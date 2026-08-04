@@ -1,0 +1,33 @@
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "5"; */
+"5.title" = "偏好设置";
+
+/* Class = "NSMenuItem"; title = "No Bookmarks"; ObjectID = "75"; */
+"75.title" = "无书签";
+
+/* Class = "NSButtonCell"; title = "Clear document changes"; ObjectID = "114"; */
+"114.title" = "清除文档变更";
+
+/* Class = "NSTextFieldCell"; title = "When downloads are done:"; ObjectID = "116"; */
+"116.title" = "下载完成后:";
+
+/* Class = "NSTextFieldCell"; title = "Source of bookmarks:"; ObjectID = "120"; */
+"120.title" = "书签来源:";
+
+/* Class = "NSButtonCell"; title = "Identities…"; ObjectID = "125"; */
+"125.title" = "身份…";
+
+/* Class = "NSButtonCell"; title = "Settings…"; ObjectID = "M4I-1c-pd2"; */
+"M4I-1c-pd2.title" = "设置…";
+
+/* Class = "NSButtonCell"; title = "Show all"; ObjectID = "a7q-ge-rqp"; */
+"a7q-ge-rqp.title" = "显示全部";
+
+/* Class = "NSTextFieldCell"; title = "When dragging to the URL field:"; ObjectID = "g7c-94-oLn"; */
+"g7c-94-oLn.title" = "拖动到 URL 字段时:";
+
+/* Class = "NSTextFieldCell"; title = "Warning alerts:"; ObjectID = "vdU-Xz-Wc8"; */
+"vdU-Xz-Wc8.title" = "警告:";
+
+/* Class = "NSButtonCell"; title = "Drag triggers download"; ObjectID = "xEc-21-54K"; */
+"xEc-21-54K.title" = "拖动触发器下载";

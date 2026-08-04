@@ -1,0 +1,11 @@
+{
+  "product": "GitHub Desktop",
+  "bundleId": "com.github.GitHubClient",
+  "defaultAppPath": "/Applications/GitHub Desktop.app",
+  "supportedVersions": ["3.6.3"],
+  "adapters": {
+    "3.6.3": { "status": "verified", "entry": "." }
+  },
+  "install": "./install.sh",
+  "uninstall": "./uninstall.sh"
+}

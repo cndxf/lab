@@ -1,0 +1,597 @@
+{
+  "text": {
+    "About GitHub Desktop": "关于 GitHub Desktop",
+    "Settings…": "设置…",
+    "Install Command Line Tool…": "安装命令行工具…",
+    "File": "文件",
+    "New Repository…": "新建仓库…",
+    "Add Local Repository…": "添加本地仓库…",
+    "Clone Repository…": "克隆仓库…",
+    "Edit": "编辑",
+    "Undo": "撤销",
+    "Redo": "重做",
+    "Cut": "剪切",
+    "Copy": "复制",
+    "Paste": "粘贴",
+    "Select All": "全选",
+    "Find": "查找",
+    "View": "视图",
+    "Show Changes": "显示更改",
+    "Show History": "显示历史记录",
+    "Show Repository List": "显示仓库列表",
+    "Show Branches List": "显示分支列表",
+    "Show Worktrees List": "显示工作树列表",
+    "Go to Summary": "转到摘要",
+    "Hide Stashed Changes": "隐藏已暂存的更改",
+    "Show Stashed Changes": "显示已暂存的更改",
+    "Hide Changes Filter": "隐藏更改筛选器",
+    "Show Changes Filter": "显示更改筛选器",
+    "Toggle Full Screen": "切换全屏",
+    "Reset Zoom": "重置缩放",
+    "Zoom In": "放大",
+    "Zoom Out": "缩小",
+    "Toggle Developer Tools": "切换开发者工具",
+    "Repository": "仓库",
+    "Push": "推送",
+    "Force Push": "强制推送",
+    "Force Push…": "强制推送…",
+    "Pull": "拉取",
+    "Fetch": "获取",
+    "Remove": "移除",
+    "Remove…": "移除…",
+    "View on GitHub": "在 GitHub 上查看",
+    "Show in Finder": "在 Finder 中显示",
+    "Open With…": "打开方式…",
+    "Create Issue on GitHub": "在 GitHub 上创建 Issue",
+    "New Worktree…": "新建工作树…",
+    "Repository Settings…": "仓库设置…",
+    "Branch": "分支",
+    "New Branch…": "新建分支…",
+    "Rename…": "重命名…",
+    "Delete…": "删除…",
+    "Discard All Changes…": "放弃所有更改…",
+    "Stash All Changes": "暂存所有更改",
+    "Stash All Changes…": "暂存所有更改…",
+    "Compare to Branch": "与分支比较",
+    "Merge into Current Branch…": "合并到当前分支…",
+    "Squash and Merge into Current Branch…": "压缩并合并到当前分支…",
+    "Rebase Current Branch…": "变基当前分支…",
+    "Compare on GitHub": "在 GitHub 上比较",
+    "View Branch on GitHub": "在 GitHub 上查看分支",
+    "Preview Pull Request": "预览 Pull Request",
+    "Create Pull Request": "创建 Pull Request",
+    "View Pull Request on GitHub": "在 GitHub 上查看 Pull Request",
+    "Report Issue…": "报告问题…",
+    "Contact GitHub Support…": "联系 GitHub 支持…",
+    "Show User Guides": "显示用户指南",
+    "Show Keyboard Shortcuts": "显示键盘快捷键",
+    "Show Logs in Finder": "在 Finder 中显示日志",
+    "Changes": "更改",
+    "History": "历史记录",
+    "Summary": "摘要",
+    "Description": "说明",
+    "Commit": "提交",
+    "Commit changes": "提交更改",
+    "Bypass Commit Hooks": "跳过提交钩子",
+    "Add Signed-off-by Trailer": "添加 Signed-off-by 尾注",
+    "Allow Empty Commit": "允许空提交",
+    "Commit to current branch": "提交到当前分支",
+    "Push origin": "推送到 origin",
+    "Pull origin": "从 origin 拉取",
+    "Fetch origin": "从 origin 获取",
+    "Sync": "同步",
+    "Publish branch": "发布分支",
+    "Open in External Editor": "在外部编辑器中打开",
+    "Open in Shell": "在 Shell 中打开",
+    "Open in Terminal": "在终端中打开",
+    "Create new repository": "创建新仓库",
+    "Add an existing repository": "添加现有仓库",
+    "Clone a repository": "克隆仓库",
+    "Sign in to GitHub.com": "登录 GitHub.com",
+    "Sign out": "退出登录",
+    "Authentication failed": "身份验证失败",
+    "Check for Updates": "检查更新",
+    "Downloading update": "正在下载更新",
+    "Update available": "有可用更新",
+    "Restart to Update": "重启并更新",
+    "Cancel": "取消",
+    "Close": "关闭",
+    "Continue": "继续",
+    "Retry": "重试",
+    "Save": "保存",
+    "Done": "完成",
+    "Learn more": "了解更多",
+    "No repositories found": "未找到仓库",
+    "No changes": "没有更改",
+    "No commits": "没有提交",
+    "Loading…": "正在加载…",
+    "Something went wrong": "出了点问题",
+    "An error occurred": "发生错误",
+    "Show details": "显示详情"
+    ,"Let's get started!": "开始使用吧！"
+    ,"Add a repository to GitHub Desktop to start collaborating": "添加仓库到 GitHub Desktop，开始协作"
+    ,"Filter your repositories": "筛选仓库"
+    ,"Create a Tutorial Repository...": "创建教程仓库…"
+    ,"Create a Tutorial Repository…": "创建教程仓库…"
+    ,"Clone a Repository from the Internet...": "从互联网克隆仓库…"
+    ,"Clone a Repository from the Internet…": "从互联网克隆仓库…"
+    ,"Create a New Repository on your Local Drive...": "在本地磁盘创建新仓库…"
+    ,"Create a New Repository on your Local Drive…": "在本地磁盘创建新仓库…"
+    ,"Add an Existing Repository from your Local Drive...": "添加本地磁盘上的现有仓库…"
+    ,"Add an Existing Repository from your Local Drive…": "添加本地磁盘上的现有仓库…"
+    ,"ProTip! You can drag & drop an existing repository folder here to add it to Desktop": "小提示！你可以将现有仓库文件夹拖放到这里，以将其添加到 Desktop"
+    ,"Settings": "设置"
+    ,"Accounts": "账户"
+    ,"Integrations": "集成"
+    ,"Appearance": "外观"
+    ,"Notifications": "通知"
+    ,"Prompts": "提示"
+    ,"Advanced": "高级"
+    ,"Accessibility": "辅助功能"
+    ,"Sign Out": "退出登录"
+    ,"If you are using GitHub Enterprise at work, sign in to it to get access to your repositories.": "如果你在工作中使用 GitHub Enterprise，请登录以访问你的仓库。"
+    ,"Sign Into GitHub Enterprise": "登录 GitHub Enterprise"
+    ,"Sign Into GitHub.com": "登录 GitHub.com"
+    ,"Sign in Using Your Browser": "使用浏览器登录"
+    ,"Your browser will redirect you back to GitHub Desktop once you've signed in. If your browser asks for your permission to launch GitHub Desktop, please allow it.": "登录后，浏览器会将你带回 GitHub Desktop。如果浏览器请求允许启动 GitHub Desktop，请点击允许。"
+    ,"Continue With Browser": "使用浏览器继续"
+    ,"Sign in to your GitHub.com account to access your repositories.": "登录你的 GitHub.com 账户以访问你的仓库。"
+    ,"Clone a Repository": "克隆仓库"
+    ,"Clone Repository...": "克隆仓库…"
+    ,"Create New Repository...": "创建新仓库…"
+    ,"Add Existing Repository...": "添加现有仓库…"
+    ,"Create a Branch": "创建分支"
+    ,"Create Branch": "创建分支"
+    ,"Branches": "分支"
+    ,"Pull Requests": "拉取请求"
+    ,"You're all set!": "全部准备就绪！"
+    ,"No open pull requests in": "仓库中没有未处理的拉取请求："
+    ,"Would you like to create a new branch and get going on your next project?": "是否要创建新分支，开始下一个项目？"
+    ,"create a new branch": "创建新分支"
+    ,"Choose a branch to merge into": "选择要合并到的分支："
+    ,"is the default branch for your repository.": "是你仓库的默认分支。"
+    ,"Your new branch will be based on your currently checked out branch": "新分支将基于当前检出的分支"
+    ,"Repository URL or GitHub username and repository": "仓库 URL 或 GitHub 用户名及仓库"
+    ,"Local Path": "本地路径"
+    ,"Choose...": "选择…"
+    ,"Choose…": "选择…"
+    ,"Clone": "克隆"
+    ,"Create a New Repository": "创建新仓库"
+    ,"Initialize this repository with a README": "使用 README 初始化此仓库"
+    ,"Git Ignore": "Git 忽略规则"
+    ,"None": "无"
+    ,"License": "许可证"
+    ,"Create Repository": "创建仓库"
+    ,"Add Local Repository": "添加本地仓库"
+    ,"Add Repository": "添加仓库"
+    ,"Start tutorial": "开始教程"
+    ,"Refresh the list of repositories": "刷新仓库列表"
+    ,"Open": "打开"
+    ,"Create": "创建"
+    ,"Theme": "主题"
+    ,"Formatting": "格式"
+    ,"Date Format": "日期格式"
+    ,"Time Format": "时间格式"
+    ,"Number Format": "数字格式"
+    ,"Prefer absolute dates over relative": "优先显示绝对日期，而不是相对日期"
+    ,"Diff": "差异对比"
+    ,"Tab Size": "制表符大小"
+    ,"Light": "浅色"
+    ,"Dark": "深色"
+    ,"System": "跟随系统"
+    ,"(default)": "（默认）"
+    ,"ProTip!": "小提示！"
+    ,"Show a confirmation dialog before...": "在以下操作前显示确认对话框…"
+    ,"Show a confirmation dialog before…": "在以下操作前显示确认对话框…"
+    ,"Removing repositories": "移除仓库"
+    ,"Discarding changes": "放弃更改"
+    ,"Discarding changes permanently": "永久放弃更改"
+    ,"Discarding stash": "放弃暂存内容"
+    ,"Checking out a commit": "检出提交"
+    ,"Force pushing": "强制推送"
+    ,"Undo commit": "撤销提交"
+    ,"Overriding commit message with generated message": "使用生成的消息覆盖提交消息"
+    ,"Removing worktrees": "移除工作树"
+    ,"Committing changes hidden by filter": "提交被筛选器隐藏的更改"
+    ,"If I have changes and I switch branches...": "如果我有更改并切换分支…"
+    ,"If I have changes and I switch branches…": "如果我有更改并切换分支…"
+    ,"Ask me where I want the changes to go": "询问我希望将更改放到哪里"
+    ,"Always bring my changes to my new branch": "始终将我的更改带到新分支"
+    ,"Always stash and leave my changes on the current branch": "始终暂存更改并将其留在当前分支"
+    ,"Commit Length": "提交长度"
+    ,"Show commit length warning": "显示提交长度警告"
+    ,"Underline links": "为链接添加下划线"
+    ,"When enabled, GitHub Desktop will underline links in commit messages, comments, and other text fields. This can help make links easier to distinguish.": "启用后，GitHub Desktop 会在提交消息、评论和其他文本字段中为链接添加下划线，帮助你更容易区分链接。"
+    ,"This is an example link": "这是示例链接"
+    ,"Show check marks in the diff": "在差异中显示勾选标记"
+    ,"When enabled, check marks will be displayed alongside the line numbers and groups of line numbers in the diff when committing. When disabled, the line number controls will be less prominent.": "启用后，提交时会在差异中的行号和行号组旁显示勾选标记。禁用后，行号控件会不那么突出。"
+    ,"Background updates": "后台更新"
+    ,"Show status icons in the repository list": "在仓库列表中显示状态图标"
+    ,"These icons indicate which repositories have local or remote changes, and require the periodic fetching of repositories that are not currently selected.": "这些图标表示哪些仓库存在本地或远程更改，并需要定期获取当前未选中的仓库。"
+    ,"Turning this off will not stop the periodic fetching of your currently selected repository, but may improve overall app performance for users with many repositories.": "关闭此选项不会停止定期获取当前选中的仓库，但对于拥有许多仓库的用户，可能会提升应用整体性能。"
+    ,"Usage": "使用情况"
+    ,"Help GitHub Desktop improve by submitting usage stats": "提交使用情况统计，帮助改进 GitHub Desktop"
+    ,"Network and credentials": "网络和凭据"
+    ,"Use Git Credential Manager": "使用 Git Credential Manager"
+    ,"Use Git Credential Manager for private repositories outside of GitHub.com. This feature is experimental and subject to change.": "对 GitHub.com 之外的私有仓库使用 Git Credential Manager。此功能处于实验阶段，可能会发生变化。"
+    ,"Enable notifications": "启用通知"
+    ,"Allows the display of notifications when high-signal events take place in the current repository. You need to grant permission to display these notifications from GitHub Desktop.": "当前仓库发生重要事件时显示通知。你需要授予权限，才能显示来自 GitHub Desktop 的这些通知。"
+    ,"Author": "作者"
+    ,"Default branch": "默认分支"
+    ,"Hooks": "钩子"
+    ,"Default branch name for new repositories": "新仓库的默认分支名称"
+    ,"GitHub's default branch name is main. You may want to change it to different workflows, or because your integrations still require the historical default branch name of master.": "GitHub 的默认分支名称是 main。你可以根据不同工作流进行更改，也可能是因为集成仍要求使用历史默认分支名称 master。"
+    ,"These preferences will edit your global Git config file.": "这些偏好设置会修改你的全局 Git 配置文件。"
+    ,"Load Git hook environment variables from shell": "从 Shell 加载 Git 钩子环境变量"
+    ,"When enabled, GitHub Desktop will attempt to load environment variables from your shell when executing Git hooks. This is useful if your Git hooks depend on environment variables set in your shell configuration files, a common practice for version managers such as nvm, rbenv, asdf, etc.": "启用后，GitHub Desktop 执行 Git 钩子时会尝试从 Shell 加载环境变量。如果 Git 钩子依赖 Shell 配置文件中设置的环境变量，这会很有用；nvm、rbenv、asdf 等版本管理器通常采用这种方式。"
+    ,"External Editor": "外部编辑器"
+    ,"Shell": "Shell"
+    ,"Terminal": "终端"
+    ,"Configure Custom Shell...": "配置自定义 Shell…"
+    ,"Configure Custom Shell…": "配置自定义 Shell…"
+    ,"Models": "模型"
+    ,"Providers": "提供商"
+    ,"Tailor how Copilot behaves by using custom instructions.": "使用自定义指令调整 Copilot 的行为。"
+    ,"Commit Message Generation": "提交消息生成"
+    ,"Auto (default)": "自动（默认）"
+    ,"Learn more about generating commit messages.": "详细了解如何生成提交消息。"
+    ,"Conflict Resolution": "冲突解决"
+    ,"Model changes apply to future conflict resolutions.": "模型更改将应用于今后的冲突解决。"
+    ,"Always Use Copilot When Conflicts Are Detected": "检测到冲突时始终使用 Copilot"
+    ,"Add Provider...": "添加提供商…"
+    ,"Add Provider…": "添加提供商…"
+    ,"Add Custom Provider": "添加自定义提供商"
+    ,"Provider": "提供商"
+    ,"Name": "名称"
+    ,"My provider": "我的提供商"
+    ,"Type": "类型"
+    ,"OpenAI / OpenAI-compatible": "OpenAI / 兼容 OpenAI"
+    ,"Base URL": "基础 URL"
+    ,"API Format": "API 格式"
+    ,"Chat completions (default)": "聊天补全（默认）"
+    ,"Request Timeout (seconds)": "请求超时（秒）"
+    ,"Authentication": "身份验证"
+    ,"API key": "API 密钥"
+    ,"Tell Desktop which models this provider offers. Each one will appear in the model picker for Copilot features.": "告诉 Desktop 此提供商提供哪些模型。每个模型都会显示在 Copilot 功能的模型选择器中。"
+    ,"No models yet. Add at least one to use this provider.": "还没有模型。请至少添加一个模型才能使用此提供商。"
+    ,"Add Model...": "添加模型…"
+    ,"Add Model…": "添加模型…"
+    ,"Display Name": "显示名称"
+    ,"The friendly name shown in the Copilot model picker.": "在 Copilot 模型选择器中显示的易读名称。"
+    ,"Model Identifier": "模型标识符"
+    ,"The exact name your provider expects (e.g. gpt-4o, llama3).": "提供商要求的准确名称（例如 gpt-4o、llama3）。"
+    ,"Reasoning Effort": "推理强度"
+    ,"Default (provider's choice)": "默认（由提供商选择）"
+    ,"Reasoning models (o1, o3, GPT-5 reasoning variants, etc.) think before responding. Higher levels are slower but produce better answers on complex tasks. Leave on Default for non-reasoning models or to let the provider pick.": "推理模型（o1、o3、GPT-5 推理变体等）会在回答前进行思考。更高等级速度较慢，但在复杂任务中效果更好。对于非推理模型，或希望由提供商选择时，请保留“默认”。"
+    ,"Choose a model": "选择模型"
+    ,"Filter models": "筛选模型"
+    ,"Email": "电子邮件"
+    ,"grant permission": "授予权限"
+    ,"usage stats": "使用情况统计"
+    ,"These preferences will edit your global Git config file.": "这些偏好设置会修改你的全局 Git 配置文件。"
+    ,"When enabled, check marks will be displayed alongside the line numbers and groups of line numbers in the diff when committing.": "启用后，提交时会在差异中的行号和行号组旁显示勾选标记。"
+    ,"When disabled, the line number controls will be less prominent.": "禁用后，行号控件会不那么突出。"
+    ,"custom instructions": "自定义指令"
+    ,"Add Model": "添加模型"
+    ,"Add": "添加"
+    ,"Low": "低"
+    ,"Medium": "中"
+    ,"High": "高"
+    ,"Extra high": "极高"
+    ,"Configure Custom Editor...": "配置自定义编辑器…"
+    ,"Configure Custom Editor…": "配置自定义编辑器…"
+    ,". This repository will only be visible to you, and not visible publicly.": "。此仓库仅你可见，不会公开显示。"
+    ,"Create New Repository…": "创建新仓库…"
+    ,"Add Existing Repository…": "添加现有仓库…"
+    ,"Sorry, I can't find that repository": "抱歉，找不到该仓库"
+    ,"ProTip! Press": "小提示！按下"
+    ,"to quickly add a local repository, and": "可快速添加本地仓库，或"
+    ,"to clone from anywhere within the app": "可在应用中的任意位置进行克隆"
+    ,"Sign In": "登录"
+    ,"Select": "选择"
+    ,"Clone As:": "克隆为："
+    ,"Unable to read path on disk. Please check the path and try again.": "无法读取磁盘上的路径。请检查路径后重试。"
+    ,"This folder contains files. Git can only clone to empty folders.": "此文件夹包含文件。Git 只能克隆到空文件夹。"
+    ,"There is already a file with this name. Git can only clone to a folder.": "已存在同名文件。Git 只能克隆到文件夹。"
+    ,"Directory could not be created at this path.": "无法在此路径创建目录。"
+    ,"The directory contains a Git repository. Would you like to add this repository instead?": "此目录包含 Git 仓库。是否改为添加此仓库？"
+    ,"Learn about submodules.": "了解子模块。"
+    ,"This directory contains a README.md file already. Checking this box will result in the existing file being overwritten.": "此目录已包含 README.md 文件。选中此项将覆盖现有文件。"
+    ,"The repository will be created at": "仓库将创建于"
+    ,"Will be created as": "将创建为"
+    ,"Invalid characters have been replaced by hyphens.": "无效字符已替换为连字符。"
+    ,"Open Editor": "打开编辑器"
+    ,"Exit Tutorial": "退出教程"
+    ,"Are you sure you want to leave the tutorial? This will bring you back to the home screen.": "确定要离开教程吗？这将返回主页。"
+    ,"Skip": "跳过"
+    ,"Add a custom provider to use your own API keys with OpenAI-compatible endpoints, Azure, Anthropic, or local providers like Ollama.": "添加自定义提供商，以使用你自己的 API 密钥连接 OpenAI 兼容端点、Azure、Anthropic 或 Ollama 等本地提供商。"
+    ,"Local": "本地"
+    ,"1 model": "1 个模型"
+    ,"Responses (GPT-5 series)": "Responses（GPT-5 系列）"
+    ,"Azure API Version": "Azure API 版本"
+    ,"No credentials will be sent with requests to this provider.": "向此提供商发送请求时不会附带凭据。"
+    ,"Edit Model": "编辑模型"
+    ,"Please enter a model identifier.": "请输入模型标识符。"
+    ,"Another model with the identifier already exists.": "已存在使用该标识符的其他模型。"
+    ,"You need to": "你需要"
+    ,"GitHub Desktop has no permission to display notifications. Please, enable them in the": "GitHub Desktop 没有显示通知的权限。请在以下位置启用通知："
+    ,"Notifications Settings": "通知设置"
+    ,"Make sure notifications are": "请确保通知已"
+    ,"properly configured": "正确配置"
+    ,"enabled": "启用"
+    ,"for GitHub Desktop in the": "，并在以下位置为 GitHub Desktop 开启"
+    ,"Use system OpenSSH (recommended)": "使用系统 OpenSSH（推荐）"
+    ,"Cache Git hook environment variables": "缓存 Git 钩子环境变量"
+    ,"Cache hook environment variables to improve performance. Disable if your hooks rely on frequently changing environment variables.": "缓存钩子环境变量以提升性能。如果钩子依赖频繁变化的环境变量，请禁用此项。"
+    ,"edit your global Git config file": "编辑你的全局 Git 配置文件"
+    ,"Repository Settings": "仓库设置"
+    ,"Remote": "远程仓库"
+    ,"Ignored Files": "忽略的文件"
+    ,"Git Config": "Git 配置"
+    ,"Fork Behavior": "派生仓库行为"
+    ,"Use my global Git config": "使用我的全局 Git 配置"
+    ,"Use a local Git config": "使用本地 Git 配置"
+    ,"Initial commit": "初始提交"
+    ,"Return to In Progress Tutorial": "返回进行中的教程"
+    ,"GitHub Desktop tutorial repository": "GitHub Desktop 教程仓库"
+    ,"Repository creation failed.": "创建仓库失败。"
+    ,"Initializing local repository": "正在初始化本地仓库"
+    ,"Finalizing tutorial repository": "正在完成教程仓库设置"
+    ,"Show Copilot model credit costs": "显示 Copilot 模型费用"
+    ,"Sign in to an account with a Copilot license to configure Copilot settings.": "登录具有 Copilot 许可证的账户以配置 Copilot 设置。"
+    ,"View Copilot plans": "查看 Copilot 方案"
+    ,"Copilot in GitHub Desktop": "GitHub Desktop 中的 Copilot"
+    ,"Open Copilot feature settings": "打开 Copilot 功能设置"
+    ,"Please enter an API key.": "请输入 API 密钥。"
+    ,"You have reached your GitHub Copilot usage limit.": "你已达到 GitHub Copilot 使用限额。"
+    ,"You have reached your GitHub Copilot session limit.": "你已达到 GitHub Copilot 会话限额。"
+    ,"GitHub Copilot billing is not configured for this account.": "此账户尚未配置 GitHub Copilot 计费。"
+    ,"Copilot billing not configured": "未配置 Copilot 计费"
+    ,"Open GitHub Copilot settings": "打开 GitHub Copilot 设置"
+    ,"Copilot billing issue": "Copilot 计费问题"
+    ,"Clone failed": "克隆失败"
+    ,"Failed to push": "推送失败"
+    ,"Failed creating repository": "创建仓库失败"
+    ,"Retry Clone": "重试克隆"
+    ,"Trust Repository": "信任仓库"
+    ,"Clone Again": "再次克隆"
+    ,"Locate…": "定位…"
+    ,"Open Preferences": "打开设置"
+    ,"File size limit exceeded": "超过文件大小限制"
+    ,"Commit failed": "提交失败"
+    ,"Error": "错误"
+    ,"Unable to determine repository type": "无法确定仓库类型"
+    ,"Directory could not be created at this path. You may not have permissions to create a directory here.": "无法在此路径创建目录。你可能没有在此处创建目录的权限。"
+    ,"This directory appears to be a bare repository. Bare repositories are not currently supported.": "此目录似乎是裸仓库。目前不支持裸仓库。"
+    ,"This directory does not appear to be a Git repository. Would you like to create a repository here instead?": "此目录似乎不是 Git 仓库。是否要改为在此处创建仓库？"
+    ,"We couldn't find that repository. Check that you are logged in, the network is accessible, and the URL or repository alias are spelled correctly.": "找不到该仓库。请检查是否已登录、网络是否可用，以及 URL 或仓库别名是否拼写正确。"
+    ,"If you trust the owner of the directory you can add an exception for this directory in order to continue.": "如果你信任该目录的所有者，可以为此目录添加例外以继续。"
+    ,"The repository is potentially unsafe": "该仓库可能不安全"
+    ,"Please delete the repository and try again.": "请删除该仓库后重试。"
+    ,"Path to executable": "可执行文件路径"
+    ,"This path does not appear to be a valid executable.": "此路径似乎不是有效的可执行文件。"
+    ,"Custom Shell": "自定义 Shell"
+    ,"Platform not currently supported for launching shells: darwin": "当前平台不支持启动 Shell：darwin"
+    ,"No editor configured in Preferences > Advanced": "未在“设置 > 高级”中配置编辑器"
+    ,"The Git repository": "Git 仓库"
+    ,"add an exception for this directory": "为此目录添加例外"
+    ,"in order to continue.": "以继续。"
+    ,"Get started": "开始使用"
+    ,"Install a text editor": "安装文本编辑器"
+    ,"Create a branch": "创建分支"
+    ,"Edit a file": "编辑文件"
+    ,"Make a commit": "创建提交"
+    ,"Publish to GitHub": "发布到 GitHub"
+    ,"Open a pull request": "发起拉取请求"
+    ,"Open Pull Request": "打开拉取请求"
+    ,"Welcome to GitHub Desktop!": "欢迎使用 GitHub Desktop！"
+    ,"You're done!": "完成！"
+    ,"You’ve learned the basics on how to use GitHub Desktop. Here are some suggestions for what to do next.": "你已经了解了 GitHub Desktop 的基本用法。下面是一些后续建议。"
+    ,"Explore projects on GitHub": "探索 GitHub 上的项目"
+    ,"Contribute to a project that interests you": "为你感兴趣的项目做贡献"
+    ,"Open in Browser": "在浏览器中打开"
+    ,"Create a new repository": "创建新仓库"
+    ,"Get started on a brand new project": "从全新项目开始"
+    ,"Add a local repository": "添加本地仓库"
+    ,"Work on an existing project in GitHub Desktop": "在 GitHub Desktop 中处理现有项目"
+    ,"Checking Copilot access…": "正在检查 Copilot 访问权限…"
+    ,"Copilot features in GitHub Desktop require a GitHub Copilot license.": "GitHub Desktop 中的 Copilot 功能需要 GitHub Copilot 许可证。"
+    ,"No Copilot models available.": "没有可用的 Copilot 模型。"
+    ,"Loading available models…": "正在加载可用模型…"
+    ,"Edit Custom Provider": "编辑自定义提供商"
+    ,"Bearer token": "Bearer 令牌"
+    ,"API key": "API 密钥"
+    ,"Authentication": "身份验证"
+    ,"None": "无"
+    ,"Please enter a bearer token.": "请输入 Bearer 令牌。"
+    ,"Please enter a name.": "请输入名称。"
+    ,"Please enter a base URL.": "请输入基础 URL。"
+    ,"Please add at least one model.": "请至少添加一个模型。"
+    ,"Request timeout must be a positive number of seconds.": "请求超时必须是正数秒。"
+    ,"Untitled model": "未命名模型"
+    ,"Your Repositories": "你的仓库"
+    ,"Choose an account": "选择账户"
+    ,"Configure Git": "配置 Git"
+    ,"For this repository I wish to": "我希望对此仓库"
+    ,"This is used to identify the commits you create. Anyone will be able to see this information if you publish commits.": "此信息用于标识你创建的提交。发布提交后，任何人都能看到这些信息。"
+    ,"Finish": "完成"
+    ,"Open Git Settings": "打开 Git 设置"
+    ,"Services": "服务"
+    ,"Hide GitHub Desktop": "隐藏 GitHub Desktop"
+    ,"Hide Others": "隐藏其他应用"
+    ,"Show All": "显示全部"
+    ,"Quit GitHub Desktop": "退出 GitHub Desktop"
+    ,"Reload": "重新加载"
+    ,"Your default editor is": "你的默认编辑器是"
+    ,"You can change your preferred editor in": "你可以在以下位置更改首选编辑器："
+    ,"It doesn’t look like you have a text editor installed. We can recommend": "看起来你还没有安装文本编辑器。我们推荐"
+    ,"Open the Atom website": "打开 Atom 网站"
+    ,"I have an editor": "我已有编辑器"
+    ,"but feel free to use any.": "但你也可以使用任意编辑器。"
+    ,"A branch allows you to work on different versions of a repository at one time. Create a branch by going into the branch menu in the top bar and clicking \"New Branch\".": "分支可以让你同时处理仓库的不同版本。请打开顶部栏中的分支菜单，然后点击“新建分支”。"
+    ,"Open this repository in your preferred text editor. Edit the": "在首选文本编辑器中打开此仓库。编辑"
+    ,"file, save it, and come back.": "文件，保存后返回。"
+    ,"Open Editor": "打开编辑器"
+    ,"A commit allows you to save sets of changes. In the “summary“ field in the bottom left, write a short message that describes the changes you made. When you’re done, click the blue Commit button to finish.": "提交可以保存一组更改。请在左下角的“摘要”字段中写下简短的更改说明，完成后点击蓝色的“提交”按钮。"
+    ,"Publishing will “push”, or upload, your commits to this branch of your repository on GitHub. Publish using the third button in the top bar.": "发布会将你的提交“推送”或上传到 GitHub 上仓库的此分支。请使用顶部栏中的第三个按钮发布。"
+    ,"A pull request allows you to propose changes to the code. By opening one, you’re requesting that someone review and merge them. Since this is a demo repository, this pull request will be private.": "拉取请求可以让你提出代码更改。发起拉取请求后，你是在请求他人审查并合并这些更改。由于这是演示仓库，此拉取请求将保持私有。"
+    ,"Create Repository": "创建仓库"
+    ,"Add Repository": "添加仓库"
+    ,"Work on an existing project in GitHub Desktop": "在 GitHub Desktop 中处理现有项目"
+    ,"OpenAI / OpenAI-compatible": "OpenAI / OpenAI 兼容"
+    ,"Chat completions (default)": "聊天补全（默认）"
+    ,"Responses (GPT-5 series)": "Responses（GPT-5 系列）"
+    ,"Azure API Version": "Azure API 版本"
+    ,"Request Timeout (seconds)": "请求超时（秒）"
+    ,"Provider": "提供商"
+    ,"Name": "名称"
+    ,"Type": "类型"
+    ,"Base URL": "基础 URL"
+    ,"API Format": "API 格式"
+    ,"No credentials will be sent with requests to this provider.": "向此提供商发出请求时不会发送凭据。"
+    ,"Models": "模型"
+    ,"Tell Desktop which models this provider offers. Each one will appear in the model picker for Copilot features.": "请告诉 Desktop 此提供商提供哪些模型。每个模型都会显示在 Copilot 功能的模型选择器中。"
+    ,"No models yet. Add at least one to use this provider.": "还没有模型。请至少添加一个模型才能使用此提供商。"
+    ,"Add Model…": "添加模型…"
+    ,"Auto (default)": "自动（默认）"
+    ,"Commit Message Generation": "提交消息生成"
+    ,"Conflict Resolution": "冲突解决"
+    ,"4 (default)": "4（默认）"
+    ,"in the current repository.": "。"
+    ,"Commit Message Generation: Auto (default)": "提交消息生成：自动（默认）"
+    ,"Conflict Resolution: Auto (default)": "冲突解决：自动（默认）"
+    ,"Use": "使用"
+    ,"for private repositories outside of GitHub.com. This feature is experimental and subject to change.": "，对 GitHub.com 之外的私有仓库使用。此功能处于实验阶段，可能发生变化。"
+    ,"When enabled, check marks will be displayed along side the line numbers and groups of line numbers in the diff when committing. When disabled, the line number controls will be less prominent.": "启用后，提交时会在差异中的行号和行号组旁显示勾选标记。禁用后，行号控件会不那么突出。"
+    ,"Current Repository": "当前仓库"
+    ,"Current Branch": "当前分支"
+    ,"Never fetched": "从未获取"
+    ,"Filter Options": "筛选选项"
+    ,"0 changed files": "0 个已更改文件"
+    ,"Create commit": "创建提交"
+    ,"View commit author information": "查看提交作者信息"
+    ,"Commit summary": "提交摘要"
+    ,"Summary (required)": "摘要（必填）"
+    ,"Commit description": "提交说明"
+    ,"Description": "说明"
+    ,"helps you work with GitHub locally.": "帮助你在本地使用 GitHub。"
+    ,"Add Co-Authors": "添加共同作者"
+    ,"Generate commit message with Copilot. Files must be selected to generate a commit message.": "使用 Copilot 生成提交消息。必须先选择文件才能生成提交消息。"
+    ,"New": "新建"
+    ,"Configure commit options": "配置提交选项"
+    ,"Commit to": "提交到"
+    ,"Welcome to GitHub Desktop": "欢迎使用 GitHub Desktop"
+    ,"Use this tutorial to get comfortable with Git, GitHub, and GitHub Desktop.": "通过本教程熟悉 Git、GitHub 和 GitHub Desktop。"
+    ,"is the version control system.": "是版本控制系统。"
+    ,"is where you store your code and collaborate with others.": "用于存储代码并与他人协作。"
+    ,"helps you work with Git locally.": "帮助你在本地使用 Git。"
+    ,"Resize handle": "调整大小"
+    ,"Last fetched": "上次获取"
+    ,"fetch complete": "获取完成"
+  },
+  "attribute": {
+    "Search repositories": "搜索仓库",
+    "Search branches": "搜索分支",
+    "Search": "搜索",
+    "Close": "关闭",
+    "Cancel": "取消",
+    "Save": "保存",
+    "Open": "打开",
+    "Delete": "删除",
+    "Settings": "设置",
+    "Filter your repositories": "筛选仓库",
+    "Filter models": "筛选模型",
+    "Refresh the list of repositories": "刷新仓库列表",
+    "Let's get started!": "开始使用吧！"
+    ,"repository name": "仓库名称"
+    ,"URL or username/repository": "URL 或 用户名/仓库"
+    ,"repository path": "仓库路径"
+    ,"My provider": "我的提供商"
+    ,"Filter": "筛选"
+    ,"Summary (required)": "摘要（必填）"
+    ,"Description": "说明"
+    ,"Filter Options": "筛选选项"
+    ,"Add Co-Authors": "添加共同作者"
+    ,"Generate commit message with Copilot. Files must be selected to generate a commit message.": "使用 Copilot 生成提交消息。必须先选择文件才能生成提交消息。"
+    ,"Configure commit options": "配置提交选项"
+    ,"View commit author information": "查看提交作者信息"
+    ,"Create commit": "创建提交"
+  },
+  "menu": {
+    "File": "文件",
+    "Edit": "编辑",
+    "View": "视图",
+    "Repository": "仓库",
+    "Branch": "分支",
+    "Help": "帮助",
+    "Window": "窗口"
+  },
+  "prefix": {
+    "Create a Tutorial Repository": "创建教程仓库",
+    "Clone a Repository from the Internet": "从互联网克隆仓库",
+    "Create a New Repository on your Local Drive": "在本地磁盘创建新仓库",
+    "Add an Existing Repository from your Local Drive": "添加本地磁盘上的现有仓库",
+    "No open pull requests in ": "仓库中没有未处理的拉取请求：",
+    "Choose a branch to merge into ": "选择要合并到的分支：",
+    "Your new branch will be based on your currently checked out branch (": "新分支将基于当前检出的分支（",
+    " is the default branch for your repository.": " 是你仓库的默认分支。",
+    "You can drag & drop an existing repository folder here to add it to Desktop": "你可以将现有仓库文件夹拖放到这里，以将其添加到 Desktop",
+    "Tailor how Copilot behaves by using": "使用自定义指令调整 Copilot 的行为",
+    "Add a custom provider to use your own API keys with": "添加自定义提供商，以使用你自己的 API 密钥连接",
+    "The exact name your provider expects (e.g.": "提供商要求的准确名称（例如",
+    "Reasoning models (o1, o3, GPT-5 reasoning variants, etc.) think before responding.": "推理模型（o1、o3、GPT-5 推理变体等）会在回答前进行思考。",
+    "GitHub's default branch name is": "GitHub 的默认分支名称是",
+    "You may want to change it to different workflows, or because your integrations still require the historical default branch name of": "你可以根据不同工作流进行更改，也可能是因为集成仍要求使用历史默认分支名称"
+    ,"These preferences will": "这些偏好设置会"
+    ,"in the current repository.": "。"
+    ,". You may want to change it due to different workflows, or because your integrations still require the historical default branch name of": "。你可能希望根据不同工作流进行更改，也可能是因为集成仍要求使用历史默认分支名称"
+    ,"Allows the display of notifications when high-signal events take place": "当前仓库发生重要事件时显示通知"
+    ,"to display these notifications from GitHub Desktop.": "以显示来自 GitHub Desktop 的这些通知。"
+    ,"Help GitHub Desktop improve by submitting": "提交使用情况统计，帮助改进 GitHub Desktop"
+    ,"Use Git Credential Manager for private repositories outside of": "对 GitHub.com 之外的私有仓库使用 Git Credential Manager"
+    ,"GitHub.com. This feature is experimental and subject to change.": "。此功能处于实验阶段，可能会发生变化。"
+    ,"When enabled, check marks will be displayed alongside the line": "启用后，提交时会在差异中的行号"
+    ,"numbers and groups of line numbers in the diff when committing.": "和行号组旁显示勾选标记。"
+    ,"When disabled, the line number controls will be less prominent.": "禁用后，行号控件会不那么突出。"
+    ,"This will create a repository on your local machine, and push it to your account": "这将在本地创建一个仓库，并将其推送到"
+    ,"on GitHub.com. This repository will only be visible to you, and not visible publicly.": "的 GitHub.com。此仓库仅你可见，不会公开显示。"
+    ,"Clone ": "克隆 "
+    ,"The directory ": "目录 "
+    ," appears to be a Git repository. Would you like to ": "似乎是 Git 仓库。是否要"
+    ," appears to be a subfolder of Git repository.": "似乎是 Git 仓库的子文件夹。"
+    ,"This directory contains a README.md file already.": "此目录已包含 README.md 文件。"
+    ,"The repository will be created at ": "仓库将创建于 "
+    ,"Will be created as ": "将创建为 "
+    ,"You need to": "你需要"
+    ,"Make sure notifications are ": "请确保通知已"
+    ,"in the current repository. You need to": "。你需要"
+    ,"for GitHub Desktop in the ": "，并在以下位置为 GitHub Desktop 开启"
+    ,"Refresh this list": "刷新此列表"
+    ,"Sorry, I can't find any repository matching": "抱歉，找不到匹配以下内容的仓库"
+    ,"Looks like there are no repositories for": "看起来没有属于"
+    ,"Loading repositories from ": "正在从 "
+    ,"Would you like to retry cloning ": "是否要重试克隆 "
+    ,"The Git repository at ": "Git 仓库位于 "
+    ,"appears to be owned by another user on your machine. Adding untrusted repositories may automatically execute files in the repository.": "似乎由你电脑上的其他用户所有。添加不受信任的仓库可能会自动执行仓库中的文件。"
+    ,"If you trust the owner of the directory you can": "如果你信任该目录的所有者，可以"
+    ,"Creating repository on ": "正在以下位置创建仓库： "
+    ,"Pushing repository to ": "正在将仓库推送到 "
+    ,"Failed creating the tutorial repository.": "创建教程仓库失败。"
+    ,"You already have a repository named ": "你的账户已有名为 "
+    ," is potentially unsafe": "可能不安全"
+    ,"second ago": "秒前"
+    ,"seconds ago": "秒前"
+    ,"minute ago": "分钟前"
+    ,"minutes ago": "分钟前"
+    ,"hour ago": "小时前"
+    ,"hours ago": "小时前"
+    ,"day ago": "天前"
+    ,"days ago": "天前"
+    ,"week ago": "周前"
+    ,"weeks ago": "周前"
+    ,"month ago": "个月前"
+    ,"months ago": "个月前"
+    ,"year ago": "年前"
+    ,"years ago": "年前"
+  }
+}

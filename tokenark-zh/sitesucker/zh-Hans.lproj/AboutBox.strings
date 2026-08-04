@@ -1,0 +1,6 @@
+
+/* Class = "NSWindow"; title = "About SiteSucker"; ObjectID = "5"; */
+"5.title" = "关于 SiteSucker";
+
+/* Class = "NSTextFieldCell"; title = "Copyright © 2001-2026 Rick Cranisky\nAll rights reserved"; ObjectID = "24"; */
+"24.title" = "Copyright © 2001-2026 Rick Cranisky\n保留所有权利";

@@ -1,0 +1,9 @@
+/* Localized versions of Info.plist keys */
+
+/* NSHumanReadableCopyright = "Copyright © 2001-2026 Rick Cranisky. All rights reserved." */
+NSHumanReadableCopyright = "Copyright © 2001-2026 Rick Cranisky. 保留所有权利.";
+
+/* File types */
+"SiteSucker Document" = "SiteSucker 文档";
+"Web internet location" = "网络位置";
+"Download Package" = "下载软件包";

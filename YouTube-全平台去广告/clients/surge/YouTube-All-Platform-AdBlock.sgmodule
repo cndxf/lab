@@ -1,0 +1,64 @@
+#!name=YouTube 全平台去广告
+#!desc=网页与移动端去广告；Apple TV 为实验支持。首次使用必须安装并信任 MITM 证书，详见项目安装说明。
+
+# ============================================================
+# [安装与证书信任设置]
+# 1. 从 URL 安装本模块并启用 Surge 的 MITM、脚本和模块功能。
+# 2. iPhone/iPad：在 Surge 的 MITM 页面生成并安装 CA；然后进入
+#    设置 > 通用 > VPN 与设备管理完成描述文件安装，再进入
+#    设置 > 通用 > 关于本机 > 证书信任设置，为 Surge 根证书开启完全信任。
+# 3. macOS：在 Surge MITM 页面把 CA 安装到系统钥匙串；如仍显示不受信任，
+#    在“钥匙串访问 > 显示简介 > 信任”中把 SSL 设为始终信任。
+# 4. 证书只需首次安装；模块不能携带、安装或信任 CA 和私钥。
+# 5. 安装或更新后应强制退出 YouTube App 和浏览器，再重新建立 TLS 连接。
+#
+# [更新方法]
+# - 在 Surge 已安装模块列表点击刷新，或再次打开同一个一键安装链接并选择替换。
+# - 远程脚本每 21600 秒检查一次更新；脚本 URL 的 ?v= 也会随版本变化以避开旧缓存。
+# - 不要保留两个同名模块，也不要同时启用其他重复处理 YouTube 的模块。
+#
+# [无法播放 / 证书错误]
+# - 先停用本模块确认是否恢复，再检查证书是否“完全信任”。
+# - 停用旧模块中的 *.googlevideo.com MITM、initplayback 请求改写和重复 youtubei 脚本。
+# - 当前模块故意不解密 *.googlevideo.com，以降低黑屏、转圈和连接不安全风险。
+#
+# [回滚方法]
+# - 在模块列表停用或删除“ YouTube 全平台去广告”，重新加载配置并重启 YouTube。
+# - 本模块不直接改写主配置，因此正常情况下无需手工删除 [MITM] 或 [Script] 行。
+# - 完整说明：https://github.com/cndxf/lab/tree/main/YouTube-%E5%85%A8%E5%B9%B3%E5%8F%B0%E5%8E%BB%E5%B9%BF%E5%91%8A/clients/surge
+
+# ============================================================
+# [通用传输层]
+# 强制 youtubei API 从 QUIC 回落到可进行脚本处理的 TCP/TLS。
+# 不拦截 *.googlevideo.com，避免旧方案造成网页视频无法播放。
+# ============================================================
+[Rule]
+AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
+DOMAIN-SUFFIX,doubleclick.net,REJECT
+DOMAIN-SUFFIX,googlesyndication.com,REJECT
+DOMAIN-SUFFIX,googleadservices.com,REJECT
+DOMAIN-SUFFIX,adservice.google.com,REJECT
+
+# ============================================================
+# [移动端 / Apple TV 候选]
+# youtube.native.response 处理原生客户端 protobuf 响应。
+# iPhone/iPad 已接入；Apple TV 复用同类接口但仍需 tvOS 真机验证。
+# 明确关闭与去广告无关的按钮隐藏功能，减少副作用。
+# ============================================================
+[Script]
+youtube.native.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config)(?:\?.*)?$,requires-body=1,max-size=-1,binary-body-mode=1,debug=false,script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/scripts/youtube-native-response.js?v=1.2.0,script-update-interval=21600,argument="{\"captionLang\":\"off\",\"blockUpload\":false,\"blockImmersive\":false,\"blockShorts\":false,\"debug\":false}"
+
+# ============================================================
+# [网页专用]
+# response 在 JSON 渲染前清理广告结构；page 注入 DOM/播放器恢复逻辑。
+# 覆盖桌面网页和 m.youtube.com，不用于原生 App protobuf。
+# ============================================================
+youtube.web.response = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/youtubei\/v1\/(?:next|browse|search|reel\/reel_watch_sequence)(?:\?.*)?$,requires-body=1,max-size=10485760,debug=false,script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/scripts/youtube-web-response.js?v=1.2.0,script-update-interval=21600
+youtube.web.page = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/(?:(?:watch|results|playlist)(?:\?.*)?|shorts\/(?:[^/?#]+)?(?:\?.*)?|(?:live|post|hashtag|clip|embed)\/[^/?#]+(?:\?.*)?|feed\/[^?#]+(?:\?.*)?|(?:@[^/?#]+|(?:channel|c|user)\/[^/?#]+)(?:\/[^?#]*)?(?:\?.*)?|(?:\?.*)?)$,requires-body=1,max-size=10485760,debug=false,script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/scripts/youtube-web-page.js?v=1.2.0,script-update-interval=21600
+
+# ============================================================
+# [MITM]
+# 模块只能声明域名，不能安装、分发或信任证书和私钥。
+# ============================================================
+[MITM]
+hostname = %APPEND% www.youtube.com, m.youtube.com, youtubei.googleapis.com

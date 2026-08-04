@@ -1,0 +1,11 @@
+{
+  "product": "Claude Desktop",
+  "bundleId": "com.anthropic.claudefordesktop",
+  "defaultAppPath": "/Applications/Claude.app",
+  "supportedVersions": ["1.24012.9"],
+  "adapters": {
+    "1.24012.9": { "status": "verified", "entry": "." }
+  },
+  "install": "./install.sh",
+  "uninstall": "./uninstall.sh"
+}

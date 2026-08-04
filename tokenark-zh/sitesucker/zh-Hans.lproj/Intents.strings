@@ -1,0 +1,12 @@
+
+/* Key = "INIntentParameterCombinationTitleID"; title = "Download ${url}"; ObjectID = "5amSbU"; */
+"5amSbU" = "下载 ${url}";
+
+/* Key = "INIntentParameterDisplayNameID"; title = "URL"; ObjectID = "E8dtPE"; */
+"E8dtPE" = "网址";
+
+/* Key = "INIntentDescriptionID"; title = "Download the specified URL in the front window. If no URL is specified, the current URL is downloaded."; ObjectID = "Jdy9jG"; */
+"Jdy9jG" = "下载前面窗口中指定的网址. 如果未指定网址, 则下载当前网址.";
+
+/* Key = "INIntentTitleID"; title = "Download URL"; ObjectID = "rnEmHR"; */
+"rnEmHR" = "下载网址";

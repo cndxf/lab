@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-07-30T07:53:38.550Z",
+  "appVersion": "6.1.8",
+  "resourceCount": 17,
+  "files": [
+    {
+      "path": "AboutBox.strings",
+      "sha256": "6697391b2348b6b4fe4ac6178aeb724ea1bc6dc5299d3f441100f8d82750ba7b"
+    },
+    {
+      "path": "AutoFillPassword.strings",
+      "sha256": "6f54331b95dfcc4ff52fad0d51e10a047d89cbdbd9be146f85925b777ec47831"
+    },
+    {
+      "path": "Browser.strings",
+      "sha256": "43bae7271f75fa4c8333b0d147601e1a16fdc92335a0e76c856974dd883b2eaa"
+    },
+    {
+      "path": "Credits.html",
+      "sha256": "2c178d2016a5529e4cf8084126a7d55be6419b4099cb315dcd869563f846714c"
+    },
+    {
+      "path": "InfoPlist.strings",
+      "sha256": "695902218ed1a0f38f0a6cee7203eced9ad7432205b5993d80348967e29e47d8"
+    },
+    {
+      "path": "Intents.strings",
+      "sha256": "733077edbc0b5a7ee7abb78f84e1b4500a95c6b9039b18eb6ea3fde1a3a1c40e"
+    },
+    {
+      "path": "Localizable.strings",
+      "sha256": "a8303fb37a71c591bd2323c3fe914abcf74a1d028e930341ac31b9fe391345f1"
+    },
+    {
+      "path": "MainMenu.strings",
+      "sha256": "016a7f2302df612bac661f3446d6c2303f967c18c7c00da6bc72bf0295711d49"
+    },
+    {
+      "path": "Preferences.strings",
+      "sha256": "2e666a185c735cee8f1f80239f9718f51c387a4ab6b6589d6570d08d1d8e78f4"
+    },
+    {
+      "path": "Queue.strings",
+      "sha256": "85b4b16c418607f29e707931054902a8762f4beebb92ee776bb876269ee48300"
+    },
+    {
+      "path": "SSDocument.strings",
+      "sha256": "898b292f0f0d59cc9f5d83d259bb1644a90554efbd69298fa9dc83d44cd0bab6"
+    },
+    {
+      "path": "SSSuggestedSettings.strings",
+      "sha256": "ee486e4c7ff227c2e116b8cdd807556aaba5ddae051ce3907149f995c161812f"
+    },
+    {
+      "path": "ServicesMenu.strings",
+      "sha256": "4086c32d3175a22976c67a0331a8c8fc6e651413f103088a066d657ff1feee5c"
+    },
+    {
+      "path": "Settings.strings",
+      "sha256": "8c7332aaa9facdd8456d89f7ee5d22c6a310d7cc499c0c3ff5970f6872090ca9"
+    },
+    {
+      "path": "SettingsManager.strings",
+      "sha256": "4d434aed9ade4cac456ea96ca79867d4b17c4b0c1325d8934d34f5e91d7d9566"
+    },
+    {
+      "path": "UserAgent.strings",
+      "sha256": "21890800448eda4513d92198839d5c91c705084378b873e055851f679b913a1b"
+    },
+    {
+      "path": "WebAuthenticationPanel.strings",
+      "sha256": "25e5da51b3451213e6cff30904304a10988e91941156b5f89073901df9cc2e17"
+    }
+  ]
+}
