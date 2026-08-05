@@ -23,7 +23,42 @@ if [ ! -x "$SURGE_CLI" ]; then
 fi
 
 temporary_profile=$(mktemp "${TMPDIR:-/tmp}/youtube-adblock-profile.XXXXXX")
-trap 'rm -f "$temporary_profile"' EXIT HUP INT TERM
+resolved_module=$(mktemp "${TMPDIR:-/tmp}/youtube-adblock-module.XXXXXX")
+trap 'rm -f "$temporary_profile" "$resolved_module"' EXIT HUP INT TERM
+
+# Resolve the module's documented default arguments before passing it to the
+# complete-profile validator. Current Surge releases use the legacy
+# key:default / {{{key}}} form in installed modules, while the validator also
+# understands the query-string / %key% form documented for newer releases.
+node - "$MODULE_PATH" "$resolved_module" <<'NODE'
+const fs = require("node:fs");
+
+const [, , sourcePath, outputPath] = process.argv;
+const source = fs.readFileSync(sourcePath, "utf8");
+const argumentLine = source.match(/^#!arguments=(.*)$/m)?.[1] || "";
+const defaults = new Map();
+
+const legacyArguments = argumentLine.includes(":") && !argumentLine.includes("&");
+const entries = legacyArguments ? argumentLine.split(",") : argumentLine.split("&");
+
+for (const entry of entries) {
+  if (!entry) continue;
+  const separator = entry.indexOf(legacyArguments ? ":" : "=");
+  if (separator <= 0) throw new Error(`Invalid module argument: ${entry}`);
+  defaults.set(entry.slice(0, separator), entry.slice(separator + 1));
+}
+
+let rendered = source;
+for (const [name, value] of defaults) {
+  rendered = rendered.replaceAll(`%${name}%`, value);
+  rendered = rendered.replaceAll(`{{{${name}}}}`, value);
+  if (rendered.includes(`%${name}%`) || rendered.includes(`{{{${name}}}}`)) {
+    throw new Error(`Unresolved module argument: ${name}`);
+  }
+}
+
+fs.writeFileSync(outputPath, rendered);
+NODE
 
 # Surge CLI validates complete profiles, while a module intentionally has no
 # FINAL rule and uses %APPEND% for MITM hostnames. Build a temporary equivalent
@@ -53,7 +88,7 @@ awk '
   END {
     if (in_rule) print "FINAL,DIRECT"
   }
-' "$MODULE_PATH" > "$temporary_profile"
+' "$resolved_module" > "$temporary_profile"
 
 "$SURGE_CLI" --check "$temporary_profile"
 printf 'Surge CLI accepted the generated profile for module %s.\n' "$MODULE_PATH"

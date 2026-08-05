@@ -6,6 +6,8 @@ SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
 PROJECT_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd -P)
 REPO_ROOT=$(CDPATH= cd -- "$PROJECT_ROOT/.." && pwd -P)
 DIST_ROOT="$REPO_ROOT/dist/youtube"
+VERSION=$(tr -d '\r\n' < "$PROJECT_ROOT/VERSION")
+RELEASE_ROOT="$DIST_ROOT/releases/$VERSION"
 CHECK_ONLY=0
 
 if [ "${1:-}" = "--check" ]; then
@@ -30,22 +32,85 @@ sync_file() {
     }
   else
     mkdir -p "$(dirname "$target_path")"
-    cp "$source_path" "$target_path"
+    case "$target_path" in
+      "$RELEASE_ROOT"/*)
+        if [ -f "$target_path" ]; then
+          cmp -s "$source_path" "$target_path" || {
+            printf 'Immutable release file already exists with different content: %s\n' \
+              "$target_path" >&2
+            exit 1
+          }
+        else
+          cp "$source_path" "$target_path"
+        fi
+        ;;
+      *)
+        cp "$source_path" "$target_path"
+        ;;
+    esac
   fi
 }
+
+assert_existing_release_file() {
+  source_path=$1
+  target_path=$2
+
+  [ -f "$target_path" ] || {
+    printf 'Immutable release directory is incomplete: %s\n' "$target_path" >&2
+    exit 1
+  }
+  cmp -s "$source_path" "$target_path" || {
+    printf 'Immutable release file already exists with different content: %s\n' \
+      "$target_path" >&2
+    exit 1
+  }
+}
+
+if [ "$CHECK_ONLY" -eq 0 ] && [ -d "$RELEASE_ROOT" ]; then
+  assert_existing_release_file \
+    "$PROJECT_ROOT/scripts/web/youtube-web-page.js" \
+    "$RELEASE_ROOT/scripts/youtube-web-page.js"
+  assert_existing_release_file \
+    "$PROJECT_ROOT/scripts/web/youtube-web-response.js" \
+    "$RELEASE_ROOT/scripts/youtube-web-response.js"
+  assert_existing_release_file \
+    "$PROJECT_ROOT/scripts/native/youtube-native-response.js" \
+    "$RELEASE_ROOT/scripts/youtube-native-response.js"
+  assert_existing_release_file \
+    "$PROJECT_ROOT/scripts/native/youtube-native-request.js" \
+    "$RELEASE_ROOT/scripts/youtube-native-request.js"
+  assert_existing_release_file \
+    "$PROJECT_ROOT/scripts/native/youtube-native-ump.js" \
+    "$RELEASE_ROOT/scripts/youtube-native-ump.js"
+  assert_existing_release_file \
+    "$PROJECT_ROOT/scripts/tvos/youtube-tvos-json.js" \
+    "$RELEASE_ROOT/scripts/youtube-tvos-json.js"
+fi
 
 sync_file \
   "$PROJECT_ROOT/clients/surge/YouTube-All-Platform-AdBlock.sgmodule" \
   "$DIST_ROOT/YouTube-AdBlock.sgmodule"
 sync_file \
+  "$PROJECT_ROOT/clients/surge/YouTube-iOS-tvOS-AdBlock.sgmodule" \
+  "$DIST_ROOT/YouTube-iOS-tvOS-AdBlock.sgmodule"
+sync_file \
   "$PROJECT_ROOT/scripts/web/youtube-web-page.js" \
-  "$DIST_ROOT/scripts/youtube-web-page.js"
+  "$RELEASE_ROOT/scripts/youtube-web-page.js"
 sync_file \
   "$PROJECT_ROOT/scripts/web/youtube-web-response.js" \
-  "$DIST_ROOT/scripts/youtube-web-response.js"
+  "$RELEASE_ROOT/scripts/youtube-web-response.js"
 sync_file \
   "$PROJECT_ROOT/scripts/native/youtube-native-response.js" \
-  "$DIST_ROOT/scripts/youtube-native-response.js"
+  "$RELEASE_ROOT/scripts/youtube-native-response.js"
+sync_file \
+  "$PROJECT_ROOT/scripts/native/youtube-native-request.js" \
+  "$RELEASE_ROOT/scripts/youtube-native-request.js"
+sync_file \
+  "$PROJECT_ROOT/scripts/native/youtube-native-ump.js" \
+  "$RELEASE_ROOT/scripts/youtube-native-ump.js"
+sync_file \
+  "$PROJECT_ROOT/scripts/tvos/youtube-tvos-json.js" \
+  "$RELEASE_ROOT/scripts/youtube-tvos-json.js"
 sync_file "$PROJECT_ROOT/VERSION" "$DIST_ROOT/VERSION"
 
 hash_file() {
@@ -60,11 +125,15 @@ hash_file() {
   fi
 }
 
-managed_dist_files='VERSION
+managed_dist_files="VERSION
 YouTube-AdBlock.sgmodule
-scripts/youtube-web-page.js
-scripts/youtube-web-response.js
-scripts/youtube-native-response.js'
+YouTube-iOS-tvOS-AdBlock.sgmodule
+releases/$VERSION/scripts/youtube-web-page.js
+releases/$VERSION/scripts/youtube-web-response.js
+releases/$VERSION/scripts/youtube-native-response.js
+releases/$VERSION/scripts/youtube-native-request.js
+releases/$VERSION/scripts/youtube-native-ump.js
+releases/$VERSION/scripts/youtube-tvos-json.js"
 
 if [ "$CHECK_ONLY" -eq 1 ]; then
   [ -f "$DIST_ROOT/SHA256SUMS" ] || {
@@ -81,8 +150,8 @@ if [ "$CHECK_ONLY" -eq 1 ]; then
     }
     checksum_count=$((checksum_count + 1))
   done < "$DIST_ROOT/SHA256SUMS"
-  [ "$checksum_count" -eq 5 ] || {
-    printf 'Expected 5 distribution checksums, found %s.\n' "$checksum_count" >&2
+  [ "$checksum_count" -eq 9 ] || {
+    printf 'Expected 9 distribution checksums, found %s.\n' "$checksum_count" >&2
     exit 1
   }
 else

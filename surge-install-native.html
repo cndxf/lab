@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      http-equiv="refresh"
+      content="0;url=surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcndxf%2Flab%2Fmain%2Fdist%2Fyoutube%2FYouTube-iOS-tvOS-AdBlock.sgmodule"
+    >
+    <title>Surge iOS/tvOS 一键导入</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      body {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+        padding: 24px;
+      }
+
+      main {
+        max-width: 520px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin: 0 0 12px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin: 0 0 20px;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      #install {
+        background: #ff5a1f;
+        border-radius: 8px;
+        color: #fff;
+        display: inline-block;
+        font-weight: 700;
+        padding: 12px 18px;
+        text-decoration: none;
+      }
+
+      #fallback {
+        font-size: 14px;
+        margin-top: 22px;
+        opacity: 0.72;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>正在打开 Surge</h1>
+      <p>将导入适用于 iPhone、iPad 和 Apple TV 的“YouTube iOS/tvOS 去广告”原生版模块。</p>
+      <a
+        id="install"
+        href="surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcndxf%2Flab%2Fmain%2Fdist%2Fyoutube%2FYouTube-iOS-tvOS-AdBlock.sgmodule"
+      >打开 Surge 并导入</a>
+      <p>
+        安装完成后，请回到 Surge 的模块列表打开启用开关。该版本会解密
+        <code>*.googlevideo.com</code> 的原生播放流，不要与 Mac 网页版或其他 YouTube 模块同时启用。
+      </p>
+      <p id="fallback">
+        如果没有自动打开，请点击上面的按钮；仍无法打开时可
+        <a href="https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/YouTube-iOS-tvOS-AdBlock.sgmodule">查看模块原始文件</a>。
+      </p>
+    </main>
+    <script>
+      // [COMMON / 多客户端通用] 固定公开模块地址，不读取账号、Cookie 或本机配置。
+      const installUrl =
+        "surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcndxf%2Flab%2Fmain%2Fdist%2Fyoutube%2FYouTube-iOS-tvOS-AdBlock.sgmodule";
+
+      // [MOBILE / 移动端专用] iPhone/iPad 浏览器若拦截自动跳转，可点击备用按钮。
+      // [TVOS / Apple TV 专用] Apple TV 由 Surge iOS 部署配置，不直接打开此页。
+      window.setTimeout(() => {
+        window.location.replace(installUrl);
+      }, 80);
+    </script>
+  </body>
+</html>

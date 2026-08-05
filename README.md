@@ -8,14 +8,20 @@
 
 目录：[`YouTube-全平台去广告/`](YouTube-全平台去广告/)
 
-当前首个可安装适配器为 Surge：
+当前可安装适配器为 Surge，请按设备选择：
 
-[一键安装到 Surge](surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcndxf%2Flab%2Fmain%2Fdist%2Fyoutube%2FYouTube-AdBlock.sgmodule)
+- [Mac 网页版一键导入](https://cndxf.github.io/lab/surge-install.html)
+- [iPhone / iPad / Apple TV 原生版一键导入](https://cndxf.github.io/lab/surge-install-native.html)
+
+GitHub 会先打开本仓库的 HTTPS 中转页，然后自动唤起 Surge；若浏览器阻止自动跳转，中转页也提供备用按钮。
+
+安装完成后仍需在当前设备的模块列表启用。模块脚本会出现在 Surge 的修改后有效配置中，不会复制到主配置文件；不同设备的启用开关需要分别打开。
 
 模块 Raw 地址：
 
 ```text
 https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/YouTube-AdBlock.sgmodule
+https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/YouTube-iOS-tvOS-AdBlock.sgmodule
 ```
 
 项目覆盖网页、iPhone/iPad 原生 App 和 Apple TV 的长期维护目标；实际支持状态以项目兼容性表为准。Stash 和 Shadowrocket 在完成真实设备验证前不提供伪兼容安装文件。
