@@ -4,11 +4,17 @@ const path = require("node:path");
 const vm = require("node:vm");
 
 const projectRoot = path.resolve(__dirname, "..");
+const version = fs.readFileSync(path.join(projectRoot, "VERSION"), "utf8").trim();
+const escapedVersion = version.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const scriptPath = path.join(projectRoot, "scripts/web/youtube-web-response.js");
 const pageScriptPath = path.join(projectRoot, "scripts/web/youtube-web-page.js");
 const modulePath = path.join(
   projectRoot,
   "clients/surge/YouTube-All-Platform-AdBlock.sgmodule",
+);
+const nativeModulePath = path.join(
+  projectRoot,
+  "clients/surge/YouTube-iOS-tvOS-AdBlock.sgmodule",
 );
 
 function runSurgeScript(url, payload) {
@@ -69,6 +75,7 @@ assert.deepEqual(
 console.log("PASS: get_watch preserves nested player ad state");
 
 const config = fs.readFileSync(modulePath, "utf8");
+const nativeConfig = fs.readFileSync(nativeModulePath, "utf8");
 const packageSnippet = config;
 const responseRule = config.match(/^youtube\.web\.response = .*$/m)?.[0] || "";
 const pageRule = config.match(/^youtube\.web\.page = .*$/m)?.[0] || "";
@@ -83,7 +90,7 @@ const packagePagePatternSource =
   packagePageRule.match(/pattern=(.*?),requires-body=/)?.[1] || "(?!)";
 const packagePagePattern = new RegExp(packagePagePatternSource);
 const nativeResponseRule =
-  config.match(/^youtube\.native\.response = .*$/m)?.[0] || "";
+  nativeConfig.match(/^youtube\.native\.response = .*$/m)?.[0] || "";
 const normalizedNativeResponseRule = nativeResponseRule.replaceAll("\\/", "/");
 const mitmHostnameLine = config.match(/^hostname = .*$/m)?.[0] || "";
 const googlevideoQuicRule =
@@ -104,9 +111,63 @@ assert.match(
 
 assert.doesNotMatch(
   responseRule,
-  /player|get_watch/,
-  "列表清理脚本不应扫描播放器响应，以免破坏服务端广告状态",
+  /(?:^|\|)player(?:\||,|\()/,
+  "列表清理脚本不应扫描完整 player 响应，以免破坏服务端广告状态",
 );
+assert.match(
+  responseRule,
+  /player\\\/ad_break/,
+  "响应脚本必须接收 player/ad_break，才能删除服务端下发的中插广告调度",
+);
+
+const adBreakPayload = {
+  responseContext: { responseId: "ad-break-fixture" },
+  playerAds: [
+    {
+      adPlacementRenderer: {
+        config: { adPlacementConfig: { offsetStartMilliseconds: "68333" } },
+      },
+    },
+  ],
+  adThrottled: true,
+  trackingParams: "keep-response-context",
+};
+const adBreakOutput = runSurgeScript(
+  "https://www.youtube.com/youtubei/v1/player/ad_break?prettyPrint=false",
+  adBreakPayload,
+);
+assert.equal(
+  adBreakOutput.playerAds,
+  undefined,
+  "player/ad_break 的播放器广告调度必须被删除",
+);
+assert.equal(
+  adBreakOutput.adThrottled,
+  undefined,
+  "player/ad_break 的广告限流标志必须被删除",
+);
+assert.deepEqual(
+  adBreakOutput.responseContext,
+  adBreakPayload.responseContext,
+  "player/ad_break 的普通响应上下文必须保留",
+);
+console.log("PASS: web response removes player/ad_break scheduling");
+
+const directPlayerPayload = {
+  playerAds: [{ adPlacementRenderer: { config: { kind: "keep-player-state" } } }],
+  playabilityStatus: { status: "OK" },
+  videoDetails: { videoId: "direct-player-fixture" },
+};
+const directPlayerOutput = runSurgeScript(
+  "https://www.youtube.com/youtubei/v1/player?prettyPrint=false",
+  directPlayerPayload,
+);
+assert.deepEqual(
+  directPlayerOutput,
+  directPlayerPayload,
+  "完整 player 响应仍必须保留播放器广告状态",
+);
+console.log("PASS: full player response remains untouched");
 
 for (const route of [
   "shorts",
@@ -139,7 +200,9 @@ assert.equal(
 );
 assert.match(
   packagePageRule,
-  /script-path=https:\/\/raw\.githubusercontent\.com\/cndxf\/lab\/main\/dist\/youtube\/scripts\/youtube-web-page\.js\?v=1\.2\.0,script-update-interval=21600$/,
+  new RegExp(
+    `script-path=https://raw\\.githubusercontent\\.com/cndxf/lab/main/dist/youtube/releases/${escapedVersion}/scripts/youtube-web-page\\.js\\?v=${escapedVersion},script-update-interval=\\{\\{\\{update_interval\\}\\}\\}$`,
+  ),
   "维护包模板必须指向受管页面脚本",
 );
 assert.equal(
@@ -286,6 +349,11 @@ function getInjectedPageScript() {
 }
 
 const injectedPageScript = getInjectedPageScript();
+assert.match(
+  injectedPageScript,
+  new RegExp(`const VERSION="${escapedVersion}"`),
+  "网页运行时版本必须与维护版本文件一致",
+);
 
 const visualAdSuppressionResult = transformPage({
   body: "<html><body><main>content</main></body></html>",
@@ -568,6 +636,179 @@ assert.equal(modernMovieVideo.muted, true, "仅有播放器广告状态时也必
 assert.equal(modernMovieVideo.playbackRate, 16, "仅有播放器广告状态时也必须临时加速");
 assert.match(runtimeDomVersion || "", /^\d+\.\d+\.\d+$/, "运行时必须写入跨上下文可见的版本标记");
 console.log("PASS: page cleaner handles modern YouTube Movies ad markup");
+
+let raceVisualAdActive = false;
+const raceVideo = { muted: false, playbackRate: 1 };
+const raceListeners = new Map();
+const racePlayer = {
+  classList: {
+    contains(className) {
+      return className === "ad-interrupting";
+    },
+  },
+  querySelector(selector) {
+    return selector === "video" ? raceVideo : null;
+  },
+  querySelectorAll() {
+    return [];
+  },
+  setAttribute(name, value) {
+    if (name === "data-youtube-adblock-active") raceVisualAdActive = value === "true";
+  },
+  removeAttribute(name) {
+    if (name === "data-youtube-adblock-active") raceVisualAdActive = false;
+  },
+};
+const raceDocument = {
+  documentElement: {},
+  querySelector(selector) {
+    return selector === "#movie_player" ? racePlayer : null;
+  },
+  querySelectorAll() {
+    return [];
+  },
+  addEventListener(name, handler) {
+    const handlers = raceListeners.get(name) || [];
+    handlers.push(handler);
+    raceListeners.set(name, handlers);
+  },
+  removeEventListener() {},
+};
+const raceContext = {
+  window: {},
+  document: raceDocument,
+  HTMLElement: VisibleElement,
+  MutationObserver: class MutationObserver {
+    observe() {}
+  },
+  setInterval() {},
+};
+
+vm.runInNewContext(injectedPageScript, raceContext, {
+  filename: "youtube-web-page.volume-race.injected.js",
+});
+assert.equal(raceVisualAdActive, true, "静音竞态测试必须处于广告态");
+raceVideo.muted = false;
+raceVideo.playbackRate = 1;
+for (const handler of raceListeners.get("volumechange") || []) handler();
+for (const handler of raceListeners.get("ratechange") || []) handler();
+assert.equal(raceVideo.muted, true, "广告态 volumechange 后必须立即重新静音");
+assert.equal(raceVideo.playbackRate, 16, "广告态 ratechange 后必须立即恢复广告加速");
+console.log("PASS: page cleaner closes the ad mute and rate race");
+
+const placeholderVideo = {
+  muted: false,
+  playbackRate: 1,
+  paused: true,
+  readyState: 0,
+  duration: Number.NaN,
+};
+const activePlaybackVideo = {
+  muted: false,
+  playbackRate: 1,
+  paused: false,
+  readyState: 4,
+  duration: 5283,
+};
+const multiVideoPlayer = {
+  classList: {
+    contains(className) {
+      return className === "ad-interrupting";
+    },
+  },
+  querySelector(selector) {
+    return selector === "video" ? placeholderVideo : null;
+  },
+  querySelectorAll(selector) {
+    return selector === "video" ? [placeholderVideo, activePlaybackVideo] : [];
+  },
+  setAttribute() {},
+  removeAttribute() {},
+};
+const multiVideoContext = {
+  window: {},
+  document: {
+    documentElement: {},
+    querySelector(selector) {
+      return selector === "#movie_player" ? multiVideoPlayer : null;
+    },
+    querySelectorAll() {
+      return [];
+    },
+    addEventListener() {},
+    removeEventListener() {},
+  },
+  HTMLElement: VisibleElement,
+  MutationObserver: class MutationObserver {
+    observe() {}
+  },
+  setInterval() {},
+};
+
+vm.runInNewContext(injectedPageScript, multiVideoContext, {
+  filename: "youtube-web-page.active-video.injected.js",
+});
+assert.equal(activePlaybackVideo.muted, true, "广告态必须静音真正正在播放的 video");
+assert.equal(activePlaybackVideo.playbackRate, 16, "广告态必须加速真正正在播放的 video");
+assert.equal(placeholderVideo.muted, false, "不应把占位 video 当成当前播放器");
+assert.equal(placeholderVideo.playbackRate, 1, "占位 video 的播放速度应保持不变");
+console.log("PASS: page cleaner targets the active player video");
+
+let staleRuntimeRunCalls = 0;
+let staleRuntimeDisposeCalls = 0;
+let replacementRuntimeVersion = null;
+const staleRuntimeContext = {
+  window: {
+    __youtubeAdBlockRuntime: {
+      version: "1.2.0",
+      run() {
+        staleRuntimeRunCalls += 1;
+      },
+      dispose() {
+        staleRuntimeDisposeCalls += 1;
+      },
+    },
+  },
+  document: {
+    hidden: false,
+    visibilityState: "visible",
+    documentElement: {
+      setAttribute(name, value) {
+        if (name === "data-youtube-adblock-version") replacementRuntimeVersion = value;
+      },
+    },
+    querySelector() {
+      return null;
+    },
+    querySelectorAll() {
+      return [];
+    },
+    addEventListener() {},
+    removeEventListener() {},
+  },
+  HTMLElement: VisibleElement,
+  MutationObserver: class MutationObserver {
+    observe() {}
+    disconnect() {}
+  },
+  setInterval() {
+    return 1;
+  },
+  clearInterval() {},
+};
+
+vm.runInNewContext(injectedPageScript, staleRuntimeContext, {
+  filename: "youtube-web-page.stale-runtime.injected.js",
+});
+assert.equal(staleRuntimeRunCalls, 0, "版本不同时不得继续复用旧运行时");
+assert.equal(staleRuntimeDisposeCalls, 1, "替换旧运行时前必须调用 dispose");
+assert.equal(replacementRuntimeVersion, version, "新运行时必须写入当前版本");
+assert.equal(
+  staleRuntimeContext.window.__youtubeAdBlockRuntime.version,
+  version,
+  "版本升级后全局运行时必须切换到当前版本",
+);
+console.log("PASS: page cleaner replaces stale runtime versions");
 
 let interruptOnlyVisualAdActive = false;
 const interruptOnlyVideo = { muted: false, playbackRate: 1 };
@@ -852,6 +1093,59 @@ retryIntervals.get(300)();
 assert.equal(retrySkipAttempts, 2, "跳过按钮点击失败后，下一轮扫描必须再次尝试");
 assert.equal(retrySkipClicks, 1, "重试成功后只应记录一次有效点击");
 console.log("PASS: page cleaner retries transient skip-button failures");
+
+let silentRetryAttempts = 0;
+let silentRetryNow = 1000;
+let silentRetryInterval;
+const silentRetryButton = new VisibleElement();
+silentRetryButton.offsetParent = {};
+silentRetryButton.textContent = "Skip Ad";
+silentRetryButton.getAttribute = () => "Skip Ad";
+silentRetryButton.click = () => {
+  silentRetryAttempts += 1;
+};
+const silentRetryPlayer = {
+  classList: { contains(className) { return className === "ad-showing"; } },
+  querySelector(selector) {
+    return selector === "video" ? { muted: false, playbackRate: 1 } : null;
+  },
+  querySelectorAll(selector) {
+    return selector === "button" ? [silentRetryButton] : [];
+  },
+};
+const silentRetryContext = {
+  window: {},
+  document: {
+    documentElement: {},
+    querySelector(selector) {
+      return selector === "#movie_player" ? silentRetryPlayer : null;
+    },
+    querySelectorAll() {
+      return [];
+    },
+  },
+  HTMLElement: VisibleElement,
+  Date: {
+    now() {
+      return silentRetryNow;
+    },
+  },
+  MutationObserver: class MutationObserver {
+    observe() {}
+  },
+  setInterval(callback, milliseconds) {
+    if (milliseconds === 300) silentRetryInterval = callback;
+  },
+};
+
+vm.runInNewContext(injectedPageScript, silentRetryContext, {
+  filename: "youtube-web-page.silent-skip-retry.injected.js",
+});
+assert.equal(silentRetryAttempts, 1, "首次发现跳过按钮时必须尝试点击");
+silentRetryNow += 800;
+silentRetryInterval();
+assert.equal(silentRetryAttempts, 2, "点击未抛错但广告未消失时必须在冷却后重试");
+console.log("PASS: page cleaner retries silent skip-button failures");
 
 let serverSideSeekTarget = null;
 const serverSideVideo = { muted: false, playbackRate: 1 };

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      http-equiv="refresh"
+      content="0;url=surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcndxf%2Flab%2Fmain%2Fdist%2Fyoutube%2FYouTube-AdBlock.sgmodule"
+    >
+    <title>Surge 一键导入</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      body {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+        padding: 24px;
+      }
+
+      main {
+        max-width: 520px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin: 0 0 12px;
+      }
+
+      p {
+        line-height: 1.6;
+        margin: 0 0 20px;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      #install {
+        background: #ff5a1f;
+        border-radius: 8px;
+        color: #fff;
+        display: inline-block;
+        font-weight: 700;
+        padding: 12px 18px;
+        text-decoration: none;
+      }
+
+      #fallback {
+        font-size: 14px;
+        margin-top: 22px;
+        opacity: 0.72;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>正在打开 Surge</h1>
+      <p>将导入适用于 Mac 网页的“YouTube 全平台去广告”安全版模块。</p>
+      <a
+        id="install"
+        href="surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcndxf%2Flab%2Fmain%2Fdist%2Fyoutube%2FYouTube-AdBlock.sgmodule"
+      >打开 Surge 并导入</a>
+      <p>
+        安装完成后，请回到 Surge 的模块列表打开启用开关。脚本会合并到修改后的有效配置，
+        不会复制到主配置。iPhone、iPad 和 Apple TV 请使用原生版入口。
+      </p>
+      <p id="fallback">
+        如果没有自动打开，请点击上面的按钮；仍无法打开时可
+        <a href="https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/YouTube-AdBlock.sgmodule">查看模块原始文件</a>。
+      </p>
+    </main>
+    <script>
+      // [COMMON / 多客户端通用] 固定公开模块地址，避免中转页读取账号、Cookie 或本机配置。
+      const installUrl =
+        "surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcndxf%2Flab%2Fmain%2Fdist%2Fyoutube%2FYouTube-AdBlock.sgmodule";
+
+      // [WEB / 网页专用] GitHub 只链接 HTTPS，本页在加载后尝试唤起 Surge 自定义协议。
+      // [MOBILE / 移动端专用] 本页不是原生 App 模块入口。
+      // [TVOS / Apple TV 专用] Apple TV 不直接打开此网页，应从已同步的 Surge 配置获取模块。
+      window.setTimeout(() => {
+        window.location.replace(installUrl);
+      }, 80);
+    </script>
+  </body>
+</html>
