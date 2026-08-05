@@ -1,1 +1,205 @@
-Y29uc3QgYXNzZXJ0ID0gcmVxdWlyZSgibm9kZTphc3NlcnQvc3RyaWN0Iik7CmNvbnN0IGNyeXB0byA9IHJlcXVpcmUoIm5vZGU6Y3J5cHRvIik7CmNvbnN0IGZzID0gcmVxdWlyZSgibm9kZTpmcyIpOwpjb25zdCBwYXRoID0gcmVxdWlyZSgibm9kZTpwYXRoIik7Cgpjb25zdCBwcm9qZWN0Um9vdCA9IHBhdGgucmVzb2x2ZShfX2Rpcm5hbWUsICIuLiIpOwpjb25zdCByZXBvUm9vdCA9IHBhdGgucmVzb2x2ZShwcm9qZWN0Um9vdCwgIi4uIik7CmNvbnN0IHZlcnNpb24gPSBmcy5yZWFkRmlsZVN5bmMocGF0aC5qb2luKHByb2plY3RSb290LCAiVkVSU0lPTiIpLCAidXRmOCIpLnRyaW0oKTsKY29uc3QgYmFzZU1vZHVsZVBhdGggPSBwYXRoLmpvaW4oCiAgcHJvamVjdFJvb3QsCiAgImNsaWVudHMvc3VyZ2UvWW91VHViZS1BbGwtUGxhdGZvcm0tQWRCbG9jay5zZ21vZHVsZSIsCik7CmNvbnN0IG5hdGl2ZU1vZHVsZVBhdGggPSBwYXRoLmpvaW4oCiAgcHJvamVjdFJvb3QsCiAgImNsaWVudHMvc3VyZ2UvWW91VHViZS1pT1MtdHZPUy1BZEJsb2NrLnNnbW9kdWxlIiwKKTsKY29uc3QgZGlzdEJhc2VNb2R1bGVQYXRoID0gcGF0aC5qb2luKHJlcG9Sb290LCAiZGlzdC95b3V0dWJlL1lvdVR1YmUtQWRCbG9jay5zZ21vZHVsZSIpOwpjb25zdCBkaXN0TmF0aXZlTW9kdWxlUGF0aCA9IHBhdGguam9pbigKICByZXBvUm9vdCwKICAiZGlzdC95b3V0dWJlL1lvdVR1YmUtaU9TLXR2T1MtQWRCbG9jay5zZ21vZHVsZSIsCik7CmNvbnN0IGVzY2FwZWRWZXJzaW9uID0gdmVyc2lvbi5yZXBsYWNlQWxsKCIuIiwgIlxcLiIpOwpjb25zdCByZWxlYXNlU2NyaXB0c1BhdGggPSBgcmVsZWFzZXMvJHt2ZXJzaW9ufS9zY3JpcHRzYDsKCmFzc2VydC5tYXRjaCh2ZXJzaW9uLCAvXlxkK1wuXGQrXC5cZCskLywgIue7tOaKpOeJiOacrOW/hemhu+S9v+eUqCBzZW12ZXIg5LiJ5q615qC85byPIik7Cgpjb25zdCBiYXNlTW9kdWxlU291cmNlID0gZnMucmVhZEZpbGVTeW5jKGJhc2VNb2R1bGVQYXRoLCAidXRmOCIpOwpjb25zdCBuYXRpdmVNb2R1bGVTb3VyY2UgPSBmcy5yZWFkRmlsZVN5bmMobmF0aXZlTW9kdWxlUGF0aCwgInV0ZjgiKTsKYXNzZXJ0Lm1hdGNoKGJhc2VNb2R1bGVTb3VyY2UsIC9eIyFuYW1lPVlvdVR1YmUg5YWo5bmz5Y+w5Y675bm/5ZGKJC9tKTsKYXNzZXJ0Lm1hdGNoKGJhc2VNb2R1bGVTb3VyY2UsIC9eIyFkZXNjPS4q572R6aG1LiokL20pOwphc3NlcnQubWF0Y2gobmF0aXZlTW9kdWxlU291cmNlLCAvXiMhbmFtZT1Zb3VUdWJlIGlPU1wvdHZPUyDljrvlub/lkYokL20pOwpmb3IgKGNvbnN0IG1vZHVsZVNvdXJjZSBvZiBbYmFzZU1vZHVsZVNvdXJjZSwgbmF0aXZlTW9kdWxlU291cmNlXSkgewogIGFzc2VydC5tYXRjaChtb2R1bGVTb3VyY2UsIC9eXFtSdWxlXF0kL20pOwogIGFzc2VydC5tYXRjaChtb2R1bGVTb3VyY2UsIC9eXFtTY3JpcHRcXSQvbSk7CiAgYXNzZXJ0Lm1hdGNoKG1vZHVsZVNvdXJjZSwgL15cW01JVE1cXSQvbSk7Cn0KZm9yIChjb25zdCByZXF1aXJlZFRleHQgb2YgWyLor4Hkuabkv6Hku7vorr7nva4iLCAi5pu05paw5pa55rOVIiwgIuaXoOazleaSreaUviIsICLlm57mu5rmlrnms5UiXSkgewogIGFzc2VydC5tYXRjaChiYXNlTW9kdWxlU291cmNlLCBuZXcgUmVnRXhwKHJlcXVpcmVkVGV4dCksIGDln7rnoYDmqKHlnZflhoXnva7or7TmmI7nvLrlsJHvvJoke3JlcXVpcmVkVGV4dH1gKTsKICBhc3NlcnQubWF0Y2gobmF0aXZlTW9kdWxlU291cmNlLCBuZXcgUmVnRXhwKHJlcXVpcmVkVGV4dCksIGBpT1MvdHZPUyDmqKHlnZflhoXnva7or7TmmI7nvLrlsJHvvJoke3JlcXVpcmVkVGV4dH1gKTsKfQpmb3IgKGNvbnN0IG1vZHVsZVNvdXJjZSBvZiBbYmFzZU1vZHVsZVNvdXJjZSwgbmF0aXZlTW9kdWxlU291cmNlXSkgewogIGFzc2VydC5tYXRjaChtb2R1bGVTb3VyY2UsIC9ob3N0bmFtZSA9IFwqLywKICAgICLmqKHlnZflv4XpobvmmI7noa7orablkYrlhajlsYAgaG9zdG5hbWU9KiDnmoTpo47pmakiKTsKICBhc3NlcnQubWF0Y2gobW9kdWxlU291cmNlLCAv5o2V6I635YWo6YOoIEhUVFBTLywKICAgICLmqKHlnZflv4XpobvmmI7noa7orablkYrlhajph48gSFRUUFMg5o2V6I6355qE6aOO6ZmpIik7Cn0KCmZvciAoY29uc3Qgc2NyaXB0TmFtZSBvZiBbCiAgInlvdXR1YmUtd2ViLXBhZ2UuanMiLAogICJ5b3V0dWJlLXdlYi1yZXNwb25zZS5qcyIsCl0pIHsKICBjb25zdCBlc2NhcGVkTmFtZSA9IHNjcmlwdE5hbWUucmVwbGFjZUFsbCgiLiIsICJcXC4iKTsKICBhc3NlcnQubWF0Y2goCiAgICBiYXNlTW9kdWxlU291cmNlLAogICAgbmV3IFJlZ0V4cCgKICAgICAgYHNjcmlwdC1wYXRoPWh0dHBzOi8vcmF3XFwuZ2l0aHVidXNlcmNvbnRlbnRcXC5jb20vY25keGYvbGFiL21haW4vZGlzdC95b3V0dWJlL3JlbGVhc2VzLyR7ZXNjYXBlZFZlcnNpb259L3NjcmlwdHMvJHtlc2NhcGVkTmFtZX1cXD92PSR7ZXNjYXBlZFZlcnNpb259YCwKICAgICksCiAgICBgJHtzY3JpcHROYW1lfSDlv4Xpobvkvb/nlKjkuI3lj6/lj5jnmoTniYjmnKznm67lvZXlkozniYjmnKzlj4LmlbBgLAogICk7Cn0KCmZvciAoY29uc3Qgc2NyaXB0UnVsZSBvZiBiYXNlTW9kdWxlU291cmNlLm1hdGNoKC9eeW91dHViZVwuLipzY3JpcHQtcGF0aD0uKiQvZ20pIHx8IFtdKSB7CiAgYXNzZXJ0Lm1hdGNoKAogICAgc2NyaXB0UnVsZSwKICAgIC9zY3JpcHQtdXBkYXRlLWludGVydmFsPVx7XHtce3VwZGF0ZV9pbnRlcnZhbFx9XH1cfS8sCiAgICAi5q+P5p2h6L+c56iL6ISa5pys6KeE5YiZ6YO95b+F6aG75L2/55So5qih5Z2X5pu05paw6Ze06ZqU5Y+C5pWwIiwKICApOwp9Cgphc3NlcnQubWF0Y2goCiAgYmFzZU1vZHVsZVNvdXJjZSwKICAvXmhvc3RuYW1lID0gJUFQUEVORCUgd3d3XC55b3V0dWJlXC5jb20sIG1cLnlvdXR1YmVcLmNvbSwgeW91dHViZWlcLmdvb2dsZWFwaXNcLmNvbSQvbSwKKTsKY29uc3QgYWN0aXZlTW9kdWxlU291cmNlID0gYmFzZU1vZHVsZVNvdXJjZQogIC5zcGxpdCgiXG4iKQogIC5maWx0ZXIoKGxpbmUpID0+IGxpbmUudHJpbSgpICYmICFsaW5lLnRyaW1TdGFydCgpLnN0YXJ0c1dpdGgoIiMiKSkKICAuam9pbigiXG4iKTsKYXNzZXJ0LmRvZXNOb3RNYXRjaCgKICBhY3RpdmVNb2R1bGVTb3VyY2UsCiAgL3lvdXR1YmVcLm5hdGl2ZVwufGluaXQtc3RyZWFtXC5tYWFzZWFcLndvcmtlcnNcLmRldnxcKlwuZ29vZ2xldmlkZW9cLmNvbS8sCiAgIue9kemhteWuieWFqOaooeWdl+S4jeW+l+WKoOi9veWOn+eUn+iEmuacrOOAgeWOn+eUn+ivt+axguaUueWGmeaIliBnb29nbGV2aWRlbyBNSVRNIiwKKTsKCmFzc2VydC5lcXVhbCgKICBmcy5yZWFkRmlsZVN5bmMoZGlzdEJhc2VNb2R1bGVQYXRoLCAidXRmOCIpLAogIGJhc2VNb2R1bGVTb3VyY2UsCiAgIuWFrOW8gOWIhuWPkeWfuuehgOaooeWdl+W/hemhu+S4jiBTdXJnZSDpgILphY3lmajmupDmlofku7blrozlhajkuIDoh7QiLAopOwphc3NlcnQuZXF1YWwoCiAgZnMucmVhZEZpbGVTeW5jKGRpc3ROYXRpdmVNb2R1bGVQYXRoLCAidXRmOCIpLAogIG5hdGl2ZU1vZHVsZVNvdXJjZSwKICAi5YWs5byA5YiG5Y+RIGlPUy90dk9TIOaooeWdl+W/hemhu+S4jiBTdXJnZSDpgILphY3lmajmupDmlofku7blrozlhajkuIDoh7QiLAopOwoKY29uc3QgY2hlY2tzdW1QYXRoID0gcGF0aC5qb2luKHJlcG9Sb290LCAiZGlzdC95b3V0dWJlL1NIQTI1NlNVTVMiKTsKY29uc3QgY2hlY2tzdW1FbnRyaWVzID0gbmV3IE1hcCgKICBmcwogICAgLnJlYWRGaWxlU3luYyhjaGVja3N1bVBhdGgsICJ1dGY4IikKICAgIC50cmltKCkKICAgIC5zcGxpdCgiXG4iKQogICAgLm1hcCgobGluZSkgPT4gewogICAgICBjb25zdCBtYXRjaCA9IGxpbmUubWF0Y2goL14oW2EtZjAtOV17NjR9KSAgKC4rKSQvKTsKICAgICAgYXNzZXJ0Lm9rKG1hdGNoLCBg5peg5pWI55qEIFNIQTI1NlNVTVMg6KGM77yaJHtsaW5lfWApOwogICAgICByZXR1cm4gW21hdGNoWzJdLCBtYXRjaFsxXV07CiAgICB9KSwKKTsKCmZvciAoY29uc3QgcmVsYXRpdmVQYXRoIG9mIFsKICAiVkVSU0lPTiIsCiAgIllvdVR1YmUtQWRCbG9jay5zZ21vZHVsZSIsCiAgIllvdVR1YmUtaU9TLXR2T1MtQWRCbG9jay5zZ21vZHVsZSIsCiAgYCR7cmVsZWFzZVNjcmlwdHNQYXRofS95b3V0dWJlLXdlYi1wYWdlLmpzYCwKICBgJHtyZWxlYXNlU2NyaXB0c1BhdGh9L3lvdXR1YmUtd2ViLXJlc3BvbnNlLmpzYCwKICBgJHtyZWxlYXNlU2NyaXB0c1BhdGh9L3lvdXR1YmUtbmF0aXZlLXJlc3BvbnNlLmpzYCwKICBgJHtyZWxlYXNlU2NyaXB0c1BhdGh9L3lvdXR1YmUtbmF0aXZlLXJlcXVlc3QuanNgLAogIGAke3JlbGVhc2VTY3JpcHRzUGF0aH0veW91dHViZS1uYXRpdmUtdW1wLmpzYCwKICBgJHtyZWxlYXNlU2NyaXB0c1BhdGh9L3lvdXR1YmUtdHZvcy1qc29uLmpzYCwKXSkgewogIGNvbnN0IGZpbGVQYXRoID0gcGF0aC5qb2luKHJlcG9Sb290LCAiZGlzdC95b3V0dWJlIiwgcmVsYXRpdmVQYXRoKTsKICBjb25zdCBhY3R1YWwgPSBjcnlwdG8uY3JlYXRlSGFzaCgic2hhMjU2IikudXBkYXRlKGZzLnJlYWRGaWxlU3luYyhmaWxlUGF0aCkpLmRpZ2VzdCgiaGV4Iik7CiAgYXNzZXJ0LmVxdWFsKGNoZWNrc3VtRW50cmllcy5nZXQocmVsYXRpdmVQYXRoKSwgYWN0dWFsLCBgJHtyZWxhdGl2ZVBhdGh9IOWTiOW4jOS4jeS4gOiHtGApOwp9CmFzc2VydC5lcXVhbChjaGVja3N1bUVudHJpZXMuc2l6ZSwgOSwgIlNIQTI1NlNVTVMg5b+F6aG75YyF5ZCr5Lmd5Liq5Y+X566h5YiG5Y+R5paH5Lu2Iik7Cgpjb25zdCBzY29wZWRTb3VyY2VzID0gWwogIFsic2NyaXB0cy93ZWIveW91dHViZS13ZWItcGFnZS5qcyIsICJTY29wZTogV2ViIG9ubHkiXSwKICBbInNjcmlwdHMvd2ViL3lvdXR1YmUtd2ViLXJlc3BvbnNlLmpzIiwgIlNjb3BlOiBXZWIgb25seSJdLAogIFsic2NyaXB0cy9uYXRpdmUveW91dHViZS1uYXRpdmUtcmVzcG9uc2UuanMiLCAiU2NvcGU6IE5hdGl2ZSBtb2JpbGUiXSwKICBbInNjcmlwdHMvbmF0aXZlL3lvdXR1YmUtbmF0aXZlLXJlcXVlc3QuanMiLCAiU2NvcGU6IE5hdGl2ZSBpbml0cGxheWJhY2sgcmVxdWVzdCJdLAogIFsic2NyaXB0cy9uYXRpdmUveW91dHViZS1uYXRpdmUtdW1wLmpzIiwgIlNjb3BlOiBOYXRpdmUgZW5jcnlwdGVkIHN0cmVhbSJdLAogIFsic2NyaXB0cy90dm9zL3lvdXR1YmUtdHZvcy1qc29uLmpzIiwgIltUVk9TIC8gQXBwbGUgVFYg5LiT55SoXSJdLApdOwoKZm9yIChjb25zdCBbcmVsYXRpdmVQYXRoLCBtYXJrZXJdIG9mIHNjb3BlZFNvdXJjZXMpIHsKICBjb25zdCBzb3VyY2UgPSBmcy5yZWFkRmlsZVN5bmMocGF0aC5qb2luKHByb2plY3RSb290LCByZWxhdGl2ZVBhdGgpLCAidXRmOCIpOwogIGFzc2VydC5tYXRjaChzb3VyY2UsIG5ldyBSZWdFeHAobWFya2VyKSwgYCR7cmVsYXRpdmVQYXRofSDnvLrlsJHlubPlj7DovrnnlYzms6jph4pgKTsKfQoKY29uc3QgbmF0aXZlU291cmNlID0gZnMucmVhZEZpbGVTeW5jKAogIHBhdGguam9pbihwcm9qZWN0Um9vdCwgInNjcmlwdHMvbmF0aXZlL3lvdXR1YmUtbmF0aXZlLXJlc3BvbnNlLmpzIiksCiAgInV0ZjgiLAopOwphc3NlcnQubWF0Y2gobmF0aXZlU291cmNlLCAvTWFhc2VhXC9zZ21vZHVsZS8pOwphc3NlcnQubWF0Y2gobmF0aXZlU291cmNlLCAvNjUwNzVjZGIzODhmYzVlMzA5NGFmZDdlNzMxNGM2N2IyNDNmMzUyNS8pOwphc3NlcnQubWF0Y2gobmF0aXZlU291cmNlLCAvQXBhY2hlIExpY2Vuc2UgMlwuMC8pOwphc3NlcnQubWF0Y2gobmF0aXZlU291cmNlLCAvQXBwbGUgVFY6IGV4cGVyaW1lbnRhbC8pOwoKY29uc3QgcmV2aWV3ZWROYXRpdmVCb2RpZXMgPSBuZXcgTWFwKFsKICBbInNjcmlwdHMvbmF0aXZlL3lvdXR1YmUtbmF0aXZlLXJlcXVlc3QuanMiLCAiZTNjZDk1ODAxMTJiZGUzYmM2MzgwZTZhN2Q4Yzk4OTkxY2YyZTYxNWYwYjIzMDlmM2Q4MDYxMTEyYWFkNTQzZCJdLAogIFsic2NyaXB0cy9uYXRpdmUveW91dHViZS1uYXRpdmUtdW1wLmpzIiwgIjk2Zjc2MzdiOWIwMGFkMDlkMGFhZTA4YmExZGMxNzBjM2Q2YmI2ZWZmYzI1MzUyNDQ1NjEyNTRhZDQ2MWU0N2EiXSwKXSk7CmZvciAoY29uc3QgW3JlbGF0aXZlUGF0aCwgZXhwZWN0ZWRCb2R5SGFzaF0gb2YgcmV2aWV3ZWROYXRpdmVCb2RpZXMpIHsKICBjb25zdCBzb3VyY2UgPSBmcy5yZWFkRmlsZVN5bmMocGF0aC5qb2luKHByb2plY3RSb290LCByZWxhdGl2ZVBhdGgpLCAidXRmOCIpOwogIGFzc2VydC5tYXRjaChzb3VyY2UsIC8yZWFkNmZmNTk1MGQ3NzIyYzRhYTY2NTg5OTg5MDRlZjc4ZWVlNTMxLyk7CiAgYXNzZXJ0Lm1hdGNoKHNvdXJjZSwgL0FwYWNoZSBMaWNlbnNlIDJcLjAvKTsKICBhc3NlcnQuZG9lc05vdE1hdGNoKHNvdXJjZSwgL3dvcmtlcnNcLmRldnxpbml0LXN0cmVhbVwubWFhc2VhLyk7CiAgY29uc3QgdXBzdHJlYW1Cb2R5ID0gc291cmNlLnNsaWNlKHNvdXJjZS5pbmRleE9mKCIvLyBCdWlsZDoiKSkudHJpbUVuZCgpOwogIGNvbnN0IGFjdHVhbEJvZHlIYXNoID0gY3J5cHRvLmNyZWF0ZUhhc2goInNoYTI1NiIpLnVwZGF0ZSh1cHN0cmVhbUJvZHkpLmRpZ2VzdCgiaGV4Iik7CiAgYXNzZXJ0LmVxdWFsKGFjdHVhbEJvZHlIYXNoLCBleHBlY3RlZEJvZHlIYXNoLCBgJHtyZWxhdGl2ZVBhdGh9IOW3suWBj+emu+WuoeaguOWQjueahOacrOWcsOaehOW7uuS9k2ApOwp9Cgpjb25zdCBpbnN0YWxsR3VpZGUgPSBmcy5yZWFkRmlsZVN5bmMoCiAgcGF0aC5qb2luKHByb2plY3RSb290LCAiY2xpZW50cy9zdXJnZS/lronoo4Xor7TmmI4ubWQiKSwKICAidXRmOCIsCik7CmZvciAoY29uc3QgcmVxdWlyZWRUZXh0IG9mIFsKICAi5LiA6ZSu5a6J6KOFIiwKICAiaVBob25lIC8gaVBhZCIsCiAgIm1hY09TIiwKICAi6K+B5Lmm5L+h5Lu76K6+572uIiwKICAi5pu05paw5qih5Z2XIiwKICAi5Zue5ruaIiwKICAiQXBwbGUgVFYiLAogICLml6Dms5Xmkq3mlL4iLApdKSB7CiAgYXNzZXJ0Lm1hdGNoKGluc3RhbGxHdWlkZSwgbmV3IFJlZ0V4cChyZXF1aXJlZFRleHQpLCBg5a6J6KOF6K+05piO57y65bCR77yaJHtyZXF1aXJlZFRleHR9YCk7Cn0KCmZvciAoY29uc3QgY2xpZW50IG9mIFsic3Rhc2giLCAic2hhZG93cm9ja2V0Il0pIHsKICBjb25zdCBjbGllbnRSZWFkbWUgPSBmcy5yZWFkRmlsZVN5bmMoCiAgICBwYXRoLmpvaW4ocHJvamVjdFJvb3QsIGBjbGllbnRzLyR7Y2xpZW50fS9SRUFETUUubWRgKSwKICAgICJ1dGY4IiwKICApOwogIGFzc2VydC5tYXRjaChjbGllbnRSZWFkbWUsIC/lsJrmnKrlrozmiJDnnJ/lrp7orr7lpIfpqozor4EvKTsKICBhc3NlcnQuZG9lc05vdE1hdGNoKGNsaWVudFJlYWRtZSwgL2luc3RhbGwtbW9kdWxlfOS4gOmUruWuieijheaMiemSri8pOwp9Cgpjb25zdCB0dm9zUmVhZG1lID0gZnMucmVhZEZpbGVTeW5jKAogIHBhdGguam9pbihwcm9qZWN0Um9vdCwgInNjcmlwdHMvdHZvcy9SRUFETUUubWQiKSwKICAidXRmOCIsCik7CmFzc2VydC5tYXRjaCh0dm9zUmVhZG1lLCAvQXBwbGUgVFYvKTsKYXNzZXJ0Lm1hdGNoKHR2b3NSZWFkbWUsIC/lrp7pqozmgKcvKTsKYXNzZXJ0Lm1hdGNoKHR2b3NSZWFkbWUsIC/kuI3lvpfmoIforrDkuLrlt7Lpqozor4EvKTsKCmNvbnN0IHN1cmdlVmFsaWRhdG9yID0gZnMucmVhZEZpbGVTeW5jKAogIHBhdGguam9pbihwcm9qZWN0Um9vdCwgInRvb2xzL3ZhbGlkYXRlLXN1cmdlLW1vZHVsZS5zaCIpLAogICJ1dGY4IiwKKTsKYXNzZXJ0Lm1hdGNoKHN1cmdlVmFsaWRhdG9yLCAvc3VyZ2UtY2xpLyk7CmFzc2VydC5tYXRjaChzdXJnZVZhbGlkYXRvciwgL0ZJTkFMLERJUkVDVC8pOwphc3NlcnQubWF0Y2goc3VyZ2VWYWxpZGF0b3IsIC8lQVBQRU5EJS8pOwphc3NlcnQubWF0Y2goc3VyZ2VWYWxpZGF0b3IsIC8tLWNoZWNrLyk7Cgpjb25zb2xlLmxvZygiUEFTUzogcGFja2FnZSBzdHJ1Y3R1cmUsIHVwZGF0ZSBwb2xpY3ksIGFuZCBwbGF0Zm9ybSBib3VuZGFyaWVzIik7Cg==
+const assert = require("node:assert/strict");
+const crypto = require("node:crypto");
+const fs = require("node:fs");
+const path = require("node:path");
+
+const projectRoot = path.resolve(__dirname, "..");
+const repoRoot = path.resolve(projectRoot, "..");
+const version = fs.readFileSync(path.join(projectRoot, "VERSION"), "utf8").trim();
+const baseModulePath = path.join(
+  projectRoot,
+  "clients/surge/YouTube-All-Platform-AdBlock.sgmodule",
+);
+const nativeModulePath = path.join(
+  projectRoot,
+  "clients/surge/YouTube-iOS-tvOS-AdBlock.sgmodule",
+);
+const distBaseModulePath = path.join(repoRoot, "dist/youtube/YouTube-AdBlock.sgmodule");
+const distNativeModulePath = path.join(
+  repoRoot,
+  "dist/youtube/YouTube-iOS-tvOS-AdBlock.sgmodule",
+);
+const escapedVersion = version.replaceAll(".", "\\.");
+const releaseScriptsPath = `releases/${version}/scripts`;
+
+assert.match(version, /^\d+\.\d+\.\d+$/, "维护版本必须使用 semver 三段格式");
+
+const baseModuleSource = fs.readFileSync(baseModulePath, "utf8");
+const nativeModuleSource = fs.readFileSync(nativeModulePath, "utf8");
+assert.match(baseModuleSource, /^#!name=YouTube 全平台去广告$/m);
+assert.match(baseModuleSource, /^#!desc=.*网页.*$/m);
+assert.match(nativeModuleSource, /^#!name=YouTube iOS\/tvOS 去广告$/m);
+for (const moduleSource of [baseModuleSource, nativeModuleSource]) {
+  assert.match(moduleSource, /^\[Rule\]$/m);
+  assert.match(moduleSource, /^\[Script\]$/m);
+  assert.match(moduleSource, /^\[MITM\]$/m);
+}
+for (const requiredText of ["证书信任设置", "更新方法", "无法播放", "回滚方法"]) {
+  assert.match(baseModuleSource, new RegExp(requiredText), `基础模块内置说明缺少：${requiredText}`);
+  assert.match(nativeModuleSource, new RegExp(requiredText), `iOS/tvOS 模块内置说明缺少：${requiredText}`);
+}
+for (const moduleSource of [baseModuleSource, nativeModuleSource]) {
+  assert.match(moduleSource, /hostname = \*/,
+    "模块必须明确警告全局 hostname=* 的风险");
+  assert.match(moduleSource, /捕获全部 HTTPS/,
+    "模块必须明确警告全量 HTTPS 捕获的风险");
+}
+
+for (const scriptName of [
+  "youtube-web-page.js",
+  "youtube-web-response.js",
+]) {
+  const escapedName = scriptName.replaceAll(".", "\\.");
+  assert.match(
+    baseModuleSource,
+    new RegExp(
+      `script-path=https://raw\\.githubusercontent\\.com/cndxf/lab/main/dist/youtube/releases/${escapedVersion}/scripts/${escapedName}\\?v=${escapedVersion}`,
+    ),
+    `${scriptName} 必须使用不可变的版本目录和版本参数`,
+  );
+}
+
+for (const scriptRule of baseModuleSource.match(/^youtube\..*script-path=.*$/gm) || []) {
+  assert.match(
+    scriptRule,
+    /script-update-interval=\{\{\{update_interval\}\}\}/,
+    "每条远程脚本规则都必须使用模块更新间隔参数",
+  );
+}
+
+assert.match(
+  baseModuleSource,
+  /^hostname = %APPEND% www\.youtube\.com, m\.youtube\.com, youtubei\.googleapis\.com$/m,
+);
+const activeModuleSource = baseModuleSource
+  .split("\n")
+  .filter((line) => line.trim() && !line.trimStart().startsWith("#"))
+  .join("\n");
+assert.doesNotMatch(
+  activeModuleSource,
+  /youtube\.native\.|init-stream\.maasea\.workers\.dev|\*\.googlevideo\.com/,
+  "网页安全模块不得加载原生脚本、原生请求改写或 googlevideo MITM",
+);
+
+assert.equal(
+  fs.readFileSync(distBaseModulePath, "utf8"),
+  baseModuleSource,
+  "公开分发基础模块必须与 Surge 适配器源文件完全一致",
+);
+assert.equal(
+  fs.readFileSync(distNativeModulePath, "utf8"),
+  nativeModuleSource,
+  "公开分发 iOS/tvOS 模块必须与 Surge 适配器源文件完全一致",
+);
+
+const checksumPath = path.join(repoRoot, "dist/youtube/SHA256SUMS");
+const checksumEntries = new Map(
+  fs
+    .readFileSync(checksumPath, "utf8")
+    .trim()
+    .split("\n")
+    .map((line) => {
+      const match = line.match(/^([a-f0-9]{64})  (.+)$/);
+      assert.ok(match, `无效的 SHA256SUMS 行：${line}`);
+      return [match[2], match[1]];
+    }),
+);
+
+for (const relativePath of [
+  "VERSION",
+  "YouTube-AdBlock.sgmodule",
+  "YouTube-iOS-tvOS-AdBlock.sgmodule",
+  `${releaseScriptsPath}/youtube-web-page.js`,
+  `${releaseScriptsPath}/youtube-web-response.js`,
+  `${releaseScriptsPath}/youtube-native-response.js`,
+  `${releaseScriptsPath}/youtube-native-request.js`,
+  `${releaseScriptsPath}/youtube-native-ump.js`,
+  `${releaseScriptsPath}/youtube-tvos-json.js`,
+]) {
+  const filePath = path.join(repoRoot, "dist/youtube", relativePath);
+  const actual = crypto.createHash("sha256").update(fs.readFileSync(filePath)).digest("hex");
+  assert.equal(checksumEntries.get(relativePath), actual, `${relativePath} 哈希不一致`);
+}
+assert.equal(checksumEntries.size, 9, "SHA256SUMS 必须包含九个受管分发文件");
+
+const scopedSources = [
+  ["scripts/web/youtube-web-page.js", "Scope: Web only"],
+  ["scripts/web/youtube-web-response.js", "Scope: Web only"],
+  ["scripts/native/youtube-native-response.js", "Scope: Native mobile"],
+  ["scripts/native/youtube-native-request.js", "Scope: Native initplayback request"],
+  ["scripts/native/youtube-native-ump.js", "Scope: Native encrypted stream"],
+  ["scripts/tvos/youtube-tvos-json.js", "[TVOS / Apple TV 专用]"],
+];
+
+for (const [relativePath, marker] of scopedSources) {
+  const source = fs.readFileSync(path.join(projectRoot, relativePath), "utf8");
+  assert.match(source, new RegExp(marker), `${relativePath} 缺少平台边界注释`);
+}
+
+const nativeSource = fs.readFileSync(
+  path.join(projectRoot, "scripts/native/youtube-native-response.js"),
+  "utf8",
+);
+assert.match(nativeSource, /Maasea\/sgmodule/);
+assert.match(nativeSource, /65075cdb388fc5e3094afd7e7314c67b243f3525/);
+assert.match(nativeSource, /Apache License 2\.0/);
+assert.match(nativeSource, /Apple TV: experimental/);
+
+const reviewedNativeBodies = new Map([
+  ["scripts/native/youtube-native-request.js", "e3cd9580112bde3bc6380e6a7d8c98991cf2e615f0b2309f3d8061112aad543d"],
+  ["scripts/native/youtube-native-ump.js", "96f7637b9b00ad09d0aae08ba1dc170c3d6bb6effc2535244561254ad461e47a"],
+]);
+for (const [relativePath, expectedBodyHash] of reviewedNativeBodies) {
+  const source = fs.readFileSync(path.join(projectRoot, relativePath), "utf8");
+  assert.match(source, /2ead6ff5950d7722c4aa6658998904ef78eee531/);
+  assert.match(source, /Apache License 2\.0/);
+  assert.doesNotMatch(source, /workers\.dev|init-stream\.maasea/);
+  const upstreamBody = source.slice(source.indexOf("// Build:")).trimEnd();
+  const actualBodyHash = crypto.createHash("sha256").update(upstreamBody).digest("hex");
+  assert.equal(actualBodyHash, expectedBodyHash, `${relativePath} 已偏离审核后的本地构建体`);
+}
+
+const installGuide = fs.readFileSync(
+  path.join(projectRoot, "clients/surge/安装说明.md"),
+  "utf8",
+);
+for (const requiredText of [
+  "一键安装",
+  "iPhone / iPad",
+  "macOS",
+  "证书信任设置",
+  "更新模块",
+  "回滚",
+  "Apple TV",
+  "无法播放",
+]) {
+  assert.match(installGuide, new RegExp(requiredText), `安装说明缺少：${requiredText}`);
+}
+
+for (const client of ["stash", "shadowrocket"]) {
+  const clientReadme = fs.readFileSync(
+    path.join(projectRoot, `clients/${client}/README.md`),
+    "utf8",
+  );
+  assert.match(clientReadme, /尚未完成真实设备验证/);
+  assert.doesNotMatch(clientReadme, /install-module|一键安装按钮/);
+}
+
+const tvosReadme = fs.readFileSync(
+  path.join(projectRoot, "scripts/tvos/README.md"),
+  "utf8",
+);
+assert.match(tvosReadme, /Apple TV/);
+assert.match(tvosReadme, /实验性/);
+assert.match(tvosReadme, /不得标记为已验证/);
+
+const surgeValidator = fs.readFileSync(
+  path.join(projectRoot, "tools/validate-surge-module.sh"),
+  "utf8",
+);
+assert.match(surgeValidator, /surge-cli/);
+assert.match(surgeValidator, /FINAL,DIRECT/);
+assert.match(surgeValidator, /%APPEND%/);
+assert.match(surgeValidator, /--check/);
+
+console.log("PASS: package structure, update policy, and platform boundaries");

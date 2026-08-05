@@ -1,1 +1,100 @@
-IyEvYmluL3NoCgpzZXQgLWV1CgpTQ1JJUFRfRElSPSQoQ0RQQVRIPSBjZCAtLSAiJChkaXJuYW1lIC0tICIkMCIpIiAmJiBwd2QgLVApClBST0pFQ1RfUk9PVD0kKENEUEFUSD0gY2QgLS0gIiRTQ1JJUFRfRElSLy4uIiAmJiBwd2QgLVApCkVYUEVDVEVEX1ZFUlNJT049JCh0ciAtZCAnXHJcbicgPCAiJFBST0pFQ1RfUk9PVC9WRVJTSU9OIikKRVhQRUNURURfUkVMRUFTRV9QQVRIPSIvcmVsZWFzZXMvJEVYUEVDVEVEX1ZFUlNJT04vc2NyaXB0cy8iClNVUkdFX0NMST0ke1NVUkdFX0NMSTotL0FwcGxpY2F0aW9ucy9TdXJnZS5hcHAvQ29udGVudHMvQXBwbGljYXRpb25zL3N1cmdlLWNsaX0KCmlmIFsgLW4gIiR7U1VSR0VfRUZGRUNUSVZFX1BST0ZJTEVfRklMRTotfSIgXTsgdGhlbgogIFsgLWYgIiRTVVJHRV9FRkZFQ1RJVkVfUFJPRklMRV9GSUxFIiBdIHx8IHsKICAgIHByaW50ZiAnRWZmZWN0aXZlIHByb2ZpbGUgZml4dHVyZSBpcyB1bmF2YWlsYWJsZTogJXNcbicgIiRTVVJHRV9FRkZFQ1RJVkVfUFJPRklMRV9GSUxFIiA+JjIKICAgIGV4aXQgMgogIH0KICBlZmZlY3RpdmVfcHJvZmlsZT0kKGNhdCAiJFNVUkdFX0VGRkVDVElWRV9QUk9GSUxFX0ZJTEUiKQplbGlmIFsgLW4gIiR7U1VSR0VfUkVNT1RFOi19IiBdOyB0aGVuCiAgWyAteCAiJFNVUkdFX0NMSSIgXSB8fCB7CiAgICBwcmludGYgJ1N1cmdlIENMSSBpcyB1bmF2YWlsYWJsZTogJXNcbicgIiRTVVJHRV9DTEkiID4mMgogICAgZXhpdCAyCiAgfQogIGVmZmVjdGl2ZV9wcm9maWxlPSQoJFNVUkdFX0NMSSAtLXJlbW90ZSAiJFNVUkdFX1JFTU9URSIgZHVtcCBwcm9maWxlIGVmZmVjdGl2ZSkKZWxzZQogIFsgLXggIiRTVVJHRV9DTEkiIF0gfHwgewogICAgcHJpbnRmICdTdXJnZSBDTEkgaXMgdW5hdmFpbGFibGU6ICVzXG4nICIkU1VSR0VfQ0xJIiA+JjIKICAgIGV4aXQgMgogIH0KICBlZmZlY3RpdmVfcHJvZmlsZT0kKCRTVVJHRV9DTEkgZHVtcCBwcm9maWxlIGVmZmVjdGl2ZSkKZmkKCmZhaWxlZD0wCm1pdG1faG9zdG5hbWU9JChwcmludGYgJyVzXG4nICIkZWZmZWN0aXZlX3Byb2ZpbGUiIHwgYXdrICcvXmhvc3RuYW1lID0gLyB7IHByaW50IH0nKQppZiBwcmludGYgJyVzXG4nICIkbWl0bV9ob3N0bmFtZSIgfCBncmVwIC1FcSAnKF58WyAsXSlcKihbICxdfCQpJzsgdGhlbgogIHByaW50ZiAnJXNcbicgXAogICAgJ0dMT0JBTF9NSVRNX1dJTERDQVJEOiBlZmZlY3RpdmUgcHJvZmlsZSBjb250YWlucyBob3N0bmFtZSA9ICouJyBcCiAgICAnUmVtb3ZlIHRoZSB3aWxkY2FyZCBhbmQga2VlcCBvbmx5IHRoZSBZb3VUdWJlIGhvc3RzIHJlcXVpcmVkIGJ5IHRoaXMgbW9kdWxlOyBjZXJ0aWZpY2F0ZS1waW5uZWQgYXBwcyBjYW4gYWJvcnQgdGhlIFRMUyBoYW5kc2hha2UuJyA+JjIKICBmYWlsZWQ9MQpmaQoKbmF0aXZlX2NvdW50PSQocHJpbnRmICclc1xuJyAiJGVmZmVjdGl2ZV9wcm9maWxlIiB8IGF3ayAnCiAgaW5kZXgoJDAsICJ5b3V0dWJlLm5hdGl2ZS4iKSA9PSAxIHx8IGluZGV4KCQwLCAieW91dHViZS50dm9zLiIpID09IDEgeyBjb3VudCArPSAxIH0KICBFTkQgeyBwcmludCBjb3VudCArIDAgfQonKQppZiBbICIkbmF0aXZlX2NvdW50IiAtZXEgMCBdOyB0aGVuCiAgcHJpbnRmICclc1xuJyBcCiAgICAnTkFUSVZFX01JU1NJTkc6IG5vIGlPUy90dk9TIFlvdVR1YmUgc2NyaXB0cyBhcmUgcHJlc2VudCBpbiB0aGUgZWZmZWN0aXZlIHByb2ZpbGUuJyBcCiAgICAnSW5zdGFsbCBhbmQgZW5hYmxlICJZb3VUdWJlIGlPUy90dk9TIOWOu+W5v+WRiiIsIHRoZW4gcmVkZXBsb3kgdGhlIHByb2ZpbGUgdG8gdGhlIGRldmljZS4nID4mMgogIGZhaWxlZD0xCmZpCgpmb3Igc2NyaXB0X25hbWUgaW4gXAogIHlvdXR1YmUubmF0aXZlLnJlc3BvbnNlIFwKICB5b3V0dWJlLm5hdGl2ZS5yZXF1ZXN0LmluaXQgXAogIHlvdXR1YmUubmF0aXZlLnJlc3BvbnNlLmluaXQgXAogIHlvdXR1YmUudHZvcy5qc29uCmRvCiAgY291bnQ9JChwcmludGYgJyVzXG4nICIkZWZmZWN0aXZlX3Byb2ZpbGUiIHwgYXdrIC12IHByZWZpeD0iJHNjcmlwdF9uYW1lID0iICcKICAgIGluZGV4KCQwLCBwcmVmaXgpID09IDEgeyBjb3VudCArPSAxIH0KICAgIEVORCB7IHByaW50IGNvdW50ICsgMCB9CiAgJykKICBjYXNlICIkY291bnQiIGluCiAgICAxKQogICAgICBwcmludGYgJ1BBU1M6ICVzIGlzIGFjdGl2ZSBleGFjdGx5IG9uY2UuXG4nICIkc2NyaXB0X25hbWUiCiAgICAgIHNjcmlwdF9saW5lPSQocHJpbnRmICclc1xuJyAiJGVmZmVjdGl2ZV9wcm9maWxlIiB8IGF3ayAtdiBwcmVmaXg9IiRzY3JpcHRfbmFtZSA9IiAnCiAgICAgICAgaW5kZXgoJDAsIHByZWZpeCkgPT0gMSB7IHByaW50OyBleGl0IH0KICAgICAgJykKICAgICAgaWYgISBwcmludGYgJyVzXG4nICIkc2NyaXB0X2xpbmUiIHwgZ3JlcCAtRnEgIiRFWFBFQ1RFRF9SRUxFQVNFX1BBVEgiOyB0aGVuCiAgICAgICAgcHJpbnRmICclc1xuJyBcCiAgICAgICAgICAiU1RBTEU6ICRzY3JpcHRfbmFtZSBkb2VzIG5vdCByZWZlcmVuY2UgcmVsZWFzZSAkRVhQRUNURURfVkVSU0lPTi4iIFwKICAgICAgICAgICdSZWZyZXNoIG9yIHJlcGxhY2UgdGhlIGN1cnJlbnQgaU9TL3R2T1MgbW9kdWxlLCB0aGVuIHJlZGVwbG95IHRoZSBwcm9maWxlLicgPiYyCiAgICAgICAgZmFpbGVkPTEKICAgICAgZmkKICAgICAgOzsKICAgIDApCiAgICAgIHByaW50ZiAnTUlTU0lORzogJXNcbicgIiRzY3JpcHRfbmFtZSIgPiYyCiAgICAgIGZhaWxlZD0xCiAgICAgIDs7CiAgICAqKQogICAgICBwcmludGYgJ0RVUExJQ0FURTogJXMgYXBwZWFycyAlcyB0aW1lcy4gUmVtb3ZlIG9sZCBvciBkdXBsaWNhdGUgbmF0aXZlIG1vZHVsZXMuXG4nIFwKICAgICAgICAiJHNjcmlwdF9uYW1lIiAiJGNvdW50IiA+JjIKICAgICAgZmFpbGVkPTEKICAgICAgOzsKICBlc2FjCmRvbmUKCmlmICEgcHJpbnRmICclc1xuJyAiJG1pdG1faG9zdG5hbWUiIHwgZ3JlcCAtRnEgJyouZ29vZ2xldmlkZW8uY29tJzsgdGhlbgogIHByaW50ZiAnJXNcbicgXAogICAgJ01JVE1fTUlTU0lORzogZWZmZWN0aXZlIHByb2ZpbGUgZG9lcyBub3QgaW5jbHVkZSAqLmdvb2dsZXZpZGVvLmNvbS4nIFwKICAgICdUaGUgbmF0aXZlIGluaXRwbGF5YmFjayByZXNwb25zZSBjYW5ub3QgYmUgaW5zcGVjdGVkIHdpdGhvdXQgdGhlIEdvb2dsZSBWaWRlbyBNSVRNIGhvc3RuYW1lLicgPiYyCiAgZmFpbGVkPTEKZmkKCmlmIFsgIiRmYWlsZWQiIC1uZSAwIF07IHRoZW4KICBwcmludGYgJyVzXG4nIFwKICAgICdUaGUgZWZmZWN0aXZlIHByb2ZpbGUgaXMgbWlzc2luZywgc3RhbGUsIGR1cGxpY2F0ZWQsIG9yIGluY29tcGxldGUgZm9yIGlPUy90dk9TIG5hdGl2ZSBZb3VUdWJlIGhhbmRsaW5nLicgXAogICAgJ0RvIG5vdCBjb3VudCB0aGUgZGV2aWNlIGFzIGRlcGxveWVkIHVudGlsIHRoaXMgY2hlY2sgcGFzc2VzLicgPiYyCiAgZXhpdCAxCmZpCgpwcmludGYgJ0FsbCBpT1MvdHZPUyBuYXRpdmUgWW91VHViZSBzY3JpcHRzIGFuZCBNSVRNIGhvc3RzIGFyZSBjdXJyZW50IGFuZCB1bmlxdWUuXG4nCg==
+#!/bin/sh
+
+set -eu
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+PROJECT_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd -P)
+EXPECTED_VERSION=$(tr -d '\r\n' < "$PROJECT_ROOT/VERSION")
+EXPECTED_RELEASE_PATH="/releases/$EXPECTED_VERSION/scripts/"
+SURGE_CLI=${SURGE_CLI:-/Applications/Surge.app/Contents/Applications/surge-cli}
+
+if [ -n "${SURGE_EFFECTIVE_PROFILE_FILE:-}" ]; then
+  [ -f "$SURGE_EFFECTIVE_PROFILE_FILE" ] || {
+    printf 'Effective profile fixture is unavailable: %s\n' "$SURGE_EFFECTIVE_PROFILE_FILE" >&2
+    exit 2
+  }
+  effective_profile=$(cat "$SURGE_EFFECTIVE_PROFILE_FILE")
+elif [ -n "${SURGE_REMOTE:-}" ]; then
+  [ -x "$SURGE_CLI" ] || {
+    printf 'Surge CLI is unavailable: %s\n' "$SURGE_CLI" >&2
+    exit 2
+  }
+  effective_profile=$($SURGE_CLI --remote "$SURGE_REMOTE" dump profile effective)
+else
+  [ -x "$SURGE_CLI" ] || {
+    printf 'Surge CLI is unavailable: %s\n' "$SURGE_CLI" >&2
+    exit 2
+  }
+  effective_profile=$($SURGE_CLI dump profile effective)
+fi
+
+failed=0
+mitm_hostname=$(printf '%s\n' "$effective_profile" | awk '/^hostname = / { print }')
+if printf '%s\n' "$mitm_hostname" | grep -Eq '(^|[ ,])\*([ ,]|$)'; then
+  printf '%s\n' \
+    'GLOBAL_MITM_WILDCARD: effective profile contains hostname = *.' \
+    'Remove the wildcard and keep only the YouTube hosts required by this module; certificate-pinned apps can abort the TLS handshake.' >&2
+  failed=1
+fi
+
+native_count=$(printf '%s\n' "$effective_profile" | awk '
+  index($0, "youtube.native.") == 1 || index($0, "youtube.tvos.") == 1 { count += 1 }
+  END { print count + 0 }
+')
+if [ "$native_count" -eq 0 ]; then
+  printf '%s\n' \
+    'NATIVE_MISSING: no iOS/tvOS YouTube scripts are present in the effective profile.' \
+    'Install and enable "YouTube iOS/tvOS 去广告", then redeploy the profile to the device.' >&2
+  failed=1
+fi
+
+for script_name in \
+  youtube.native.response \
+  youtube.native.request.init \
+  youtube.native.response.init \
+  youtube.tvos.json
+do
+  count=$(printf '%s\n' "$effective_profile" | awk -v prefix="$script_name =" '
+    index($0, prefix) == 1 { count += 1 }
+    END { print count + 0 }
+  ')
+  case "$count" in
+    1)
+      printf 'PASS: %s is active exactly once.\n' "$script_name"
+      script_line=$(printf '%s\n' "$effective_profile" | awk -v prefix="$script_name =" '
+        index($0, prefix) == 1 { print; exit }
+      ')
+      if ! printf '%s\n' "$script_line" | grep -Fq "$EXPECTED_RELEASE_PATH"; then
+        printf '%s\n' \
+          "STALE: $script_name does not reference release $EXPECTED_VERSION." \
+          'Refresh or replace the current iOS/tvOS module, then redeploy the profile.' >&2
+        failed=1
+      fi
+      ;;
+    0)
+      printf 'MISSING: %s\n' "$script_name" >&2
+      failed=1
+      ;;
+    *)
+      printf 'DUPLICATE: %s appears %s times. Remove old or duplicate native modules.\n' \
+        "$script_name" "$count" >&2
+      failed=1
+      ;;
+  esac
+done
+
+if ! printf '%s\n' "$mitm_hostname" | grep -Fq '*.googlevideo.com'; then
+  printf '%s\n' \
+    'MITM_MISSING: effective profile does not include *.googlevideo.com.' \
+    'The native initplayback response cannot be inspected without the Google Video MITM hostname.' >&2
+  failed=1
+fi
+
+if [ "$failed" -ne 0 ]; then
+  printf '%s\n' \
+    'The effective profile is missing, stale, duplicated, or incomplete for iOS/tvOS native YouTube handling.' \
+    'Do not count the device as deployed until this check passes.' >&2
+  exit 1
+fi
+
+printf 'All iOS/tvOS native YouTube scripts and MITM hosts are current and unique.\n'

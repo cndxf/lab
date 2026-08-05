@@ -1,1 +1,146 @@
-IyEvYmluL3NoCgpzZXQgLWV1CgpTQ1JJUFRfRElSPSQoQ0RQQVRIPSBjZCAtLSAiJChkaXJuYW1lIC0tICIkMCIpIiAmJiBwd2QgLVApClBST0pFQ1RfUk9PVD0kKENEUEFUSD0gY2QgLS0gIiRTQ1JJUFRfRElSLy4uIiAmJiBwd2QgLVApCkFVRElUX1NDUklQVD0iJFBST0pFQ1RfUk9PVC90b29scy9hdWRpdC11cHN0cmVhbS5zaCIKVEVTVF9UTVBfRElSPSQobWt0ZW1wIC1kICIke1RNUERJUjotL3RtcH0veW91dHViZS11cHN0cmVhbS1hdWRpdC10ZXN0LlhYWFhYWCIpCgpjbGVhbnVwKCkgewogIHJtIC1yZiAiJFRFU1RfVE1QX0RJUiIKfQoKdHJhcCBjbGVhbnVwIEVYSVQgSFVQIElOVCBURVJNCgpjYXQgPiAiJFRFU1RfVE1QX0RJUi91YXNzZXRzLXZhbGlkLnR4dCIgPDwnRU9GJwp5b3V0dWJlX2FudGlhZGJsb2NrX2FuZF9hZHMKYWRQbGFjZW1lbnRzCmFkU2xvdHMKc3NhcENvbmZpZwpub19hZHMKcmVlbFdhdGNoRW5kcG9pbnQuYWRDbGllbnRQYXJhbXMuaXNBZApzZXJ2ZXJDb250cmFjdApTU0FQCmdldF93YXRjaApnaXRodWIuY29tL3VCbG9ja09yaWdpbi91QXNzZXRzL2lzc3Vlcy8zMzY3CkVPRgoKY2F0ID4gIiRURVNUX1RNUF9ESVIvYWRndWFyZC12YWxpZC50eHQiIDw8J0VPRicKU1RBUlQ6IFlvdXR1YmUgd2hpdGVzY3JlZW4gZml4Cnl0SW5pdGlhbFBsYXllclJlc3BvbnNlLmFkUGxhY2VtZW50cwphZFNsb3RzCnBsYXllckFkcwpzc2FwQ29uZmlnCm5vX2FkcwpyZWVsV2F0Y2hFbmRwb2ludC5hZENsaWVudFBhcmFtcy5pc0FkCnNlcnZlckFiclN0cmVhbWluZ1VybApnZXRfZHJtX2xpY2Vuc2UKaHRtbDVfZW5hYmxlX3NzYXBfZW50aXR5X2lkCkVORDogWW91dHViZSB3aGl0ZXNjcmVlbiBmaXgKRU9GCgp2YWxpZF9vdXRwdXQ9JCgKICAiJEFVRElUX1NDUklQVCIgXAogICAgLS11YXNzZXRzLWZpbGUgIiRURVNUX1RNUF9ESVIvdWFzc2V0cy12YWxpZC50eHQiIFwKICAgIC0tYWRndWFyZC1maWxlICIkVEVTVF9UTVBfRElSL2FkZ3VhcmQtdmFsaWQudHh0IiBcCiAgICAtLW5hdGl2ZS1oZWFkIDY1MDc1Y2RiMzg4ZmM1ZTMwOTRhZmQ3ZTczMTRjNjdiMjQzZjM1MjUgXAogICAgLS1za2lwLWJhc2VsaW5lCikKCmNhc2UgIiR2YWxpZF9vdXRwdXQiIGluCiAgKiJNYWFzZWEgbmF0aXZlIGJhc2VsaW5lOiB1bmNoYW5nZWQiKiJ1QXNzZXRzIHNpZ25hdHVyZXM6IE9LIioiQWRHdWFyZCBzaWduYXR1cmVzOiBPSyIqKSA7OwogICopCiAgICBwcmludGYgJ0ZBSUw6IHZhbGlkIHVwc3RyZWFtIHNpZ25hdHVyZXMgd2VyZSByZWplY3RlZC5cbiVzXG4nICIkdmFsaWRfb3V0cHV0IiA+JjIKICAgIGV4aXQgMQogICAgOzsKZXNhYwoKc2VkICcvc3NhcENvbmZpZy9kJyAiJFRFU1RfVE1QX0RJUi9hZGd1YXJkLXZhbGlkLnR4dCIgPiAiJFRFU1RfVE1QX0RJUi9hZGd1YXJkLW1pc3NpbmcudHh0IgoKaWYgbWlzc2luZ19vdXRwdXQ9JCgKICAiJEFVRElUX1NDUklQVCIgXAogICAgLS11YXNzZXRzLWZpbGUgIiRURVNUX1RNUF9ESVIvdWFzc2V0cy12YWxpZC50eHQiIFwKICAgIC0tYWRndWFyZC1maWxlICIkVEVTVF9UTVBfRElSL2FkZ3VhcmQtbWlzc2luZy50eHQiIFwKICAgIC0tbmF0aXZlLWhlYWQgNjUwNzVjZGIzODhmYzVlMzA5NGFmZDdlNzMxNGM2N2IyNDNmMzUyNSBcCiAgICAtLXNraXAtYmFzZWxpbmUgMj4mMQopOyB0aGVuCiAgcHJpbnRmICdGQUlMOiBtaXNzaW5nIHVwc3RyZWFtIHNpZ25hdHVyZSB1bmV4cGVjdGVkbHkgcGFzc2VkLlxuJyA+JjIKICBleGl0IDEKZmkKCmNhc2UgIiRtaXNzaW5nX291dHB1dCIgaW4KICAqIk1JU1NJTkcgQWRHdWFyZCBzaWduYXR1cmU6IHNzYXBDb25maWciKikgOzsKICAqKQogICAgcHJpbnRmICdGQUlMOiBtaXNzaW5nIHNpZ25hdHVyZSB3YXMgbm90IHJlcG9ydGVkIGNsZWFybHkuXG4lc1xuJyAiJG1pc3Npbmdfb3V0cHV0IiA+JjIKICAgIGV4aXQgMQogICAgOzsKZXNhYwoKc2VkICcvbm9fYWRzL2QnICIkVEVTVF9UTVBfRElSL2FkZ3VhcmQtdmFsaWQudHh0IiA+ICIkVEVTVF9UTVBfRElSL2FkZ3VhcmQtbm8tYWRzLW1pc3NpbmcudHh0IgoKaWYgbm9fYWRzX21pc3Npbmdfb3V0cHV0PSQoCiAgIiRBVURJVF9TQ1JJUFQiIFwKICAgIC0tdWFzc2V0cy1maWxlICIkVEVTVF9UTVBfRElSL3Vhc3NldHMtdmFsaWQudHh0IiBcCiAgICAtLWFkZ3VhcmQtZmlsZSAiJFRFU1RfVE1QX0RJUi9hZGd1YXJkLW5vLWFkcy1taXNzaW5nLnR4dCIgXAogICAgLS1uYXRpdmUtaGVhZCA2NTA3NWNkYjM4OGZjNWUzMDk0YWZkN2U3MzE0YzY3YjI0M2YzNTI1IFwKICAgIC0tc2tpcC1iYXNlbGluZSAyPiYxCik7IHRoZW4KICBwcmludGYgJ0ZBSUw6IG1pc3NpbmcgQWRHdWFyZCBub19hZHMgc2lnbmF0dXJlIHVuZXhwZWN0ZWRseSBwYXNzZWQuXG4nID4mMgogIGV4aXQgMQpmaQoKY2FzZSAiJG5vX2Fkc19taXNzaW5nX291dHB1dCIgaW4KICAqIk1JU1NJTkcgQWRHdWFyZCBzaWduYXR1cmU6IG5vX2FkcyIqKSA7OwogICopCiAgICBwcmludGYgJ0ZBSUw6IG1pc3NpbmcgQWRHdWFyZCBub19hZHMgc2lnbmF0dXJlIHdhcyBub3QgcmVwb3J0ZWQgY2xlYXJseS5cbiVzXG4nICIkbm9fYWRzX21pc3Npbmdfb3V0cHV0IiA+JjIKICAgIGV4aXQgMQogICAgOzsKZXNhYwoKaWYgbmF0aXZlX291dHB1dD0kKAogICIkQVVESVRfU0NSSVBUIiBcCiAgICAtLXVhc3NldHMtZmlsZSAiJFRFU1RfVE1QX0RJUi91YXNzZXRzLXZhbGlkLnR4dCIgXAogICAgLS1hZGd1YXJkLWZpbGUgIiRURVNUX1RNUF9ESVIvYWRndWFyZC12YWxpZC50eHQiIFwKICAgIC0tbmF0aXZlLWhlYWQgZGVhZGJlZWYgXAogICAgLS1za2lwLWJhc2VsaW5lIFwKICAgIC0tc3RyaWN0IDI+JjEKKTsgdGhlbgogIHByaW50ZiAnRkFJTDogY2hhbmdlZCBuYXRpdmUgdXBzdHJlYW0gY29tbWl0IHVuZXhwZWN0ZWRseSBwYXNzZWQgc3RyaWN0IG1vZGUuXG4nID4mMgogIGV4aXQgMQplbHNlCiAgbmF0aXZlX3N0YXR1cz0kPwpmaQoKWyAiJG5hdGl2ZV9zdGF0dXMiIC1lcSAzIF0gfHwgewogIHByaW50ZiAnRkFJTDogY2hhbmdlZCBuYXRpdmUgdXBzdHJlYW0gcmV0dXJuZWQgJXMgaW5zdGVhZCBvZiAzLlxuJXNcbicgXAogICAgIiRuYXRpdmVfc3RhdHVzIiAiJG5hdGl2ZV9vdXRwdXQiID4mMgogIGV4aXQgMQp9CgpjYXNlICIkbmF0aXZlX291dHB1dCIgaW4KICAqIk1hYXNlYSBuYXRpdmUgYmFzZWxpbmU6IENIQU5HRUQiKikgOzsKICAqKQogICAgcHJpbnRmICdGQUlMOiBjaGFuZ2VkIG5hdGl2ZSB1cHN0cmVhbSB3YXMgbm90IHJlcG9ydGVkIGNsZWFybHkuXG4lc1xuJyAiJG5hdGl2ZV9vdXRwdXQiID4mMgogICAgZXhpdCAxCiAgICA7Owplc2FjCgp2ZXJpZnlfc291cmNlPSQoY2F0ICIkUFJPSkVDVF9ST09UL3Rvb2xzL3ZlcmlmeS5zaCIpCmNhc2UgIiR2ZXJpZnlfc291cmNlIiBpbgogICondGVzdHMvdXBzdHJlYW0tYXVkaXQudGVzdC5zaCcqKSA7OwogICopCiAgICBwcmludGYgJ0ZBSUw6IHRvb2xzL3ZlcmlmeS5zaCBkb2VzIG5vdCBydW4gdGhlIHVwc3RyZWFtIGF1ZGl0IHJlZ3Jlc3Npb24gdGVzdC5cbicgPiYyCiAgICBleGl0IDEKICAgIDs7CmVzYWMKCmNhc2UgIiR2ZXJpZnlfc291cmNlIiBpbgogIConQVVESVRfVVBTVFJFQU0nKikgOzsKICAqKQogICAgcHJpbnRmICdGQUlMOiB0b29scy92ZXJpZnkuc2ggaGFzIG5vIG9wdC1pbiBsaXZlIHVwc3RyZWFtIGF1ZGl0LlxuJyA+JjIKICAgIGV4aXQgMQogICAgOzsKZXNhYwoKcHJpbnRmICdQQVNTOiB1cHN0cmVhbSBhdWRpdCBhY2NlcHRzIGtub3duIHNpZ25hbHMgYW5kIHJlamVjdHMgbWlzc2luZyBvbmVzLlxuJwo=
+#!/bin/sh
+
+set -eu
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+PROJECT_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd -P)
+AUDIT_SCRIPT="$PROJECT_ROOT/tools/audit-upstream.sh"
+TEST_TMP_DIR=$(mktemp -d "${TMPDIR:-/tmp}/youtube-upstream-audit-test.XXXXXX")
+
+cleanup() {
+  rm -rf "$TEST_TMP_DIR"
+}
+
+trap cleanup EXIT HUP INT TERM
+
+cat > "$TEST_TMP_DIR/uassets-valid.txt" <<'EOF'
+youtube_antiadblock_and_ads
+adPlacements
+adSlots
+ssapConfig
+no_ads
+reelWatchEndpoint.adClientParams.isAd
+serverContract
+SSAP
+get_watch
+github.com/uBlockOrigin/uAssets/issues/3367
+EOF
+
+cat > "$TEST_TMP_DIR/adguard-valid.txt" <<'EOF'
+START: Youtube whitescreen fix
+ytInitialPlayerResponse.adPlacements
+adSlots
+playerAds
+ssapConfig
+no_ads
+reelWatchEndpoint.adClientParams.isAd
+serverAbrStreamingUrl
+get_drm_license
+html5_enable_ssap_entity_id
+END: Youtube whitescreen fix
+EOF
+
+valid_output=$(
+  "$AUDIT_SCRIPT" \
+    --uassets-file "$TEST_TMP_DIR/uassets-valid.txt" \
+    --adguard-file "$TEST_TMP_DIR/adguard-valid.txt" \
+    --native-head 65075cdb388fc5e3094afd7e7314c67b243f3525 \
+    --skip-baseline
+)
+
+case "$valid_output" in
+  *"Maasea native baseline: unchanged"*"uAssets signatures: OK"*"AdGuard signatures: OK"*) ;;
+  *)
+    printf 'FAIL: valid upstream signatures were rejected.\n%s\n' "$valid_output" >&2
+    exit 1
+    ;;
+esac
+
+sed '/ssapConfig/d' "$TEST_TMP_DIR/adguard-valid.txt" > "$TEST_TMP_DIR/adguard-missing.txt"
+
+if missing_output=$(
+  "$AUDIT_SCRIPT" \
+    --uassets-file "$TEST_TMP_DIR/uassets-valid.txt" \
+    --adguard-file "$TEST_TMP_DIR/adguard-missing.txt" \
+    --native-head 65075cdb388fc5e3094afd7e7314c67b243f3525 \
+    --skip-baseline 2>&1
+); then
+  printf 'FAIL: missing upstream signature unexpectedly passed.\n' >&2
+  exit 1
+fi
+
+case "$missing_output" in
+  *"MISSING AdGuard signature: ssapConfig"*) ;;
+  *)
+    printf 'FAIL: missing signature was not reported clearly.\n%s\n' "$missing_output" >&2
+    exit 1
+    ;;
+esac
+
+sed '/no_ads/d' "$TEST_TMP_DIR/adguard-valid.txt" > "$TEST_TMP_DIR/adguard-no-ads-missing.txt"
+
+if no_ads_missing_output=$(
+  "$AUDIT_SCRIPT" \
+    --uassets-file "$TEST_TMP_DIR/uassets-valid.txt" \
+    --adguard-file "$TEST_TMP_DIR/adguard-no-ads-missing.txt" \
+    --native-head 65075cdb388fc5e3094afd7e7314c67b243f3525 \
+    --skip-baseline 2>&1
+); then
+  printf 'FAIL: missing AdGuard no_ads signature unexpectedly passed.\n' >&2
+  exit 1
+fi
+
+case "$no_ads_missing_output" in
+  *"MISSING AdGuard signature: no_ads"*) ;;
+  *)
+    printf 'FAIL: missing AdGuard no_ads signature was not reported clearly.\n%s\n' "$no_ads_missing_output" >&2
+    exit 1
+    ;;
+esac
+
+if native_output=$(
+  "$AUDIT_SCRIPT" \
+    --uassets-file "$TEST_TMP_DIR/uassets-valid.txt" \
+    --adguard-file "$TEST_TMP_DIR/adguard-valid.txt" \
+    --native-head deadbeef \
+    --skip-baseline \
+    --strict 2>&1
+); then
+  printf 'FAIL: changed native upstream commit unexpectedly passed strict mode.\n' >&2
+  exit 1
+else
+  native_status=$?
+fi
+
+[ "$native_status" -eq 3 ] || {
+  printf 'FAIL: changed native upstream returned %s instead of 3.\n%s\n' \
+    "$native_status" "$native_output" >&2
+  exit 1
+}
+
+case "$native_output" in
+  *"Maasea native baseline: CHANGED"*) ;;
+  *)
+    printf 'FAIL: changed native upstream was not reported clearly.\n%s\n' "$native_output" >&2
+    exit 1
+    ;;
+esac
+
+verify_source=$(cat "$PROJECT_ROOT/tools/verify.sh")
+case "$verify_source" in
+  *'tests/upstream-audit.test.sh'*) ;;
+  *)
+    printf 'FAIL: tools/verify.sh does not run the upstream audit regression test.\n' >&2
+    exit 1
+    ;;
+esac
+
+case "$verify_source" in
+  *'AUDIT_UPSTREAM'*) ;;
+  *)
+    printf 'FAIL: tools/verify.sh has no opt-in live upstream audit.\n' >&2
+    exit 1
+    ;;
+esac
+
+printf 'PASS: upstream audit accepts known signals and rejects missing ones.\n'

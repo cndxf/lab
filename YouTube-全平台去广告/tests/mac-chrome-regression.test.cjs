@@ -1,1 +1,427 @@
-Y29uc3QgYXNzZXJ0ID0gcmVxdWlyZSgibm9kZTphc3NlcnQvc3RyaWN0Iik7CmNvbnN0IGZzID0gcmVxdWlyZSgibm9kZTpmcyIpOwpjb25zdCBwYXRoID0gcmVxdWlyZSgibm9kZTpwYXRoIik7Cgpjb25zdCB7CiAgREVGQVVMVF9DQVNFUywKICBQTEFZRVJfQ0FTRV9OQU1FUywKICBjbGFzc2lmeVBsYXliYWNrQmxvY2tlciwKICBjb21wdXRlQWROb2RlTWV0cmljcywKICBpbnNwZWN0QWRCcmVha1BheWxvYWQsCiAgbG9hZEV4cGVjdGVkVmVyc2lvbiwKICBwYXJzZUFyZ3VtZW50cywKICBzZWxlY3RDYXNlcywKICBTTkFQU0hPVF9FWFBSRVNTSU9OLAogIFNUQVJUX1BMQVlCQUNLX0VYUFJFU1NJT04sCiAgc3VtbWFyaXplQWRCcmVha0V2aWRlbmNlLAogIHN1bW1hcml6ZVNhbXBsZXMsCn0gPSByZXF1aXJlKCIuLi90b29scy9tYWMtY2hyb21lLXJlZ3Jlc3Npb24uY2pzIik7Cgpjb25zdCBwcm9qZWN0Um9vdCA9IHBhdGgucmVzb2x2ZShfX2Rpcm5hbWUsICIuLiIpOwpjb25zdCB2ZXJpZnlTY3JpcHQgPSBmcy5yZWFkRmlsZVN5bmMocGF0aC5qb2luKHByb2plY3RSb290LCAidG9vbHMvdmVyaWZ5LnNoIiksICJ1dGY4Iik7CmNvbnN0IGN1cnJlbnRWZXJzaW9uID0gbG9hZEV4cGVjdGVkVmVyc2lvbihwcm9qZWN0Um9vdCk7Cgphc3NlcnQubWF0Y2goCiAgdmVyaWZ5U2NyaXB0LAogIC9tYWMtY2hyb21lLXJlZ3Jlc3Npb25cLnRlc3RcLmNqcy8sCiAgIue7n+S4gOmqjOivgeWFpeWPo+W/hemhu+aJp+ihjCBNYWMgQ2hyb21lIOWbnuW9kuW3peWFt+a1i+ivlSIsCik7Cgphc3NlcnQuZXF1YWwoCiAgbG9hZEV4cGVjdGVkVmVyc2lvbihwcm9qZWN0Um9vdCksCiAgY3VycmVudFZlcnNpb24sCiAgIk1hYyDlm57lvZLlt6Xlhbflv4Xpobvku47pobnnm64gVkVSU0lPTiDoh6rliqjor7vlj5blvZPliY3niYjmnKwiLAopOwoKY29uc3QgcmVxdWlyZWRDYXNlcyA9IFsKICAiaG9tZSIsCiAgInNlYXJjaCIsCiAgIndhdGNoIiwKICAibW92aWUtMSIsCiAgIm1vdmllLTIiLAogICJzaG9ydHMiLAogICJwbGF5bGlzdCIsCiAgInN1YnNjcmlwdGlvbnMiLAogICJjaGFubmVsIiwKICAicG9zdCIsCiAgImhhc2h0YWciLAogICJjbGlwIiwKICAibGl2ZSIsCiAgImVtYmVkIiwKXTsKYXNzZXJ0LmRlZXBFcXVhbCgKICByZXF1aXJlZENhc2VzLmV2ZXJ5KChuYW1lKSA9PiBERUZBVUxUX0NBU0VTLnNvbWUoKHRlc3RDYXNlKSA9PiB0ZXN0Q2FzZS5uYW1lID09PSBuYW1lKSksCiAgdHJ1ZSwKICAiTWFjIOWbnuW9kuefqemYteW/hemhu+WMheWQq+aJgOaciee9kemhteWFpeWPo+WSjOaSreaUvuWZqOWFpeWPoyIsCik7Cgpjb25zdCBwYXJzZWRBcmd1bWVudHMgPSBwYXJzZUFyZ3VtZW50cyhbCiAgIi0tcm91bmRzIiwKICAiNCIsCiAgIi0tb25seSIsCiAgImhvbWUsY2xpcCIsCiAgIi0tb3V0cHV0IiwKICAiL3RtcC95b3V0dWJlLXJlZ3Jlc3Npb24tdGVzdCIsCl0pOwphc3NlcnQuZXF1YWwocGFyc2VkQXJndW1lbnRzLnJvdW5kcywgNCk7CmFzc2VydC5kZWVwRXF1YWwoWy4uLnBhcnNlZEFyZ3VtZW50cy5vbmx5XSwgWyJob21lIiwgImNsaXAiXSk7CmFzc2VydC5lcXVhbChwYXJzZWRBcmd1bWVudHMub3V0cHV0RGlyLCAiL3RtcC95b3V0dWJlLXJlZ3Jlc3Npb24tdGVzdCIpOwphc3NlcnQuZXF1YWwocGFyc2VkQXJndW1lbnRzLnNjb3BlLCAicGxheWVyIik7Cgpjb25zdCBmdWxsQXJndW1lbnRzID0gcGFyc2VBcmd1bWVudHMoWyItLXNjb3BlIiwgImZ1bGwiXSk7CmFzc2VydC5lcXVhbChmdWxsQXJndW1lbnRzLnNjb3BlLCAiZnVsbCIpOwpsZXQgcGVyc2lzdGVudFByb2ZpbGVBcmd1bWVudHM7CmFzc2VydC5kb2VzTm90VGhyb3coKCkgPT4gewogIHBlcnNpc3RlbnRQcm9maWxlQXJndW1lbnRzID0gcGFyc2VBcmd1bWVudHMoWwogICAgIi0tcHJvZmlsZS1kaXIiLAogICAgIi90bXAveW91dHViZS1yZWdyZXNzaW9uLXByb2ZpbGUiLAogIF0pOwp9LCAiTWFjIOecn+mhteWbnuW9kuW/hemhu+aUr+aMgeWkjeeUqOS4k+eUqOeZu+W9lei1hOaWmeebruW9lSIpOwphc3NlcnQuZXF1YWwoCiAgcGVyc2lzdGVudFByb2ZpbGVBcmd1bWVudHMucHJvZmlsZURpciwKICAiL3RtcC95b3V0dWJlLXJlZ3Jlc3Npb24tcHJvZmlsZSIsCik7CmFzc2VydC5kZWVwRXF1YWwoCiAgc2VsZWN0Q2FzZXMoREVGQVVMVF9DQVNFUywgcGFyc2VBcmd1bWVudHMoW10pKS5tYXAoKHsgbmFtZSB9KSA9PiBuYW1lKSwKICBQTEFZRVJfQ0FTRV9OQU1FUywKICAiTWFjIOWunua1i+m7mOiupOWPqui3keaSreaUvuWZqOW5v+WRiuWcuuaZr++8jOmhtemdouW5v+WRiuefqemYteeUsSAtLXNjb3BlIGZ1bGwg5pi+5byP5omn6KGMIiwKKTsKYXNzZXJ0LmVxdWFsKAogIHNlbGVjdENhc2VzKERFRkFVTFRfQ0FTRVMsIGZ1bGxBcmd1bWVudHMpLmxlbmd0aCwKICBERUZBVUxUX0NBU0VTLmxlbmd0aCwKICAiLS1zY29wZSBmdWxsIOW/hemhu+S/neeVmeWujOaVtOmhtemdouefqemYtSIsCik7CmFzc2VydC50aHJvd3MoCiAgKCkgPT4gcGFyc2VBcmd1bWVudHMoWyItLXNjb3BlIiwgInVua25vd24iXSksCiAgLy0tc2NvcGUgbXVzdCBiZSBwbGF5ZXIgb3IgZnVsbC8sCik7Cgphc3NlcnQubWF0Y2goCiAgU05BUFNIT1RfRVhQUkVTU0lPTiwKICAvZmluZFwoY2FuZGlkYXRlXHMqPT5ccyohY2FuZGlkYXRlXC5wYXVzZWQvLAogICLlm57lvZLlv6vnhaflv4XpobvkvJjlhYjor7vlj5blrp7pmYXmraPlnKjmkq3mlL7nmoQgdmlkZW/vvIzkuI3og73lm7rlrprlj5YgU2hvcnRzIOeahOesrOS4gOS4quWNoOS9jSB2aWRlbyIsCik7CmFzc2VydC5tYXRjaCgKICBTVEFSVF9QTEFZQkFDS19FWFBSRVNTSU9OLAogIC9maW5kXChjYW5kaWRhdGVccyo9PlxzKiFjYW5kaWRhdGVcLnBhdXNlZC8sCiAgIuaSreaUvuWZqOWQr+WKqOW/hemhu+S8mOWFiOaTjeS9nOWunumZhea0u+WKqOeahCB2aWRlbyIsCik7Cgphc3NlcnQuZXF1YWwoCiAgdHlwZW9mIGNsYXNzaWZ5UGxheWJhY2tCbG9ja2VyLAogICJmdW5jdGlvbiIsCiAgIuWbnuW9kuW3peWFt+W/hemhu+WvvOWHuuWPr+a1i+ivleeahCBZb3VUdWJlIOaSreaUvumYu+aWreWIhuexu+WZqCIsCik7CmFzc2VydC5lcXVhbCgKICBjbGFzc2lmeVBsYXliYWNrQmxvY2tlcih7CiAgICBib2R5VGV4dDogIiIsCiAgICBwYXRobmFtZTogIi9lbWJlZC84ZEp5Um0yakotVSIsCiAgICBwbGF5ZXJDbGFzczogImh0bWw1LXZpZGVvLXBsYXllciB5dHAtZW1iZWQtZXJyb3IiLAogIH0pLAogICJ5b3V0dWJlLWVtYmVkLXBsYXllci1lcnJvciIsCiAgIuW1jOWFpeaSreaUvuWZqOiHqui6q+mUmeivr+S4jeiDveivr+aKpeS4uuaooeWdl+aSreaUvuWksei0pSIsCik7Cgpjb25zdCBoaWRkZW5QbGFjZWhvbGRlclNhbXBsZXMgPSBbCiAgeyByYXdBZE5vZGVzOiAwLCB2aXNpYmxlQWROb2RlU2lnbmF0dXJlczogW10gfSwKICB7IHJhd0FkTm9kZXM6IDEsIHZpc2libGVBZE5vZGVTaWduYXR1cmVzOiBbXSB9LAogIHsgcmF3QWROb2RlczogMSwgdmlzaWJsZUFkTm9kZVNpZ25hdHVyZXM6IFtdIH0sCiAgeyByYXdBZE5vZGVzOiAwLCB2aXNpYmxlQWROb2RlU2lnbmF0dXJlczogW10gfSwKXTsKY29uc3QgaGlkZGVuTWV0cmljcyA9IGNvbXB1dGVBZE5vZGVNZXRyaWNzKGhpZGRlblBsYWNlaG9sZGVyU2FtcGxlcywgMyk7CmFzc2VydC5kZWVwRXF1YWwoaGlkZGVuTWV0cmljcywgewogIG1heFJhd0FkTm9kZXM6IDEsCiAgbWF4VmlzaWJsZUFkTm9kZXM6IDAsCiAgc3RhYmxlQWROb2RlczogMCwKICBzdGFibGVBZE5vZGVTaWduYXR1cmVzOiBbXSwKfSk7Cgpjb25zdCB0cmFuc2llbnRWaXNpYmxlU2FtcGxlcyA9IFsKICB7IHJhd0FkTm9kZXM6IDAsIHZpc2libGVBZE5vZGVTaWduYXR1cmVzOiBbXSB9LAogIHsgcmF3QWROb2RlczogMSwgdmlzaWJsZUFkTm9kZVNpZ25hdHVyZXM6IFsieXRkLWFkLXNsb3QtcmVuZGVyZXIiXSB9LAogIHsgcmF3QWROb2RlczogMCwgdmlzaWJsZUFkTm9kZVNpZ25hdHVyZXM6IFtdIH0sCl07CmFzc2VydC5lcXVhbCgKICBjb21wdXRlQWROb2RlTWV0cmljcyh0cmFuc2llbnRWaXNpYmxlU2FtcGxlcywgMykuc3RhYmxlQWROb2RlcywKICAwLAogICLljZXmrKHlj6/op4HnmoTnnqzml7boioLngrnlv4XpobvorrDlvZXkvYbkuI3og73nm7TmjqXliKTlrprkuLrnqLPlrprlub/lkYrms4TmvI8iLAopOwoKY29uc3QgcGVyc2lzdGVudFZpc2libGVTYW1wbGVzID0gWwogIHsgcmF3QWROb2RlczogMSwgdmlzaWJsZUFkTm9kZVNpZ25hdHVyZXM6IFsiI3BsYXllci1hZHM+eXRkLXBsYXllci1sZWdhY3ktZGVza3RvcC13YXRjaC1hZHMtcmVuZGVyZXIiXSB9LAogIHsgcmF3QWROb2RlczogMSwgdmlzaWJsZUFkTm9kZVNpZ25hdHVyZXM6IFsiI3BsYXllci1hZHM+eXRkLXBsYXllci1sZWdhY3ktZGVza3RvcC13YXRjaC1hZHMtcmVuZGVyZXIiXSB9LAogIHsgcmF3QWROb2RlczogMSwgdmlzaWJsZUFkTm9kZVNpZ25hdHVyZXM6IFsiI3BsYXllci1hZHM+eXRkLXBsYXllci1sZWdhY3ktZGVza3RvcC13YXRjaC1hZHMtcmVuZGVyZXIiXSB9LApdOwpjb25zdCBwZXJzaXN0ZW50TWV0cmljcyA9IGNvbXB1dGVBZE5vZGVNZXRyaWNzKHBlcnNpc3RlbnRWaXNpYmxlU2FtcGxlcywgMyk7CmFzc2VydC5lcXVhbChwZXJzaXN0ZW50TWV0cmljcy5tYXhWaXNpYmxlQWROb2RlcywgMSk7CmFzc2VydC5lcXVhbChwZXJzaXN0ZW50TWV0cmljcy5zdGFibGVBZE5vZGVzLCAxKTsKCmNvbnN0IGJhc2VTbmFwc2hvdCA9IHsKICBkb2N1bWVudFZlcnNpb246IGN1cnJlbnRWZXJzaW9uLAogIHJ1bnRpbWVWZXJzaW9uOiBjdXJyZW50VmVyc2lvbiwKICBpbmplY3RlZFNjcmlwdENvdW50OiAxLAogIGluamVjdGVkU3R5bGVDb3VudDogMSwKICBkaWFnbm9zdGljczogeyBlcnJvcnM6IFtdIH0sCn07Cgpjb25zdCBoaWRkZW5TdW1tYXJ5ID0gc3VtbWFyaXplU2FtcGxlcygKICBoaWRkZW5QbGFjZWhvbGRlclNhbXBsZXMubWFwKChzYW1wbGUpID0+ICh7IC4uLmJhc2VTbmFwc2hvdCwgLi4uc2FtcGxlIH0pKSwKICB7IGV4cGVjdGVkVmVyc2lvbjogY3VycmVudFZlcnNpb24sIGV4cGVjdFBsYXliYWNrOiBmYWxzZSwgc3RhYmxlU2FtcGxlQ291bnQ6IDMgfSwKKTsKYXNzZXJ0LmVxdWFsKGhpZGRlblN1bW1hcnkub2ssIHRydWUsICLpmpDol4/ljaDkvY3oioLngrnkuI3og73orqnpobXpnaLlm57lvZLlpLHotKUiKTsKYXNzZXJ0LmVxdWFsKGhpZGRlblN1bW1hcnkuc3RhdHVzLCAicGFzc2VkIik7CmFzc2VydC5lcXVhbChoaWRkZW5TdW1tYXJ5LmFkTm9kZU1ldHJpY3MubWF4UmF3QWROb2RlcywgMSk7CmFzc2VydC5lcXVhbChoaWRkZW5TdW1tYXJ5LmFkTm9kZU1ldHJpY3Muc3RhYmxlQWROb2RlcywgMCk7Cgpjb25zdCBibG9ja2VkU3VtbWFyeSA9IHN1bW1hcml6ZVNhbXBsZXMoCiAgWwogICAgewogICAgICAuLi5iYXNlU25hcHNob3QsCiAgICAgIHBsYXliYWNrQmxvY2tlcjogInlvdXR1YmUtYm90LXNpZ25pbi1nYXRlIiwKICAgICAgcGF1c2VkOiB0cnVlLAogICAgICByZWFkeVN0YXRlOiAwLAogICAgICBkdXJhdGlvbjogbnVsbCwKICAgIH0sCiAgXSwKICB7IGV4cGVjdGVkVmVyc2lvbjogY3VycmVudFZlcnNpb24sIGV4cGVjdFBsYXliYWNrOiB0cnVlLCBzdGFibGVTYW1wbGVDb3VudDogMyB9LAopOwphc3NlcnQuZXF1YWwoYmxvY2tlZFN1bW1hcnkub2ssIGZhbHNlKTsKYXNzZXJ0LmVxdWFsKGJsb2NrZWRTdW1tYXJ5LnN0YXR1cywgImJsb2NrZWQiLCAi5aSW6YOo55m75b2VL+acuuWZqOS6uumXqOanm+W/hemhu+eLrOeri+agh+iusOS4uiBibG9ja2VkIik7Cgpjb25zdCBmYWlsZWRQbGF5YmFja1N1bW1hcnkgPSBzdW1tYXJpemVTYW1wbGVzKAogIFsKICAgIHsKICAgICAgLi4uYmFzZVNuYXBzaG90LAogICAgICBwYXVzZWQ6IHRydWUsCiAgICAgIHJlYWR5U3RhdGU6IDAsCiAgICAgIGR1cmF0aW9uOiBudWxsLAogICAgfSwKICBdLAogIHsgZXhwZWN0ZWRWZXJzaW9uOiBjdXJyZW50VmVyc2lvbiwgZXhwZWN0UGxheWJhY2s6IHRydWUsIHN0YWJsZVNhbXBsZUNvdW50OiAzIH0sCik7CmFzc2VydC5lcXVhbChmYWlsZWRQbGF5YmFja1N1bW1hcnkuc3RhdHVzLCAiZmFpbGVkIiwgIuayoeacieWklumDqOmYu+aWreagh+iusOeahOaSreaUvuWksei0peW/hemhu+S/neeVmSBmYWlsZWQiKTsKCmNvbnN0IHBhdXNlZExvYWRlZFNhbXBsZXMgPSBbCiAgewogICAgLi4uYmFzZVNuYXBzaG90LAogICAgY3VycmVudFRpbWU6IDAsCiAgICBkdXJhdGlvbjogNTI4MywKICAgIHBhdXNlZDogdHJ1ZSwKICAgIHJlYWR5U3RhdGU6IDQsCiAgfSwKICB7CiAgICAuLi5iYXNlU25hcHNob3QsCiAgICBjdXJyZW50VGltZTogMCwKICAgIGR1cmF0aW9uOiA1MjgzLAogICAgcGF1c2VkOiB0cnVlLAogICAgcmVhZHlTdGF0ZTogNCwKICB9LApdOwpjb25zdCBwYXVzZWRMb2FkZWRTdW1tYXJ5ID0gc3VtbWFyaXplU2FtcGxlcygKICBwYXVzZWRMb2FkZWRTYW1wbGVzLAogIHsgZXhwZWN0ZWRWZXJzaW9uOiBjdXJyZW50VmVyc2lvbiwgZXhwZWN0UGxheWJhY2s6IHRydWUsIHN0YWJsZVNhbXBsZUNvdW50OiAzIH0sCik7CmFzc2VydC5lcXVhbCgKICBwYXVzZWRMb2FkZWRTdW1tYXJ5LnBsYXliYWNrRXN0YWJsaXNoZWQsCiAgZmFsc2UsCiAgIuS7heWKoOi9veW5tuaaguWBnOeahOinhumikeS4jeiDveeul+S9nOecn+WunuaSreaUvuW3suW7uueriyIsCik7CmFzc2VydC5lcXVhbCgKICBwYXVzZWRMb2FkZWRTdW1tYXJ5Lm9rLAogIGZhbHNlLAogICLmkq3mlL7lmajmnKrlrp7pmYXmkq3mlL7ml7bvvIzliY3otLTniYcv5Lit5o+S5Zue5b2S5b+F6aG75aSx6LSl6ICM5LiN5piv5YGH6YCa6L+HIiwKKTsKYXNzZXJ0Lm1hdGNoKAogIHBhdXNlZExvYWRlZFN1bW1hcnkuZmFpbHVyZXMuam9pbigiXG4iKSwKICAvbWVkaWEgcGxheWJhY2sgbm90IGVzdGFibGlzaGVkLywKKTsKCmNvbnN0IHBlcnNpc3RlbnRTdW1tYXJ5ID0gc3VtbWFyaXplU2FtcGxlcygKICBwZXJzaXN0ZW50VmlzaWJsZVNhbXBsZXMubWFwKChzYW1wbGUpID0+ICh7IC4uLmJhc2VTbmFwc2hvdCwgLi4uc2FtcGxlIH0pKSwKICB7IGV4cGVjdGVkVmVyc2lvbjogY3VycmVudFZlcnNpb24sIGV4cGVjdFBsYXliYWNrOiBmYWxzZSwgc3RhYmxlU2FtcGxlQ291bnQ6IDMgfSwKKTsKYXNzZXJ0LmVxdWFsKHBlcnNpc3RlbnRTdW1tYXJ5Lm9rLCBmYWxzZSwgIuaMgee7reWPr+ingeeahOW5v+WRiuiKgueCueW/hemhu+iuqeWbnuW9kuWksei0pSIpOwphc3NlcnQubWF0Y2gocGVyc2lzdGVudFN1bW1hcnkuZmFpbHVyZXMuam9pbigiXG4iKSwgL3N0YWJsZSB2aXNpYmxlIGFkIG5vZGVzPTEvKTsKCmNvbnN0IHByZXJvbGxTdW1tYXJ5ID0gc3VtbWFyaXplU2FtcGxlcygKICBbCiAgICB7CiAgICAgIC4uLmJhc2VTbmFwc2hvdCwKICAgICAgcGhhc2U6ICJpbml0aWFsIiwKICAgICAgYWN0aXZlOiB0cnVlLAogICAgICBjdXJyZW50VGltZTogMTIsCiAgICAgIGR1cmF0aW9uOiA0OCwKICAgICAgcGF1c2VkOiBmYWxzZSwKICAgICAgbXV0ZWQ6IHRydWUsCiAgICAgIHBsYXliYWNrUmF0ZTogMTYsCiAgICAgIG9wYWNpdHk6ICIwIiwKICAgIH0sCiAgICB7CiAgICAgIC4uLmJhc2VTbmFwc2hvdCwKICAgICAgcGhhc2U6ICJpbml0aWFsIiwKICAgICAgYWN0aXZlOiBmYWxzZSwKICAgICAgY3VycmVudFRpbWU6IDIsCiAgICAgIGR1cmF0aW9uOiA1MjgzLAogICAgICBwYXVzZWQ6IGZhbHNlLAogICAgICBtdXRlZDogZmFsc2UsCiAgICAgIHBsYXliYWNrUmF0ZTogMSwKICAgICAgb3BhY2l0eTogIjEiLAogICAgfSwKICBdLAogIHsgZXhwZWN0ZWRWZXJzaW9uOiBjdXJyZW50VmVyc2lvbiwgZXhwZWN0UGxheWJhY2s6IHRydWUsIHN0YWJsZVNhbXBsZUNvdW50OiAzIH0sCik7CmFzc2VydC5lcXVhbChwcmVyb2xsU3VtbWFyeS5wcmVyb2xsU3RhdHVzLCAidmVyaWZpZWQiKTsKYXNzZXJ0LmVxdWFsKHByZXJvbGxTdW1tYXJ5LnNlZW5QcmVyb2xsQWQsIHRydWUpOwphc3NlcnQuZXF1YWwocHJlcm9sbFN1bW1hcnkuc2VlblByZXJvbGxSZWNvdmVyeSwgdHJ1ZSk7CmFzc2VydC5lcXVhbChwcmVyb2xsU3VtbWFyeS5taWRyb2xsU3RhdHVzLCAibm90LWFwcGxpY2FibGUiKTsKCmNvbnN0IG1pZHJvbGxTdW1tYXJ5ID0gc3VtbWFyaXplU2FtcGxlcygKICBbCiAgICB7CiAgICAgIC4uLmJhc2VTbmFwc2hvdCwKICAgICAgcGhhc2U6ICJpbml0aWFsIiwKICAgICAgYWN0aXZlOiBmYWxzZSwKICAgICAgY3VycmVudFRpbWU6IDEwMCwKICAgICAgZHVyYXRpb246IDUyODMsCiAgICAgIHBhdXNlZDogZmFsc2UsCiAgICAgIG11dGVkOiBmYWxzZSwKICAgICAgcGxheWJhY2tSYXRlOiAxLAogICAgICBvcGFjaXR5OiAiMSIsCiAgICB9LAogICAgewogICAgICAuLi5iYXNlU25hcHNob3QsCiAgICAgIHBoYXNlOiAic2VlayIsCiAgICAgIHNlZWtQb2ludDogMTE5NywKICAgICAgYWN0aXZlOiB0cnVlLAogICAgICBjdXJyZW50VGltZTogOCwKICAgICAgZHVyYXRpb246IDMwLAogICAgICBwYXVzZWQ6IGZhbHNlLAogICAgICBtdXRlZDogdHJ1ZSwKICAgICAgcGxheWJhY2tSYXRlOiAxNiwKICAgICAgb3BhY2l0eTogIjAiLAogICAgfSwKICAgIHsKICAgICAgLi4uYmFzZVNuYXBzaG90LAogICAgICBwaGFzZTogInNlZWsiLAogICAgICBzZWVrUG9pbnQ6IDExOTcsCiAgICAgIGFjdGl2ZTogZmFsc2UsCiAgICAgIGN1cnJlbnRUaW1lOiAxMTk4LAogICAgICBkdXJhdGlvbjogNTI4MywKICAgICAgcGF1c2VkOiBmYWxzZSwKICAgICAgbXV0ZWQ6IGZhbHNlLAogICAgICBwbGF5YmFja1JhdGU6IDEsCiAgICAgIG9wYWNpdHk6ICIxIiwKICAgIH0sCiAgXSwKICB7IGV4cGVjdGVkVmVyc2lvbjogY3VycmVudFZlcnNpb24sIGV4cGVjdFBsYXliYWNrOiB0cnVlLCBzdGFibGVTYW1wbGVDb3VudDogMyB9LAopOwphc3NlcnQuZXF1YWwobWlkcm9sbFN1bW1hcnkubWlkcm9sbFN0YXR1cywgInZlcmlmaWVkIik7CmFzc2VydC5lcXVhbChtaWRyb2xsU3VtbWFyeS5zZWVuTWlkcm9sbEFkLCB0cnVlKTsKYXNzZXJ0LmVxdWFsKG1pZHJvbGxTdW1tYXJ5LnNlZW5NaWRyb2xsUmVjb3ZlcnksIHRydWUpOwphc3NlcnQuZGVlcEVxdWFsKG1pZHJvbGxTdW1tYXJ5LnNlZWtQb2ludHNUZXN0ZWQsIFsxMTk3XSk7Cgpjb25zdCBub01pZHJvbGxTdW1tYXJ5ID0gc3VtbWFyaXplU2FtcGxlcygKICBbCiAgICB7CiAgICAgIC4uLmJhc2VTbmFwc2hvdCwKICAgICAgcGhhc2U6ICJpbml0aWFsIiwKICAgICAgYWN0aXZlOiBmYWxzZSwKICAgICAgY3VycmVudFRpbWU6IDEwMCwKICAgICAgZHVyYXRpb246IDUyODMsCiAgICAgIHBhdXNlZDogZmFsc2UsCiAgICAgIG11dGVkOiBmYWxzZSwKICAgICAgcGxheWJhY2tSYXRlOiAxLAogICAgICBvcGFjaXR5OiAiMSIsCiAgICB9LAogICAgewogICAgICAuLi5iYXNlU25hcHNob3QsCiAgICAgIHBoYXNlOiAic2VlayIsCiAgICAgIHNlZWtQb2ludDogMTE5NywKICAgICAgYWN0aXZlOiBmYWxzZSwKICAgICAgY3VycmVudFRpbWU6IDExOTgsCiAgICAgIGR1cmF0aW9uOiA1MjgzLAogICAgICBwYXVzZWQ6IGZhbHNlLAogICAgICBtdXRlZDogZmFsc2UsCiAgICAgIHBsYXliYWNrUmF0ZTogMSwKICAgICAgb3BhY2l0eTogIjEiLAogICAgfSwKICBdLAogIHsgZXhwZWN0ZWRWZXJzaW9uOiBjdXJyZW50VmVyc2lvbiwgZXhwZWN0UGxheWJhY2s6IHRydWUsIHN0YWJsZVNhbXBsZUNvdW50OiAzIH0sCik7CmFzc2VydC5lcXVhbChub01pZHJvbGxTdW1tYXJ5Lm9rLCB0cnVlKTsKYXNzZXJ0LmVxdWFsKAogIG5vTWlkcm9sbFN1bW1hcnkubWlkcm9sbFN0YXR1cywKICAibm90LW9ic2VydmVkIiwKICAi5pat54K55q2j5bi45pKt5pS+5Y+q6IO96K+B5piO5YW85a655oCn77yM5LiN6IO95YaS5YWF55yf5a6e5Lit5o+S5bm/5ZGK5bey5aSE55CGIiwKKTsKCmNvbnN0IHN0dWNrTWlkcm9sbFN1bW1hcnkgPSBzdW1tYXJpemVTYW1wbGVzKAogIFsKICAgIHsKICAgICAgLi4uYmFzZVNuYXBzaG90LAogICAgICBwaGFzZTogImluaXRpYWwiLAogICAgICBhY3RpdmU6IGZhbHNlLAogICAgICBjdXJyZW50VGltZTogMTAwLAogICAgICBkdXJhdGlvbjogNTI4MywKICAgICAgcGF1c2VkOiBmYWxzZSwKICAgICAgbXV0ZWQ6IGZhbHNlLAogICAgICBwbGF5YmFja1JhdGU6IDEsCiAgICAgIG9wYWNpdHk6ICIxIiwKICAgIH0sCiAgICB7CiAgICAgIC4uLmJhc2VTbmFwc2hvdCwKICAgICAgcGhhc2U6ICJzZWVrIiwKICAgICAgc2Vla1BvaW50OiAxMTk3LAogICAgICBhY3RpdmU6IHRydWUsCiAgICAgIGN1cnJlbnRUaW1lOiA4LAogICAgICBkdXJhdGlvbjogMzAsCiAgICAgIHBhdXNlZDogZmFsc2UsCiAgICAgIG11dGVkOiB0cnVlLAogICAgICBwbGF5YmFja1JhdGU6IDE2LAogICAgICBvcGFjaXR5OiAiMCIsCiAgICB9LAogIF0sCiAgeyBleHBlY3RlZFZlcnNpb246IGN1cnJlbnRWZXJzaW9uLCBleHBlY3RQbGF5YmFjazogdHJ1ZSwgc3RhYmxlU2FtcGxlQ291bnQ6IDMgfSwKKTsKYXNzZXJ0LmVxdWFsKHN0dWNrTWlkcm9sbFN1bW1hcnkub2ssIGZhbHNlKTsKYXNzZXJ0LmVxdWFsKHN0dWNrTWlkcm9sbFN1bW1hcnkubWlkcm9sbFN0YXR1cywgImZhaWxlZCIpOwphc3NlcnQubWF0Y2goc3R1Y2tNaWRyb2xsU3VtbWFyeS5mYWlsdXJlcy5qb2luKCJcbiIpLCAvbWlkcm9sbCBhZCBkaWQgbm90IHJlY292ZXIvKTsKCmNvbnN0IGNsZWFuZWRBZEJyZWFrID0gaW5zcGVjdEFkQnJlYWtQYXlsb2FkKAogIEpTT04uc3RyaW5naWZ5KHsgcmVzcG9uc2VDb250ZXh0OiB7IHJlc3BvbnNlSWQ6ICJvayIgfSwgdHJhY2tpbmdQYXJhbXM6ICJ0cmFja2luZyIgfSksCik7CmFzc2VydC5lcXVhbChjbGVhbmVkQWRCcmVhay5wYXJzZWQsIHRydWUpOwphc3NlcnQuZXF1YWwoY2xlYW5lZEFkQnJlYWsuY2xlYW5lZCwgdHJ1ZSk7CmFzc2VydC5kZWVwRXF1YWwoY2xlYW5lZEFkQnJlYWsuYWRGaWVsZFBhdGhzLCBbXSk7Cgpjb25zdCBkaXJ0eUFkQnJlYWsgPSBpbnNwZWN0QWRCcmVha1BheWxvYWQoCiAgSlNPTi5zdHJpbmdpZnkoewogICAgcmVzcG9uc2VDb250ZXh0OiB7IHJlc3BvbnNlSWQ6ICJkaXJ0eSIgfSwKICAgIHBsYXllckFkczogW3sgYWRQbGFjZW1lbnRSZW5kZXJlcjogeyBjb25maWc6IHsga2luZDogIm1pZHJvbGwiIH0gfSB9XSwKICAgIG5lc3RlZDogeyBhZFNsb3RzOiBbeyBhZFNsb3RSZW5kZXJlcjogeyBzbG90SWQ6ICJzbG90LTEiIH0gfV0gfSwKICB9KSwKKTsKYXNzZXJ0LmVxdWFsKGRpcnR5QWRCcmVhay5jbGVhbmVkLCBmYWxzZSk7CmFzc2VydC5kZWVwRXF1YWwoZGlydHlBZEJyZWFrLmFkRmllbGRQYXRocywgWwogICJuZXN0ZWQuYWRTbG90cyIsCiAgIm5lc3RlZC5hZFNsb3RzWzBdLmFkU2xvdFJlbmRlcmVyIiwKICAicGxheWVyQWRzIiwKICAicGxheWVyQWRzWzBdLmFkUGxhY2VtZW50UmVuZGVyZXIiLApdKTsKCmFzc2VydC5lcXVhbChzdW1tYXJpemVBZEJyZWFrRXZpZGVuY2UoW10pLnN0YXR1cywgIm5vdC1vYnNlcnZlZCIpOwphc3NlcnQuZXF1YWwoCiAgc3VtbWFyaXplQWRCcmVha0V2aWRlbmNlKFt7IHJlcXVlc3RJZDogIjEiLCBwYXlsb2FkOiBjbGVhbmVkQWRCcmVhayB9XSkuc3RhdHVzLAogICJ2ZXJpZmllZCIsCik7CmNvbnN0IGZhaWxlZEFkQnJlYWtFdmlkZW5jZSA9IHN1bW1hcml6ZUFkQnJlYWtFdmlkZW5jZShbCiAgeyByZXF1ZXN0SWQ6ICIyIiwgcGF5bG9hZDogZGlydHlBZEJyZWFrIH0sCl0pOwphc3NlcnQuZXF1YWwoZmFpbGVkQWRCcmVha0V2aWRlbmNlLnN0YXR1cywgImZhaWxlZCIpOwphc3NlcnQuZGVlcEVxdWFsKGZhaWxlZEFkQnJlYWtFdmlkZW5jZS5hZEZpZWxkUGF0aHMsIGRpcnR5QWRCcmVhay5hZEZpZWxkUGF0aHMpOwphc3NlcnQuZXF1YWwoCiAgc3VtbWFyaXplQWRCcmVha0V2aWRlbmNlKFt7IHJlcXVlc3RJZDogIjMiLCBlcnJvcjogImJvZHkgdW5hdmFpbGFibGUiIH1dKS5zdGF0dXMsCiAgInVuYXZhaWxhYmxlIiwKKTsKCmNvbnNvbGUubG9nKCJQQVNTOiBNYWMgQ2hyb21lIHJlZ3Jlc3Npb24gY2xhc3NpZmllcyByYXcsIHZpc2libGUsIGFuZCBzdGFibGUgYWQgbm9kZXMiKTsK
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+
+const {
+  DEFAULT_CASES,
+  PLAYER_CASE_NAMES,
+  classifyPlaybackBlocker,
+  computeAdNodeMetrics,
+  inspectAdBreakPayload,
+  loadExpectedVersion,
+  parseArguments,
+  selectCases,
+  SNAPSHOT_EXPRESSION,
+  START_PLAYBACK_EXPRESSION,
+  summarizeAdBreakEvidence,
+  summarizeSamples,
+} = require("../tools/mac-chrome-regression.cjs");
+
+const projectRoot = path.resolve(__dirname, "..");
+const verifyScript = fs.readFileSync(path.join(projectRoot, "tools/verify.sh"), "utf8");
+const currentVersion = loadExpectedVersion(projectRoot);
+
+assert.match(
+  verifyScript,
+  /mac-chrome-regression\.test\.cjs/,
+  "统一验证入口必须执行 Mac Chrome 回归工具测试",
+);
+
+assert.equal(
+  loadExpectedVersion(projectRoot),
+  currentVersion,
+  "Mac 回归工具必须从项目 VERSION 自动读取当前版本",
+);
+
+const requiredCases = [
+  "home",
+  "search",
+  "watch",
+  "movie-1",
+  "movie-2",
+  "shorts",
+  "playlist",
+  "subscriptions",
+  "channel",
+  "post",
+  "hashtag",
+  "clip",
+  "live",
+  "embed",
+];
+assert.deepEqual(
+  requiredCases.every((name) => DEFAULT_CASES.some((testCase) => testCase.name === name)),
+  true,
+  "Mac 回归矩阵必须包含所有网页入口和播放器入口",
+);
+
+const parsedArguments = parseArguments([
+  "--rounds",
+  "4",
+  "--only",
+  "home,clip",
+  "--output",
+  "/tmp/youtube-regression-test",
+]);
+assert.equal(parsedArguments.rounds, 4);
+assert.deepEqual([...parsedArguments.only], ["home", "clip"]);
+assert.equal(parsedArguments.outputDir, "/tmp/youtube-regression-test");
+assert.equal(parsedArguments.scope, "player");
+
+const fullArguments = parseArguments(["--scope", "full"]);
+assert.equal(fullArguments.scope, "full");
+let persistentProfileArguments;
+assert.doesNotThrow(() => {
+  persistentProfileArguments = parseArguments([
+    "--profile-dir",
+    "/tmp/youtube-regression-profile",
+  ]);
+}, "Mac 真页回归必须支持复用专用登录资料目录");
+assert.equal(
+  persistentProfileArguments.profileDir,
+  "/tmp/youtube-regression-profile",
+);
+assert.deepEqual(
+  selectCases(DEFAULT_CASES, parseArguments([])).map(({ name }) => name),
+  PLAYER_CASE_NAMES,
+  "Mac 实测默认只跑播放器广告场景，页面广告矩阵由 --scope full 显式执行",
+);
+assert.equal(
+  selectCases(DEFAULT_CASES, fullArguments).length,
+  DEFAULT_CASES.length,
+  "--scope full 必须保留完整页面矩阵",
+);
+assert.throws(
+  () => parseArguments(["--scope", "unknown"]),
+  /--scope must be player or full/,
+);
+
+assert.match(
+  SNAPSHOT_EXPRESSION,
+  /find\(candidate\s*=>\s*!candidate\.paused/,
+  "回归快照必须优先读取实际正在播放的 video，不能固定取 Shorts 的第一个占位 video",
+);
+assert.match(
+  START_PLAYBACK_EXPRESSION,
+  /find\(candidate\s*=>\s*!candidate\.paused/,
+  "播放器启动必须优先操作实际活动的 video",
+);
+
+assert.equal(
+  typeof classifyPlaybackBlocker,
+  "function",
+  "回归工具必须导出可测试的 YouTube 播放阻断分类器",
+);
+assert.equal(
+  classifyPlaybackBlocker({
+    bodyText: "",
+    pathname: "/embed/8dJyRm2jJ-U",
+    playerClass: "html5-video-player ytp-embed-error",
+  }),
+  "youtube-embed-player-error",
+  "嵌入播放器自身错误不能误报为模块播放失败",
+);
+
+const hiddenPlaceholderSamples = [
+  { rawAdNodes: 0, visibleAdNodeSignatures: [] },
+  { rawAdNodes: 1, visibleAdNodeSignatures: [] },
+  { rawAdNodes: 1, visibleAdNodeSignatures: [] },
+  { rawAdNodes: 0, visibleAdNodeSignatures: [] },
+];
+const hiddenMetrics = computeAdNodeMetrics(hiddenPlaceholderSamples, 3);
+assert.deepEqual(hiddenMetrics, {
+  maxRawAdNodes: 1,
+  maxVisibleAdNodes: 0,
+  stableAdNodes: 0,
+  stableAdNodeSignatures: [],
+});
+
+const transientVisibleSamples = [
+  { rawAdNodes: 0, visibleAdNodeSignatures: [] },
+  { rawAdNodes: 1, visibleAdNodeSignatures: ["ytd-ad-slot-renderer"] },
+  { rawAdNodes: 0, visibleAdNodeSignatures: [] },
+];
+assert.equal(
+  computeAdNodeMetrics(transientVisibleSamples, 3).stableAdNodes,
+  0,
+  "单次可见的瞬时节点必须记录但不能直接判定为稳定广告泄漏",
+);
+
+const persistentVisibleSamples = [
+  { rawAdNodes: 1, visibleAdNodeSignatures: ["#player-ads>ytd-player-legacy-desktop-watch-ads-renderer"] },
+  { rawAdNodes: 1, visibleAdNodeSignatures: ["#player-ads>ytd-player-legacy-desktop-watch-ads-renderer"] },
+  { rawAdNodes: 1, visibleAdNodeSignatures: ["#player-ads>ytd-player-legacy-desktop-watch-ads-renderer"] },
+];
+const persistentMetrics = computeAdNodeMetrics(persistentVisibleSamples, 3);
+assert.equal(persistentMetrics.maxVisibleAdNodes, 1);
+assert.equal(persistentMetrics.stableAdNodes, 1);
+
+const baseSnapshot = {
+  documentVersion: currentVersion,
+  runtimeVersion: currentVersion,
+  injectedScriptCount: 1,
+  injectedStyleCount: 1,
+  diagnostics: { errors: [] },
+};
+
+const hiddenSummary = summarizeSamples(
+  hiddenPlaceholderSamples.map((sample) => ({ ...baseSnapshot, ...sample })),
+  { expectedVersion: currentVersion, expectPlayback: false, stableSampleCount: 3 },
+);
+assert.equal(hiddenSummary.ok, true, "隐藏占位节点不能让页面回归失败");
+assert.equal(hiddenSummary.status, "passed");
+assert.equal(hiddenSummary.adNodeMetrics.maxRawAdNodes, 1);
+assert.equal(hiddenSummary.adNodeMetrics.stableAdNodes, 0);
+
+const blockedSummary = summarizeSamples(
+  [
+    {
+      ...baseSnapshot,
+      playbackBlocker: "youtube-bot-signin-gate",
+      paused: true,
+      readyState: 0,
+      duration: null,
+    },
+  ],
+  { expectedVersion: currentVersion, expectPlayback: true, stableSampleCount: 3 },
+);
+assert.equal(blockedSummary.ok, false);
+assert.equal(blockedSummary.status, "blocked", "外部登录/机器人门槛必须独立标记为 blocked");
+
+const failedPlaybackSummary = summarizeSamples(
+  [
+    {
+      ...baseSnapshot,
+      paused: true,
+      readyState: 0,
+      duration: null,
+    },
+  ],
+  { expectedVersion: currentVersion, expectPlayback: true, stableSampleCount: 3 },
+);
+assert.equal(failedPlaybackSummary.status, "failed", "没有外部阻断标记的播放失败必须保留 failed");
+
+const pausedLoadedSamples = [
+  {
+    ...baseSnapshot,
+    currentTime: 0,
+    duration: 5283,
+    paused: true,
+    readyState: 4,
+  },
+  {
+    ...baseSnapshot,
+    currentTime: 0,
+    duration: 5283,
+    paused: true,
+    readyState: 4,
+  },
+];
+const pausedLoadedSummary = summarizeSamples(
+  pausedLoadedSamples,
+  { expectedVersion: currentVersion, expectPlayback: true, stableSampleCount: 3 },
+);
+assert.equal(
+  pausedLoadedSummary.playbackEstablished,
+  false,
+  "仅加载并暂停的视频不能算作真实播放已建立",
+);
+assert.equal(
+  pausedLoadedSummary.ok,
+  false,
+  "播放器未实际播放时，前贴片/中插回归必须失败而不是假通过",
+);
+assert.match(
+  pausedLoadedSummary.failures.join("\n"),
+  /media playback not established/,
+);
+
+const persistentSummary = summarizeSamples(
+  persistentVisibleSamples.map((sample) => ({ ...baseSnapshot, ...sample })),
+  { expectedVersion: currentVersion, expectPlayback: false, stableSampleCount: 3 },
+);
+assert.equal(persistentSummary.ok, false, "持续可见的广告节点必须让回归失败");
+assert.match(persistentSummary.failures.join("\n"), /stable visible ad nodes=1/);
+
+const prerollSummary = summarizeSamples(
+  [
+    {
+      ...baseSnapshot,
+      phase: "initial",
+      active: true,
+      currentTime: 12,
+      duration: 48,
+      paused: false,
+      muted: true,
+      playbackRate: 16,
+      opacity: "0",
+    },
+    {
+      ...baseSnapshot,
+      phase: "initial",
+      active: false,
+      currentTime: 2,
+      duration: 5283,
+      paused: false,
+      muted: false,
+      playbackRate: 1,
+      opacity: "1",
+    },
+  ],
+  { expectedVersion: currentVersion, expectPlayback: true, stableSampleCount: 3 },
+);
+assert.equal(prerollSummary.prerollStatus, "verified");
+assert.equal(prerollSummary.seenPrerollAd, true);
+assert.equal(prerollSummary.seenPrerollRecovery, true);
+assert.equal(prerollSummary.midrollStatus, "not-applicable");
+
+const midrollSummary = summarizeSamples(
+  [
+    {
+      ...baseSnapshot,
+      phase: "initial",
+      active: false,
+      currentTime: 100,
+      duration: 5283,
+      paused: false,
+      muted: false,
+      playbackRate: 1,
+      opacity: "1",
+    },
+    {
+      ...baseSnapshot,
+      phase: "seek",
+      seekPoint: 1197,
+      active: true,
+      currentTime: 8,
+      duration: 30,
+      paused: false,
+      muted: true,
+      playbackRate: 16,
+      opacity: "0",
+    },
+    {
+      ...baseSnapshot,
+      phase: "seek",
+      seekPoint: 1197,
+      active: false,
+      currentTime: 1198,
+      duration: 5283,
+      paused: false,
+      muted: false,
+      playbackRate: 1,
+      opacity: "1",
+    },
+  ],
+  { expectedVersion: currentVersion, expectPlayback: true, stableSampleCount: 3 },
+);
+assert.equal(midrollSummary.midrollStatus, "verified");
+assert.equal(midrollSummary.seenMidrollAd, true);
+assert.equal(midrollSummary.seenMidrollRecovery, true);
+assert.deepEqual(midrollSummary.seekPointsTested, [1197]);
+
+const noMidrollSummary = summarizeSamples(
+  [
+    {
+      ...baseSnapshot,
+      phase: "initial",
+      active: false,
+      currentTime: 100,
+      duration: 5283,
+      paused: false,
+      muted: false,
+      playbackRate: 1,
+      opacity: "1",
+    },
+    {
+      ...baseSnapshot,
+      phase: "seek",
+      seekPoint: 1197,
+      active: false,
+      currentTime: 1198,
+      duration: 5283,
+      paused: false,
+      muted: false,
+      playbackRate: 1,
+      opacity: "1",
+    },
+  ],
+  { expectedVersion: currentVersion, expectPlayback: true, stableSampleCount: 3 },
+);
+assert.equal(noMidrollSummary.ok, true);
+assert.equal(
+  noMidrollSummary.midrollStatus,
+  "not-observed",
+  "断点正常播放只能证明兼容性，不能冒充真实中插广告已处理",
+);
+
+const stuckMidrollSummary = summarizeSamples(
+  [
+    {
+      ...baseSnapshot,
+      phase: "initial",
+      active: false,
+      currentTime: 100,
+      duration: 5283,
+      paused: false,
+      muted: false,
+      playbackRate: 1,
+      opacity: "1",
+    },
+    {
+      ...baseSnapshot,
+      phase: "seek",
+      seekPoint: 1197,
+      active: true,
+      currentTime: 8,
+      duration: 30,
+      paused: false,
+      muted: true,
+      playbackRate: 16,
+      opacity: "0",
+    },
+  ],
+  { expectedVersion: currentVersion, expectPlayback: true, stableSampleCount: 3 },
+);
+assert.equal(stuckMidrollSummary.ok, false);
+assert.equal(stuckMidrollSummary.midrollStatus, "failed");
+assert.match(stuckMidrollSummary.failures.join("\n"), /midroll ad did not recover/);
+
+const cleanedAdBreak = inspectAdBreakPayload(
+  JSON.stringify({ responseContext: { responseId: "ok" }, trackingParams: "tracking" }),
+);
+assert.equal(cleanedAdBreak.parsed, true);
+assert.equal(cleanedAdBreak.cleaned, true);
+assert.deepEqual(cleanedAdBreak.adFieldPaths, []);
+
+const dirtyAdBreak = inspectAdBreakPayload(
+  JSON.stringify({
+    responseContext: { responseId: "dirty" },
+    playerAds: [{ adPlacementRenderer: { config: { kind: "midroll" } } }],
+    nested: { adSlots: [{ adSlotRenderer: { slotId: "slot-1" } }] },
+  }),
+);
+assert.equal(dirtyAdBreak.cleaned, false);
+assert.deepEqual(dirtyAdBreak.adFieldPaths, [
+  "nested.adSlots",
+  "nested.adSlots[0].adSlotRenderer",
+  "playerAds",
+  "playerAds[0].adPlacementRenderer",
+]);
+
+assert.equal(summarizeAdBreakEvidence([]).status, "not-observed");
+assert.equal(
+  summarizeAdBreakEvidence([{ requestId: "1", payload: cleanedAdBreak }]).status,
+  "verified",
+);
+const failedAdBreakEvidence = summarizeAdBreakEvidence([
+  { requestId: "2", payload: dirtyAdBreak },
+]);
+assert.equal(failedAdBreakEvidence.status, "failed");
+assert.deepEqual(failedAdBreakEvidence.adFieldPaths, dirtyAdBreak.adFieldPaths);
+assert.equal(
+  summarizeAdBreakEvidence([{ requestId: "3", error: "body unavailable" }]).status,
+  "unavailable",
+);
+
+console.log("PASS: Mac Chrome regression classifies raw, visible, and stable ad nodes");

@@ -1,1 +1,197 @@
-IyEvYmluL3NoCgpzZXQgLWV1CgpVQVNTRVRTX1VSTD0iaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3VCbG9ja09yaWdpbi91QXNzZXRzL21hc3Rlci9maWx0ZXJzL3F1aWNrLWZpeGVzLnR4dCIKQURHVUFSRF9VUkw9Imh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9BZGd1YXJkVGVhbS9BZGd1YXJkRmlsdGVycy9tYXN0ZXIvQmFzZUZpbHRlci9zZWN0aW9ucy9zcGVjaWZpYy50eHQiCk5BVElWRV9SRVBPX1VSTD0iaHR0cHM6Ly9naXRodWIuY29tL01hYXNlYS9zZ21vZHVsZS5naXQiCk5BVElWRV9CQVNFTElORV9DT01NSVQ9IjY1MDc1Y2RiMzg4ZmM1ZTMwOTRhZmQ3ZTczMTRjNjdiMjQzZjM1MjUiClVBU1NFVFNfQkFTRUxJTkVfQ09NTUlUPSI5YmJkNDkxMDQyYzNlNmMzYWRlMjgxYWI0M2RlNzUwMmQ3NTM0N2Q0IgpBREdVQVJEX0JBU0VMSU5FX0NPTU1JVD0iYzZmNGY0YWJmZmNkYTEzYjY2Y2VkOTIzZDQzNDhlNzYzMzc0NWI5MCIKVUFTU0VUU19CQVNFTElORV9IQVNIPSI3OGM5ZmQ1ZmI0MTA2Mjc3MzYwNDVkZWEzMjRhNjllYmMwMmFjNzgwZjhlNjRmZTViNWNmMzNlNzdkNDdiNzUxIgpBREdVQVJEX0JBU0VMSU5FX0hBU0g9Ijg1YWIyYjllNjdkZGFkNmMyMzRlZTU2MGU4ZTYyY2I0NmIxMzQwOTg4MmQ1NGE2M2JlYjE4ZjJkMmQ0MjFiYzkiCgp1YXNzZXRzX2ZpbGU9IiIKYWRndWFyZF9maWxlPSIiCm5hdGl2ZV9oZWFkPSIiCnNraXBfYmFzZWxpbmU9MApzdHJpY3Q9MAp0ZW1wb3JhcnlfZmlsZXM9IiIKCnVzYWdlKCkgewogIHByaW50ZiAnJXNcbicgXAogICAgIlVzYWdlOiAkMCBbLS11YXNzZXRzLWZpbGUgUEFUSF0gWy0tYWRndWFyZC1maWxlIFBBVEhdIFstLW5hdGl2ZS1oZWFkIFNIQV0gWy0tc2tpcC1iYXNlbGluZV0gWy0tc3RyaWN0XSIKfQoKY2xlYW51cCgpIHsKICBmb3IgZmlsZSBpbiAkdGVtcG9yYXJ5X2ZpbGVzOyBkbwogICAgcm0gLWYgLS0gIiRmaWxlIgogIGRvbmUKfQoKbmV3X3RlbXBvcmFyeV9maWxlKCkgewogIHRlbXBvcmFyeV9maWxlPSQobWt0ZW1wICIke1RNUERJUjotL3RtcH0veW91dHViZS11cHN0cmVhbS1hdWRpdC5YWFhYWFgiKQogIHRlbXBvcmFyeV9maWxlcz0iJHRlbXBvcmFyeV9maWxlcyAkdGVtcG9yYXJ5X2ZpbGUiCn0KCmRvd25sb2FkX3NvdXJjZSgpIHsKICBjdXJsIC0tZmFpbCAtLXNpbGVudCAtLXNob3ctZXJyb3IgLS1sb2NhdGlvbiAtLW1heC10aW1lIDMwICIkMSIgLW8gIiQyIgp9CgpleHRyYWN0X3Vhc3NldHNfYmxvY2soKSB7CiAgYXdrICcKICAgIC95b3V0dWJlX2FudGlhZGJsb2NrX2FuZF9hZHMvIHsgY2FwdHVyZSA9IDEgfQogICAgY2FwdHVyZSAmJiAvZ2l0aHViLmNvbVwvdUJsb2NrT3JpZ2luXC91QXNzZXRzXC9pc3N1ZXNcLzMzNjcvIHsgZXhpdCB9CiAgICBjYXB0dXJlIHsgcHJpbnQgfQogICcgIiQxIiA+ICIkMiIKfQoKZXh0cmFjdF9hZGd1YXJkX2Jsb2NrKCkgewogIGF3ayAnCiAgICAvU1RBUlQ6IFlvdXR1YmUgd2hpdGVzY3JlZW4gZml4LyB7IGNhcHR1cmUgPSAxIH0KICAgIGNhcHR1cmUgeyBwcmludCB9CiAgICAvRU5EOiBZb3V0dWJlIHdoaXRlc2NyZWVuIGZpeC8geyBleGl0IH0KICAnICIkMSIgPiAiJDIiCn0KCnJlcXVpcmVfc2lnbmF0dXJlKCkgewogIGlmICEgZ3JlcCAtRnEgLS0gIiQyIiAiJDEiOyB0aGVuCiAgICBwcmludGYgJ01JU1NJTkcgJXMgc2lnbmF0dXJlOiAlc1xuJyAiJDMiICIkMiIgPiYyCiAgICByZXR1cm4gMQogIGZpCn0KCmhhc2hfZmlsZSgpIHsKICBpZiBjb21tYW5kIC12IHNoYXN1bSA+L2Rldi9udWxsIDI+JjE7IHRoZW4KICAgIHNoYXN1bSAtYSAyNTYgIiQxIiB8IGF3ayAne3ByaW50ICQxfScKICBlbGlmIGNvbW1hbmQgLXYgc2hhMjU2c3VtID4vZGV2L251bGwgMj4mMTsgdGhlbgogICAgc2hhMjU2c3VtICIkMSIgfCBhd2sgJ3twcmludCAkMX0nCiAgZWxzZQogICAgcHJpbnRmICdOZWl0aGVyIHNoYXN1bSBub3Igc2hhMjU2c3VtIGlzIGF2YWlsYWJsZS5cbicgPiYyCiAgICByZXR1cm4gMQogIGZpCn0KCmNoZWNrX2hhc2goKSB7CiAgYWN0dWFsPSQoaGFzaF9maWxlICIkMSIpCiAgaWYgWyAiJGFjdHVhbCIgPSAiJDIiIF07IHRoZW4KICAgIHByaW50ZiAnJXMgYmFzZWxpbmU6IHVuY2hhbmdlZCAoJXMpXG4nICIkMyIgIiQ0IgogICAgcmV0dXJuIDAKICBmaQogIHByaW50ZiAnJXMgYmFzZWxpbmU6IENIQU5HRUQgKGJhc2VsaW5lIGNvbW1pdCAlcywgY3VycmVudCBoYXNoICVzKVxuJyBcCiAgICAiJDMiICIkNCIgIiRhY3R1YWwiCiAgcmV0dXJuIDEKfQoKd2hpbGUgWyAiJCMiIC1ndCAwIF07IGRvCiAgY2FzZSAiJDEiIGluCiAgICAtLXVhc3NldHMtZmlsZSkKICAgICAgWyAiJCMiIC1nZSAyIF0gfHwgeyB1c2FnZSA+JjI7IGV4aXQgMjsgfQogICAgICB1YXNzZXRzX2ZpbGU9JDIKICAgICAgc2hpZnQKICAgICAgOzsKICAgIC0tYWRndWFyZC1maWxlKQogICAgICBbICIkIyIgLWdlIDIgXSB8fCB7IHVzYWdlID4mMjsgZXhpdCAyOyB9CiAgICAgIGFkZ3VhcmRfZmlsZT0kMgogICAgICBzaGlmdAogICAgICA7OwogICAgLS1uYXRpdmUtaGVhZCkKICAgICAgWyAiJCMiIC1nZSAyIF0gfHwgeyB1c2FnZSA+JjI7IGV4aXQgMjsgfQogICAgICBuYXRpdmVfaGVhZD0kMgogICAgICBzaGlmdAogICAgICA7OwogICAgLS1za2lwLWJhc2VsaW5lKSBza2lwX2Jhc2VsaW5lPTEgOzsKICAgIC0tc3RyaWN0KSBzdHJpY3Q9MSA7OwogICAgLWh8LS1oZWxwKSB1c2FnZTsgZXhpdCAwIDs7CiAgICAqKSB1c2FnZSA+JjI7IGV4aXQgMiA7OwogIGVzYWMKICBzaGlmdApkb25lCgp0cmFwIGNsZWFudXAgRVhJVCBIVVAgSU5UIFRFUk0KCmlmIFsgLXogIiRuYXRpdmVfaGVhZCIgXTsgdGhlbgogIG5hdGl2ZV9oZWFkPSQoZ2l0IGxzLXJlbW90ZSAiJE5BVElWRV9SRVBPX1VSTCIgSEVBRCB8IGF3ayAnTlIgPT0gMSB7IHByaW50ICQxIH0nKQpmaQoKWyAtbiAiJG5hdGl2ZV9oZWFkIiBdIHx8IHsKICBwcmludGYgJ0NvdWxkIG5vdCByZXNvbHZlIE1hYXNlYSBuYXRpdmUgdXBzdHJlYW0gSEVBRC5cbicgPiYyCiAgZXhpdCAxCn0KCmF1ZGl0X2NoYW5nZWQ9MAppZiBbICIkbmF0aXZlX2hlYWQiID0gIiROQVRJVkVfQkFTRUxJTkVfQ09NTUlUIiBdOyB0aGVuCiAgcHJpbnRmICdNYWFzZWEgbmF0aXZlIGJhc2VsaW5lOiB1bmNoYW5nZWQgKCVzKVxuJyAiJE5BVElWRV9CQVNFTElORV9DT01NSVQiCmVsc2UKICBwcmludGYgJ01hYXNlYSBuYXRpdmUgYmFzZWxpbmU6IENIQU5HRUQgKGJhc2VsaW5lIGNvbW1pdCAlcywgY3VycmVudCBjb21taXQgJXMpXG4nIFwKICAgICIkTkFUSVZFX0JBU0VMSU5FX0NPTU1JVCIgIiRuYXRpdmVfaGVhZCIKICBhdWRpdF9jaGFuZ2VkPTEKZmkKCmlmIFsgLXogIiR1YXNzZXRzX2ZpbGUiIF07IHRoZW4KICBuZXdfdGVtcG9yYXJ5X2ZpbGUKICB1YXNzZXRzX2ZpbGU9JHRlbXBvcmFyeV9maWxlCiAgZG93bmxvYWRfc291cmNlICIkVUFTU0VUU19VUkwiICIkdWFzc2V0c19maWxlIgpmaQoKaWYgWyAteiAiJGFkZ3VhcmRfZmlsZSIgXTsgdGhlbgogIG5ld190ZW1wb3JhcnlfZmlsZQogIGFkZ3VhcmRfZmlsZT0kdGVtcG9yYXJ5X2ZpbGUKICBkb3dubG9hZF9zb3VyY2UgIiRBREdVQVJEX1VSTCIgIiRhZGd1YXJkX2ZpbGUiCmZpCgpbIC1mICIkdWFzc2V0c19maWxlIiBdIHx8IHsgcHJpbnRmICdNaXNzaW5nIHVBc3NldHMgc291cmNlOiAlc1xuJyAiJHVhc3NldHNfZmlsZSIgPiYyOyBleGl0IDE7IH0KWyAtZiAiJGFkZ3VhcmRfZmlsZSIgXSB8fCB7IHByaW50ZiAnTWlzc2luZyBBZEd1YXJkIHNvdXJjZTogJXNcbicgIiRhZGd1YXJkX2ZpbGUiID4mMjsgZXhpdCAxOyB9CgpuZXdfdGVtcG9yYXJ5X2ZpbGUKdWFzc2V0c19ibG9jaz0kdGVtcG9yYXJ5X2ZpbGUKbmV3X3RlbXBvcmFyeV9maWxlCmFkZ3VhcmRfYmxvY2s9JHRlbXBvcmFyeV9maWxlCmV4dHJhY3RfdWFzc2V0c19ibG9jayAiJHVhc3NldHNfZmlsZSIgIiR1YXNzZXRzX2Jsb2NrIgpleHRyYWN0X2FkZ3VhcmRfYmxvY2sgIiRhZGd1YXJkX2ZpbGUiICIkYWRndWFyZF9ibG9jayIKClsgLXMgIiR1YXNzZXRzX2Jsb2NrIiBdIHx8IHsgcHJpbnRmICdDb3VsZCBub3QgbG9jYXRlIHRoZSB1QXNzZXRzIFlvdVR1YmUgYmxvY2suXG4nID4mMjsgZXhpdCAxOyB9ClsgLXMgIiRhZGd1YXJkX2Jsb2NrIiBdIHx8IHsgcHJpbnRmICdDb3VsZCBub3QgbG9jYXRlIHRoZSBBZEd1YXJkIFlvdVR1YmUgYmxvY2suXG4nID4mMjsgZXhpdCAxOyB9CgpzaWduYXR1cmVfZmFpbHVyZT0wCmZvciBzaWduYXR1cmUgaW4gXAogIGFkUGxhY2VtZW50cyBcCiAgYWRTbG90cyBcCiAgbm9fYWRzIFwKICByZWVsV2F0Y2hFbmRwb2ludC5hZENsaWVudFBhcmFtcy5pc0FkIFwKICBzZXJ2ZXJDb250cmFjdCBcCiAgU1NBUCBcCiAgZ2V0X3dhdGNoOyBkbwogIHJlcXVpcmVfc2lnbmF0dXJlICIkdWFzc2V0c19ibG9jayIgIiRzaWduYXR1cmUiIHVBc3NldHMgfHwgc2lnbmF0dXJlX2ZhaWx1cmU9MQpkb25lClsgIiRzaWduYXR1cmVfZmFpbHVyZSIgLWVxIDAgXSAmJiBwcmludGYgJ3VBc3NldHMgc2lnbmF0dXJlczogT0tcbicKCmFkZ3VhcmRfc2lnbmF0dXJlX2ZhaWx1cmU9MApmb3Igc2lnbmF0dXJlIGluIFwKICB5dEluaXRpYWxQbGF5ZXJSZXNwb25zZS5hZFBsYWNlbWVudHMgXAogIGFkU2xvdHMgXAogIHBsYXllckFkcyBcCiAgc3NhcENvbmZpZyBcCiAgbm9fYWRzIFwKICByZWVsV2F0Y2hFbmRwb2ludC5hZENsaWVudFBhcmFtcy5pc0FkIFwKICBzZXJ2ZXJBYnJTdHJlYW1pbmdVcmwgXAogIGdldF9kcm1fbGljZW5zZSBcCiAgaHRtbDVfZW5hYmxlX3NzYXBfZW50aXR5X2lkOyBkbwogIHJlcXVpcmVfc2lnbmF0dXJlICIkYWRndWFyZF9ibG9jayIgIiRzaWduYXR1cmUiIEFkR3VhcmQgfHwgYWRndWFyZF9zaWduYXR1cmVfZmFpbHVyZT0xCmRvbmUKWyAiJGFkZ3VhcmRfc2lnbmF0dXJlX2ZhaWx1cmUiIC1lcSAwIF0gJiYgcHJpbnRmICdBZEd1YXJkIHNpZ25hdHVyZXM6IE9LXG4nCgppZiBbICIkc2lnbmF0dXJlX2ZhaWx1cmUiIC1uZSAwIF0gfHwgWyAiJGFkZ3VhcmRfc2lnbmF0dXJlX2ZhaWx1cmUiIC1uZSAwIF07IHRoZW4KICBleGl0IDEKZmkKCmlmIFsgIiRza2lwX2Jhc2VsaW5lIiAtZXEgMCBdOyB0aGVuCiAgY2hlY2tfaGFzaCAiJHVhc3NldHNfYmxvY2siICIkVUFTU0VUU19CQVNFTElORV9IQVNIIiB1QXNzZXRzICIkVUFTU0VUU19CQVNFTElORV9DT01NSVQiIHx8IGF1ZGl0X2NoYW5nZWQ9MQogIGNoZWNrX2hhc2ggIiRhZGd1YXJkX2Jsb2NrIiAiJEFER1VBUkRfQkFTRUxJTkVfSEFTSCIgQWRHdWFyZCAiJEFER1VBUkRfQkFTRUxJTkVfQ09NTUlUIiB8fCBhdWRpdF9jaGFuZ2VkPTEKZmkKCmlmIFsgIiRzdHJpY3QiIC1lcSAxIF0gJiYgWyAiJGF1ZGl0X2NoYW5nZWQiIC1uZSAwIF07IHRoZW4KICBleGl0IDMKZmkKCnByaW50ZiAnVXBzdHJlYW0gWW91VHViZSBhdWRpdCBjb21wbGV0ZWQuIE5vIHJlbW90ZSBjb250ZW50IHdhcyBleGVjdXRlZCBvciBpbnN0YWxsZWQuXG4nCg==
+#!/bin/sh
+
+set -eu
+
+UASSETS_URL="https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/quick-fixes.txt"
+ADGUARD_URL="https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/specific.txt"
+NATIVE_REPO_URL="https://github.com/Maasea/sgmodule.git"
+NATIVE_BASELINE_COMMIT="65075cdb388fc5e3094afd7e7314c67b243f3525"
+UASSETS_BASELINE_COMMIT="9bbd491042c3e6c3ade281ab43de7502d75347d4"
+ADGUARD_BASELINE_COMMIT="c6f4f4abffcda13b66ced923d4348e7633745b90"
+UASSETS_BASELINE_HASH="78c9fd5fb410627736045dea324a69ebc02ac780f8e64fe5b5cf33e77d47b751"
+ADGUARD_BASELINE_HASH="85ab2b9e67ddad6c234ee560e8e62cb46b13409882d54a63beb18f2d2d421bc9"
+
+uassets_file=""
+adguard_file=""
+native_head=""
+skip_baseline=0
+strict=0
+temporary_files=""
+
+usage() {
+  printf '%s\n' \
+    "Usage: $0 [--uassets-file PATH] [--adguard-file PATH] [--native-head SHA] [--skip-baseline] [--strict]"
+}
+
+cleanup() {
+  for file in $temporary_files; do
+    rm -f -- "$file"
+  done
+}
+
+new_temporary_file() {
+  temporary_file=$(mktemp "${TMPDIR:-/tmp}/youtube-upstream-audit.XXXXXX")
+  temporary_files="$temporary_files $temporary_file"
+}
+
+download_source() {
+  curl --fail --silent --show-error --location --max-time 30 "$1" -o "$2"
+}
+
+extract_uassets_block() {
+  awk '
+    /youtube_antiadblock_and_ads/ { capture = 1 }
+    capture && /github.com\/uBlockOrigin\/uAssets\/issues\/3367/ { exit }
+    capture { print }
+  ' "$1" > "$2"
+}
+
+extract_adguard_block() {
+  awk '
+    /START: Youtube whitescreen fix/ { capture = 1 }
+    capture { print }
+    /END: Youtube whitescreen fix/ { exit }
+  ' "$1" > "$2"
+}
+
+require_signature() {
+  if ! grep -Fq -- "$2" "$1"; then
+    printf 'MISSING %s signature: %s\n' "$3" "$2" >&2
+    return 1
+  fi
+}
+
+hash_file() {
+  if command -v shasum >/dev/null 2>&1; then
+    shasum -a 256 "$1" | awk '{print $1}'
+  elif command -v sha256sum >/dev/null 2>&1; then
+    sha256sum "$1" | awk '{print $1}'
+  else
+    printf 'Neither shasum nor sha256sum is available.\n' >&2
+    return 1
+  fi
+}
+
+check_hash() {
+  actual=$(hash_file "$1")
+  if [ "$actual" = "$2" ]; then
+    printf '%s baseline: unchanged (%s)\n' "$3" "$4"
+    return 0
+  fi
+  printf '%s baseline: CHANGED (baseline commit %s, current hash %s)\n' \
+    "$3" "$4" "$actual"
+  return 1
+}
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --uassets-file)
+      [ "$#" -ge 2 ] || { usage >&2; exit 2; }
+      uassets_file=$2
+      shift
+      ;;
+    --adguard-file)
+      [ "$#" -ge 2 ] || { usage >&2; exit 2; }
+      adguard_file=$2
+      shift
+      ;;
+    --native-head)
+      [ "$#" -ge 2 ] || { usage >&2; exit 2; }
+      native_head=$2
+      shift
+      ;;
+    --skip-baseline) skip_baseline=1 ;;
+    --strict) strict=1 ;;
+    -h|--help) usage; exit 0 ;;
+    *) usage >&2; exit 2 ;;
+  esac
+  shift
+done
+
+trap cleanup EXIT HUP INT TERM
+
+if [ -z "$native_head" ]; then
+  native_head=$(git ls-remote "$NATIVE_REPO_URL" HEAD | awk 'NR == 1 { print $1 }')
+fi
+
+[ -n "$native_head" ] || {
+  printf 'Could not resolve Maasea native upstream HEAD.\n' >&2
+  exit 1
+}
+
+audit_changed=0
+if [ "$native_head" = "$NATIVE_BASELINE_COMMIT" ]; then
+  printf 'Maasea native baseline: unchanged (%s)\n' "$NATIVE_BASELINE_COMMIT"
+else
+  printf 'Maasea native baseline: CHANGED (baseline commit %s, current commit %s)\n' \
+    "$NATIVE_BASELINE_COMMIT" "$native_head"
+  audit_changed=1
+fi
+
+if [ -z "$uassets_file" ]; then
+  new_temporary_file
+  uassets_file=$temporary_file
+  download_source "$UASSETS_URL" "$uassets_file"
+fi
+
+if [ -z "$adguard_file" ]; then
+  new_temporary_file
+  adguard_file=$temporary_file
+  download_source "$ADGUARD_URL" "$adguard_file"
+fi
+
+[ -f "$uassets_file" ] || { printf 'Missing uAssets source: %s\n' "$uassets_file" >&2; exit 1; }
+[ -f "$adguard_file" ] || { printf 'Missing AdGuard source: %s\n' "$adguard_file" >&2; exit 1; }
+
+new_temporary_file
+uassets_block=$temporary_file
+new_temporary_file
+adguard_block=$temporary_file
+extract_uassets_block "$uassets_file" "$uassets_block"
+extract_adguard_block "$adguard_file" "$adguard_block"
+
+[ -s "$uassets_block" ] || { printf 'Could not locate the uAssets YouTube block.\n' >&2; exit 1; }
+[ -s "$adguard_block" ] || { printf 'Could not locate the AdGuard YouTube block.\n' >&2; exit 1; }
+
+signature_failure=0
+for signature in \
+  adPlacements \
+  adSlots \
+  no_ads \
+  reelWatchEndpoint.adClientParams.isAd \
+  serverContract \
+  SSAP \
+  get_watch; do
+  require_signature "$uassets_block" "$signature" uAssets || signature_failure=1
+done
+[ "$signature_failure" -eq 0 ] && printf 'uAssets signatures: OK\n'
+
+adguard_signature_failure=0
+for signature in \
+  ytInitialPlayerResponse.adPlacements \
+  adSlots \
+  playerAds \
+  ssapConfig \
+  no_ads \
+  reelWatchEndpoint.adClientParams.isAd \
+  serverAbrStreamingUrl \
+  get_drm_license \
+  html5_enable_ssap_entity_id; do
+  require_signature "$adguard_block" "$signature" AdGuard || adguard_signature_failure=1
+done
+[ "$adguard_signature_failure" -eq 0 ] && printf 'AdGuard signatures: OK\n'
+
+if [ "$signature_failure" -ne 0 ] || [ "$adguard_signature_failure" -ne 0 ]; then
+  exit 1
+fi
+
+if [ "$skip_baseline" -eq 0 ]; then
+  check_hash "$uassets_block" "$UASSETS_BASELINE_HASH" uAssets "$UASSETS_BASELINE_COMMIT" || audit_changed=1
+  check_hash "$adguard_block" "$ADGUARD_BASELINE_HASH" AdGuard "$ADGUARD_BASELINE_COMMIT" || audit_changed=1
+fi
+
+if [ "$strict" -eq 1 ] && [ "$audit_changed" -ne 0 ]; then
+  exit 3
+fi
+
+printf 'Upstream YouTube audit completed. No remote content was executed or installed.\n'

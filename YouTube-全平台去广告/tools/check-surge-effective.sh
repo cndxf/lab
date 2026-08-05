@@ -1,1 +1,97 @@
-IyEvYmluL3NoCgpzZXQgLWV1CgpTQ1JJUFRfRElSPSQoQ0RQQVRIPSBjZCAtLSAiJChkaXJuYW1lIC0tICIkMCIpIiAmJiBwd2QgLVApClBST0pFQ1RfUk9PVD0kKENEUEFUSD0gY2QgLS0gIiRTQ1JJUFRfRElSLy4uIiAmJiBwd2QgLVApCkVYUEVDVEVEX1ZFUlNJT049JCh0ciAtZCAnXHJcbicgPCAiJFBST0pFQ1RfUk9PVC9WRVJTSU9OIikKRVhQRUNURURfUkVMRUFTRV9QQVRIPSIvcmVsZWFzZXMvJEVYUEVDVEVEX1ZFUlNJT04vIgpTVVJHRV9DTEk9JHtTVVJHRV9DTEk6LS9BcHBsaWNhdGlvbnMvU3VyZ2UuYXBwL0NvbnRlbnRzL0FwcGxpY2F0aW9ucy9zdXJnZS1jbGl9CgojIOa1i+ivleWPr+S8oOWFpeWbuuWumueahOacieaViOmFjee9ru+8m+ato+W4uOS9v+eUqOaXtuS7jeeUsSBTdXJnZSBDTEkg6K+75Y+W5b2T5YmN5ZCI5bm257uT5p6c44CCCmlmIFsgLW4gIiR7U1VSR0VfRUZGRUNUSVZFX1BST0ZJTEVfRklMRTotfSIgXTsgdGhlbgogIFsgLWYgIiRTVVJHRV9FRkZFQ1RJVkVfUFJPRklMRV9GSUxFIiBdIHx8IHsKICAgIHByaW50ZiAnRWZmZWN0aXZlIHByb2ZpbGUgZml4dHVyZSBpcyB1bmF2YWlsYWJsZTogJXNcbicgIiRTVVJHRV9FRkZFQ1RJVkVfUFJPRklMRV9GSUxFIiA+JjIKICAgIGV4aXQgMgogIH0KICBlZmZlY3RpdmVfcHJvZmlsZT0kKGNhdCAiJFNVUkdFX0VGRkVDVElWRV9QUk9GSUxFX0ZJTEUiKQplbHNlCiAgWyAteCAiJFNVUkdFX0NMSSIgXSB8fCB7CiAgICBwcmludGYgJ1N1cmdlIENMSSBpcyB1bmF2YWlsYWJsZTogJXNcbicgIiRTVVJHRV9DTEkiID4mMgogICAgZXhpdCAyCiAgfQogICMgW0NPTU1PTiAvIOWkmuWuouaIt+err+mAmueUqF0g5qih5Z2X5LiN5Lya5pS55YaZ5Li76YWN572u77yb6L+Z6YeM6K+75Y+W5qih5Z2X5ZCI5bm25ZCO55qE5pyJ5pWI6YWN572u44CCCiAgZWZmZWN0aXZlX3Byb2ZpbGU9JCgkU1VSR0VfQ0xJIGR1bXAgcHJvZmlsZSBlZmZlY3RpdmUpCmZpCgpmYWlsZWQ9MAptaXRtX2hvc3RuYW1lPSQocHJpbnRmICclc1xuJyAiJGVmZmVjdGl2ZV9wcm9maWxlIiB8IGF3ayAnL15ob3N0bmFtZSA9IC8geyBwcmludCB9JykKaWYgcHJpbnRmICclc1xuJyAiJG1pdG1faG9zdG5hbWUiIHwgZ3JlcCAtRXEgJyhefFsgLF0pXCooWyAsXXwkKSc7IHRoZW4KICBwcmludGYgJyVzXG4nIFwKICAgICdHTE9CQUxfTUlUTV9XSUxEQ0FSRDogZWZmZWN0aXZlIHByb2ZpbGUgY29udGFpbnMgaG9zdG5hbWUgPSAqLicgXAogICAgJ1JlbW92ZSB0aGUgd2lsZGNhcmQgYW5kIGtlZXAgb25seSB0aGUgWW91VHViZSBob3N0cyByZXF1aXJlZCBieSB0aGlzIG1vZHVsZTsgY2VydGlmaWNhdGUtcGlubmVkIGFwcHMgY2FuIGFib3J0IHRoZSBUTFMgaGFuZHNoYWtlLicgPiYyCiAgZmFpbGVkPTEKZmkKCm5hdGl2ZV9zY3JpcHRfY291bnQ9JChwcmludGYgJyVzXG4nICIkZWZmZWN0aXZlX3Byb2ZpbGUiIHwgYXdrICcKICBpbmRleCgkMCwgInlvdXR1YmUubmF0aXZlLiIpID09IDEgfHwgaW5kZXgoJDAsICJ5b3V0dWJlLnR2b3MuIikgPT0gMSB7IGNvdW50ICs9IDEgfQogIEVORCB7IHByaW50IGNvdW50ICsgMCB9CicpCmlmIFsgIiRuYXRpdmVfc2NyaXB0X2NvdW50IiAtZ3QgMCBdOyB0aGVuCiAgcHJpbnRmICclc1xuJyBcCiAgICAiTkFUSVZFX0NPTkZMSUNUOiBNYWMgZWZmZWN0aXZlIHByb2ZpbGUgY29udGFpbnMgJG5hdGl2ZV9zY3JpcHRfY291bnQgaU9TL3R2T1MgWW91VHViZSBzY3JpcHQocykuIiBcCiAgICAnUmVtb3ZlIHRoZSBpT1MvdHZPUyBtb2R1bGUgZnJvbSBNYWMgYW5kIGtlZXAgb25seSAiWW91VHViZSDlhajlubPlj7Dljrvlub/lkYoiLicgPiYyCiAgZmFpbGVkPTEKZmkKCmZvciBzY3JpcHRfbmFtZSBpbiBcCiAgeW91dHViZS53ZWIucmVzcG9uc2UgXAogIHlvdXR1YmUud2ViLnBhZ2UKZG8KICBjb3VudD0kKHByaW50ZiAnJXNcbicgIiRlZmZlY3RpdmVfcHJvZmlsZSIgfCBhd2sgLXYgcHJlZml4PSIkc2NyaXB0X25hbWUgPSIgJwogICAgaW5kZXgoJDAsIHByZWZpeCkgPT0gMSB7IGNvdW50ICs9IDEgfQogICAgRU5EIHsgcHJpbnQgY291bnQgKyAwIH0KICAnKQogIGNhc2UgIiRjb3VudCIgaW4KICAgIDEpCiAgICAgIHByaW50ZiAnUEFTUzogJXMgaXMgYWN0aXZlIGV4YWN0bHkgb25jZS5cbicgIiRzY3JpcHRfbmFtZSIKICAgICAgc2NyaXB0X2xpbmU9JChwcmludGYgJyVzXG4nICIkZWZmZWN0aXZlX3Byb2ZpbGUiIHwgYXdrIC12IHByZWZpeD0iJHNjcmlwdF9uYW1lID0iICcKICAgICAgICBpbmRleCgkMCwgcHJlZml4KSA9PSAxIHsgcHJpbnQ7IGV4aXQgfQogICAgICAnKQogICAgICBpZiAhIHByaW50ZiAnJXNcbicgIiRzY3JpcHRfbGluZSIgfCBncmVwIC1GcSAiJEVYUEVDVEVEX1JFTEVBU0VfUEFUSCI7IHRoZW4KICAgICAgICBwcmludGYgJyVzXG4nIFwKICAgICAgICAgICJTVEFMRTogJHNjcmlwdF9uYW1lIGRvZXMgbm90IHJlZmVyZW5jZSByZWxlYXNlICRFWFBFQ1RFRF9WRVJTSU9OLiIgXAogICAgICAgICAgJ1JlZnJlc2ggb3IgcmVwbGFjZSB0aGUgY3VycmVudCBZb3VUdWJlIG1vZHVsZSwgdGhlbiBhcHBseSBjaGFuZ2VzLicgPiYyCiAgICAgICAgZmFpbGVkPTEKICAgICAgZmkKICAgICAgOzsKICAgIDApCiAgICAgIHByaW50ZiAnTUlTU0lORzogJXNcbicgIiRzY3JpcHRfbmFtZSIgPiYyCiAgICAgIGZhaWxlZD0xCiAgICAgIDs7CiAgICAqKQogICAgICBwcmludGYgJ0RVUExJQ0FURTogJXMgYXBwZWFycyAlcyB0aW1lcy4gUmVtb3ZlIG9sZCBvciBkdXBsaWNhdGUgbW9kdWxlcy5cbicgXAogICAgICAgICIkc2NyaXB0X25hbWUiICIkY291bnQiID4mMgogICAgICBmYWlsZWQ9MQogICAgICA7OwogIGVzYWMKZG9uZQoKd2ViX3Jlc3BvbnNlX2xpbmVzPSQocHJpbnRmICclc1xuJyAiJGVmZmVjdGl2ZV9wcm9maWxlIiB8IGF3ayAnCiAgaW5kZXgoJDAsICJ5b3V0dWJlLndlYi5yZXNwb25zZSA9IikgPT0gMSB7IHByaW50IH0KJykKaWYgWyAtbiAiJHdlYl9yZXNwb25zZV9saW5lcyIgXSAmJiAhIHByaW50ZiAnJXNcbicgIiR3ZWJfcmVzcG9uc2VfbGluZXMiIHwgZ3JlcCAtRnEgJ3BsYXllclwvYWRfYnJlYWsnOyB0aGVuCiAgcHJpbnRmICclc1xuJyBcCiAgICAnU1RBTEU6IHlvdXR1YmUud2ViLnJlc3BvbnNlIGRvZXMgbm90IGluY2x1ZGUgcGxheWVyXC9hZF9icmVhay4nIFwKICAgICdEaXNhYmxlIG9yIHJlbW92ZSB0aGUgb2xkIFlvdVR1YmUgbW9kdWxlLCB0aGVuIGVuYWJsZSB0aGUgY3VycmVudCBtb2R1bGUuJyA+JjIKICBmYWlsZWQ9MQpmaQoKaWYgWyAiJGZhaWxlZCIgLW5lIDAgXTsgdGhlbgogIHByaW50ZiAnJXNcbicgXAogICAgJ1RoZSBlZmZlY3RpdmUgcHJvZmlsZSBpcyBtaXNzaW5nLCBzdGFsZSwgb3IgY29udGFpbnMgZHVwbGljYXRlIFlvdVR1YmUgc2NyaXB0cy4nIFwKICAgICdPcGVuIFN1cmdlID4gTW9kdWxlcywga2VlcCBvbmUgY3VycmVudCAiWW91VHViZSDlhajlubPlj7Dljrvlub/lkYoiLCB0aGVuIGFwcGx5IGNoYW5nZXMuJyA+JjIKICBleGl0IDEKZmkKCnByaW50ZiAnQWxsIFlvdVR1YmUgbW9kdWxlIHNjcmlwdHMgYXJlIGN1cnJlbnQgYW5kIHVuaXF1ZSBpbiB0aGUgZWZmZWN0aXZlIHByb2ZpbGUuXG4nCg==
+#!/bin/sh
+
+set -eu
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+PROJECT_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd -P)
+EXPECTED_VERSION=$(tr -d '\r\n' < "$PROJECT_ROOT/VERSION")
+EXPECTED_RELEASE_PATH="/releases/$EXPECTED_VERSION/"
+SURGE_CLI=${SURGE_CLI:-/Applications/Surge.app/Contents/Applications/surge-cli}
+
+# 测试可传入固定的有效配置；正常使用时仍由 Surge CLI 读取当前合并结果。
+if [ -n "${SURGE_EFFECTIVE_PROFILE_FILE:-}" ]; then
+  [ -f "$SURGE_EFFECTIVE_PROFILE_FILE" ] || {
+    printf 'Effective profile fixture is unavailable: %s\n' "$SURGE_EFFECTIVE_PROFILE_FILE" >&2
+    exit 2
+  }
+  effective_profile=$(cat "$SURGE_EFFECTIVE_PROFILE_FILE")
+else
+  [ -x "$SURGE_CLI" ] || {
+    printf 'Surge CLI is unavailable: %s\n' "$SURGE_CLI" >&2
+    exit 2
+  }
+  # [COMMON / 多客户端通用] 模块不会改写主配置；这里读取模块合并后的有效配置。
+  effective_profile=$($SURGE_CLI dump profile effective)
+fi
+
+failed=0
+mitm_hostname=$(printf '%s\n' "$effective_profile" | awk '/^hostname = / { print }')
+if printf '%s\n' "$mitm_hostname" | grep -Eq '(^|[ ,])\*([ ,]|$)'; then
+  printf '%s\n' \
+    'GLOBAL_MITM_WILDCARD: effective profile contains hostname = *.' \
+    'Remove the wildcard and keep only the YouTube hosts required by this module; certificate-pinned apps can abort the TLS handshake.' >&2
+  failed=1
+fi
+
+native_script_count=$(printf '%s\n' "$effective_profile" | awk '
+  index($0, "youtube.native.") == 1 || index($0, "youtube.tvos.") == 1 { count += 1 }
+  END { print count + 0 }
+')
+if [ "$native_script_count" -gt 0 ]; then
+  printf '%s\n' \
+    "NATIVE_CONFLICT: Mac effective profile contains $native_script_count iOS/tvOS YouTube script(s)." \
+    'Remove the iOS/tvOS module from Mac and keep only "YouTube 全平台去广告".' >&2
+  failed=1
+fi
+
+for script_name in \
+  youtube.web.response \
+  youtube.web.page
+do
+  count=$(printf '%s\n' "$effective_profile" | awk -v prefix="$script_name =" '
+    index($0, prefix) == 1 { count += 1 }
+    END { print count + 0 }
+  ')
+  case "$count" in
+    1)
+      printf 'PASS: %s is active exactly once.\n' "$script_name"
+      script_line=$(printf '%s\n' "$effective_profile" | awk -v prefix="$script_name =" '
+        index($0, prefix) == 1 { print; exit }
+      ')
+      if ! printf '%s\n' "$script_line" | grep -Fq "$EXPECTED_RELEASE_PATH"; then
+        printf '%s\n' \
+          "STALE: $script_name does not reference release $EXPECTED_VERSION." \
+          'Refresh or replace the current YouTube module, then apply changes.' >&2
+        failed=1
+      fi
+      ;;
+    0)
+      printf 'MISSING: %s\n' "$script_name" >&2
+      failed=1
+      ;;
+    *)
+      printf 'DUPLICATE: %s appears %s times. Remove old or duplicate modules.\n' \
+        "$script_name" "$count" >&2
+      failed=1
+      ;;
+  esac
+done
+
+web_response_lines=$(printf '%s\n' "$effective_profile" | awk '
+  index($0, "youtube.web.response =") == 1 { print }
+')
+if [ -n "$web_response_lines" ] && ! printf '%s\n' "$web_response_lines" | grep -Fq 'player\/ad_break'; then
+  printf '%s\n' \
+    'STALE: youtube.web.response does not include player\/ad_break.' \
+    'Disable or remove the old YouTube module, then enable the current module.' >&2
+  failed=1
+fi
+
+if [ "$failed" -ne 0 ]; then
+  printf '%s\n' \
+    'The effective profile is missing, stale, or contains duplicate YouTube scripts.' \
+    'Open Surge > Modules, keep one current "YouTube 全平台去广告", then apply changes.' >&2
+  exit 1
+fi
+
+printf 'All YouTube module scripts are current and unique in the effective profile.\n'

@@ -1,1 +1,225 @@
-LyoKICogWW91VHViZSDlhajlubPlj7Dljrvlub/lkYogLSDnvZHpobUgQVBJIOWTjeW6lOiEmuacrAogKgogKiBbQ09NTU9OIC8g5aSa5a6i5oi356uv6YCa55SoXQogKiDkvb/nlKggJHJlcXVlc3QvJHJlc3BvbnNlLyRkb25lIOeahOacgOWwj+i/kOihjOaXtuWlkee6pu+8m+Wfn+WQjeOAgeeJiOacrOWSjOWuieWFqOi+ueeVjOWPr+S+m+mAgumFjeWZqOWkjeeUqO+8jAogKiDkvYYgU3VyZ2XjgIFTdGFzaOOAgVNoYWRvd3JvY2tldCDnmoTphY3nva7or63ms5XkuI7nvJPlrZjooYzkuLrlv4XpobvliIbliKvpqozor4HjgIIKICoKICogW1dFQiAvIOe9kemhteS4k+eUqF0KICogU2NvcGU6IFdlYiBvbmx5LiDmuIXnkIYgd3d3LnlvdXR1YmUuY29tIOS4jiBtLnlvdXR1YmUuY29tIOeahCBKU09OIOWIl+ihqOW5v+WRiue7k+aehOOAggogKiDlronlhajovrnnlYzvvJrlj6rlrprlkJHliKDpmaQgcGxheWVyIOeahCBTU0FQIOmFjee9ruWSjCBwbGF5ZXIvYWRfYnJlYWsg6L+U5Zue55qE5bm/5ZGK6LCD5bqm5a2X5q6177ybCiAqIOS4jeWIoOmZpOWujOaVtCBwbGF5ZXIvZ2V0X3dhdGNoIOeahOW5v+WRiueKtuaAgeaIluinhumikea1geWcsOWdgO+8jOmBv+WFjeegtOWdj+aSreaUvuWZqOaBouWkjeOAggogKgogKiBbTU9CSUxFIC8g56e75Yqo56uv5LiT55SoXQogKiDmnKzmlofku7bkuI3lpITnkIYgaVBob25lL2lQYWQg5Y6f55SfIEFwcCDnmoQgcHJvdG9idWYg5LqM6L+b5Yi25ZON5bqU44CCCiAqCiAqIFtUVk9TIC8gQXBwbGUgVFYg5LiT55SoXQogKiDmnKzmlofku7bkuI3lpITnkIYgdHZPU++8m0FwcGxlIFRWIOeLrOacieaOpeWPo+W/hemhu+WcqCBzY3JpcHRzL3R2b3MvIOS4reWNleeLrOWunueOsOWSjOeVmeivgeOAggogKi8KCi8vIFtXRUIgLyDnvZHpobXkuJPnlKhdIOWFpeWPo+S7heaOpeWPl+WPr+ino+aekOeahCBKU09OIOaWh+acrO+8jOS6jOi/m+WItuWTjeW6lOS6pOe7mSBuYXRpdmUg6ISa5pys44CCCmNvbnN0IHNvdXJjZSA9ICRyZXNwb25zZS5ib2R5OwoKaWYgKCFzb3VyY2UpIHsKICAkZG9uZSh7fSk7Cn0gZWxzZSB7CiAgdHJ5IHsKICAgIGNvbnN0IHBheWxvYWQgPSBKU09OLnBhcnNlKHNvdXJjZSk7CiAgICBjb25zdCBlbmRwb2ludE1hdGNoID0gJHJlcXVlc3QudXJsLm1hdGNoKC9cL3lvdXR1YmVpXC92MVwvKFteP10rKS8pOwogICAgY29uc3QgZW5kcG9pbnQgPSBlbmRwb2ludE1hdGNoID8gZW5kcG9pbnRNYXRjaFsxXSA6ICJ1bmtub3duIjsKICAgIGNvbnN0IGlzQWRCcmVha0VuZHBvaW50ID0gZW5kcG9pbnQgPT09ICJwbGF5ZXIvYWRfYnJlYWsiOwogICAgY29uc3Qgc3RhdHMgPSB7CiAgICAgIHJlbW92ZWQ6IDAsCiAgICAgIG5lc3RlZEpzb246IDAsCiAgICAgIGN0aWVyTDogKHNvdXJjZS5tYXRjaCgvY3RpZXIoPzolM0R8PSlML2cpIHx8IFtdKS5sZW5ndGgsCiAgICAgIHBhdGhzOiBbXSwKICAgIH07CgogICAgLy8gW1dFQiAvIOe9kemhteS4k+eUqF0g5bey56Gu6K6k5bGe5LqO572R6aG15riy5p+T5bGC55qE5bm/5ZGK5a2X5q6144CCCiAgICBjb25zdCBkcm9wS2V5cyA9IG5ldyBTZXQoWwogICAgICAiYWRwbGFjZW1lbnRzIiwKICAgICAgImFkc2xvdHMiLAogICAgICAicGxheWVyYWRzIiwKICAgICAgInNzYXBjb25maWciLAogICAgICAiYWRicmVha2hlYXJ0YmVhdHBhcmFtcyIsCiAgICAgICJwYWdlYWR2aWV3dGhyb3VnaGNvbnZlcnNpb24iLAogICAgICAiYWRwbGFjZW1lbnRyZW5kZXJlciIsCiAgICAgICJhZHNsb3RyZW5kZXJlciIsCiAgICAgICJpbmZlZWRhZGxheW91dHJlbmRlcmVyIiwKICAgICAgImRpc3BsYXlhZHJlbmRlcmVyIiwKICAgICAgInByb21vdGVkc3BhcmtsZXN3ZWJyZW5kZXJlciIsCiAgICAgICJwcm9tb3RlZHZpZGVvcmVuZGVyZXIiLAogICAgICAiY29tcGFjdHByb21vdGVkdmlkZW9yZW5kZXJlciIsCiAgICAgICJzZWFyY2hweXZyZW5kZXJlciIsCiAgICAgICJwbGF5ZXJvdmVybGF5YWRyZW5kZXJlciIsCiAgICAgICJhZGJyZWFrc2VydmljZXJlbmRlcmVyIiwKICAgICAgImFkZmVlZGJhY2tyZW5kZXJlciIsCiAgICAgICJhZGluZm9yZW5kZXJlciIsCiAgICAgICJhZHByZXZpZXdyZW5kZXJlciIsCiAgICAgICJza2lwYWRyZW5kZXJlciIsCiAgICAgICJ2aXNpdGFkdmVydGlzZXJyZW5kZXJlciIsCiAgICAgICJhZGNvdW50ZG93bnJlbmRlcmVyIiwKICAgICAgImFkZHVyYXRpb25yZW1haW5pbmdyZW5kZXJlciIsCiAgICAgICJhZGJ1dHRvbnJlbmRlcmVyIiwKICAgICAgImFkcGxheWVyb3ZlcmxheSIsCiAgICBdKTsKCiAgICBjb25zdCBuZXN0ZWRKc29uS2V5cyA9IG5ldyBTZXQoWwogICAgICAicGxheWVyUmVzcG9uc2UiLAogICAgICAid2F0Y2hOZXh0UmVzcG9uc2UiLAogICAgICAicmVzcG9uc2UiLAogICAgXSk7CgogICAgY29uc3QgcGxheWVyUGFzc1Rocm91Z2hLZXlzID0gbmV3IFNldChbCiAgICAgICJhZHBsYWNlbWVudHMiLAogICAgICAiYWRzbG90cyIsCiAgICAgICJwbGF5ZXJhZHMiLAogICAgICAiYWRicmVha2hlYXJ0YmVhdHBhcmFtcyIsCiAgICAgICJwYWdlYWR2aWV3dGhyb3VnaGNvbnZlcnNpb24iLAogICAgXSk7CgogICAgZnVuY3Rpb24gcmVtZW1iZXIocGF0aCkgewogICAgICBzdGF0cy5yZW1vdmVkICs9IDE7CiAgICAgIGlmIChzdGF0cy5wYXRocy5sZW5ndGggPCAxMikgc3RhdHMucGF0aHMucHVzaChwYXRoKTsKICAgIH0KCiAgICBmdW5jdGlvbiBpc1BsYXllclJlc3BvbnNlUGF0aChwYXRoKSB7CiAgICAgIHJldHVybiAoCiAgICAgICAgKGVuZHBvaW50ID09PSAicGxheWVyIiAmJiBwYXRoID09PSAiIikgfHwKICAgICAgICBwYXRoID09PSAicGxheWVyUmVzcG9uc2UiIHx8CiAgICAgICAgcGF0aC5lbmRzV2l0aCgiLnBsYXllclJlc3BvbnNlIikKICAgICAgKTsKICAgIH0KCiAgICBjb25zdCBhZFdyYXBwZXJLZXlzID0gbmV3IFNldChbCiAgICAgICJyaWNoaXRlbXJlbmRlcmVyIiwKICAgICAgImNvbnRlbnQiLAogICAgICAicmVuZGVyZXIiLAogICAgICAiaXRlbXNlY3Rpb25yZW5kZXJlciIsCiAgICBdKTsKCiAgICBmdW5jdGlvbiBpc1Nob3J0c0FkRW50cnkodmFsdWUpIHsKICAgICAgcmV0dXJuIEJvb2xlYW4oCiAgICAgICAgZW5kcG9pbnQgPT09ICJyZWVsL3JlZWxfd2F0Y2hfc2VxdWVuY2UiICYmCiAgICAgICAgICB2YWx1ZT8uY29tbWFuZD8ucmVlbFdhdGNoRW5kcG9pbnQ/LmFkQ2xpZW50UGFyYW1zPy5pc0FkID09PSB0cnVlLAogICAgICApOwogICAgfQoKICAgIGZ1bmN0aW9uIGlzQWRJdGVtKHZhbHVlLCBkZXB0aCkgewogICAgICBpZiAoCiAgICAgICAgIXZhbHVlIHx8CiAgICAgICAgdHlwZW9mIHZhbHVlICE9PSAib2JqZWN0IiB8fAogICAgICAgIEFycmF5LmlzQXJyYXkodmFsdWUpIHx8CiAgICAgICAgZGVwdGggPiA0CiAgICAgICkgewogICAgICAgIHJldHVybiBmYWxzZTsKICAgICAgfQoKICAgICAgaWYgKAogICAgICAgIHZhbHVlLmlzQWQgPT09IHRydWUgfHwKICAgICAgICB2YWx1ZS5hZENsaWVudFBhcmFtcyAhPSBudWxsIHx8CiAgICAgICAgdmFsdWUuYWRWaWRlb0lkICE9IG51bGwKICAgICAgKSB7CiAgICAgICAgcmV0dXJuIHRydWU7CiAgICAgIH0KCiAgICAgIGZvciAoY29uc3Qga2V5IG9mIE9iamVjdC5rZXlzKHZhbHVlKSkgewogICAgICAgIGlmIChkcm9wS2V5cy5oYXMoa2V5LnRvTG93ZXJDYXNlKCkpKSByZXR1cm4gdHJ1ZTsKICAgICAgICBjb25zdCBjaGlsZCA9IHZhbHVlW2tleV07CiAgICAgICAgaWYgKAogICAgICAgICAgYWRXcmFwcGVyS2V5cy5oYXMoa2V5LnRvTG93ZXJDYXNlKCkpICYmCiAgICAgICAgICBjaGlsZCAmJgogICAgICAgICAgdHlwZW9mIGNoaWxkID09PSAib2JqZWN0IiAmJgogICAgICAgICAgaXNBZEl0ZW0oY2hpbGQsIGRlcHRoICsgMSkKICAgICAgICApIHsKICAgICAgICAgIHJldHVybiB0cnVlOwogICAgICAgIH0KICAgICAgfQogICAgICByZXR1cm4gZmFsc2U7CiAgICB9CgogICAgLy8gW0NPTU1PTiAvIOWkmuWuouaIt+err+mAmueUqF0g6YCS5b2S5riF55CG5Zmo5Y+q5L6d6LWW5pmu6YCaIEpTT07vvJvnq6/ngrnnmb3lkI3ljZXlkozlrZfmrrXooajku43lsZ7kuo7nvZHpobXlsYLjgIIKICAgIGZ1bmN0aW9uIGNsZWFuKHZhbHVlLCBwYXRoKSB7CiAgICAgIGlmICghdmFsdWUgfHwgdHlwZW9mIHZhbHVlICE9PSAib2JqZWN0IikgcmV0dXJuOwoKICAgICAgaWYgKEFycmF5LmlzQXJyYXkodmFsdWUpKSB7CiAgICAgICAgZm9yIChsZXQgaW5kZXggPSB2YWx1ZS5sZW5ndGggLSAxOyBpbmRleCA+PSAwOyBpbmRleCAtPSAxKSB7CiAgICAgICAgICBjb25zdCBpdGVtUGF0aCA9IGAke3BhdGh9WyR7aW5kZXh9XWA7CiAgICAgICAgICBpZiAoaXNTaG9ydHNBZEVudHJ5KHZhbHVlW2luZGV4XSkgfHwgaXNBZEl0ZW0odmFsdWVbaW5kZXhdLCAwKSkgewogICAgICAgICAgICB2YWx1ZS5zcGxpY2UoaW5kZXgsIDEpOwogICAgICAgICAgICByZW1lbWJlcihpdGVtUGF0aCk7CiAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICBjbGVhbih2YWx1ZVtpbmRleF0sIGl0ZW1QYXRoKTsKICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgcmV0dXJuOwogICAgICB9CgogICAgICBmb3IgKGNvbnN0IGtleSBvZiBPYmplY3Qua2V5cyh2YWx1ZSkpIHsKICAgICAgICBjb25zdCBrZXlQYXRoID0gcGF0aCA/IGAke3BhdGh9LiR7a2V5fWAgOiBrZXk7CiAgICAgICAgaWYgKAogICAgICAgICAgaXNBZEJyZWFrRW5kcG9pbnQgJiYKICAgICAgICAgIHBhdGggPT09ICIiICYmCiAgICAgICAgICAoa2V5LnRvTG93ZXJDYXNlKCkgPT09ICJwbGF5ZXJhZHMiIHx8CiAgICAgICAgICAgIGtleS50b0xvd2VyQ2FzZSgpID09PSAiYWR0aHJvdHRsZWQiKQogICAgICAgICkgewogICAgICAgICAgZGVsZXRlIHZhbHVlW2tleV07CiAgICAgICAgICByZW1lbWJlcihrZXlQYXRoKTsKICAgICAgICAgIGNvbnRpbnVlOwogICAgICAgIH0KICAgICAgICBpZiAoCiAgICAgICAgICBpc1BsYXllclJlc3BvbnNlUGF0aChwYXRoKSAmJgogICAgICAgICAgcGxheWVyUGFzc1Rocm91Z2hLZXlzLmhhcyhrZXkudG9Mb3dlckNhc2UoKSkKICAgICAgICApIHsKICAgICAgICAgIGNvbnRpbnVlOwogICAgICAgIH0KICAgICAgICBpZiAoZHJvcEtleXMuaGFzKGtleS50b0xvd2VyQ2FzZSgpKSkgewogICAgICAgICAgZGVsZXRlIHZhbHVlW2tleV07CiAgICAgICAgICByZW1lbWJlcihrZXlQYXRoKTsKICAgICAgICAgIGNvbnRpbnVlOwogICAgICAgIH0KCiAgICAgICAgY29uc3QgY2hpbGQgPSB2YWx1ZVtrZXldOwogICAgICAgIGNvbnN0IGxlYWRpbmdXaGl0ZXNwYWNlID0KICAgICAgICAgIHR5cGVvZiBjaGlsZCA9PT0gInN0cmluZyIgPyBjaGlsZC5tYXRjaCgvXlxzKi8pPy5bMF0gfHwgIiIgOiAiIjsKICAgICAgICBjb25zdCBuZXN0ZWRKc29uU291cmNlID0KICAgICAgICAgIHR5cGVvZiBjaGlsZCA9PT0gInN0cmluZyIgPyBjaGlsZC5zbGljZShsZWFkaW5nV2hpdGVzcGFjZS5sZW5ndGgpIDogIiI7CiAgICAgICAgaWYgKAogICAgICAgICAgbmVzdGVkSnNvbktleXMuaGFzKGtleSkgJiYKICAgICAgICAgIHR5cGVvZiBjaGlsZCA9PT0gInN0cmluZyIgJiYKICAgICAgICAgIG5lc3RlZEpzb25Tb3VyY2UubGVuZ3RoID4gMSAmJgogICAgICAgICAgKG5lc3RlZEpzb25Tb3VyY2VbMF0gPT09ICJ7IiB8fCBuZXN0ZWRKc29uU291cmNlWzBdID09PSAiWyIpCiAgICAgICAgKSB7CiAgICAgICAgICB0cnkgewogICAgICAgICAgICBjb25zdCBuZXN0ZWQgPSBKU09OLnBhcnNlKG5lc3RlZEpzb25Tb3VyY2UpOwogICAgICAgICAgICBjb25zdCBiZWZvcmUgPSBzdGF0cy5yZW1vdmVkOwogICAgICAgICAgICBjbGVhbihuZXN0ZWQsIGtleVBhdGgpOwogICAgICAgICAgICBpZiAoc3RhdHMucmVtb3ZlZCA+IGJlZm9yZSkgewogICAgICAgICAgICAgIHZhbHVlW2tleV0gPSBsZWFkaW5nV2hpdGVzcGFjZSArIEpTT04uc3RyaW5naWZ5KG5lc3RlZCk7CiAgICAgICAgICAgICAgc3RhdHMubmVzdGVkSnNvbiArPSAxOwogICAgICAgICAgICB9CiAgICAgICAgICB9IGNhdGNoIChfKSB7CiAgICAgICAgICAgIC8vIFNvbWUgcmVzcG9uc2UgZmllbGRzIGFyZSBvcmRpbmFyeSBzdHJpbmdzLCBub3QgZW1iZWRkZWQgSlNPTi4KICAgICAgICAgIH0KICAgICAgICAgIGNvbnRpbnVlOwogICAgICAgIH0KCiAgICAgICAgY2xlYW4oY2hpbGQsIGtleVBhdGgpOwogICAgICB9CiAgICB9CgogICAgY2xlYW4ocGF5bG9hZCwgIiIpOwogICAgY29uc29sZS5sb2coCiAgICAgIGBZb3VUdWJlIFdlYiAke2VuZHBvaW50fTogcmVtb3ZlZD0ke3N0YXRzLnJlbW92ZWR9LCBuZXN0ZWQ9JHtzdGF0cy5uZXN0ZWRKc29ufSwgY3RpZXJMPSR7c3RhdHMuY3RpZXJMfSwgcGF0aHM9JHtzdGF0cy5wYXRocy5qb2luKCJ8Iil9YCwKICAgICk7CgogICAgaWYgKHN0YXRzLnJlbW92ZWQgPiAwKSB7CiAgICAgICRkb25lKHsgYm9keTogSlNPTi5zdHJpbmdpZnkocGF5bG9hZCkgfSk7CiAgICB9IGVsc2UgewogICAgICAkZG9uZSh7fSk7CiAgICB9CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIGNvbnNvbGUubG9nKGBZb3VUdWJlIFdlYjogSlNPTiBwYXJzZSBmYWlsZWQ6ICR7U3RyaW5nKGVycm9yKX1gKTsKICAgICRkb25lKHt9KTsKICB9Cn0K
+/*
+ * YouTube 全平台去广告 - 网页 API 响应脚本
+ *
+ * [COMMON / 多客户端通用]
+ * 使用 $request/$response/$done 的最小运行时契约；域名、版本和安全边界可供适配器复用，
+ * 但 Surge、Stash、Shadowrocket 的配置语法与缓存行为必须分别验证。
+ *
+ * [WEB / 网页专用]
+ * Scope: Web only. 清理 www.youtube.com 与 m.youtube.com 的 JSON 列表广告结构。
+ * 安全边界：只定向删除 player 的 SSAP 配置和 player/ad_break 返回的广告调度字段；
+ * 不删除完整 player/get_watch 的广告状态或视频流地址，避免破坏播放器恢复。
+ *
+ * [MOBILE / 移动端专用]
+ * 本文件不处理 iPhone/iPad 原生 App 的 protobuf 二进制响应。
+ *
+ * [TVOS / Apple TV 专用]
+ * 本文件不处理 tvOS；Apple TV 独有接口必须在 scripts/tvos/ 中单独实现和留证。
+ */
+
+// [WEB / 网页专用] 入口仅接受可解析的 JSON 文本，二进制响应交给 native 脚本。
+const source = $response.body;
+
+if (!source) {
+  $done({});
+} else {
+  try {
+    const payload = JSON.parse(source);
+    const endpointMatch = $request.url.match(/\/youtubei\/v1\/([^?]+)/);
+    const endpoint = endpointMatch ? endpointMatch[1] : "unknown";
+    const isAdBreakEndpoint = endpoint === "player/ad_break";
+    const stats = {
+      removed: 0,
+      nestedJson: 0,
+      ctierL: (source.match(/ctier(?:%3D|=)L/g) || []).length,
+      paths: [],
+    };
+
+    // [WEB / 网页专用] 已确认属于网页渲染层的广告字段。
+    const dropKeys = new Set([
+      "adplacements",
+      "adslots",
+      "playerads",
+      "ssapconfig",
+      "adbreakheartbeatparams",
+      "pageadviewthroughconversion",
+      "adplacementrenderer",
+      "adslotrenderer",
+      "infeedadlayoutrenderer",
+      "displayadrenderer",
+      "promotedsparkleswebrenderer",
+      "promotedvideorenderer",
+      "compactpromotedvideorenderer",
+      "searchpyvrenderer",
+      "playeroverlayadrenderer",
+      "adbreakservicerenderer",
+      "adfeedbackrenderer",
+      "adinforenderer",
+      "adpreviewrenderer",
+      "skipadrenderer",
+      "visitadvertiserrenderer",
+      "adcountdownrenderer",
+      "addurationremainingrenderer",
+      "adbuttonrenderer",
+      "adplayeroverlay",
+    ]);
+
+    const nestedJsonKeys = new Set([
+      "playerResponse",
+      "watchNextResponse",
+      "response",
+    ]);
+
+    const playerPassThroughKeys = new Set([
+      "adplacements",
+      "adslots",
+      "playerads",
+      "adbreakheartbeatparams",
+      "pageadviewthroughconversion",
+    ]);
+
+    function remember(path) {
+      stats.removed += 1;
+      if (stats.paths.length < 12) stats.paths.push(path);
+    }
+
+    function isPlayerResponsePath(path) {
+      return (
+        (endpoint === "player" && path === "") ||
+        path === "playerResponse" ||
+        path.endsWith(".playerResponse")
+      );
+    }
+
+    const adWrapperKeys = new Set([
+      "richitemrenderer",
+      "content",
+      "renderer",
+      "itemsectionrenderer",
+    ]);
+
+    function isShortsAdEntry(value) {
+      return Boolean(
+        endpoint === "reel/reel_watch_sequence" &&
+          value?.command?.reelWatchEndpoint?.adClientParams?.isAd === true,
+      );
+    }
+
+    function isAdItem(value, depth) {
+      if (
+        !value ||
+        typeof value !== "object" ||
+        Array.isArray(value) ||
+        depth > 4
+      ) {
+        return false;
+      }
+
+      if (
+        value.isAd === true ||
+        value.adClientParams != null ||
+        value.adVideoId != null
+      ) {
+        return true;
+      }
+
+      for (const key of Object.keys(value)) {
+        if (dropKeys.has(key.toLowerCase())) return true;
+        const child = value[key];
+        if (
+          adWrapperKeys.has(key.toLowerCase()) &&
+          child &&
+          typeof child === "object" &&
+          isAdItem(child, depth + 1)
+        ) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // [COMMON / 多客户端通用] 递归清理器只依赖普通 JSON；端点白名单和字段表仍属于网页层。
+    function clean(value, path) {
+      if (!value || typeof value !== "object") return;
+
+      if (Array.isArray(value)) {
+        for (let index = value.length - 1; index >= 0; index -= 1) {
+          const itemPath = `${path}[${index}]`;
+          if (isShortsAdEntry(value[index]) || isAdItem(value[index], 0)) {
+            value.splice(index, 1);
+            remember(itemPath);
+          } else {
+            clean(value[index], itemPath);
+          }
+        }
+        return;
+      }
+
+      for (const key of Object.keys(value)) {
+        const keyPath = path ? `${path}.${key}` : key;
+        if (
+          isAdBreakEndpoint &&
+          path === "" &&
+          (key.toLowerCase() === "playerads" ||
+            key.toLowerCase() === "adthrottled")
+        ) {
+          delete value[key];
+          remember(keyPath);
+          continue;
+        }
+        if (
+          isPlayerResponsePath(path) &&
+          playerPassThroughKeys.has(key.toLowerCase())
+        ) {
+          continue;
+        }
+        if (dropKeys.has(key.toLowerCase())) {
+          delete value[key];
+          remember(keyPath);
+          continue;
+        }
+
+        const child = value[key];
+        const leadingWhitespace =
+          typeof child === "string" ? child.match(/^\s*/)?.[0] || "" : "";
+        const nestedJsonSource =
+          typeof child === "string" ? child.slice(leadingWhitespace.length) : "";
+        if (
+          nestedJsonKeys.has(key) &&
+          typeof child === "string" &&
+          nestedJsonSource.length > 1 &&
+          (nestedJsonSource[0] === "{" || nestedJsonSource[0] === "[")
+        ) {
+          try {
+            const nested = JSON.parse(nestedJsonSource);
+            const before = stats.removed;
+            clean(nested, keyPath);
+            if (stats.removed > before) {
+              value[key] = leadingWhitespace + JSON.stringify(nested);
+              stats.nestedJson += 1;
+            }
+          } catch (_) {
+            // Some response fields are ordinary strings, not embedded JSON.
+          }
+          continue;
+        }
+
+        clean(child, keyPath);
+      }
+    }
+
+    clean(payload, "");
+    console.log(
+      `YouTube Web ${endpoint}: removed=${stats.removed}, nested=${stats.nestedJson}, ctierL=${stats.ctierL}, paths=${stats.paths.join("|")}`,
+    );
+
+    if (stats.removed > 0) {
+      $done({ body: JSON.stringify(payload) });
+    } else {
+      $done({});
+    }
+  } catch (error) {
+    console.log(`YouTube Web: JSON parse failed: ${String(error)}`);
+    $done({});
+  }
+}

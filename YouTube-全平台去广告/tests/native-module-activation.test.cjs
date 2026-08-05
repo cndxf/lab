@@ -1,1 +1,79 @@
-Y29uc3QgYXNzZXJ0ID0gcmVxdWlyZSgibm9kZTphc3NlcnQvc3RyaWN0Iik7CmNvbnN0IHsgc3Bhd25TeW5jIH0gPSByZXF1aXJlKCJub2RlOmNoaWxkX3Byb2Nlc3MiKTsKY29uc3QgZnMgPSByZXF1aXJlKCJub2RlOmZzIik7CmNvbnN0IG9zID0gcmVxdWlyZSgibm9kZTpvcyIpOwpjb25zdCBwYXRoID0gcmVxdWlyZSgibm9kZTpwYXRoIik7Cgpjb25zdCBwcm9qZWN0Um9vdCA9IHBhdGgucmVzb2x2ZShfX2Rpcm5hbWUsICIuLiIpOwpjb25zdCBjaGVja2VyUGF0aCA9IHBhdGguam9pbihwcm9qZWN0Um9vdCwgInRvb2xzL2NoZWNrLXN1cmdlLW5hdGl2ZS1lZmZlY3RpdmUuc2giKTsKY29uc3QgdmVyc2lvbiA9IGZzLnJlYWRGaWxlU3luYyhwYXRoLmpvaW4ocHJvamVjdFJvb3QsICJWRVJTSU9OIiksICJ1dGY4IikudHJpbSgpOwoKYXNzZXJ0Lm9rKGZzLmV4aXN0c1N5bmMoY2hlY2tlclBhdGgpLCAi5b+F6aG75o+Q5L6bIGlPUy90dk9TIOacieaViOmFjee9ruajgOafpeW3peWFtyIpOwpjb25zdCBjaGVja2VyID0gZnMucmVhZEZpbGVTeW5jKGNoZWNrZXJQYXRoLCAidXRmOCIpOwphc3NlcnQubWF0Y2goY2hlY2tlciwgL3lvdXR1YmVcLm5hdGl2ZVwucmVzcG9uc2UvKTsKYXNzZXJ0Lm1hdGNoKGNoZWNrZXIsIC95b3V0dWJlXC50dm9zXC5qc29uLyk7CmFzc2VydC5tYXRjaChjaGVja2VyLCAvZ29vZ2xldmlkZW8vKTsKCmZ1bmN0aW9uIHJ1bkNoZWNrZXIocHJvZmlsZSkgewogIGNvbnN0IHRlbXBvcmFyeURpcmVjdG9yeSA9IGZzLm1rZHRlbXBTeW5jKHBhdGguam9pbihvcy50bXBkaXIoKSwgInlvdXR1YmUtbmF0aXZlLWVmZmVjdGl2ZS1wcm9maWxlLSIpKTsKICBjb25zdCBwcm9maWxlUGF0aCA9IHBhdGguam9pbih0ZW1wb3JhcnlEaXJlY3RvcnksICJlZmZlY3RpdmUuY29uZiIpOwogIGZzLndyaXRlRmlsZVN5bmMocHJvZmlsZVBhdGgsIHByb2ZpbGUpOwogIGNvbnN0IHJlc3VsdCA9IHNwYXduU3luYyhjaGVja2VyUGF0aCwgW10sIHsKICAgIGVuY29kaW5nOiAidXRmOCIsCiAgICBlbnY6IHsgLi4ucHJvY2Vzcy5lbnYsIFNVUkdFX0VGRkVDVElWRV9QUk9GSUxFX0ZJTEU6IHByb2ZpbGVQYXRoIH0sCiAgfSk7CiAgZnMucm1TeW5jKHRlbXBvcmFyeURpcmVjdG9yeSwgeyByZWN1cnNpdmU6IHRydWUsIGZvcmNlOiB0cnVlIH0pOwogIHJldHVybiByZXN1bHQ7Cn0KCmNvbnN0IHJlbGVhc2VSb290ID0gYC9yZWxlYXNlcy8ke3ZlcnNpb259L3NjcmlwdHMvYDsKY29uc3QgdmFsaWROYXRpdmVQcm9maWxlID0gYApbTUlUTV0KaG9zdG5hbWUgPSB3d3cueW91dHViZS5jb20sIG0ueW91dHViZS5jb20sIHlvdXR1YmVpLmdvb2dsZWFwaXMuY29tLCAqLmdvb2dsZXZpZGVvLmNvbQoKW1NjcmlwdF0KeW91dHViZS5uYXRpdmUucmVzcG9uc2UgPSB0eXBlPWh0dHAtcmVzcG9uc2Usc2NyaXB0LXBhdGg9JHtyZWxlYXNlUm9vdH15b3V0dWJlLW5hdGl2ZS1yZXNwb25zZS5qcwp5b3V0dWJlLm5hdGl2ZS5yZXF1ZXN0LmluaXQgPSB0eXBlPWh0dHAtcmVxdWVzdCxzY3JpcHQtcGF0aD0ke3JlbGVhc2VSb290fXlvdXR1YmUtbmF0aXZlLXJlcXVlc3QuanMKeW91dHViZS5uYXRpdmUucmVzcG9uc2UuaW5pdCA9IHR5cGU9aHR0cC1yZXNwb25zZSxzY3JpcHQtcGF0aD0ke3JlbGVhc2VSb290fXlvdXR1YmUtbmF0aXZlLXVtcC5qcwp5b3V0dWJlLnR2b3MuanNvbiA9IHR5cGU9aHR0cC1yZXNwb25zZSxzY3JpcHQtcGF0aD0ke3JlbGVhc2VSb290fXlvdXR1YmUtdHZvcy1qc29uLmpzCmA7Cgpjb25zdCB2YWxpZFJlc3VsdCA9IHJ1bkNoZWNrZXIodmFsaWROYXRpdmVQcm9maWxlKTsKYXNzZXJ0LmVxdWFsKHZhbGlkUmVzdWx0LnN0YXR1cywgMCwgdmFsaWRSZXN1bHQuc3RkZXJyIHx8IHZhbGlkUmVzdWx0LnN0ZG91dCk7Cgpjb25zdCB3aWxkY2FyZE1pdG1SZXN1bHQgPSBydW5DaGVja2VyKAogIHZhbGlkTmF0aXZlUHJvZmlsZS5yZXBsYWNlKAogICAgImhvc3RuYW1lID0gd3d3LnlvdXR1YmUuY29tLCBtLnlvdXR1YmUuY29tLCB5b3V0dWJlaS5nb29nbGVhcGlzLmNvbSwgKi5nb29nbGV2aWRlby5jb20iLAogICAgImhvc3RuYW1lID0gKiwgd3d3LnlvdXR1YmUuY29tLCBtLnlvdXR1YmUuY29tLCB5b3V0dWJlaS5nb29nbGVhcGlzLmNvbSwgKi5nb29nbGV2aWRlby5jb20iLAogICksCik7CmFzc2VydC5lcXVhbCh3aWxkY2FyZE1pdG1SZXN1bHQuc3RhdHVzLCAxLCAi5YWo5bGAICogTUlUTSDlv4Xpobvmo4Dmn6XlpLHotKXvvIzpgb/lhY3or4Hkuablm7rlrprlupTnlKjlkozmma7pgJrnvZHnq5nkuIDotbfmlq3nvZEiKTsKYXNzZXJ0Lm1hdGNoKAogIGAke3dpbGRjYXJkTWl0bVJlc3VsdC5zdGRvdXR9XG4ke3dpbGRjYXJkTWl0bVJlc3VsdC5zdGRlcnJ9YCwKICAvR0xPQkFMX01JVE1fV0lMRENBUkQvLAopOwoKY29uc3QgbWlzc2luZ1R2b3NSZXN1bHQgPSBydW5DaGVja2VyKAogIHZhbGlkTmF0aXZlUHJvZmlsZS5yZXBsYWNlKC95b3V0dWJlXC50dm9zXC5qc29uLipcbi8sICIiKSwKKTsKYXNzZXJ0LmVxdWFsKG1pc3NpbmdUdm9zUmVzdWx0LnN0YXR1cywgMSwgIue8uuWwkSB0dk9TIEpTT04g6KeE5YiZ5b+F6aG75qOA5p+l5aSx6LSlIik7CmFzc2VydC5tYXRjaChgJHttaXNzaW5nVHZvc1Jlc3VsdC5zdGRvdXR9XG4ke21pc3NpbmdUdm9zUmVzdWx0LnN0ZGVycn1gLCAvTUlTU0lORy8pOwoKY29uc3Qgc3RhbGVSZXN1bHQgPSBydW5DaGVja2VyKAogIHZhbGlkTmF0aXZlUHJvZmlsZS5yZXBsYWNlQWxsKGAvcmVsZWFzZXMvJHt2ZXJzaW9ufS9gLCAiL3JlbGVhc2VzLzEuMi44LyIpLAopOwphc3NlcnQuZXF1YWwoc3RhbGVSZXN1bHQuc3RhdHVzLCAxLCAi5pen54mI5pys5Y6f55Sf6ISa5pys5b+F6aG75qOA5p+l5aSx6LSlIik7CmFzc2VydC5tYXRjaChgJHtzdGFsZVJlc3VsdC5zdGRvdXR9XG4ke3N0YWxlUmVzdWx0LnN0ZGVycn1gLCAvU1RBTEUvKTsKCmNvbnN0IGR1cGxpY2F0ZVJlc3VsdCA9IHJ1bkNoZWNrZXIoYCR7dmFsaWROYXRpdmVQcm9maWxlfVxuJHt2YWxpZE5hdGl2ZVByb2ZpbGV9YCk7CmFzc2VydC5lcXVhbChkdXBsaWNhdGVSZXN1bHQuc3RhdHVzLCAxLCAi6YeN5aSN5Y6f55Sf5qih5Z2X5b+F6aG75qOA5p+l5aSx6LSlIik7CmFzc2VydC5tYXRjaChgJHtkdXBsaWNhdGVSZXN1bHQuc3Rkb3V0fVxuJHtkdXBsaWNhdGVSZXN1bHQuc3RkZXJyfWAsIC9EVVBMSUNBVEUvKTsKCmNvbnN0IHdlYk9ubHlSZXN1bHQgPSBydW5DaGVja2VyKAogICJob3N0bmFtZSA9IHd3dy55b3V0dWJlLmNvbSwgbS55b3V0dWJlLmNvbSwgeW91dHViZWkuZ29vZ2xlYXBpcy5jb21cbiIgKwogICAgYHlvdXR1YmUud2ViLnJlc3BvbnNlID0gdHlwZT1odHRwLXJlc3BvbnNlLHNjcmlwdC1wYXRoPS9yZWxlYXNlcy8ke3ZlcnNpb259L3NjcmlwdHMveW91dHViZS13ZWItcmVzcG9uc2UuanNcbmAsCik7CmFzc2VydC5lcXVhbCh3ZWJPbmx5UmVzdWx0LnN0YXR1cywgMSwgIue9kemhteaooeWdl+S4jeiDveiiq+inhuS4uuWOn+eUn+aooeWdl+W3sumDqOe9siIpOwphc3NlcnQubWF0Y2goYCR7d2ViT25seVJlc3VsdC5zdGRvdXR9XG4ke3dlYk9ubHlSZXN1bHQuc3RkZXJyfWAsIC9OQVRJVkVfTUlTU0lORy8pOwoKY29uc29sZS5sb2coIlBBU1M6IG5hdGl2ZSBpT1MvdHZPUyBlZmZlY3RpdmUtcHJvZmlsZSBjaGVja2VyIik7Cg==
+const assert = require("node:assert/strict");
+const { spawnSync } = require("node:child_process");
+const fs = require("node:fs");
+const os = require("node:os");
+const path = require("node:path");
+
+const projectRoot = path.resolve(__dirname, "..");
+const checkerPath = path.join(projectRoot, "tools/check-surge-native-effective.sh");
+const version = fs.readFileSync(path.join(projectRoot, "VERSION"), "utf8").trim();
+
+assert.ok(fs.existsSync(checkerPath), "必须提供 iOS/tvOS 有效配置检查工具");
+const checker = fs.readFileSync(checkerPath, "utf8");
+assert.match(checker, /youtube\.native\.response/);
+assert.match(checker, /youtube\.tvos\.json/);
+assert.match(checker, /googlevideo/);
+
+function runChecker(profile) {
+  const temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "youtube-native-effective-profile-"));
+  const profilePath = path.join(temporaryDirectory, "effective.conf");
+  fs.writeFileSync(profilePath, profile);
+  const result = spawnSync(checkerPath, [], {
+    encoding: "utf8",
+    env: { ...process.env, SURGE_EFFECTIVE_PROFILE_FILE: profilePath },
+  });
+  fs.rmSync(temporaryDirectory, { recursive: true, force: true });
+  return result;
+}
+
+const releaseRoot = `/releases/${version}/scripts/`;
+const validNativeProfile = `
+[MITM]
+hostname = www.youtube.com, m.youtube.com, youtubei.googleapis.com, *.googlevideo.com
+
+[Script]
+youtube.native.response = type=http-response,script-path=${releaseRoot}youtube-native-response.js
+youtube.native.request.init = type=http-request,script-path=${releaseRoot}youtube-native-request.js
+youtube.native.response.init = type=http-response,script-path=${releaseRoot}youtube-native-ump.js
+youtube.tvos.json = type=http-response,script-path=${releaseRoot}youtube-tvos-json.js
+`;
+
+const validResult = runChecker(validNativeProfile);
+assert.equal(validResult.status, 0, validResult.stderr || validResult.stdout);
+
+const wildcardMitmResult = runChecker(
+  validNativeProfile.replace(
+    "hostname = www.youtube.com, m.youtube.com, youtubei.googleapis.com, *.googlevideo.com",
+    "hostname = *, www.youtube.com, m.youtube.com, youtubei.googleapis.com, *.googlevideo.com",
+  ),
+);
+assert.equal(wildcardMitmResult.status, 1, "全局 * MITM 必须检查失败，避免证书固定应用和普通网站一起断网");
+assert.match(
+  `${wildcardMitmResult.stdout}\n${wildcardMitmResult.stderr}`,
+  /GLOBAL_MITM_WILDCARD/,
+);
+
+const missingTvosResult = runChecker(
+  validNativeProfile.replace(/youtube\.tvos\.json.*\n/, ""),
+);
+assert.equal(missingTvosResult.status, 1, "缺少 tvOS JSON 规则必须检查失败");
+assert.match(`${missingTvosResult.stdout}\n${missingTvosResult.stderr}`, /MISSING/);
+
+const staleResult = runChecker(
+  validNativeProfile.replaceAll(`/releases/${version}/`, "/releases/1.2.8/"),
+);
+assert.equal(staleResult.status, 1, "旧版本原生脚本必须检查失败");
+assert.match(`${staleResult.stdout}\n${staleResult.stderr}`, /STALE/);
+
+const duplicateResult = runChecker(`${validNativeProfile}\n${validNativeProfile}`);
+assert.equal(duplicateResult.status, 1, "重复原生模块必须检查失败");
+assert.match(`${duplicateResult.stdout}\n${duplicateResult.stderr}`, /DUPLICATE/);
+
+const webOnlyResult = runChecker(
+  "hostname = www.youtube.com, m.youtube.com, youtubei.googleapis.com\n" +
+    `youtube.web.response = type=http-response,script-path=/releases/${version}/scripts/youtube-web-response.js\n`,
+);
+assert.equal(webOnlyResult.status, 1, "网页模块不能被视为原生模块已部署");
+assert.match(`${webOnlyResult.stdout}\n${webOnlyResult.stderr}`, /NATIVE_MISSING/);
+
+console.log("PASS: native iOS/tvOS effective-profile checker");

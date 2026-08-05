@@ -1,1 +1,350 @@
-IyEvdXNyL2Jpbi9lbnYgbm9kZQoKaW1wb3J0IGNyeXB0byBmcm9tICJub2RlOmNyeXB0byI7CmltcG9ydCBmcyBmcm9tICJub2RlOmZzIjsKaW1wb3J0IGh0dHAgZnJvbSAibm9kZTpodHRwIjsKaW1wb3J0IG9zIGZyb20gIm5vZGU6b3MiOwppbXBvcnQgcGF0aCBmcm9tICJub2RlOnBhdGgiOwppbXBvcnQgeyBmaWxlVVJMVG9QYXRoIH0gZnJvbSAibm9kZTp1cmwiOwoKY29uc3QgTU9EVUxFX0NPTkZJR1MgPSB7CiAgbmF0aXZlOiB7CiAgICBtb2R1bGVOYW1lOiAiWW91VHViZS1pT1MtdHZPUy1BZEJsb2NrLnNnbW9kdWxlIiwKICAgIHNvdXJjZU1vZHVsZU5hbWU6ICJZb3VUdWJlLWlPUy10dk9TLUFkQmxvY2suc2dtb2R1bGUiLAogICAgc2NyaXB0TmFtZXM6IFsKICAgICAgInlvdXR1YmUtbmF0aXZlLXJlc3BvbnNlLmpzIiwKICAgICAgInlvdXR1YmUtbmF0aXZlLXJlcXVlc3QuanMiLAogICAgICAieW91dHViZS1uYXRpdmUtdW1wLmpzIiwKICAgICAgInlvdXR1YmUtdHZvcy1qc29uLmpzIiwKICAgICAgInlvdXR1YmUtd2ViLXJlc3BvbnNlLmpzIiwKICAgICAgInlvdXR1YmUtd2ViLXBhZ2UuanMiLAogICAgXSwKICAgIHRpdGxlOiAiWW91VHViZSBpT1MvdHZPUyDmnKzlnLDmtYvor5Xlronoo4UiLAogIH0sCiAgd2ViOiB7CiAgICBtb2R1bGVOYW1lOiAiWW91VHViZS1BZEJsb2NrLnNnbW9kdWxlIiwKICAgIHNvdXJjZU1vZHVsZU5hbWU6ICJZb3VUdWJlLUFsbC1QbGF0Zm9ybS1BZEJsb2NrLnNnbW9kdWxlIiwKICAgIHNjcmlwdE5hbWVzOiBbInlvdXR1YmUtd2ViLXJlc3BvbnNlLmpzIiwgInlvdXR1YmUtd2ViLXBhZ2UuanMiXSwKICAgIHRpdGxlOiAiWW91VHViZSBNYWMg572R6aG15pys5Zyw5rWL6K+V5a6J6KOFIiwKICB9LAp9Owpjb25zdCBTQ1JJUFRfTkFNRVMgPSBbCiAgLi4ubmV3IFNldChPYmplY3QudmFsdWVzKE1PRFVMRV9DT05GSUdTKS5mbGF0TWFwKCh7IHNjcmlwdE5hbWVzIH0pID0+IHNjcmlwdE5hbWVzKSksCl07CmNvbnN0IFBVQkxJU0hFRF9TQ1JJUFRfUk9PVCA9CiAgImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9jbmR4Zi9sYWIvbWFpbi9kaXN0L3lvdXR1YmUvIjsKCmZ1bmN0aW9uIHNlbmQocmVzcG9uc2UsIHN0YXR1c0NvZGUsIGNvbnRlbnRUeXBlLCBib2R5KSB7CiAgcmVzcG9uc2Uud3JpdGVIZWFkKHN0YXR1c0NvZGUsIHsKICAgICJjYWNoZS1jb250cm9sIjogIm5vLXN0b3JlIiwKICAgICJjb250ZW50LXR5cGUiOiBjb250ZW50VHlwZSwKICAgICJ4LWNvbnRlbnQtdHlwZS1vcHRpb25zIjogIm5vc25pZmYiLAogIH0pOwogIHJlc3BvbnNlLmVuZChib2R5KTsKfQoKZnVuY3Rpb24gaXNQcml2YXRlTGFuSXB2NCh2YWx1ZSkgewogIGNvbnN0IG9jdGV0cyA9IHZhbHVlLnNwbGl0KCIuIik7CiAgaWYgKG9jdGV0cy5sZW5ndGggIT09IDQgfHwgb2N0ZXRzLnNvbWUoKG9jdGV0KSA9PiAhL15cZHsxLDN9JC8udGVzdChvY3RldCkpKSB7CiAgICByZXR1cm4gZmFsc2U7CiAgfQogIGNvbnN0IG51bWJlcnMgPSBvY3RldHMubWFwKE51bWJlcik7CiAgaWYgKG51bWJlcnMuc29tZSgobnVtYmVyKSA9PiBudW1iZXIgPiAyNTUpKSB7CiAgICByZXR1cm4gZmFsc2U7CiAgfQogIHJldHVybiAoCiAgICBudW1iZXJzWzBdID09PSAxMCB8fAogICAgKG51bWJlcnNbMF0gPT09IDE3MiAmJiBudW1iZXJzWzFdID49IDE2ICYmIG51bWJlcnNbMV0gPD0gMzEpIHx8CiAgICAobnVtYmVyc1swXSA9PT0gMTkyICYmIG51bWJlcnNbMV0gPT09IDE2OCkKICApOwp9CgpmdW5jdGlvbiBmaW5kTGFuQWRkcmVzcygpIHsKICBmb3IgKGNvbnN0IGFkZHJlc3NlcyBvZiBPYmplY3QudmFsdWVzKG9zLm5ldHdvcmtJbnRlcmZhY2VzKCkpKSB7CiAgICBmb3IgKGNvbnN0IGFkZHJlc3Mgb2YgYWRkcmVzc2VzID8/IFtdKSB7CiAgICAgIGlmIChhZGRyZXNzLmZhbWlseSA9PT0gIklQdjQiICYmICFhZGRyZXNzLmludGVybmFsICYmIGlzUHJpdmF0ZUxhbklwdjQoYWRkcmVzcy5hZGRyZXNzKSkgewogICAgICAgIHJldHVybiBhZGRyZXNzLmFkZHJlc3M7CiAgICAgIH0KICAgIH0KICB9CiAgcmV0dXJuIHVuZGVmaW5lZDsKfQoKZnVuY3Rpb24gcmVxdWlyZUxhbkNvbmZpZ3VyYXRpb24oeyBhbGxvd0xhbiwgaG9zdCwgYWR2ZXJ0aXNlSG9zdCB9KSB7CiAgaWYgKCFhbGxvd0xhbikgewogICAgaWYgKGhvc3QgIT09ICIxMjcuMC4wLjEiKSB7CiAgICAgIHRocm93IG5ldyBFcnJvcigiYWxsb3dMYW49dHJ1ZSBpcyByZXF1aXJlZCBmb3Igbm9uLWxvb3BiYWNrIGxpc3RlbmluZyIpOwogICAgfQogICAgaWYgKGFkdmVydGlzZUhvc3QgIT09ICIxMjcuMC4wLjEiKSB7CiAgICAgIHRocm93IG5ldyBFcnJvcigiYWxsb3dMYW49dHJ1ZSBpcyByZXF1aXJlZCBmb3Igbm9uLWxvb3BiYWNrIGFkdmVydGlzaW5nIik7CiAgICB9CiAgICByZXR1cm47CiAgfQoKICBpZiAoaG9zdCAhPT0gIjAuMC4wLjAiICYmICFpc1ByaXZhdGVMYW5JcHY0KGhvc3QpKSB7CiAgICB0aHJvdyBuZXcgRXJyb3IoIkxBTiBob3N0IG11c3QgYmUgMC4wLjAuMCBvciBhIHByaXZhdGUgTEFOIElQdjQgYWRkcmVzcyIpOwogIH0KICBpZiAoIWlzUHJpdmF0ZUxhbklwdjQoYWR2ZXJ0aXNlSG9zdCkpIHsKICAgIHRocm93IG5ldyBFcnJvcigiYWR2ZXJ0aXNlSG9zdCBtdXN0IGJlIGEgcHJpdmF0ZSBMQU4gSVB2NCBhZGRyZXNzIik7CiAgfQp9CgpmdW5jdGlvbiBjcmVhdGVTZXNzaW9uVG9rZW4oKSB7CiAgcmV0dXJuIGNyeXB0by5yYW5kb21CeXRlcygyNCkudG9TdHJpbmcoImJhc2U2NHVybCIpOwp9CgpmdW5jdGlvbiB3aXRoVG9rZW4odXJsLCB0b2tlbikgewogIGNvbnN0IHNlcGFyYXRvciA9IHVybC5pbmNsdWRlcygiPyIpID8gIiYiIDogIj8iOwogIHJldHVybiBgJHt1cmx9JHtzZXBhcmF0b3J9dG9rZW49JHtlbmNvZGVVUklDb21wb25lbnQodG9rZW4pfWA7Cn0KCmZ1bmN0aW9uIHJlbmRlckluc3RhbGxlcihvcmlnaW4sIHRva2VuLCBtb2R1bGVOYW1lLCB0aXRsZSkgewogIGNvbnN0IG1vZHVsZVVybCA9IHdpdGhUb2tlbihgJHtvcmlnaW59LyR7bW9kdWxlTmFtZX1gLCB0b2tlbik7CiAgY29uc3QgaW5zdGFsbFVybCA9IGBzdXJnZTovLy9pbnN0YWxsLW1vZHVsZT91cmw9JHtlbmNvZGVVUklDb21wb25lbnQobW9kdWxlVXJsKX1gOwogIHJldHVybiBgPCFkb2N0eXBlIGh0bWw+CjxodG1sIGxhbmc9InpoLUNOIj4KICA8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CiAgICA8bWV0YSBodHRwLWVxdWl2PSJyZWZyZXNoIiBjb250ZW50PSIwO3VybD0ke2luc3RhbGxVcmx9Ij4KICAgIDx0aXRsZT4ke3RpdGxlfTwvdGl0bGU+CiAgPC9oZWFkPgogIDxib2R5PgogICAgPG1haW4+CiAgICAgIDxoMT4ke3RpdGxlfTwvaDE+CiAgICAgIDxwPjxhIGhyZWY9IiR7aW5zdGFsbFVybH0iPuaJk+W8gCBTdXJnZSDlubblr7zlhaU8L2E+PC9wPgogICAgICA8cD48YSBocmVmPSIke21vZHVsZVVybH0iPuafpeeci+acrOWcsOa1i+ivleaooeWdlzwvYT48L3A+CiAgICA8L21haW4+CiAgPC9ib2R5Pgo8L2h0bWw+CmA7Cn0KCmZ1bmN0aW9uIHJld3JpdGVNb2R1bGVTb3VyY2Uoc291cmNlLCBvcmlnaW4sIHRva2VuLCBzY3JpcHROYW1lcykgewogIGNvbnN0IHNjcmlwdE5hbWVQYXR0ZXJuID0gc2NyaXB0TmFtZXMKICAgIC5tYXAoKHNjcmlwdE5hbWUpID0+IHNjcmlwdE5hbWUucmVwbGFjZSgvWy4qKz9eJHt9KCl8W1xdXFxdL2csICJcXCQmIikpCiAgICAuam9pbigifCIpOwogIGNvbnN0IHBhdHRlcm4gPSBuZXcgUmVnRXhwKAogICAgYCR7UFVCTElTSEVEX1NDUklQVF9ST09ULnJlcGxhY2UoL1suKis/XiR7fSgpfFtcXVxcXS9nLCAiXFwkJiIpfSg/OnJlbGVhc2VzL1teLyxcXHJcXG5dKy8pP3NjcmlwdHMvKCR7c2NyaXB0TmFtZVBhdHRlcm59KShcXD9bXixcXHJcXG5dKik/YCwKICAgICJnIiwKICApOwogIHJldHVybiBzb3VyY2UucmVwbGFjZShwYXR0ZXJuLCAoXywgc2NyaXB0TmFtZSwgcXVlcnkgPSAiIikgPT4gewogICAgY29uc3QgcGFyYW1ldGVycyA9IG5ldyBVUkxTZWFyY2hQYXJhbXMocXVlcnkuc2xpY2UoMSkpOwogICAgcGFyYW1ldGVycy5zZXQoInRva2VuIiwgdG9rZW4pOwogICAgcmV0dXJuIGAke29yaWdpbn0vc2NyaXB0cy8ke3NjcmlwdE5hbWV9PyR7cGFyYW1ldGVycy50b1N0cmluZygpfWA7CiAgfSk7Cn0KCmZ1bmN0aW9uIHJlYWRSZXF1aXJlZChyZWFkRmlsZSwgZmlsZVBhdGgpIHsKICB0cnkgewogICAgcmV0dXJuIHJlYWRGaWxlKGZpbGVQYXRoLCAidXRmOCIpOwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICB0aHJvdyBuZXcgRXJyb3IoYGRpc3QveW91dHViZSBpcyBzdGFsZTogdW5hYmxlIHRvIHJlYWQgJHtmaWxlUGF0aH06ICR7ZXJyb3IubWVzc2FnZX1gKTsKICB9Cn0KCmV4cG9ydCBmdW5jdGlvbiB2YWxpZGF0ZURpc3RyaWJ1dGlvbkN1cnJlbnQoeyBwcm9qZWN0Um9vdCwgcmVhZEZpbGUgPSBmcy5yZWFkRmlsZVN5bmMgfSA9IHt9KSB7CiAgaWYgKCFwcm9qZWN0Um9vdCkgewogICAgdGhyb3cgbmV3IEVycm9yKCJwcm9qZWN0Um9vdCBpcyByZXF1aXJlZCIpOwogIH0KCiAgY29uc3QgcmVwb1Jvb3QgPSBwYXRoLnJlc29sdmUocHJvamVjdFJvb3QsICIuLiIpOwogIGNvbnN0IGRpc3RSb290ID0gcGF0aC5qb2luKHJlcG9Sb290LCAiZGlzdC95b3V0dWJlIik7CiAgY29uc3QgdmVyc2lvbiA9IHJlYWRSZXF1aXJlZChyZWFkRmlsZSwgcGF0aC5qb2luKHByb2plY3RSb290LCAiVkVSU0lPTiIpKS50cmltKCk7CiAgY29uc3QgcmVsZWFzZVJvb3QgPSBwYXRoLmpvaW4oZGlzdFJvb3QsICJyZWxlYXNlcyIsIHZlcnNpb24pOwogIGNvbnN0IGRpc3RWZXJzaW9uID0gcmVhZFJlcXVpcmVkKHJlYWRGaWxlLCBwYXRoLmpvaW4oZGlzdFJvb3QsICJWRVJTSU9OIikpLnRyaW0oKTsKICBpZiAodmVyc2lvbiAhPT0gZGlzdFZlcnNpb24pIHsKICAgIHRocm93IG5ldyBFcnJvcigiZGlzdC95b3V0dWJlIGlzIHN0YWxlOiBWRVJTSU9OIGRpZmZlcnMiKTsKICB9CgogIGZvciAoY29uc3QgbW9kdWxlQ29uZmlnIG9mIE9iamVjdC52YWx1ZXMoTU9EVUxFX0NPTkZJR1MpKSB7CiAgICBjb25zdCBzb3VyY2VNb2R1bGUgPSByZWFkUmVxdWlyZWQoCiAgICAgIHJlYWRGaWxlLAogICAgICBwYXRoLmpvaW4ocHJvamVjdFJvb3QsICJjbGllbnRzL3N1cmdlIiwgbW9kdWxlQ29uZmlnLnNvdXJjZU1vZHVsZU5hbWUpLAogICAgKTsKICAgIGNvbnN0IGRpc3RNb2R1bGUgPSByZWFkUmVxdWlyZWQocmVhZEZpbGUsIHBhdGguam9pbihkaXN0Um9vdCwgbW9kdWxlQ29uZmlnLm1vZHVsZU5hbWUpKTsKICAgIGlmIChzb3VyY2VNb2R1bGUgIT09IGRpc3RNb2R1bGUpIHsKICAgICAgdGhyb3cgbmV3IEVycm9yKGBkaXN0L3lvdXR1YmUgaXMgc3RhbGU6IG1vZHVsZSAke21vZHVsZUNvbmZpZy5tb2R1bGVOYW1lfSBkaWZmZXJzYCk7CiAgICB9CiAgfQoKICBmb3IgKGNvbnN0IHNjcmlwdE5hbWUgb2YgU0NSSVBUX05BTUVTKSB7CiAgICBjb25zdCBzb3VyY2VEaXJlY3RvcnkgPQogICAgICBzY3JpcHROYW1lID09PSAieW91dHViZS10dm9zLWpzb24uanMiCiAgICAgICAgPyAidHZvcyIKICAgICAgICA6IHNjcmlwdE5hbWUuc3RhcnRzV2l0aCgieW91dHViZS1uYXRpdmUtIikKICAgICAgICAgID8gIm5hdGl2ZSIKICAgICAgICAgIDogIndlYiI7CiAgICBjb25zdCBzb3VyY2UgPSByZWFkUmVxdWlyZWQocmVhZEZpbGUsIHBhdGguam9pbihwcm9qZWN0Um9vdCwgInNjcmlwdHMiLCBzb3VyY2VEaXJlY3RvcnksIHNjcmlwdE5hbWUpKTsKICAgIGNvbnN0IGRpc3RyaWJ1dGlvbiA9IHJlYWRSZXF1aXJlZChyZWFkRmlsZSwgcGF0aC5qb2luKHJlbGVhc2VSb290LCAic2NyaXB0cyIsIHNjcmlwdE5hbWUpKTsKICAgIGlmIChzb3VyY2UgIT09IGRpc3RyaWJ1dGlvbikgewogICAgICB0aHJvdyBuZXcgRXJyb3IoYGRpc3QveW91dHViZSBpcyBzdGFsZTogc2NyaXB0ICR7c2NyaXB0TmFtZX0gZGlmZmVyc2ApOwogICAgfQogIH0KCiAgcmV0dXJuIHsgZGlzdFJvb3QsIHJlbGVhc2VSb290LCB2ZXJzaW9uIH07Cn0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBzdGFydExvY2FsVGVzdFNlcnZlcih7CiAgcHJvamVjdFJvb3QsCiAgcGxhdGZvcm0gPSAibmF0aXZlIiwKICBhbGxvd0xhbiA9IGZhbHNlLAogIGhvc3QsCiAgYWR2ZXJ0aXNlSG9zdCwKICBwb3J0ID0gODc2NSwKICB0b2tlbiA9IGNyZWF0ZVNlc3Npb25Ub2tlbigpLAogIGxvZ2dlciA9IGNvbnNvbGUubG9nLAp9ID0ge30pIHsKICBjb25zdCBtb2R1bGVDb25maWcgPSBNT0RVTEVfQ09ORklHU1twbGF0Zm9ybV07CiAgaWYgKCFtb2R1bGVDb25maWcpIHsKICAgIHRocm93IG5ldyBFcnJvcihgcGxhdGZvcm0gbXVzdCBiZSBvbmUgb2Y6ICR7T2JqZWN0LmtleXMoTU9EVUxFX0NPTkZJR1MpLmpvaW4oIiwgIil9YCk7CiAgfQogIGNvbnN0IHsgZGlzdFJvb3QsIHJlbGVhc2VSb290LCB2ZXJzaW9uIH0gPSB2YWxpZGF0ZURpc3RyaWJ1dGlvbkN1cnJlbnQoeyBwcm9qZWN0Um9vdCB9KTsKICBpZiAodHlwZW9mIHRva2VuICE9PSAic3RyaW5nIiB8fCB0b2tlbi5sZW5ndGggPT09IDApIHsKICAgIHRocm93IG5ldyBFcnJvcigidG9rZW4gbXVzdCBiZSBhIG5vbi1lbXB0eSBzdHJpbmciKTsKICB9CgogIGNvbnN0IGxpc3Rlbkhvc3QgPSBob3N0ID8/IChhbGxvd0xhbiA/ICIwLjAuMC4wIiA6ICIxMjcuMC4wLjEiKTsKICBjb25zdCBwdWJsaWNIb3N0ID0gYWR2ZXJ0aXNlSG9zdCA/PyAoYWxsb3dMYW4gPyBmaW5kTGFuQWRkcmVzcygpIDogIjEyNy4wLjAuMSIpOwogIHJlcXVpcmVMYW5Db25maWd1cmF0aW9uKHsgYWxsb3dMYW4sIGhvc3Q6IGxpc3Rlbkhvc3QsIGFkdmVydGlzZUhvc3Q6IHB1YmxpY0hvc3QgfSk7CgogIGNvbnN0IG1vZHVsZVBhdGggPSBwYXRoLmpvaW4oZGlzdFJvb3QsIG1vZHVsZUNvbmZpZy5tb2R1bGVOYW1lKTsKICBjb25zdCBzY3JpcHRzUm9vdCA9IHBhdGguam9pbihyZWxlYXNlUm9vdCwgInNjcmlwdHMiKTsKICBjb25zdCBzY3JpcHROYW1lU2V0ID0gbmV3IFNldChtb2R1bGVDb25maWcuc2NyaXB0TmFtZXMpOwogIGNvbnN0IHNlcnZlciA9IGh0dHAuY3JlYXRlU2VydmVyKChyZXF1ZXN0LCByZXNwb25zZSkgPT4gewogICAgY29uc3QgcmVxdWVzdFVybCA9IG5ldyBVUkwocmVxdWVzdC51cmwgPz8gIi8iLCAiaHR0cDovL2xvY2FsLnRlc3QiKTsKICAgIGNvbnN0IHN1cHBsaWVkVG9rZW5zID0gcmVxdWVzdFVybC5zZWFyY2hQYXJhbXMuZ2V0QWxsKCJ0b2tlbiIpOwogICAgaWYgKHN1cHBsaWVkVG9rZW5zLmxlbmd0aCAhPT0gMSB8fCBzdXBwbGllZFRva2Vuc1swXSAhPT0gdG9rZW4pIHsKICAgICAgc2VuZChyZXNwb25zZSwgNDA0LCAidGV4dC9wbGFpbjsgY2hhcnNldD11dGYtOCIsICJOb3QgRm91bmRcbiIpOwogICAgICByZXR1cm47CiAgICB9CgogICAgaWYgKHJlcXVlc3QubWV0aG9kICE9PSAiR0VUIikgewogICAgICBzZW5kKHJlc3BvbnNlLCA0MDUsICJ0ZXh0L3BsYWluOyBjaGFyc2V0PXV0Zi04IiwgIk1ldGhvZCBOb3QgQWxsb3dlZFxuIik7CiAgICAgIHJldHVybjsKICAgIH0KCiAgICBjb25zdCBwYXRobmFtZSA9IHJlcXVlc3RVcmwucGF0aG5hbWU7CiAgICBjb25zdCBhZGRyZXNzID0gc2VydmVyLmFkZHJlc3MoKTsKICAgIGNvbnN0IGFjdHVhbFBvcnQgPSB0eXBlb2YgYWRkcmVzcyA9PT0gIm9iamVjdCIgJiYgYWRkcmVzcyA/IGFkZHJlc3MucG9ydCA6IHBvcnQ7CiAgICBjb25zdCBvcmlnaW4gPSBgaHR0cDovLyR7cHVibGljSG9zdH06JHthY3R1YWxQb3J0fWA7CgogICAgaWYgKHBhdGhuYW1lID09PSAiL2hlYWx0aCIpIHsKICAgICAgc2VuZChyZXNwb25zZSwgMjAwLCAiYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOCIsIGAke0pTT04uc3RyaW5naWZ5KHsgc3RhdHVzOiAib2siLCB2ZXJzaW9uIH0pfVxuYCk7CiAgICAgIHJldHVybjsKICAgIH0KICAgIGlmIChwYXRobmFtZSA9PT0gIi9pbnN0YWxsLmh0bWwiIHx8IHBhdGhuYW1lID09PSAiLyIpIHsKICAgICAgc2VuZCgKICAgICAgICByZXNwb25zZSwKICAgICAgICAyMDAsCiAgICAgICAgInRleHQvaHRtbDsgY2hhcnNldD11dGYtOCIsCiAgICAgICAgcmVuZGVySW5zdGFsbGVyKG9yaWdpbiwgdG9rZW4sIG1vZHVsZUNvbmZpZy5tb2R1bGVOYW1lLCBtb2R1bGVDb25maWcudGl0bGUpLAogICAgICApOwogICAgICByZXR1cm47CiAgICB9CiAgICBpZiAocGF0aG5hbWUgPT09IGAvJHttb2R1bGVDb25maWcubW9kdWxlTmFtZX1gKSB7CiAgICAgIGNvbnN0IHNvdXJjZSA9IHJld3JpdGVNb2R1bGVTb3VyY2UoCiAgICAgICAgZnMucmVhZEZpbGVTeW5jKG1vZHVsZVBhdGgsICJ1dGY4IiksCiAgICAgICAgb3JpZ2luLAogICAgICAgIHRva2VuLAogICAgICAgIG1vZHVsZUNvbmZpZy5zY3JpcHROYW1lcywKICAgICAgKTsKICAgICAgc2VuZChyZXNwb25zZSwgMjAwLCAidGV4dC9wbGFpbjsgY2hhcnNldD11dGYtOCIsIHNvdXJjZSk7CiAgICAgIHJldHVybjsKICAgIH0KICAgIGlmIChwYXRobmFtZS5zdGFydHNXaXRoKCIvc2NyaXB0cy8iKSkgewogICAgICBsZXQgc2NyaXB0TmFtZTsKICAgICAgdHJ5IHsKICAgICAgICBzY3JpcHROYW1lID0gZGVjb2RlVVJJQ29tcG9uZW50KHBhdGhuYW1lLnNsaWNlKCIvc2NyaXB0cy8iLmxlbmd0aCkpOwogICAgICB9IGNhdGNoIHsKICAgICAgICBzZW5kKHJlc3BvbnNlLCA0MDQsICJ0ZXh0L3BsYWluOyBjaGFyc2V0PXV0Zi04IiwgIk5vdCBGb3VuZFxuIik7CiAgICAgICAgcmV0dXJuOwogICAgICB9CiAgICAgIGlmICghc2NyaXB0TmFtZVNldC5oYXMoc2NyaXB0TmFtZSkpIHsKICAgICAgICBzZW5kKHJlc3BvbnNlLCA0MDQsICJ0ZXh0L3BsYWluOyBjaGFyc2V0PXV0Zi04IiwgIk5vdCBGb3VuZFxuIik7CiAgICAgICAgcmV0dXJuOwogICAgICB9CiAgICAgIHNlbmQocmVzcG9uc2UsIDIwMCwgInRleHQvamF2YXNjcmlwdDsgY2hhcnNldD11dGYtOCIsIGZzLnJlYWRGaWxlU3luYyhwYXRoLmpvaW4oc2NyaXB0c1Jvb3QsIHNjcmlwdE5hbWUpLCAidXRmOCIpKTsKICAgICAgcmV0dXJuOwogICAgfQogICAgc2VuZChyZXNwb25zZSwgNDA0LCAidGV4dC9wbGFpbjsgY2hhcnNldD11dGYtOCIsICJOb3QgRm91bmRcbiIpOwogIH0pOwoKICBhd2FpdCBuZXcgUHJvbWlzZSgocmVzb2x2ZSwgcmVqZWN0KSA9PiB7CiAgICBzZXJ2ZXIub25jZSgiZXJyb3IiLCByZWplY3QpOwogICAgc2VydmVyLmxpc3Rlbihwb3J0LCBsaXN0ZW5Ib3N0LCByZXNvbHZlKTsKICB9KTsKCiAgY29uc3QgYWRkcmVzcyA9IHNlcnZlci5hZGRyZXNzKCk7CiAgY29uc3QgYWN0dWFsUG9ydCA9IHR5cGVvZiBhZGRyZXNzID09PSAib2JqZWN0IiAmJiBhZGRyZXNzID8gYWRkcmVzcy5wb3J0IDogcG9ydDsKICBjb25zdCBvcmlnaW4gPSBgaHR0cDovLyR7cHVibGljSG9zdH06JHthY3R1YWxQb3J0fWA7CiAgbG9nZ2VyKGBMb2NhbCBZb3VUdWJlIHRlc3Qgc2VydmVyOiAke3dpdGhUb2tlbihgJHtvcmlnaW59L2luc3RhbGwuaHRtbGAsIHRva2VuKX1gKTsKICBsb2dnZXIoYExvY2FsIFN1cmdlIG1vZHVsZTogJHt3aXRoVG9rZW4oYCR7b3JpZ2lufS8ke21vZHVsZUNvbmZpZy5tb2R1bGVOYW1lfWAsIHRva2VuKX1gKTsKCiAgcmV0dXJuIHsKICAgIGhvc3Q6IGxpc3Rlbkhvc3QsCiAgICBvcmlnaW4sCiAgICB0b2tlbiwKICAgIGNsb3NlKCkgewogICAgICByZXR1cm4gbmV3IFByb21pc2UoKHJlc29sdmUsIHJlamVjdCkgPT4gewogICAgICAgIHNlcnZlci5jbG9zZSgoZXJyb3IpID0+IChlcnJvciA/IHJlamVjdChlcnJvcikgOiByZXNvbHZlKCkpKTsKICAgICAgfSk7CiAgICB9LAogIH07Cn0KCmV4cG9ydCBmdW5jdGlvbiBwYXJzZUNsaU9wdGlvbnMoYXJndikgewogIGNvbnN0IG9wdGlvbnMgPSB7fTsKICBmb3IgKGxldCBpbmRleCA9IDA7IGluZGV4IDwgYXJndi5sZW5ndGg7IGluZGV4ICs9IDEpIHsKICAgIGNvbnN0IG5hbWUgPSBhcmd2W2luZGV4XTsKICAgIGNvbnN0IHZhbHVlID0gYXJndltpbmRleCArIDFdOwogICAgaWYgKG5hbWUgPT09ICItLWFsbG93LWxhbiIpIHsKICAgICAgb3B0aW9ucy5hbGxvd0xhbiA9IHRydWU7CiAgICAgIGNvbnRpbnVlOwogICAgfQogICAgaWYgKG5hbWUgPT09ICItLXBsYXRmb3JtIikgewogICAgICBpZiAoIXZhbHVlIHx8ICFPYmplY3QuaGFzT3duKE1PRFVMRV9DT05GSUdTLCB2YWx1ZSkpIHsKICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIi0tcGxhdGZvcm0gbXVzdCBiZSB3ZWIgb3IgbmF0aXZlIik7CiAgICAgIH0KICAgICAgb3B0aW9ucy5wbGF0Zm9ybSA9IHZhbHVlOwogICAgICBpbmRleCArPSAxOwogICAgICBjb250aW51ZTsKICAgIH0KICAgIGlmIChuYW1lID09PSAiLS1ob3N0IiB8fCBuYW1lID09PSAiLS1hZHZlcnRpc2UtaG9zdCIgfHwgbmFtZSA9PT0gIi0tcG9ydCIpIHsKICAgICAgaWYgKCF2YWx1ZSkgewogICAgICAgIHRocm93IG5ldyBFcnJvcihgJHtuYW1lfSByZXF1aXJlcyBhIHZhbHVlYCk7CiAgICAgIH0KICAgICAgaWYgKG5hbWUgPT09ICItLWhvc3QiKSBvcHRpb25zLmhvc3QgPSB2YWx1ZTsKICAgICAgaWYgKG5hbWUgPT09ICItLWFkdmVydGlzZS1ob3N0Iikgb3B0aW9ucy5hZHZlcnRpc2VIb3N0ID0gdmFsdWU7CiAgICAgIGlmIChuYW1lID09PSAiLS1wb3J0IikgewogICAgICAgIGlmICghL15cZCskLy50ZXN0KHZhbHVlKSkgewogICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCItLXBvcnQgbXVzdCBiZSBhbiBpbnRlZ2VyIik7CiAgICAgICAgfQogICAgICAgIG9wdGlvbnMucG9ydCA9IE51bWJlcih2YWx1ZSk7CiAgICAgIH0KICAgICAgaW5kZXggKz0gMTsKICAgICAgY29udGludWU7CiAgICB9CiAgICB0aHJvdyBuZXcgRXJyb3IoYFVua25vd24gb3B0aW9uOiAke25hbWV9YCk7CiAgfQogIGlmIChvcHRpb25zLnBvcnQgIT09IHVuZGVmaW5lZCAmJiAob3B0aW9ucy5wb3J0IDwgMCB8fCBvcHRpb25zLnBvcnQgPiA2NTUzNSkpIHsKICAgIHRocm93IG5ldyBFcnJvcigiLS1wb3J0IG11c3QgYmUgYmV0d2VlbiAwIGFuZCA2NTUzNSIpOwogIH0KICByZXR1cm4gb3B0aW9uczsKfQoKY29uc3QgZW50cnlQYXRoID0gcHJvY2Vzcy5hcmd2WzFdID8gcGF0aC5yZXNvbHZlKHByb2Nlc3MuYXJndlsxXSkgOiAiIjsKaWYgKGVudHJ5UGF0aCA9PT0gZmlsZVVSTFRvUGF0aChpbXBvcnQubWV0YS51cmwpKSB7CiAgY29uc3QgcHJvamVjdFJvb3QgPSBwYXRoLnJlc29sdmUocGF0aC5kaXJuYW1lKGZpbGVVUkxUb1BhdGgoaW1wb3J0Lm1ldGEudXJsKSksICIuLiIpOwogIGNvbnN0IHJ1bnRpbWUgPSBhd2FpdCBzdGFydExvY2FsVGVzdFNlcnZlcih7CiAgICBwcm9qZWN0Um9vdCwKICAgIC4uLnBhcnNlQ2xpT3B0aW9ucyhwcm9jZXNzLmFyZ3Yuc2xpY2UoMikpLAogIH0pOwoKICBjb25zdCBzdG9wID0gYXN5bmMgKCkgPT4gewogICAgYXdhaXQgcnVudGltZS5jbG9zZSgpOwogICAgcHJvY2Vzcy5leGl0KDApOwogIH07CiAgcHJvY2Vzcy5vbmNlKCJTSUdJTlQiLCBzdG9wKTsKICBwcm9jZXNzLm9uY2UoIlNJR1RFUk0iLCBzdG9wKTsKfQo=
+#!/usr/bin/env node
+
+import crypto from "node:crypto";
+import fs from "node:fs";
+import http from "node:http";
+import os from "node:os";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const MODULE_CONFIGS = {
+  native: {
+    moduleName: "YouTube-iOS-tvOS-AdBlock.sgmodule",
+    sourceModuleName: "YouTube-iOS-tvOS-AdBlock.sgmodule",
+    scriptNames: [
+      "youtube-native-response.js",
+      "youtube-native-request.js",
+      "youtube-native-ump.js",
+      "youtube-tvos-json.js",
+      "youtube-web-response.js",
+      "youtube-web-page.js",
+    ],
+    title: "YouTube iOS/tvOS 本地测试安装",
+  },
+  web: {
+    moduleName: "YouTube-AdBlock.sgmodule",
+    sourceModuleName: "YouTube-All-Platform-AdBlock.sgmodule",
+    scriptNames: ["youtube-web-response.js", "youtube-web-page.js"],
+    title: "YouTube Mac 网页本地测试安装",
+  },
+};
+const SCRIPT_NAMES = [
+  ...new Set(Object.values(MODULE_CONFIGS).flatMap(({ scriptNames }) => scriptNames)),
+];
+const PUBLISHED_SCRIPT_ROOT =
+  "https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/";
+
+function send(response, statusCode, contentType, body) {
+  response.writeHead(statusCode, {
+    "cache-control": "no-store",
+    "content-type": contentType,
+    "x-content-type-options": "nosniff",
+  });
+  response.end(body);
+}
+
+function isPrivateLanIpv4(value) {
+  const octets = value.split(".");
+  if (octets.length !== 4 || octets.some((octet) => !/^\d{1,3}$/.test(octet))) {
+    return false;
+  }
+  const numbers = octets.map(Number);
+  if (numbers.some((number) => number > 255)) {
+    return false;
+  }
+  return (
+    numbers[0] === 10 ||
+    (numbers[0] === 172 && numbers[1] >= 16 && numbers[1] <= 31) ||
+    (numbers[0] === 192 && numbers[1] === 168)
+  );
+}
+
+function findLanAddress() {
+  for (const addresses of Object.values(os.networkInterfaces())) {
+    for (const address of addresses ?? []) {
+      if (address.family === "IPv4" && !address.internal && isPrivateLanIpv4(address.address)) {
+        return address.address;
+      }
+    }
+  }
+  return undefined;
+}
+
+function requireLanConfiguration({ allowLan, host, advertiseHost }) {
+  if (!allowLan) {
+    if (host !== "127.0.0.1") {
+      throw new Error("allowLan=true is required for non-loopback listening");
+    }
+    if (advertiseHost !== "127.0.0.1") {
+      throw new Error("allowLan=true is required for non-loopback advertising");
+    }
+    return;
+  }
+
+  if (host !== "0.0.0.0" && !isPrivateLanIpv4(host)) {
+    throw new Error("LAN host must be 0.0.0.0 or a private LAN IPv4 address");
+  }
+  if (!isPrivateLanIpv4(advertiseHost)) {
+    throw new Error("advertiseHost must be a private LAN IPv4 address");
+  }
+}
+
+function createSessionToken() {
+  return crypto.randomBytes(24).toString("base64url");
+}
+
+function withToken(url, token) {
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}token=${encodeURIComponent(token)}`;
+}
+
+function renderInstaller(origin, token, moduleName, title) {
+  const moduleUrl = withToken(`${origin}/${moduleName}`, token);
+  const installUrl = `surge:///install-module?url=${encodeURIComponent(moduleUrl)}`;
+  return `<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="0;url=${installUrl}">
+    <title>${title}</title>
+  </head>
+  <body>
+    <main>
+      <h1>${title}</h1>
+      <p><a href="${installUrl}">打开 Surge 并导入</a></p>
+      <p><a href="${moduleUrl}">查看本地测试模块</a></p>
+    </main>
+  </body>
+</html>
+`;
+}
+
+function rewriteModuleSource(source, origin, token, scriptNames) {
+  const scriptNamePattern = scriptNames
+    .map((scriptName) => scriptName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("|");
+  const pattern = new RegExp(
+    `${PUBLISHED_SCRIPT_ROOT.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:releases/[^/,\\r\\n]+/)?scripts/(${scriptNamePattern})(\\?[^,\\r\\n]*)?`,
+    "g",
+  );
+  return source.replace(pattern, (_, scriptName, query = "") => {
+    const parameters = new URLSearchParams(query.slice(1));
+    parameters.set("token", token);
+    return `${origin}/scripts/${scriptName}?${parameters.toString()}`;
+  });
+}
+
+function readRequired(readFile, filePath) {
+  try {
+    return readFile(filePath, "utf8");
+  } catch (error) {
+    throw new Error(`dist/youtube is stale: unable to read ${filePath}: ${error.message}`);
+  }
+}
+
+export function validateDistributionCurrent({ projectRoot, readFile = fs.readFileSync } = {}) {
+  if (!projectRoot) {
+    throw new Error("projectRoot is required");
+  }
+
+  const repoRoot = path.resolve(projectRoot, "..");
+  const distRoot = path.join(repoRoot, "dist/youtube");
+  const version = readRequired(readFile, path.join(projectRoot, "VERSION")).trim();
+  const releaseRoot = path.join(distRoot, "releases", version);
+  const distVersion = readRequired(readFile, path.join(distRoot, "VERSION")).trim();
+  if (version !== distVersion) {
+    throw new Error("dist/youtube is stale: VERSION differs");
+  }
+
+  for (const moduleConfig of Object.values(MODULE_CONFIGS)) {
+    const sourceModule = readRequired(
+      readFile,
+      path.join(projectRoot, "clients/surge", moduleConfig.sourceModuleName),
+    );
+    const distModule = readRequired(readFile, path.join(distRoot, moduleConfig.moduleName));
+    if (sourceModule !== distModule) {
+      throw new Error(`dist/youtube is stale: module ${moduleConfig.moduleName} differs`);
+    }
+  }
+
+  for (const scriptName of SCRIPT_NAMES) {
+    const sourceDirectory =
+      scriptName === "youtube-tvos-json.js"
+        ? "tvos"
+        : scriptName.startsWith("youtube-native-")
+          ? "native"
+          : "web";
+    const source = readRequired(readFile, path.join(projectRoot, "scripts", sourceDirectory, scriptName));
+    const distribution = readRequired(readFile, path.join(releaseRoot, "scripts", scriptName));
+    if (source !== distribution) {
+      throw new Error(`dist/youtube is stale: script ${scriptName} differs`);
+    }
+  }
+
+  return { distRoot, releaseRoot, version };
+}
+
+export async function startLocalTestServer({
+  projectRoot,
+  platform = "native",
+  allowLan = false,
+  host,
+  advertiseHost,
+  port = 8765,
+  token = createSessionToken(),
+  logger = console.log,
+} = {}) {
+  const moduleConfig = MODULE_CONFIGS[platform];
+  if (!moduleConfig) {
+    throw new Error(`platform must be one of: ${Object.keys(MODULE_CONFIGS).join(", ")}`);
+  }
+  const { distRoot, releaseRoot, version } = validateDistributionCurrent({ projectRoot });
+  if (typeof token !== "string" || token.length === 0) {
+    throw new Error("token must be a non-empty string");
+  }
+
+  const listenHost = host ?? (allowLan ? "0.0.0.0" : "127.0.0.1");
+  const publicHost = advertiseHost ?? (allowLan ? findLanAddress() : "127.0.0.1");
+  requireLanConfiguration({ allowLan, host: listenHost, advertiseHost: publicHost });
+
+  const modulePath = path.join(distRoot, moduleConfig.moduleName);
+  const scriptsRoot = path.join(releaseRoot, "scripts");
+  const scriptNameSet = new Set(moduleConfig.scriptNames);
+  const server = http.createServer((request, response) => {
+    const requestUrl = new URL(request.url ?? "/", "http://local.test");
+    const suppliedTokens = requestUrl.searchParams.getAll("token");
+    if (suppliedTokens.length !== 1 || suppliedTokens[0] !== token) {
+      send(response, 404, "text/plain; charset=utf-8", "Not Found\n");
+      return;
+    }
+
+    if (request.method !== "GET") {
+      send(response, 405, "text/plain; charset=utf-8", "Method Not Allowed\n");
+      return;
+    }
+
+    const pathname = requestUrl.pathname;
+    const address = server.address();
+    const actualPort = typeof address === "object" && address ? address.port : port;
+    const origin = `http://${publicHost}:${actualPort}`;
+
+    if (pathname === "/health") {
+      send(response, 200, "application/json; charset=utf-8", `${JSON.stringify({ status: "ok", version })}\n`);
+      return;
+    }
+    if (pathname === "/install.html" || pathname === "/") {
+      send(
+        response,
+        200,
+        "text/html; charset=utf-8",
+        renderInstaller(origin, token, moduleConfig.moduleName, moduleConfig.title),
+      );
+      return;
+    }
+    if (pathname === `/${moduleConfig.moduleName}`) {
+      const source = rewriteModuleSource(
+        fs.readFileSync(modulePath, "utf8"),
+        origin,
+        token,
+        moduleConfig.scriptNames,
+      );
+      send(response, 200, "text/plain; charset=utf-8", source);
+      return;
+    }
+    if (pathname.startsWith("/scripts/")) {
+      let scriptName;
+      try {
+        scriptName = decodeURIComponent(pathname.slice("/scripts/".length));
+      } catch {
+        send(response, 404, "text/plain; charset=utf-8", "Not Found\n");
+        return;
+      }
+      if (!scriptNameSet.has(scriptName)) {
+        send(response, 404, "text/plain; charset=utf-8", "Not Found\n");
+        return;
+      }
+      send(response, 200, "text/javascript; charset=utf-8", fs.readFileSync(path.join(scriptsRoot, scriptName), "utf8"));
+      return;
+    }
+    send(response, 404, "text/plain; charset=utf-8", "Not Found\n");
+  });
+
+  await new Promise((resolve, reject) => {
+    server.once("error", reject);
+    server.listen(port, listenHost, resolve);
+  });
+
+  const address = server.address();
+  const actualPort = typeof address === "object" && address ? address.port : port;
+  const origin = `http://${publicHost}:${actualPort}`;
+  logger(`Local YouTube test server: ${withToken(`${origin}/install.html`, token)}`);
+  logger(`Local Surge module: ${withToken(`${origin}/${moduleConfig.moduleName}`, token)}`);
+
+  return {
+    host: listenHost,
+    origin,
+    token,
+    close() {
+      return new Promise((resolve, reject) => {
+        server.close((error) => (error ? reject(error) : resolve()));
+      });
+    },
+  };
+}
+
+export function parseCliOptions(argv) {
+  const options = {};
+  for (let index = 0; index < argv.length; index += 1) {
+    const name = argv[index];
+    const value = argv[index + 1];
+    if (name === "--allow-lan") {
+      options.allowLan = true;
+      continue;
+    }
+    if (name === "--platform") {
+      if (!value || !Object.hasOwn(MODULE_CONFIGS, value)) {
+        throw new Error("--platform must be web or native");
+      }
+      options.platform = value;
+      index += 1;
+      continue;
+    }
+    if (name === "--host" || name === "--advertise-host" || name === "--port") {
+      if (!value) {
+        throw new Error(`${name} requires a value`);
+      }
+      if (name === "--host") options.host = value;
+      if (name === "--advertise-host") options.advertiseHost = value;
+      if (name === "--port") {
+        if (!/^\d+$/.test(value)) {
+          throw new Error("--port must be an integer");
+        }
+        options.port = Number(value);
+      }
+      index += 1;
+      continue;
+    }
+    throw new Error(`Unknown option: ${name}`);
+  }
+  if (options.port !== undefined && (options.port < 0 || options.port > 65535)) {
+    throw new Error("--port must be between 0 and 65535");
+  }
+  return options;
+}
+
+const entryPath = process.argv[1] ? path.resolve(process.argv[1]) : "";
+if (entryPath === fileURLToPath(import.meta.url)) {
+  const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+  const runtime = await startLocalTestServer({
+    projectRoot,
+    ...parseCliOptions(process.argv.slice(2)),
+  });
+
+  const stop = async () => {
+    await runtime.close();
+    process.exit(0);
+  };
+  process.once("SIGINT", stop);
+  process.once("SIGTERM", stop);
+}

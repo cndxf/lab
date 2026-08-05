@@ -1,1 +1,84 @@
-LyoKICogWW91VHViZSDlhajlubPlj7Dljrvlub/lkYogLSBBcHBsZSBUViBKU09OIOWTjeW6lOWbnumAgOiEmuacrAogKgogKiBbVFZPUyAvIEFwcGxlIFRWIOS4k+eUqF0KICogdHZPUyDmn5DkupvniYjmnKzkvJrmioogcGxheWVyIOWTjeW6lOi/lOWbnuS4uiBKU09O77yM6ICM5LiN5piv56e75Yqo56uv5L2/55So55qECiAqIHByb3RvYnVmL1VNUOOAgui/memHjOS7heWIoOmZpOW3suefpeeahOW5v+WRiuiwg+W6puWSjOW5v+WRiui/vei4quWtl+aute+8jOWFtuS7luaSreaUvueKtuaAgQogKiDljp/moLfkv53nlZnvvJvliqDlr4YgaW5pdHBsYXliYWNrIOS7jeeUseWOn+eUnyBVTVAg6ISa5pys5aSE55CG44CCCiAqCiAqIFvlronlhajovrnnlYxdCiAqIOS4jeivt+axguWklumDqCBXb3JrZXLvvIzkuI3or7vlj5botKblj7fmiJbmkq3mlL7lr4bpkqXvvIzkuI3kv67mlLnop4bpopHmtYHlnLDlnYDjgIIKICovCigoKSA9PiB7CiAgY29uc3QgcmVzcG9uc2UgPSB0eXBlb2YgJHJlc3BvbnNlID09PSAib2JqZWN0IiAmJiAkcmVzcG9uc2UgPyAkcmVzcG9uc2UgOiB7fTsKICBjb25zdCBib2R5ID0gcmVzcG9uc2UuYm9keTsKCiAgaWYgKHR5cGVvZiBib2R5ICE9PSAic3RyaW5nIiB8fCBib2R5Lmxlbmd0aCA9PT0gMCkgewogICAgJGRvbmUoe30pOwogICAgcmV0dXJuOwogIH0KCiAgbGV0IHBheWxvYWQ7CiAgdHJ5IHsKICAgIHBheWxvYWQgPSBKU09OLnBhcnNlKGJvZHkpOwogIH0gY2F0Y2ggewogICAgLy8g6Z2eIEpTT04g5ZON5bqU5Lqk57uZIFlvdVR1YmUg5Y6f5qC35aSE55CG77yM6YG/5YWN56C05Z2P5pKt5pS+44CCCiAgICAkZG9uZSh7fSk7CiAgICByZXR1cm47CiAgfQoKICBjb25zdCBhZEZpZWxkcyA9IG5ldyBTZXQoWwogICAgInBsYXllckFkcyIsCiAgICAiYWRQbGFjZW1lbnRzIiwKICAgICJhZFNsb3RzIiwKICAgICJzc2FwQ29uZmlnIiwKICAgICJhZEJyZWFrcyIsCiAgICAiYWRCcmVha1N0YXR1cyIsCiAgICAiYWRCcmVha0hlYXJ0YmVhdFBhcmFtcyIsCiAgICAiYWRQbGF5YmFja0NvbnRleHQiLAogICAgImFkTGF5b3V0TWV0YWRhdGEiLAogIF0pOwogIGNvbnN0IGFkUmVuZGVyZXJGaWVsZHMgPSBuZXcgU2V0KFsKICAgICJhZFBsYWNlbWVudFJlbmRlcmVyIiwKICAgICJhZFNsb3RSZW5kZXJlciIsCiAgICAiYWRCcmVha1JlbmRlcmVyIiwKICAgICJhZEluZm9SZW5kZXJlciIsCiAgICAicGxheWVyQWRSZW5kZXJlciIsCiAgICAiaW5QbGF5ZXJBZExheW91dFJlbmRlcmVyIiwKICBdKTsKICBsZXQgY2hhbmdlZCA9IGZhbHNlOwoKICBjb25zdCBpc0FkUmVuZGVyZXJPYmplY3QgPSAodmFsdWUpID0+CiAgICB2YWx1ZSAmJgogICAgdHlwZW9mIHZhbHVlID09PSAib2JqZWN0IiAmJgogICAgIUFycmF5LmlzQXJyYXkodmFsdWUpICYmCiAgICBPYmplY3Qua2V5cyh2YWx1ZSkuc29tZSgoa2V5KSA9PiBhZFJlbmRlcmVyRmllbGRzLmhhcyhrZXkpKTsKCiAgY29uc3QgdmlzaXQgPSAodmFsdWUpID0+IHsKICAgIGlmIChBcnJheS5pc0FycmF5KHZhbHVlKSkgewogICAgICBmb3IgKGxldCBpbmRleCA9IHZhbHVlLmxlbmd0aCAtIDE7IGluZGV4ID49IDA7IGluZGV4IC09IDEpIHsKICAgICAgICBpZiAoaXNBZFJlbmRlcmVyT2JqZWN0KHZhbHVlW2luZGV4XSkpIHsKICAgICAgICAgIHZhbHVlLnNwbGljZShpbmRleCwgMSk7CiAgICAgICAgICBjaGFuZ2VkID0gdHJ1ZTsKICAgICAgICAgIGNvbnRpbnVlOwogICAgICAgIH0KICAgICAgICB2aXNpdCh2YWx1ZVtpbmRleF0pOwogICAgICB9CiAgICAgIHJldHVybjsKICAgIH0KCiAgICBpZiAoIXZhbHVlIHx8IHR5cGVvZiB2YWx1ZSAhPT0gIm9iamVjdCIpIHJldHVybjsKCiAgICBmb3IgKGNvbnN0IGtleSBvZiBPYmplY3Qua2V5cyh2YWx1ZSkpIHsKICAgICAgaWYgKGFkRmllbGRzLmhhcyhrZXkpIHx8IGtleSA9PT0gInBhZ2VhZFZpZXd0aHJvdWdoY29udmVyc2lvbiIpIHsKICAgICAgICBkZWxldGUgdmFsdWVba2V5XTsKICAgICAgICBjaGFuZ2VkID0gdHJ1ZTsKICAgICAgICBjb250aW51ZTsKICAgICAgfQogICAgICB2aXNpdCh2YWx1ZVtrZXldKTsKICAgIH0KICB9OwoKICB2aXNpdChwYXlsb2FkKTsKICAkZG9uZShjaGFuZ2VkID8geyBib2R5OiBKU09OLnN0cmluZ2lmeShwYXlsb2FkKSB9IDoge30pOwp9KSgpOwo=
+/*
+ * YouTube 全平台去广告 - Apple TV JSON 响应回退脚本
+ *
+ * [TVOS / Apple TV 专用]
+ * tvOS 某些版本会把 player 响应返回为 JSON，而不是移动端使用的
+ * protobuf/UMP。这里仅删除已知的广告调度和广告追踪字段，其他播放状态
+ * 原样保留；加密 initplayback 仍由原生 UMP 脚本处理。
+ *
+ * [安全边界]
+ * 不请求外部 Worker，不读取账号或播放密钥，不修改视频流地址。
+ */
+(() => {
+  const response = typeof $response === "object" && $response ? $response : {};
+  const body = response.body;
+
+  if (typeof body !== "string" || body.length === 0) {
+    $done({});
+    return;
+  }
+
+  let payload;
+  try {
+    payload = JSON.parse(body);
+  } catch {
+    // 非 JSON 响应交给 YouTube 原样处理，避免破坏播放。
+    $done({});
+    return;
+  }
+
+  const adFields = new Set([
+    "playerAds",
+    "adPlacements",
+    "adSlots",
+    "ssapConfig",
+    "adBreaks",
+    "adBreakStatus",
+    "adBreakHeartbeatParams",
+    "adPlaybackContext",
+    "adLayoutMetadata",
+  ]);
+  const adRendererFields = new Set([
+    "adPlacementRenderer",
+    "adSlotRenderer",
+    "adBreakRenderer",
+    "adInfoRenderer",
+    "playerAdRenderer",
+    "inPlayerAdLayoutRenderer",
+  ]);
+  let changed = false;
+
+  const isAdRendererObject = (value) =>
+    value &&
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    Object.keys(value).some((key) => adRendererFields.has(key));
+
+  const visit = (value) => {
+    if (Array.isArray(value)) {
+      for (let index = value.length - 1; index >= 0; index -= 1) {
+        if (isAdRendererObject(value[index])) {
+          value.splice(index, 1);
+          changed = true;
+          continue;
+        }
+        visit(value[index]);
+      }
+      return;
+    }
+
+    if (!value || typeof value !== "object") return;
+
+    for (const key of Object.keys(value)) {
+      if (adFields.has(key) || key === "pageadViewthroughconversion") {
+        delete value[key];
+        changed = true;
+        continue;
+      }
+      visit(value[key]);
+    }
+  };
+
+  visit(payload);
+  $done(changed ? { body: JSON.stringify(payload) } : {});
+})();
