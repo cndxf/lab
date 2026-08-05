@@ -71,7 +71,7 @@ grep -Fq "const VERSION=\"$version\"" "$page_script" || {
 }
 
 module="$temporary_root/YouTube-AdBlock.sgmodule"
-for script_name in youtube-native-response.js youtube-web-response.js youtube-web-page.js; do
+for script_name in youtube-web-response.js youtube-web-page.js; do
   grep -Fq "script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/$version/scripts/$script_name?v=$version" "$module" || {
     printf 'Published module does not point %s at version %s.\n' "$script_name" "$version" >&2
     exit 1
