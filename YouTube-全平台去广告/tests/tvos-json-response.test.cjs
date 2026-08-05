@@ -30,6 +30,10 @@ function runScript(url, payload) {
 }
 
 const payload = {
+  playerConfig: {
+    ssapConfig: { ssapPrerollEnabled: true, entityId: "ssap-fixture" },
+    playbackStartConfig: { startSeconds: 0 },
+  },
   playerAds: [{ adPlacementRenderer: { config: { kind: "pre-roll" } } }],
   adPlacements: [{ adPlacementRenderer: { config: { kind: "mid-roll" } } }],
   adSlots: [{ adSlotRenderer: { slotId: "slot-1" } }],
@@ -49,6 +53,16 @@ const cleaned = JSON.parse(result.body);
 assert.equal(cleaned.playerAds, undefined);
 assert.equal(cleaned.adPlacements, undefined);
 assert.equal(cleaned.adSlots, undefined);
+assert.equal(
+  cleaned.playerConfig.ssapConfig,
+  undefined,
+  "tvOS player JSON must remove server-side ad insertion config",
+);
+assert.deepEqual(
+  cleaned.playerConfig.playbackStartConfig,
+  payload.playerConfig.playbackStartConfig,
+  "tvOS player JSON must preserve non-ad player configuration",
+);
 assert.equal(cleaned.playbackTracking.pageadViewthroughconversion, undefined);
 assert.deepEqual(cleaned.playbackTracking.videoplayback, { start: "keep" });
 assert.deepEqual(cleaned.videoDetails, payload.videoDetails);

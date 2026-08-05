@@ -37,13 +37,13 @@ Surge 分为两个安装入口：Mac 网页安全版不解密 `googlevideo`，iO
 | `youtubei.googleapis.com` 二进制响应 | `youtube-native-response.js` | iPhone/iPad 原生 App 路径，使用 `binary-body-mode=1` |
 | `*.googlevideo.com/initplayback` 请求 | `youtube-native-request.js` | 校验并刷新本地 onesie key，不转发请求 |
 | `*.googlevideo.com/initplayback` UMP 响应 | `youtube-native-ump.js` | 本地 AES-CTR 解密、清理、gzip、重新加密和 HMAC |
-| `www.youtube.com/youtubei/v1/player` JSON 响应 | `youtube-tvos-json.js` | tvOS 专用回退路径，只清理广告调度和追踪字段 |
+| `www.youtube.com/youtubei/v1/player` JSON 响应 | `youtube-tvos-json.js` | tvOS 专用回退路径，清理广告调度、SSAP 配置和追踪字段 |
 
 因此“自动识别”的核心是请求域名、路径和响应格式，不是硬件型号或用户手动选择平台。原生脚本内部只额外使用 `User-Agent` 区分 YouTube 与 YouTube Music 的状态存储，不用它决定 Mac 或 iPhone 路径。
 
 ## 网页专用
 
-`youtube-web-response.js` 处理网页 JSON 列表广告，并只对 `player/ad_break` 定向删除中插调度字段；它刻意避开完整 `player` 和 `get_watch` 的播放器状态。`youtube-web-page.js` 处理 DOM 广告、跳过按钮、播放器广告态、临时静音加速以及正片恢复。
+`youtube-web-response.js` 处理网页 JSON 列表广告，并覆盖 `next`、`browse`、`search`、`get_watch`、`player` 和 `player/ad_break` 响应。对 `player` 只删除 `playerConfig.ssapConfig`，对 `player/ad_break` 定向删除中插调度字段；它仍保留其他完整 `player` 和 `get_watch` 播放器状态。`youtube-web-page.js` 处理 DOM 广告、跳过按钮、播放器广告态、临时静音加速以及正片恢复。
 
 Mac 当前先验收播放器链路：真实前贴片广告态、正片恢复、`player/ad_break` 响应清理和真实中插恢复。首页、搜索、推荐流等页面广告仍保留完整回归入口，但不能用页面节点清理结果替代播放器广告证据。
 
@@ -57,7 +57,7 @@ Mac 当前先验收播放器链路：真实前贴片广告态、正片恢复、`
 
 ## Apple TV 专用
 
-Apple TV 目前由 iOS/tvOS 原生模块复用 UMP 候选路径，并对 JSON `player` 响应增加独立回退脚本；不宣称和 iPhone 完全相同。若 tvOS 出现其他独有接口、证书部署或播放恢复问题，应在 `scripts/tvos/` 增加独立脚本和测试，并保留真机证据。
+Apple TV 目前由 iOS/tvOS 原生模块复用 UMP 候选路径，并对 JSON `player` 响应增加独立回退脚本；回退脚本会删除 `ssapConfig` 及已知广告调度字段，但不改写视频流地址。不宣称和 iPhone 完全相同。若 tvOS 出现其他独有接口、证书部署或播放恢复问题，应在 `scripts/tvos/` 增加独立脚本和测试，并保留真机证据。
 
 ## 更新原则
 

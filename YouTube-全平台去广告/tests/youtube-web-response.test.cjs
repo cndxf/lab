@@ -91,6 +91,8 @@ const packagePagePatternSource =
 const packagePagePattern = new RegExp(packagePagePatternSource);
 const nativeResponseRule =
   nativeConfig.match(/^youtube\.native\.response = .*$/m)?.[0] || "";
+const nativeWebResponseRule =
+  nativeConfig.match(/^youtube\.web\.response = .*$/m)?.[0] || "";
 const normalizedNativeResponseRule = nativeResponseRule.replaceAll("\\/", "/");
 const mitmHostnameLine = config.match(/^hostname = .*$/m)?.[0] || "";
 const googlevideoQuicRule =
@@ -108,16 +110,48 @@ assert.match(
   /reel\\\/reel_watch_sequence/,
   "响应脚本必须接收 Shorts 序列接口，才能在渲染前删除广告条目",
 );
-
-assert.doesNotMatch(
+assert.match(
   responseRule,
-  /(?:^|\|)player(?:\||,|\()/,
-  "列表清理脚本不应扫描完整 player 响应，以免破坏服务端广告状态",
+  /get_watch/,
+  "响应脚本必须接收 get_watch 接口，避免服务端广告调度绕过清理",
+);
+assert.match(
+  nativeWebResponseRule,
+  /get_watch/,
+  "原生模块复用网页响应脚本时也必须覆盖 get_watch",
+);
+
+const playerSsapPayload = {
+  playerConfig: {
+    ssapConfig: { ssapPrerollEnabled: true, entityId: "web-ssap-fixture" },
+    playbackStartConfig: { startSeconds: 0 },
+  },
+  streamingData: { serverAbrStreamingUrl: "keep-streaming-url" },
+  videoDetails: { videoId: "web-player-ssap-fixture" },
+};
+const playerSsapOutput = runSurgeScript(
+  "https://www.youtube.com/youtubei/v1/player?prettyPrint=false",
+  playerSsapPayload,
+);
+assert.equal(
+  playerSsapOutput.playerConfig.ssapConfig,
+  undefined,
+  "网页 player 响应必须移除服务器端广告配置",
+);
+assert.deepEqual(
+  playerSsapOutput.playerConfig.playbackStartConfig,
+  playerSsapPayload.playerConfig.playbackStartConfig,
+  "网页 player 响应必须保留其他播放器配置",
+);
+assert.deepEqual(
+  playerSsapOutput.streamingData,
+  playerSsapPayload.streamingData,
+  "网页 player 响应不得修改视频流地址",
 );
 assert.match(
   responseRule,
-  /player\\\/ad_break/,
-  "响应脚本必须接收 player/ad_break，才能删除服务端下发的中插广告调度",
+  /player(?:\\\/ad_break)?/,
+  "响应脚本必须接收 player 和 player/ad_break，才能覆盖 SSAP 与中插调度",
 );
 
 const adBreakPayload = {
@@ -165,7 +199,7 @@ const directPlayerOutput = runSurgeScript(
 assert.deepEqual(
   directPlayerOutput,
   directPlayerPayload,
-  "完整 player 响应仍必须保留播放器广告状态",
+  "完整 player 响应除 SSAP 配置外仍必须保留播放器广告状态",
 );
 console.log("PASS: full player response remains untouched");
 

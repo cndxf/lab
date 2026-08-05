@@ -1,6 +1,6 @@
 # Apple TV 脚本边界
 
-Apple TV 当前为实验性目标。`YouTube-iOS-tvOS-AdBlock.sgmodule` 复用移动端的 protobuf、initplayback 和 UMP 路径，并增加 `scripts/tvos/youtube-tvos-json.js` 处理 tvOS 可能返回的 JSON `player` 响应。该脚本只清理广告调度字段，不修改视频流地址。
+Apple TV 当前为实验性目标。`YouTube-iOS-tvOS-AdBlock.sgmodule` 复用移动端的 protobuf、initplayback 和 UMP 路径，并增加 `scripts/tvos/youtube-tvos-json.js` 处理 tvOS 可能返回的 JSON `player` 响应。该脚本清理已知广告调度字段和 `playerConfig.ssapConfig`，不修改视频流地址或其他播放器配置。
 
 部署顺序：
 

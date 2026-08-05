@@ -1,5 +1,5 @@
 #!name=YouTube 全平台去广告
-#!desc=Mac 与移动浏览器网页去广告；原生设备请使用 iOS/tvOS 模块。安装后请在模块列表启用；脚本进入修改后的有效配置，不会复制到主配置。
+#!desc=Mac 与移动浏览器网页去广告；原生设备请使用 iOS/tvOS 模块。启用前必须关闭全局 hostname=* HTTPS 捕获；脚本只进入有效配置，不会复制到主配置。
 #!category=广告过滤
 #!arguments=debug:false,update_interval:21600
 #!arguments-desc=debug：两条网页脚本调试日志，true/false；update_interval：远程脚本更新间隔，单位秒
@@ -7,13 +7,16 @@
 # ============================================================
 # [安装与证书信任设置]
 # 1. 从 URL 安装本模块；安装完成不等于启用，必须在每台设备的模块列表打开开关。
-# 2. iPhone/iPad：在 Surge 的 MITM 页面生成并安装 CA；然后进入
+# 2. 启用前检查 Surge 的有效 [MITM]，不要保留单独的 hostname = * 或“捕获全部 HTTPS”；
+#    这会让 Bilibili、银行等证书固定应用主动断开。模块使用 %APPEND% 只追加 YouTube 主机，
+#    不能替已有的全局通配符。
+# 3. iPhone/iPad：在 Surge 的 MITM 页面生成并安装 CA；然后进入
 #    设置 > 通用 > VPN 与设备管理完成描述文件安装，再进入
 #    设置 > 通用 > 关于本机 > 证书信任设置，为 Surge 根证书开启完全信任。
-# 3. macOS：在 Surge MITM 页面把 CA 安装到系统钥匙串；如仍显示不受信任，
+# 4. macOS：在 Surge MITM 页面把 CA 安装到系统钥匙串；如仍显示不受信任，
 #    在“钥匙串访问 > 显示简介 > 信任”中把 SSL 设为始终信任。
-# 4. 证书只需首次安装；模块不能携带、安装或信任 CA 和私钥。
-# 5. 安装或更新后应强制退出浏览器，再重新建立 TLS 连接。
+# 5. 证书只需首次安装；模块不能携带、安装或信任 CA 和私钥。
+# 6. 安装或更新后应强制退出浏览器，再重新建立 TLS 连接。
 #
 # [更新方法]
 # - 在 Surge 已安装模块列表点击刷新，或再次打开同一个一键安装链接并选择替换。
@@ -48,8 +51,8 @@ DOMAIN-SUFFIX,adservice.google.com,REJECT
 # 覆盖桌面网页和 m.youtube.com，不用于原生 App protobuf。
 # ============================================================
 [Script]
-youtube.web.response = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/youtubei\/v1\/(?:next|browse|search|reel\/reel_watch_sequence|player\/ad_break)(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.9/scripts/youtube-web-response.js?v=1.2.9,script-update-interval={{{update_interval}}}
-youtube.web.page = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/(?:(?:watch|results|playlist)(?:\?.*)?|shorts\/(?:[^/?#]+)?(?:\?.*)?|(?:live|post|hashtag|clip|embed)\/[^/?#]+(?:\?.*)?|feed\/[^?#]+(?:\?.*)?|(?:@[^/?#]+|(?:channel|c|user)\/[^/?#]+)(?:\/[^?#]*)?(?:\?.*)?|(?:\?.*)?)$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.9/scripts/youtube-web-page.js?v=1.2.9,script-update-interval={{{update_interval}}}
+youtube.web.response = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/youtubei\/v1\/(?:next|browse|search|get_watch|reel\/reel_watch_sequence|player|player\/ad_break)(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-web-response.js?v=1.2.11,script-update-interval={{{update_interval}}}
+youtube.web.page = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/(?:(?:watch|results|playlist)(?:\?.*)?|shorts\/(?:[^/?#]+)?(?:\?.*)?|(?:live|post|hashtag|clip|embed)\/[^/?#]+(?:\?.*)?|feed\/[^?#]+(?:\?.*)?|(?:@[^/?#]+|(?:channel|c|user)\/[^/?#]+)(?:\/[^?#]*)?(?:\?.*)?|(?:\?.*)?)$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-web-page.js?v=1.2.11,script-update-interval={{{update_interval}}}
 
 # ============================================================
 # [MITM]

@@ -7,8 +7,8 @@
  *
  * [WEB / 网页专用]
  * Scope: Web only. 清理 www.youtube.com 与 m.youtube.com 的 JSON 列表广告结构。
- * 安全边界：只定向删除 player 的 SSAP 配置和 player/ad_break 返回的广告调度字段；
- * 不删除完整 player/get_watch 的广告状态或视频流地址，避免破坏播放器恢复。
+ * 安全边界：不处理完整 player/get_watch 播放器广告状态；只定向删除 player/ad_break
+ * 返回的广告调度字段，避免服务端提前下发中插计划。
  *
  * [MOBILE / 移动端专用]
  * 本文件不处理 iPhone/iPad 原生 App 的 protobuf 二进制响应。
@@ -40,7 +40,6 @@ if (!source) {
       "adplacements",
       "adslots",
       "playerads",
-      "ssapconfig",
       "adbreakheartbeatparams",
       "pageadviewthroughconversion",
       "adplacementrenderer",

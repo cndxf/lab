@@ -19,10 +19,10 @@ GitHub 会先打开本仓库的 HTTPS 中转页，然后自动唤起 Surge；若
 
 | 平台 / 客户端 | 状态 | 说明 |
 | --- | --- | --- |
-| macOS 网页 + Surge | `1.2.9` 网页安全版 | 只加载网页脚本，不再注册原生 protobuf 脚本；网页逻辑沿用真实前贴片和播放恢复证据 |
-| iPhone/iPad YouTube App + Surge | `1.2.9` 真机候选 | 独立原生模块已接入 protobuf、本地 UMP 解密和有限期 key 刷新，前贴片、中插和恢复仍需真机验收 |
+| macOS 网页 + Surge | `1.2.11` 网页安全版，待最终播放器验收 | 只加载网页脚本，不再注册原生 protobuf 脚本；当前匿名播放器回归为 `3/15`，其余主要被 YouTube 登录/机器人门槛阻断，尚未取得 `1.2.11` 新一轮真实广告态证据 |
+| iPhone/iPad YouTube App + Surge | `1.2.11` 真机候选 | 独立原生模块已接入 protobuf、本地 UMP 解密和有限期 key 刷新，前贴片、中插和恢复仍需真机验收 |
 | iPhone/iPad 网页 + Surge | 已接入 | 与移动网页规则共用，需继续真机回归 |
-| Apple TV + Surge | `1.2.9` 实验性 | 原生模块增加 JSON player 回退路径并接入 UMP 候选路径；证书、前贴片、中插和长时播放仍需 tvOS 真机验收 |
+| Apple TV + Surge | `1.2.11` 实验性 | JSON player 回退路径新增 SSAP 配置清理并接入 UMP 候选路径；证书、前贴片、中插和长时播放仍需 tvOS 真机验收 |
 | Stash | 未验证 | 不提供安装文件 |
 | Shadowrocket | 未验证 | 不提供安装文件 |
 
@@ -30,6 +30,7 @@ GitHub 会先打开本仓库的 HTTPS 中转页，然后自动唤起 Surge；若
 
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)：多客户端、网页、移动端和 Apple TV 的边界。
 - [`docs/MAC-REGRESSION.md`](docs/MAC-REGRESSION.md)：Mac 网页端真实回归矩阵和证据边界。
+- [`docs/TVOS-REGRESSION.md`](docs/TVOS-REGRESSION.md)：Apple TV 部署门槛、有效配置检查和 tvOS 真机回归矩阵。
 - [`scripts/web/`](scripts/web/)：网页专用脚本。
 - [`scripts/native/`](scripts/native/)：移动端原生响应脚本。
 - [`scripts/tvos/`](scripts/tvos/)：Apple TV JSON 回退脚本、实验记录和真机证据。
@@ -37,6 +38,7 @@ GitHub 会先打开本仓库的 HTTPS 中转页，然后自动唤起 Surge；若
 - [`tools/verify.sh`](tools/verify.sh)：本地与 CI 验证入口。
 - [`tools/check-published.sh`](tools/check-published.sh)：发布前核对 GitHub 公开分发与本地产物。
 - [`tools/check-surge-effective.sh`](tools/check-surge-effective.sh)：Mac 上检查两条网页脚本是否进入有效配置。
+- [`tools/check-surge-native-effective.sh`](tools/check-surge-native-effective.sh)：iOS/tvOS 上检查四条原生脚本与 `*.googlevideo.com` MITM 是否完整、唯一且为当前版本。
 - [`tools/serve-local-test.mjs`](tools/serve-local-test.mjs)：未发布版本通过局域网安装到 iPhone/iPad 的一次性真机测试服务器。
 - [`tools/audit-upstream.sh`](tools/audit-upstream.sh)：发布前检查 Maasea 原生脚本与 uBlock Origin、AdGuard 的 YouTube 广告特征是否变化。
 - [`tools/mac-chrome-regression.cjs`](tools/mac-chrome-regression.cjs)：默认执行播放器广告回归，并分别报告前贴片、中插广告态和 `player/ad_break` 响应证据；可用 `--profile-dir` 复用专用登录测试资料，避免匿名会话长期被 YouTube 登录门槛阻断。

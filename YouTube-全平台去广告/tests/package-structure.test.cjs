@@ -22,7 +22,7 @@ const distNativeModulePath = path.join(
 const escapedVersion = version.replaceAll(".", "\\.");
 const releaseScriptsPath = `releases/${version}/scripts`;
 
-assert.equal(version, "1.2.9", "当前维护版本必须是 1.2.9");
+assert.match(version, /^\d+\.\d+\.\d+$/, "维护版本必须使用 semver 三段格式");
 
 const baseModuleSource = fs.readFileSync(baseModulePath, "utf8");
 const nativeModuleSource = fs.readFileSync(nativeModulePath, "utf8");
@@ -37,6 +37,12 @@ for (const moduleSource of [baseModuleSource, nativeModuleSource]) {
 for (const requiredText of ["证书信任设置", "更新方法", "无法播放", "回滚方法"]) {
   assert.match(baseModuleSource, new RegExp(requiredText), `基础模块内置说明缺少：${requiredText}`);
   assert.match(nativeModuleSource, new RegExp(requiredText), `iOS/tvOS 模块内置说明缺少：${requiredText}`);
+}
+for (const moduleSource of [baseModuleSource, nativeModuleSource]) {
+  assert.match(moduleSource, /hostname = \*/,
+    "模块必须明确警告全局 hostname=* 的风险");
+  assert.match(moduleSource, /捕获全部 HTTPS/,
+    "模块必须明确警告全量 HTTPS 捕获的风险");
 }
 
 for (const scriptName of [

@@ -711,9 +711,22 @@ function summarizeSamples(
     }
   }
 
+  const uniqueFailures = [...new Set(failures)];
+  const playbackBlocker = samples.find((sample) => sample.playbackBlocker)?.playbackBlocker || null;
+  const onlyExternalPlaybackBlock =
+    Boolean(playbackBlocker) &&
+    uniqueFailures.length === 1 &&
+    uniqueFailures[0] === `playback blocked=${playbackBlocker}`;
+  const status = uniqueFailures.length === 0
+    ? "passed"
+    : onlyExternalPlaybackBlock
+      ? "blocked"
+      : "failed";
+
   return {
-    ok: failures.length === 0,
-    failures: [...new Set(failures)],
+    ok: uniqueFailures.length === 0,
+    status,
+    failures: uniqueFailures,
     title: last.title || first.title || "",
     finalUrl: last.href || first.href || "",
     samples: samples.length,
@@ -734,10 +747,19 @@ function summarizeSamples(
         : samples.find((sample) => sample.playbackBlocker)
           ? "blocked"
           : "failed",
-    playbackBlocker: samples.find((sample) => sample.playbackBlocker)?.playbackBlocker || null,
+    playbackBlocker,
     adNodeMetrics,
     final: last,
   };
+}
+
+function deriveResultStatus(summary) {
+  if (summary.ok) return "passed";
+  const onlyExternalPlaybackBlock =
+    Boolean(summary.playbackBlocker) &&
+    summary.failures.length === 1 &&
+    summary.failures[0] === `playback blocked=${summary.playbackBlocker}`;
+  return onlyExternalPlaybackBlock ? "blocked" : "failed";
 }
 
 async function runCase(client, testCase, round, outputDir, expectedVersion) {
@@ -866,6 +888,9 @@ async function runCase(client, testCase, round, outputDir, expectedVersion) {
       summary.failures.push(`browser exceptions=${summary.browserExceptions.join(" | ")}`);
     }
 
+    summary.failures = [...new Set(summary.failures)];
+    summary.status = deriveResultStatus(summary);
+
     if (!summary.ok || summary.adNodeMetrics.maxVisibleAdNodes > 0) {
       await captureScreenshot(
         client,
@@ -937,7 +962,11 @@ async function main() {
       for (const testCase of testCases) {
         const result = await runCase(client, testCase, round, options.outputDir, expectedVersion);
         results.push(result);
-        const status = result.ok ? "PASS" : "FAIL";
+        const status = result.status === "passed"
+          ? "PASS"
+          : result.status === "blocked"
+            ? "BLOCKED"
+            : "FAIL";
         console.log(
           `${status} round=${round} case=${testCase.name} media=${result.playbackStatus} preroll=${result.prerollStatus} midroll=${result.midrollStatus} adbreak=${result.adBreakStatus} active=${result.seenActiveAd} recovery=${result.seenRecovery} raw=${result.adNodeMetrics.maxRawAdNodes} visible=${result.adNodeMetrics.maxVisibleAdNodes} stable=${result.adNodeMetrics.stableAdNodes} errors=${result.final.diagnostics?.counters?.errors ?? "n/a"}`,
         );
@@ -973,10 +1002,15 @@ async function main() {
     ),
   );
 
-  const failed = results.filter((result) => !result.ok);
+  const failed = results.filter((result) => result.status === "failed");
+  const blocked = results.filter((result) => result.status === "blocked");
   console.log(`Report: ${reportPath}`);
-  console.log(`Summary: ${results.length - failed.length}/${results.length} passed`);
+  console.log(
+    `Summary: passed=${results.filter((result) => result.status === "passed").length} ` +
+      `blocked=${blocked.length} failed=${failed.length} total=${results.length}`,
+  );
   if (failed.length) process.exitCode = 1;
+  else if (blocked.length) process.exitCode = 2;
 }
 
 module.exports = {

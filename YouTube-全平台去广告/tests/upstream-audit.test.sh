@@ -17,6 +17,8 @@ cat > "$TEST_TMP_DIR/uassets-valid.txt" <<'EOF'
 youtube_antiadblock_and_ads
 adPlacements
 adSlots
+ssapConfig
+no_ads
 reelWatchEndpoint.adClientParams.isAd
 serverContract
 SSAP
@@ -29,6 +31,8 @@ START: Youtube whitescreen fix
 ytInitialPlayerResponse.adPlacements
 adSlots
 playerAds
+ssapConfig
+no_ads
 reelWatchEndpoint.adClientParams.isAd
 serverAbrStreamingUrl
 get_drm_license
@@ -52,12 +56,12 @@ case "$valid_output" in
     ;;
 esac
 
-sed '/adSlots/d' "$TEST_TMP_DIR/uassets-valid.txt" > "$TEST_TMP_DIR/uassets-missing.txt"
+sed '/ssapConfig/d' "$TEST_TMP_DIR/adguard-valid.txt" > "$TEST_TMP_DIR/adguard-missing.txt"
 
 if missing_output=$(
   "$AUDIT_SCRIPT" \
-    --uassets-file "$TEST_TMP_DIR/uassets-missing.txt" \
-    --adguard-file "$TEST_TMP_DIR/adguard-valid.txt" \
+    --uassets-file "$TEST_TMP_DIR/uassets-valid.txt" \
+    --adguard-file "$TEST_TMP_DIR/adguard-missing.txt" \
     --native-head 65075cdb388fc5e3094afd7e7314c67b243f3525 \
     --skip-baseline 2>&1
 ); then
@@ -66,9 +70,30 @@ if missing_output=$(
 fi
 
 case "$missing_output" in
-  *"MISSING uAssets signature: adSlots"*) ;;
+  *"MISSING AdGuard signature: ssapConfig"*) ;;
   *)
     printf 'FAIL: missing signature was not reported clearly.\n%s\n' "$missing_output" >&2
+    exit 1
+    ;;
+esac
+
+sed '/no_ads/d' "$TEST_TMP_DIR/adguard-valid.txt" > "$TEST_TMP_DIR/adguard-no-ads-missing.txt"
+
+if no_ads_missing_output=$(
+  "$AUDIT_SCRIPT" \
+    --uassets-file "$TEST_TMP_DIR/uassets-valid.txt" \
+    --adguard-file "$TEST_TMP_DIR/adguard-no-ads-missing.txt" \
+    --native-head 65075cdb388fc5e3094afd7e7314c67b243f3525 \
+    --skip-baseline 2>&1
+); then
+  printf 'FAIL: missing AdGuard no_ads signature unexpectedly passed.\n' >&2
+  exit 1
+fi
+
+case "$no_ads_missing_output" in
+  *"MISSING AdGuard signature: no_ads"*) ;;
+  *)
+    printf 'FAIL: missing AdGuard no_ads signature was not reported clearly.\n%s\n' "$no_ads_missing_output" >&2
     exit 1
     ;;
 esac

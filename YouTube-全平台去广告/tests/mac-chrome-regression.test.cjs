@@ -169,8 +169,37 @@ const hiddenSummary = summarizeSamples(
   { expectedVersion: currentVersion, expectPlayback: false, stableSampleCount: 3 },
 );
 assert.equal(hiddenSummary.ok, true, "隐藏占位节点不能让页面回归失败");
+assert.equal(hiddenSummary.status, "passed");
 assert.equal(hiddenSummary.adNodeMetrics.maxRawAdNodes, 1);
 assert.equal(hiddenSummary.adNodeMetrics.stableAdNodes, 0);
+
+const blockedSummary = summarizeSamples(
+  [
+    {
+      ...baseSnapshot,
+      playbackBlocker: "youtube-bot-signin-gate",
+      paused: true,
+      readyState: 0,
+      duration: null,
+    },
+  ],
+  { expectedVersion: currentVersion, expectPlayback: true, stableSampleCount: 3 },
+);
+assert.equal(blockedSummary.ok, false);
+assert.equal(blockedSummary.status, "blocked", "外部登录/机器人门槛必须独立标记为 blocked");
+
+const failedPlaybackSummary = summarizeSamples(
+  [
+    {
+      ...baseSnapshot,
+      paused: true,
+      readyState: 0,
+      duration: null,
+    },
+  ],
+  { expectedVersion: currentVersion, expectPlayback: true, stableSampleCount: 3 },
+);
+assert.equal(failedPlaybackSummary.status, "failed", "没有外部阻断标记的播放失败必须保留 failed");
 
 const pausedLoadedSamples = [
   {

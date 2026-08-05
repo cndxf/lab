@@ -6,6 +6,7 @@ const { pathToFileURL } = require("node:url");
 const projectRoot = path.resolve(__dirname, "..");
 const repoRoot = path.resolve(projectRoot, "..");
 const moduleName = "YouTube-iOS-tvOS-AdBlock.sgmodule";
+const webModuleName = "YouTube-AdBlock.sgmodule";
 const scriptNames = [
   "youtube-native-response.js",
   "youtube-native-request.js",
@@ -44,6 +45,8 @@ function escapeRegExp(value) {
       port: 8765,
     },
   );
+  assert.deepEqual(parseCliOptions(["--platform", "web"]), { platform: "web" });
+  assert.throws(() => parseCliOptions(["--platform", "other"]), /platform must be web or native/);
   assert.throws(() => parseCliOptions(["--allow-lan=no"]), /Unknown option/);
   assert.throws(
     () =>
@@ -136,6 +139,40 @@ function escapeRegExp(value) {
     assert.equal(traversalResponse.status, 404);
   } finally {
     await runtime.close();
+  }
+
+  const webRuntime = await startLocalTestServer({
+    projectRoot,
+    platform: "web",
+    port: 0,
+    token,
+    logger() {},
+  });
+
+  try {
+    const webModuleResponse = await fetch(`${webRuntime.origin}/${webModuleName}?token=${token}`);
+    assert.equal(webModuleResponse.status, 200);
+    const webModuleSource = await webModuleResponse.text();
+    for (const scriptName of ["youtube-web-response.js", "youtube-web-page.js"]) {
+      assert.match(
+        webModuleSource,
+        new RegExp(`${escapeRegExp(webRuntime.origin)}/scripts/${escapeRegExp(scriptName)}\\?[^,\\r\\n]*token=${token}`),
+        `${scriptName} must use the local web origin and session token`,
+      );
+    }
+    assert.equal(
+      (await fetch(`${webRuntime.origin}/scripts/youtube-native-ump.js?token=${token}`)).status,
+      404,
+    );
+    assert.equal(
+      (await fetch(`${webRuntime.origin}/scripts/youtube-web-page.js?token=${token}`)).status,
+      200,
+    );
+    const webInstaller = await (await fetch(`${webRuntime.origin}/install.html?token=${token}`)).text();
+    assert.match(webInstaller, /YouTube Mac 网页本地测试安装/);
+    assert.match(webInstaller, new RegExp(escapeRegExp(`${webRuntime.origin}/${webModuleName}?token=${token}`)));
+  } finally {
+    await webRuntime.close();
   }
 
   for (const advertiseHost of ["127.0.0.1", "0.0.0.0", "198.18.0.1"]) {

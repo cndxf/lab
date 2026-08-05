@@ -18,13 +18,15 @@ const installer = fs.readFileSync(path.join(repoRoot, "surge-install.html"), "ut
 const checkerPath = path.join(projectRoot, "tools/check-surge-effective.sh");
 const version = fs.readFileSync(path.join(projectRoot, "VERSION"), "utf8").trim();
 
-assert.match(moduleSource, /^#!desc=.*安装后.*启用.*有效配置.*$/m);
+assert.match(moduleSource, /^#!desc=.*hostname=\*.*有效配置.*$/m);
 
 for (const requiredText of [
   "安装完成不等于启用",
   "每台设备单独启用",
   "修改后的有效配置",
   "不会复制到主配置",
+  "hostname = *",
+  "捕获全部 HTTPS",
 ]) {
   assert.match(installGuide, new RegExp(requiredText), `安装说明缺少：${requiredText}`);
 }
@@ -57,11 +59,35 @@ function runChecker(profile) {
 }
 
 const currentEffectiveProfile = `
-youtube.web.response = type=http-response,pattern=^https:\\/\\/www\\.youtube\\.com\\/youtubei\\/v1\\/(?:next|player\\/ad_break)$,script-path=/tmp/dist/youtube/releases/${version}/scripts/youtube-web-response.js
+youtube.web.response = type=http-response,pattern=^https:\\/\\/www\\.youtube\\.com\\/youtubei\\/v1\\/(?:next|browse|search|get_watch|player|player\\/ad_break)$,script-path=/tmp/dist/youtube/releases/${version}/scripts/youtube-web-response.js
 youtube.web.page = type=http-response,pattern=^https:\\/\\/www\\.youtube\\.com\\/watch$,script-path=/tmp/dist/youtube/releases/${version}/scripts/youtube-web-page.js
 `;
 const currentResult = runChecker(currentEffectiveProfile);
 assert.equal(currentResult.status, 0, currentResult.stderr || currentResult.stdout);
+
+const wildcardMitmResult = runChecker(
+  `${currentEffectiveProfile}\nhostname = *, www.youtube.com, m.youtube.com, youtubei.googleapis.com\n`,
+);
+assert.equal(wildcardMitmResult.status, 1, "全局 * MITM 必须检查失败");
+assert.match(
+  `${wildcardMitmResult.stdout}\n${wildcardMitmResult.stderr}`,
+  /GLOBAL_MITM_WILDCARD/,
+);
+
+const mixedNativeResult = runChecker(
+  `${currentEffectiveProfile}\n` +
+    "youtube.native.response = type=http-response,script-path=/tmp/dist/youtube/releases/" +
+    `${version}/scripts/youtube-native-response.js\n`,
+);
+assert.equal(
+  mixedNativeResult.status,
+  1,
+  "Mac 有效配置混入 iOS/tvOS 原生脚本时必须检查失败",
+);
+assert.match(
+  `${mixedNativeResult.stdout}\n${mixedNativeResult.stderr}`,
+  /NATIVE_CONFLICT/,
+);
 
 const duplicateResult = runChecker(`${currentEffectiveProfile}\n${currentEffectiveProfile}`);
 assert.equal(duplicateResult.status, 1, "重复模块必须让有效配置检查失败");

@@ -7,16 +7,30 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const MODULE_NAME = "YouTube-iOS-tvOS-AdBlock.sgmodule";
+const MODULE_CONFIGS = {
+  native: {
+    moduleName: "YouTube-iOS-tvOS-AdBlock.sgmodule",
+    sourceModuleName: "YouTube-iOS-tvOS-AdBlock.sgmodule",
+    scriptNames: [
+      "youtube-native-response.js",
+      "youtube-native-request.js",
+      "youtube-native-ump.js",
+      "youtube-tvos-json.js",
+      "youtube-web-response.js",
+      "youtube-web-page.js",
+    ],
+    title: "YouTube iOS/tvOS 本地测试安装",
+  },
+  web: {
+    moduleName: "YouTube-AdBlock.sgmodule",
+    sourceModuleName: "YouTube-All-Platform-AdBlock.sgmodule",
+    scriptNames: ["youtube-web-response.js", "youtube-web-page.js"],
+    title: "YouTube Mac 网页本地测试安装",
+  },
+};
 const SCRIPT_NAMES = [
-  "youtube-native-response.js",
-  "youtube-native-request.js",
-  "youtube-native-ump.js",
-  "youtube-tvos-json.js",
-  "youtube-web-response.js",
-  "youtube-web-page.js",
+  ...new Set(Object.values(MODULE_CONFIGS).flatMap(({ scriptNames }) => scriptNames)),
 ];
-const SCRIPT_NAME_SET = new Set(SCRIPT_NAMES);
 const PUBLISHED_SCRIPT_ROOT =
   "https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/";
 
@@ -84,8 +98,8 @@ function withToken(url, token) {
   return `${url}${separator}token=${encodeURIComponent(token)}`;
 }
 
-function renderInstaller(origin, token) {
-  const moduleUrl = withToken(`${origin}/${MODULE_NAME}`, token);
+function renderInstaller(origin, token, moduleName, title) {
+  const moduleUrl = withToken(`${origin}/${moduleName}`, token);
   const installUrl = `surge:///install-module?url=${encodeURIComponent(moduleUrl)}`;
   return `<!doctype html>
 <html lang="zh-CN">
@@ -93,11 +107,11 @@ function renderInstaller(origin, token) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="refresh" content="0;url=${installUrl}">
-    <title>YouTube iOS/tvOS 本地测试安装</title>
+    <title>${title}</title>
   </head>
   <body>
     <main>
-      <h1>YouTube iOS/tvOS 本地测试安装</h1>
+      <h1>${title}</h1>
       <p><a href="${installUrl}">打开 Surge 并导入</a></p>
       <p><a href="${moduleUrl}">查看本地测试模块</a></p>
     </main>
@@ -106,9 +120,12 @@ function renderInstaller(origin, token) {
 `;
 }
 
-function rewriteModuleSource(source, origin, token) {
+function rewriteModuleSource(source, origin, token, scriptNames) {
+  const scriptNamePattern = scriptNames
+    .map((scriptName) => scriptName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("|");
   const pattern = new RegExp(
-    `${PUBLISHED_SCRIPT_ROOT.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:releases/[^/,\\r\\n]+/)?scripts/(${SCRIPT_NAMES.join("|")})(\\?[^,\\r\\n]*)?`,
+    `${PUBLISHED_SCRIPT_ROOT.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:releases/[^/,\\r\\n]+/)?scripts/(${scriptNamePattern})(\\?[^,\\r\\n]*)?`,
     "g",
   );
   return source.replace(pattern, (_, scriptName, query = "") => {
@@ -140,13 +157,15 @@ export function validateDistributionCurrent({ projectRoot, readFile = fs.readFil
     throw new Error("dist/youtube is stale: VERSION differs");
   }
 
-  const sourceModule = readRequired(
-    readFile,
-    path.join(projectRoot, "clients/surge", MODULE_NAME),
-  );
-  const distModule = readRequired(readFile, path.join(distRoot, MODULE_NAME));
-  if (sourceModule !== distModule) {
-    throw new Error(`dist/youtube is stale: module ${MODULE_NAME} differs`);
+  for (const moduleConfig of Object.values(MODULE_CONFIGS)) {
+    const sourceModule = readRequired(
+      readFile,
+      path.join(projectRoot, "clients/surge", moduleConfig.sourceModuleName),
+    );
+    const distModule = readRequired(readFile, path.join(distRoot, moduleConfig.moduleName));
+    if (sourceModule !== distModule) {
+      throw new Error(`dist/youtube is stale: module ${moduleConfig.moduleName} differs`);
+    }
   }
 
   for (const scriptName of SCRIPT_NAMES) {
@@ -168,6 +187,7 @@ export function validateDistributionCurrent({ projectRoot, readFile = fs.readFil
 
 export async function startLocalTestServer({
   projectRoot,
+  platform = "native",
   allowLan = false,
   host,
   advertiseHost,
@@ -175,6 +195,10 @@ export async function startLocalTestServer({
   token = createSessionToken(),
   logger = console.log,
 } = {}) {
+  const moduleConfig = MODULE_CONFIGS[platform];
+  if (!moduleConfig) {
+    throw new Error(`platform must be one of: ${Object.keys(MODULE_CONFIGS).join(", ")}`);
+  }
   const { distRoot, releaseRoot, version } = validateDistributionCurrent({ projectRoot });
   if (typeof token !== "string" || token.length === 0) {
     throw new Error("token must be a non-empty string");
@@ -184,8 +208,9 @@ export async function startLocalTestServer({
   const publicHost = advertiseHost ?? (allowLan ? findLanAddress() : "127.0.0.1");
   requireLanConfiguration({ allowLan, host: listenHost, advertiseHost: publicHost });
 
-  const modulePath = path.join(distRoot, MODULE_NAME);
+  const modulePath = path.join(distRoot, moduleConfig.moduleName);
   const scriptsRoot = path.join(releaseRoot, "scripts");
+  const scriptNameSet = new Set(moduleConfig.scriptNames);
   const server = http.createServer((request, response) => {
     const requestUrl = new URL(request.url ?? "/", "http://local.test");
     const suppliedTokens = requestUrl.searchParams.getAll("token");
@@ -209,11 +234,21 @@ export async function startLocalTestServer({
       return;
     }
     if (pathname === "/install.html" || pathname === "/") {
-      send(response, 200, "text/html; charset=utf-8", renderInstaller(origin, token));
+      send(
+        response,
+        200,
+        "text/html; charset=utf-8",
+        renderInstaller(origin, token, moduleConfig.moduleName, moduleConfig.title),
+      );
       return;
     }
-    if (pathname === `/${MODULE_NAME}`) {
-      const source = rewriteModuleSource(fs.readFileSync(modulePath, "utf8"), origin, token);
+    if (pathname === `/${moduleConfig.moduleName}`) {
+      const source = rewriteModuleSource(
+        fs.readFileSync(modulePath, "utf8"),
+        origin,
+        token,
+        moduleConfig.scriptNames,
+      );
       send(response, 200, "text/plain; charset=utf-8", source);
       return;
     }
@@ -225,7 +260,7 @@ export async function startLocalTestServer({
         send(response, 404, "text/plain; charset=utf-8", "Not Found\n");
         return;
       }
-      if (!SCRIPT_NAME_SET.has(scriptName)) {
+      if (!scriptNameSet.has(scriptName)) {
         send(response, 404, "text/plain; charset=utf-8", "Not Found\n");
         return;
       }
@@ -244,7 +279,7 @@ export async function startLocalTestServer({
   const actualPort = typeof address === "object" && address ? address.port : port;
   const origin = `http://${publicHost}:${actualPort}`;
   logger(`Local YouTube test server: ${withToken(`${origin}/install.html`, token)}`);
-  logger(`Local Surge module: ${withToken(`${origin}/${MODULE_NAME}`, token)}`);
+  logger(`Local Surge module: ${withToken(`${origin}/${moduleConfig.moduleName}`, token)}`);
 
   return {
     host: listenHost,
@@ -265,6 +300,14 @@ export function parseCliOptions(argv) {
     const value = argv[index + 1];
     if (name === "--allow-lan") {
       options.allowLan = true;
+      continue;
+    }
+    if (name === "--platform") {
+      if (!value || !Object.hasOwn(MODULE_CONFIGS, value)) {
+        throw new Error("--platform must be web or native");
+      }
+      options.platform = value;
+      index += 1;
       continue;
     }
     if (name === "--host" || name === "--advertise-host" || name === "--port") {

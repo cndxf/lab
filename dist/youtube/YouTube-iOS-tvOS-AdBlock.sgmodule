@@ -1,5 +1,5 @@
 #!name=YouTube iOS/tvOS 去广告
-#!desc=iPhone、iPad 与 Apple TV 原生 YouTube 去广告；本地处理加密播放流，Apple TV 仍为实验支持。
+#!desc=iPhone、iPad 与 Apple TV 原生 YouTube 去广告；本地处理加密播放流，Apple TV 仍为实验支持。启用前必须关闭全局 hostname=* HTTPS 捕获。
 #!category=广告过滤
 #!requirement=CORE_VERSION >= 20 && (SYSTEM = 'iOS' || SYSTEM = 'tvOS')
 #!arguments=caption_lang:off,block_upload:false,block_immersive:false,block_shorts:false,debug:false,update_interval:21600
@@ -9,11 +9,14 @@
 # [安装与证书信任设置]
 # 1. 该模块仅允许在 iOS/iPadOS/tvOS 使用；macOS 继续使用不解密
 #    googlevideo 的“YouTube 全平台去广告”基础模块。
-# 2. iPhone/iPad 安装后，必须在 Surge 中安装并完全信任 MITM CA。
-# 3. Apple TV 需先由 Surge iOS 部署配置与证书，然后重启 Surge tvOS 和 YouTube。
-# 4. 本模块会解密 *.googlevideo.com 的 initplayback 请求；处理全部在本机完成，
+# 2. 启用前检查 Surge 的有效 [MITM]，不要保留单独的 hostname = * 或“捕获全部 HTTPS”；
+#    这会让 Bilibili、银行等证书固定应用主动断开。模块使用 %APPEND% 只追加 YouTube 主机，
+#    不能替已有的全局通配符。
+# 3. iPhone/iPad 安装后，必须在 Surge 中安装并完全信任 MITM CA。
+# 4. Apple TV 需先由 Surge iOS 部署配置与证书，然后重启 Surge tvOS 和 YouTube。
+# 5. 本模块会解密 *.googlevideo.com 的 initplayback 请求；处理全部在本机完成，
 #    不使用 init-stream.maasea.workers.dev 或其他第三方 Worker。
-# 5. 安装或更新后强制退出 YouTube，再重新打开建立 TLS 连接。
+# 6. 安装或更新后强制退出 YouTube，再重新打开建立 TLS 连接。
 #
 # [更新方法]
 # - 在 Surge 已安装模块列表点击刷新，或重新打开 iOS/tvOS 一键安装入口并选择替换。
@@ -45,24 +48,24 @@ DOMAIN-SUFFIX,adservice.google.com,REJECT
 # 中插、播放恢复、遥控器操作和长时间播放稳定性。
 # ============================================================
 [Script]
-youtube.native.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config)(?:\?.*)?$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.9/scripts/youtube-native-response.js?v=1.2.9,script-update-interval={{{update_interval}}},argument="{\"captionLang\":\"{{{caption_lang}}}\",\"blockUpload\":{{{block_upload}}},\"blockImmersive\":{{{block_immersive}}},\"blockShorts\":{{{block_shorts}}},\"debug\":{{{debug}}}}"
-youtube.native.request.init = type=http-request,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.9/scripts/youtube-native-request.js?v=1.2.9,script-update-interval={{{update_interval}}}
-youtube.native.response.init = type=http-response,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.9/scripts/youtube-native-ump.js?v=1.2.9,script-update-interval={{{update_interval}}},argument="{\"captionLang\":\"{{{caption_lang}}}\",\"blockUpload\":{{{block_upload}}},\"blockImmersive\":{{{block_immersive}}},\"blockShorts\":{{{block_shorts}}},\"debug\":{{{debug}}}}"
-youtube.native.request.log_event = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event(?:\?.*)?$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.9/scripts/youtube-native-request.js?v=1.2.9,script-update-interval={{{update_interval}}}
+youtube.native.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config)(?:\?.*)?$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-native-response.js?v=1.2.11,script-update-interval={{{update_interval}}},argument="{\"captionLang\":\"{{{caption_lang}}}\",\"blockUpload\":{{{block_upload}}},\"blockImmersive\":{{{block_immersive}}},\"blockShorts\":{{{block_shorts}}},\"debug\":{{{debug}}}}"
+youtube.native.request.init = type=http-request,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-native-request.js?v=1.2.11,script-update-interval={{{update_interval}}}
+youtube.native.response.init = type=http-response,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-native-ump.js?v=1.2.11,script-update-interval={{{update_interval}}},argument="{\"captionLang\":\"{{{caption_lang}}}\",\"blockUpload\":{{{block_upload}}},\"blockImmersive\":{{{block_immersive}}},\"blockShorts\":{{{block_shorts}}},\"debug\":{{{debug}}}}"
+youtube.native.request.log_event = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event(?:\?.*)?$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-native-request.js?v=1.2.11,script-update-interval={{{update_interval}}}
 
 # ============================================================
 # [TVOS / Apple TV 专用]
 # Apple TV 某些版本会把 player 返回为 JSON；此规则只处理该回退格式。
 # 原生 UMP 规则仍负责可能出现的加密 initplayback 响应。
 # ============================================================
-youtube.tvos.json = type=http-response,pattern=^https:\/\/(?:(?:www|m)\.youtube\.com|youtubei\.googleapis\.com)\/youtubei\/v1\/player(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.9/scripts/youtube-tvos-json.js?v=1.2.9,script-update-interval={{{update_interval}}}
+youtube.tvos.json = type=http-response,pattern=^https:\/\/(?:(?:www|m)\.youtube\.com|youtubei\.googleapis\.com)\/youtubei\/v1\/player(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-tvos-json.js?v=1.2.11,script-update-interval={{{update_interval}}}
 
 # ============================================================
 # [WEB / 移动浏览器专用]
 # iPhone/iPad Safari 与其他 WebKit 浏览器复用基础模块的网页清理脚本。
 # ============================================================
-youtube.web.response = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/youtubei\/v1\/(?:next|browse|search|reel\/reel_watch_sequence|player\/ad_break)(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.9/scripts/youtube-web-response.js?v=1.2.9,script-update-interval={{{update_interval}}}
-youtube.web.page = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/(?:(?:watch|results|playlist)(?:\?.*)?|shorts\/(?:[^/?#]+)?(?:\?.*)?|(?:live|post|hashtag|clip|embed)\/[^/?#]+(?:\?.*)?|feed\/[^?#]+(?:\?.*)?|(?:@[^/?#]+|(?:channel|c|user)\/[^/?#]+)(?:\/[^?#]*)?(?:\?.*)?|(?:\?.*)?)$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.9/scripts/youtube-web-page.js?v=1.2.9,script-update-interval={{{update_interval}}}
+youtube.web.response = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/youtubei\/v1\/(?:next|browse|search|get_watch|reel\/reel_watch_sequence|player|player\/ad_break)(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-web-response.js?v=1.2.11,script-update-interval={{{update_interval}}}
+youtube.web.page = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/(?:(?:watch|results|playlist)(?:\?.*)?|shorts\/(?:[^/?#]+)?(?:\?.*)?|(?:live|post|hashtag|clip|embed)\/[^/?#]+(?:\?.*)?|feed\/[^?#]+(?:\?.*)?|(?:@[^/?#]+|(?:channel|c|user)\/[^/?#]+)(?:\/[^?#]*)?(?:\?.*)?|(?:\?.*)?)$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-web-page.js?v=1.2.11,script-update-interval={{{update_interval}}}
 
 # ============================================================
 # [MITM]

@@ -157,6 +157,7 @@ signature_failure=0
 for signature in \
   adPlacements \
   adSlots \
+  no_ads \
   reelWatchEndpoint.adClientParams.isAd \
   serverContract \
   SSAP \
@@ -170,6 +171,8 @@ for signature in \
   ytInitialPlayerResponse.adPlacements \
   adSlots \
   playerAds \
+  ssapConfig \
+  no_ads \
   reelWatchEndpoint.adClientParams.isAd \
   serverAbrStreamingUrl \
   get_drm_license \
