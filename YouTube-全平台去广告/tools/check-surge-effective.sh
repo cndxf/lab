@@ -40,7 +40,7 @@ native_script_count=$(printf '%s\n' "$effective_profile" | awk '
 if [ "$native_script_count" -gt 0 ]; then
   printf '%s\n' \
     "NATIVE_CONFLICT: Mac effective profile contains $native_script_count iOS/tvOS YouTube script(s)." \
-    'Remove the iOS/tvOS module from Mac and keep only "YouTube 全平台去广告".' >&2
+    "Remove the iOS/tvOS module from Mac and keep only the current \"YouTube 全平台去广告 v$EXPECTED_VERSION\" module." >&2
   failed=1
 fi
 
@@ -90,7 +90,7 @@ fi
 if [ "$failed" -ne 0 ]; then
   printf '%s\n' \
     'The effective profile is missing, stale, or contains duplicate YouTube scripts.' \
-    'Open Surge > Modules, keep one current "YouTube 全平台去广告", then apply changes.' >&2
+    "Open Surge > Modules, keep one current \"YouTube 全平台去广告 v$EXPECTED_VERSION\", then apply changes." >&2
   exit 1
 fi
 

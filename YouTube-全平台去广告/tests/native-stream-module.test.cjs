@@ -26,7 +26,10 @@ assert.ok(fs.existsSync(requestScriptPath), "native initplayback request script 
 assert.ok(fs.existsSync(umpScriptPath), "native UMP response script is missing");
 
 const moduleSource = fs.readFileSync(modulePath, "utf8");
-assert.match(moduleSource, /^#!name=YouTube iOS\/tvOS 去广告$/m);
+assert.match(
+  moduleSource,
+  new RegExp(`^#!name=YouTube iOS\\/tvOS 去广告 v${escapedVersion}$`, "m"),
+);
 assert.match(
   moduleSource,
   /^#!requirement=CORE_VERSION >= 20 && \(SYSTEM = 'iOS' \|\| SYSTEM = 'tvOS'\)$/m,

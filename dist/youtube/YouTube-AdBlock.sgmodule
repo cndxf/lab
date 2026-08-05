@@ -1,4 +1,4 @@
-#!name=YouTube 全平台去广告
+#!name=YouTube 全平台去广告 v1.2.11
 #!desc=Mac 与移动浏览器网页去广告；原生设备请使用 iOS/tvOS 模块。启用前必须关闭全局 hostname=* HTTPS 捕获；脚本只进入有效配置，不会复制到主配置。
 #!category=广告过滤
 #!arguments=debug:false,update_interval:21600
@@ -29,7 +29,7 @@
 # - 当前模块故意不解密 *.googlevideo.com，以降低黑屏、转圈和连接不安全风险。
 #
 # [回滚方法]
-# - 在模块列表停用或删除“ YouTube 全平台去广告”，重新加载配置并重启 YouTube。
+# - 在模块列表停用或删除“ YouTube 全平台去广告 v1.2.11”，重新加载配置并重启 YouTube。
 # - 本模块不直接改写主配置，因此正常情况下无需手工删除 [MITM] 或 [Script] 行。
 # - 完整说明：https://github.com/cndxf/lab/tree/main/YouTube-%E5%85%A8%E5%B9%B3%E5%8F%B0%E5%8E%BB%E5%B9%BF%E5%91%8A/clients/surge
 

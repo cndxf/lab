@@ -44,7 +44,7 @@ native_count=$(printf '%s\n' "$effective_profile" | awk '
 if [ "$native_count" -eq 0 ]; then
   printf '%s\n' \
     'NATIVE_MISSING: no iOS/tvOS YouTube scripts are present in the effective profile.' \
-    'Install and enable "YouTube iOS/tvOS 去广告", then redeploy the profile to the device.' >&2
+    "Install and enable the current \"YouTube iOS/tvOS 去广告 v$EXPECTED_VERSION\", then redeploy the profile to the device." >&2
   failed=1
 fi
 

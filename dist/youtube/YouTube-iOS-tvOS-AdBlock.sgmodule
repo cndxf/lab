@@ -1,4 +1,4 @@
-#!name=YouTube iOS/tvOS 去广告
+#!name=YouTube iOS/tvOS 去广告 v1.2.11
 #!desc=iPhone、iPad 与 Apple TV 原生 YouTube 去广告；本地处理加密播放流，Apple TV 仍为实验支持。启用前必须关闭全局 hostname=* HTTPS 捕获。
 #!category=广告过滤
 #!requirement=CORE_VERSION >= 20 && (SYSTEM = 'iOS' || SYSTEM = 'tvOS')

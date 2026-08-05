@@ -26,9 +26,9 @@ assert.match(version, /^\d+\.\d+\.\d+$/, "维护版本必须使用 semver 三段
 
 const baseModuleSource = fs.readFileSync(baseModulePath, "utf8");
 const nativeModuleSource = fs.readFileSync(nativeModulePath, "utf8");
-assert.match(baseModuleSource, /^#!name=YouTube 全平台去广告$/m);
+assert.match(baseModuleSource, new RegExp(`^#!name=YouTube 全平台去广告 v${escapedVersion}$`, "m"));
 assert.match(baseModuleSource, /^#!desc=.*网页.*$/m);
-assert.match(nativeModuleSource, /^#!name=YouTube iOS\/tvOS 去广告$/m);
+assert.match(nativeModuleSource, new RegExp(`^#!name=YouTube iOS\\/tvOS 去广告 v${escapedVersion}$`, "m"));
 for (const moduleSource of [baseModuleSource, nativeModuleSource]) {
   assert.match(moduleSource, /^\[Rule\]$/m);
   assert.match(moduleSource, /^\[Script\]$/m);
