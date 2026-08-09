@@ -263,6 +263,9 @@
 /* Class = "NSMenuItem"; title = "All Domains"; ObjectID = "NUJ-I7-ozd"; */
 "NUJ-I7-ozd.title" = "所有域";
 
+/* Class = "NSButtonCell"; title = "Format HTML"; ObjectID = "O0x-DA-LSD"; */
+"O0x-DA-LSD.title" = "格式化 HTML";
+
 /* Class = "NSMenuItem"; title = "iPad Pro (12.9”)"; ObjectID = "Ob3-Eo-HG2"; */
 "Ob3-Eo-HG2.title" = "iPad Pro (12.9”)";
 

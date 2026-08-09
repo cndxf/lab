@@ -4,26 +4,38 @@ set -euo pipefail
 PACKAGE_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 PROJECT_ROOT="$(cd "$PACKAGE_ROOT/../.." && pwd -P)"
 APP_ROOT="${SITESUCKER_APP_ROOT:-/Applications/SiteSucker.app}"
-if [[ -d "$APP_ROOT" && ! -w "$APP_ROOT/Contents/Resources" && -d "$HOME/Applications/SiteSucker.app" ]]; then
-  APP_ROOT="$HOME/Applications/SiteSucker.app"
-fi
+SOURCE_APP_ROOT="$APP_ROOT"
+USER_APP_ROOT="$HOME/Applications/SiteSucker.app"
 BACKUP_ROOT="$PROJECT_ROOT/backups/sitesucker"
 EXPECTED_BUNDLE_ID="us.sitesucker.mac.sitesucker"
-EXPECTED_VERSION="${TOKENARK_SITESUCKER_EXPECTED_VERSION:-6.1.8}"
+EXPECTED_VERSION="${TOKENARK_SITESUCKER_EXPECTED_VERSION:-6.2}"
 PACKAGE="$PACKAGE_ROOT/zh-Hans.lproj"
 
 die() { printf '错误：%s\n' "$*" >&2; exit 1; }
-bundle_id=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP_ROOT/Contents/Info.plist")
-version=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$APP_ROOT/Contents/Info.plist")
+bundle_id=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$SOURCE_APP_ROOT/Contents/Info.plist")
+version=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$SOURCE_APP_ROOT/Contents/Info.plist")
 [[ "$bundle_id" == "$EXPECTED_BUNDLE_ID" ]] || die "Bundle ID 不匹配：$bundle_id"
 [[ "$version" == "$EXPECTED_VERSION" ]] || die "仅支持 SiteSucker $EXPECTED_VERSION，当前为 $version"
 [[ -d "$PACKAGE" ]] || die "请先运行 generate_sitesucker_locale.sh"
-if pgrep -f "$APP_ROOT/Contents/MacOS/SiteSucker$" >/dev/null 2>&1; then die "请先退出 SiteSucker"; fi
+if pgrep -f 'SiteSucker.app/Contents/MacOS/SiteSucker$' >/dev/null 2>&1; then die "请先退出 SiteSucker"; fi
 
 mkdir -p "$BACKUP_ROOT"
 stamp="$(date +%Y%m%d-%H%M%S)"
 backup="$BACKUP_ROOT/${stamp}-SiteSucker.app"
-ditto "$APP_ROOT" "$backup"
+if [[ -w "$SOURCE_APP_ROOT/Contents/Resources" ]]; then
+  APP_ROOT="$SOURCE_APP_ROOT"
+  ditto "$APP_ROOT" "$backup"
+else
+  APP_ROOT="$USER_APP_ROOT"
+  if [[ -d "$APP_ROOT" ]]; then
+    ditto "$APP_ROOT" "$backup"
+    rm -rf "$APP_ROOT"
+  else
+    ditto "$SOURCE_APP_ROOT" "$backup"
+  fi
+  mkdir -p "$(dirname "$APP_ROOT")"
+  ditto "$SOURCE_APP_ROOT" "$APP_ROOT"
+fi
 ditto "$PACKAGE" "$APP_ROOT/Contents/Resources/zh-Hans.lproj"
 # The current build resolves the English bundle first on this machine. Keep
 # the active resource set Chinese even when Cocoa does not select zh-Hans.

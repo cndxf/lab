@@ -52,6 +52,8 @@ let mainlandTerms: [(String, String)] = [
     ("目前", "当前"), ("下載", "下载"), ("網站", "网站"),
     ("網址", "网址"), ("支援", "支持"), ("記錄", "记录"),
     ("檢查", "检查"), ("關閉", "关闭"), ("開啟", "打开"),
+    ("存取", "访问"), ("伺服器", "服务器"), ("钥匙圈", "钥匙串"),
+    ("鑰匙圈", "钥匙串"), ("视图此", "查看此"), ("視圖此", "查看此"),
     // Keep lexical choices consistent with Mainland Chinese system UI.
     ("压缩封存档", "压缩归档文件"), ("壓縮封存檔", "压缩归档文件"),
     ("音讯档", "音频文件"), ("音訊檔", "音频文件"),
@@ -70,5 +72,7 @@ let mainlandTerms: [(String, String)] = [
 for (old, replacement) in mainlandTerms {
     text = text.replacingOccurrences(of: old, with: replacement)
 }
+text = text.replacingOccurrences(of: "[ \\t]+\\n", with: "\n", options: .regularExpression)
+text = text.replacingOccurrences(of: " +\\t", with: "\t", options: .regularExpression)
 try FileManager.default.createDirectory(at: output.deletingLastPathComponent(), withIntermediateDirectories: true)
 try text.write(to: output, atomically: true, encoding: .utf8)

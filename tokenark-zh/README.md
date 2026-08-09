@@ -4,7 +4,7 @@
 
 - `github-desktop/`：GitHub Desktop 3.6.3 的 Electron 菜单和动态界面翻译。
 - `claude/`：Claude Desktop 1.24012.9 的本地 locale 翻译。
-- `sitesucker/`：SiteSucker 6.1.8 的 `zh-Hans` 资源和大陆词汇规范化。
+- `sitesucker/`：SiteSucker 6.2 的 `zh-Hans` 资源和大陆词汇规范化。
 
 每个软件目录都有自己的 `skills/SKILL.md`、脚本、资源和测试。统一入口：
 

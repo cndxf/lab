@@ -64,9 +64,9 @@
 "Overwrite files?" = "覆写文件?";
 "Path" = "路径";
 "Pattern is invalid" = "样式无效";
-"Permission required to access file: %@" = "存取文件所需的权限: %@";
-"Permission required to access folder: %@" = "存取文件夹所需的权限: %@";
-"Permit access" = "允许存取";
+"Permission required to access file: %@" = "访问文件所需的权限: %@";
+"Permission required to access folder: %@" = "访问文件夹所需的权限: %@";
+"Permit access" = "允许访问";
 "Please choose a destination folder" = "请选择目的地文件夹";
 "Please choose an application to open the file" = "请选择应用以打开此文件";
 "Please enter a valid address that begins with “http://” or “https://”." = "请输入以 “http://” 或 “https://” 开头的有效位址.";
@@ -104,8 +104,8 @@
 "Waiting for Internet connection" = "等待网络连接";
 "Webpage" = "网页";
 "Would you like to load “%@”?" = "您要加载 “%@”?";
-"Would you like to save this password for “%@” in your keychain?" = "您要在钥匙圈中保存 “%@” 的密码吗?";
-"Would you like to update the password for “%@” in your keychain?" = "您要在钥匙圈中更新 “%@” 的密码吗?";
+"Would you like to save this password for “%@” in your keychain?" = "您要在钥匙串中保存 “%@” 的密码吗?";
+"Would you like to update the password for “%@” in your keychain?" = "您要在钥匙串中更新 “%@” 的密码吗?";
 "Wrong item was selected." = "选择了错误的项目.";
 "Yes" = "是";
 "“%@” is not a valid custom data attribute name. A valid custom data attribute name should begin with “data-” and should not contain uppercase characters." = "“%@” 不是有效的自定义数据属性名称. 有效的自定义数据属性名称应以 “data-” 开头, 并且不应包含大写字符.";
@@ -191,9 +191,9 @@
 /* WebAuthenticationPanel Strings */
 "%ld failures" = "%ld 次失败";
 "1 failure" = "1 次失败";
-"To view this page, you must log in to area “%@” on %@." = "要视图此页面, 您必须登录 %@ 上的 “%@” 区域.";
-"To view this page, you must log in to the %@ proxy server %@." = "要视图此页面, 您必须登录 %@ 代理伺服器 %@.";
-"To view this page, you must log in to this area on %@:" = "要视图此页面, 您必须在 %@ 上登录此区域:";
+"To view this page, you must log in to area “%@” on %@." = "要查看此页面, 您必须登录 %@ 上的 “%@” 区域.";
+"To view this page, you must log in to the %@ proxy server %@." = "要查看此页面, 您必须登录 %@ 代理服务器 %@.";
+"To view this page, you must log in to this area on %@:" = "要查看此页面, 您必须在 %@ 上登录此区域:";
 "Your login information will be sent securely." = "您的登录信息将会安全地传送.";
 "Your password will be sent unencrypted." = "您的密码将以未加密的方式传送.";
 

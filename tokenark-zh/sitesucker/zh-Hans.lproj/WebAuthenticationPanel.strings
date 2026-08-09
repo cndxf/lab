@@ -3,7 +3,7 @@
 "5.title" = "登录";
 
 /* Class = "NSTextFieldCell"; title = "To view this page, you must log in to this area on www.server.com:"; ObjectID = "100010"; */
-"100010.title" = "要视图此页面, 您必须登录 www.server.com 上的此区域:";
+"100010.title" = "要查看此页面, 您必须登录 www.server.com 上的此区域:";
 
 /* Class = "NSTextFieldCell"; title = "Your password will be sent unencrypted."; ObjectID = "100011"; */
 "100011.title" = "您的密码将以未加密的方式传送.";
@@ -21,7 +21,7 @@
 "100017.title" = "密码:";
 
 /* Class = "NSButtonCell"; title = "Remember this password in my keychain"; ObjectID = "100039"; */
-"100039.title" = "在我的钥匙圈中记住此密码";
+"100039.title" = "在我的钥匙串中记住此密码";
 
 /* Class = "NSButtonCell"; title = "Log In"; ObjectID = "IRy-sP-2Ug"; */
 "IRy-sP-2Ug.title" = "登录";

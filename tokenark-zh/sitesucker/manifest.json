@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-30T07:53:38.550Z",
-  "appVersion": "6.1.8",
+  "generatedAt": "2026-08-09T14:53:56.122Z",
+  "appVersion": "6.2",
   "resourceCount": 17,
   "files": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "path": "Credits.html",
-      "sha256": "2c178d2016a5529e4cf8084126a7d55be6419b4099cb315dcd869563f846714c"
+      "sha256": "b81cff2133ffba39adfbe7371a6e050217fa2d3afe45fb1c33e1daf112569fe3"
     },
     {
       "path": "InfoPlist.strings",
@@ -29,7 +29,7 @@
     },
     {
       "path": "Localizable.strings",
-      "sha256": "a8303fb37a71c591bd2323c3fe914abcf74a1d028e930341ac31b9fe391345f1"
+      "sha256": "c71b4cdbb5ba3b8d90b88d0918fb9ca6fe9911017811f82595eece9d542559af"
     },
     {
       "path": "MainMenu.strings",
@@ -53,11 +53,11 @@
     },
     {
       "path": "ServicesMenu.strings",
-      "sha256": "4086c32d3175a22976c67a0331a8c8fc6e651413f103088a066d657ff1feee5c"
+      "sha256": "bad0a44fc22ccaec24fb3b36c7a6c2fda85dafca344c21b85d9a1585f9834a66"
     },
     {
       "path": "Settings.strings",
-      "sha256": "8c7332aaa9facdd8456d89f7ee5d22c6a310d7cc499c0c3ff5970f6872090ca9"
+      "sha256": "1258d529cf4423420b9ee14f21e2871ac54c8ff4bd6c806fd5e063d43d2da0fd"
     },
     {
       "path": "SettingsManager.strings",
@@ -69,7 +69,7 @@
     },
     {
       "path": "WebAuthenticationPanel.strings",
-      "sha256": "25e5da51b3451213e6cff30904304a10988e91941156b5f89073901df9cc2e17"
+      "sha256": "4e703a4d35a941c4530bf75e1afe7100ebab9c135826cf7b8268688e050e961a"
     }
   ]
 }
