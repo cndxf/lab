@@ -23,9 +23,7 @@ if (!source || !/<\/body>/i.test(source)) {
 } else if (source.includes("data-youtube-adblock-skipper")) {
   $done({});
 } else {
-  const nonceMatch = Array.from(
-    source.matchAll(/<script\b[^>]*\bnonce=(["'])([^"']*)\1/gi),
-  ).find((match) => match[2]);
+  const nonceMatch = source.match(/<script\b[^>]*\bnonce=(["'])([^"']+)\1/i);
   const cspHeader = Object.entries($response.headers || {}).find(
     ([name]) => name.toLowerCase() === "content-security-policy",
   )?.[1];
@@ -65,7 +63,7 @@ if (!source || !/<\/body>/i.test(source)) {
   </style>`;
   const injectedScript = `<script${nonceAttribute} data-youtube-adblock-skipper>(()=>{
     // [COMMON / 多客户端通用] 运行时名称和诊断快照保持客户端无关，便于跨适配器排障。
-    const VERSION="1.2.17";
+    const VERSION="1.2.12";
     const activeRuntime=window.__youtubeAdBlockRuntime;
     if(activeRuntime){
       if(activeRuntime.version===VERSION){
@@ -105,18 +103,6 @@ if (!source || !/<\/body>/i.test(source)) {
     };
     window.__youtubeAdBlockRuntime=runtime;
     document.documentElement?.setAttribute?.("data-youtube-adblock-version",VERSION);
-    // [WEB / 网页专用] 上游当前用于识别网页请求的 network machine 实验会重新引入广告链路；
-    // 每次扫描都重写，兼容 ytcfg 在 HTML 注入后才完成初始化的页面。
-    function disableNetworkMachineExperiments(){
-      try{
-        const flags=window.ytcfg?.data_?.EXPERIMENT_FLAGS;
-        if(!flags||typeof flags!=="object")return;
-        flags.all_web_enable_network_machine=false;
-        flags.all_web_network_machine_raw_request=false;
-      }catch(_){
-        // 某些页面会在 ytcfg 初始化期间冻结对象；不影响其他广告清理路径。
-      }
-    }
     // [WEB / 网页专用] 以下选择器和播放器 API 仅对应 YouTube Web DOM，不可复制到原生端。
     const skipButtonSelectors=[
       ".ytp-ad-skip-button-modern",
@@ -335,11 +321,6 @@ if (!source || !/<\/body>/i.test(source)) {
       try{
         video.muted=true;
         video.playbackRate=16;
-        if(video.paused&&typeof video.play==="function"){
-          const playResult=video.play();
-          if(playResult&&typeof playResult.catch==="function")playResult.catch(rememberError);
-          remember("resume-ad-playback");
-        }
         counters.acceleratedTicks+=1;
         remember(serverSideAd?"accelerate-ssap":"accelerate-ad");
       }catch(error){
@@ -368,7 +349,6 @@ if (!source || !/<\/body>/i.test(source)) {
     }
     function safeCleanPage(){
       try{
-        disableNetworkMachineExperiments();
         cleanPage();
       }catch(error){
         rememberError(error);

@@ -11,6 +11,8 @@
 
 GitHub 会先打开本仓库的 HTTPS 中转页，然后自动唤起 Surge；若浏览器阻止自动跳转，中转页也提供备用按钮。
 
+公开入口的实际版本以 [`dist/youtube/VERSION`](../dist/youtube/VERSION) 和模块标题为准，不以本文中的候选版本号为准。当前工作区的 `1.2.17` 仍是候选版；在它完成真机回归并推送公开分发前，测试请使用安装说明中的局域网一次性测试服务器。
+
 安装完成后仍需在当前设备的模块列表启用。Mac 使用不解密 `googlevideo` 的网页安全版；iPhone、iPad 和 Apple TV 使用原生版。同一设备不要同时启用两个模块。
 
 详细步骤、证书信任、更新、验证和回滚见 [`clients/surge/安装说明.md`](clients/surge/安装说明.md)。
@@ -19,10 +21,10 @@ GitHub 会先打开本仓库的 HTTPS 中转页，然后自动唤起 Surge；若
 
 | 平台 / 客户端 | 状态 | 说明 |
 | --- | --- | --- |
-| macOS 网页 + Surge | `1.2.11` 网页安全版，待最终播放器验收 | 只加载网页脚本，不再注册原生 protobuf 脚本；当前匿名播放器回归为 `3/15`，其余主要被 YouTube 登录/机器人门槛阻断，尚未取得 `1.2.11` 新一轮真实广告态证据 |
-| iPhone/iPad YouTube App + Surge | `1.2.11` 真机候选 | 独立原生模块已接入 protobuf、本地 UMP 解密和有限期 key 刷新，前贴片、中插和恢复仍需真机验收 |
+| macOS 网页 + Surge | `1.2.17` 候选，待最终播放器验收 | 修复游戏、音乐、电影、播客、Premium、购物及同类页面入口未注入的问题；真实前贴片、中插仍需在已登录资料中复测 |
+| iPhone/iPad YouTube App + Surge | `1.2.17` 真机候选 | 独立原生模块已接入 protobuf、本地 UMP 解密和有限期 key 刷新，前贴片、中插和恢复仍需真机验收 |
 | iPhone/iPad 网页 + Surge | 已接入 | 与移动网页规则共用，需继续真机回归 |
-| Apple TV + Surge | `1.2.11` 实验性 | JSON player 回退路径新增 SSAP 配置清理并接入 UMP 候选路径；证书、前贴片、中插和长时播放仍需 tvOS 真机验收 |
+| Apple TV + Surge | `1.2.17` 实验性 | JSON player 回退路径新增 SSAP 配置清理并接入 UMP 候选路径；证书、前贴片、中插和长时播放仍需 tvOS 真机验收 |
 | Stash | 未验证 | 不提供安装文件 |
 | Shadowrocket | 未验证 | 不提供安装文件 |
 
@@ -50,6 +52,7 @@ AUDIT_UPSTREAM=1 ./tools/verify.sh
 ```
 
 实时审计发现上游提交或广告字段块变化时会以严格模式失败，防止未复核差异就直接发布。
+网络较慢时可用 `YOUTUBE_AUDIT_MAX_TIME=180 AUDIT_UPSTREAM=1 ./tools/verify.sh` 延长上游文件下载超时；默认值为 120 秒。
 
 ## 安全边界
 

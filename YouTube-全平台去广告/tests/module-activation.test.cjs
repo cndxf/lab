@@ -19,12 +19,23 @@ const checkerPath = path.join(projectRoot, "tools/check-surge-effective.sh");
 const version = fs.readFileSync(path.join(projectRoot, "VERSION"), "utf8").trim();
 
 assert.match(moduleSource, /^#!desc=.*hostname=\*.*有效配置.*$/m);
+assert.match(
+  moduleSource,
+  /\(\?:www\|m\|music\)\\\.youtube\\\.com/,
+  "Mac 网页模块必须覆盖 YouTube Music 独立域名",
+);
+assert.match(
+  moduleSource,
+  /hostname = %APPEND% .*music\.youtube\.com/,
+  "Mac 网页模块必须把 YouTube Music 加入 MITM 主机",
+);
 
 for (const requiredText of [
   "安装完成不等于启用",
   "每台设备单独启用",
   "修改后的有效配置",
   "不会复制到主配置",
+  "SURGE_LOCAL_TEST=1",
   "hostname = *",
   "捕获全部 HTTPS",
 ]) {
@@ -38,6 +49,11 @@ for (const requiredText of ["安装完成后", "模块列表", "启用开关"]) 
 assert.ok(fs.existsSync(checkerPath), "必须提供 Mac 有效配置检查工具");
 const checker = fs.readFileSync(checkerPath, "utf8");
 assert.match(checker, /dump profile effective/);
+assert.match(
+  checker,
+  /for required_route in gaming music movies podcasts premium shopping sports news kids fashion learning live;/,
+  "Mac 有效配置检查器必须覆盖全部当前 YouTube 页面入口",
+);
 for (const scriptName of [
   "youtube.web.response",
   "youtube.web.page",
@@ -46,13 +62,13 @@ for (const scriptName of [
 }
 assert.doesNotMatch(checker, /youtube\.native\.response/);
 
-function runChecker(profile) {
+function runChecker(profile, extraEnv = {}) {
   const temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "youtube-effective-profile-"));
   const profilePath = path.join(temporaryDirectory, "effective.conf");
   fs.writeFileSync(profilePath, profile);
   const result = spawnSync(checkerPath, [], {
     encoding: "utf8",
-    env: { ...process.env, SURGE_EFFECTIVE_PROFILE_FILE: profilePath },
+    env: { ...process.env, SURGE_EFFECTIVE_PROFILE_FILE: profilePath, ...extraEnv },
   });
   fs.rmSync(temporaryDirectory, { recursive: true, force: true });
   return result;
@@ -60,10 +76,22 @@ function runChecker(profile) {
 
 const currentEffectiveProfile = `
 youtube.web.response = type=http-response,pattern=^https:\\/\\/www\\.youtube\\.com\\/youtubei\\/v1\\/(?:next|browse|search|get_watch|player|player\\/ad_break)$,script-path=/tmp/dist/youtube/releases/${version}/scripts/youtube-web-response.js
-youtube.web.page = type=http-response,pattern=^https:\\/\\/www\\.youtube\\.com\\/watch$,script-path=/tmp/dist/youtube/releases/${version}/scripts/youtube-web-page.js
+youtube.web.page = type=http-response,pattern=^https:\\/\\/www\\.youtube\\.com\\/(?:(?:watch|results|playlist)|(?:gaming|music|movies|podcasts|premium|shopping|sports|news|kids|fashion|learning|live)(?:\\/[^?#]*)?|(?:\\?.*)?)$,script-path=/tmp/dist/youtube/releases/${version}/scripts/youtube-web-page.js
 `;
 const currentResult = runChecker(currentEffectiveProfile);
 assert.equal(currentResult.status, 0, currentResult.stderr || currentResult.stdout);
+
+const localTestProfile = currentEffectiveProfile.replaceAll(
+  `/releases/${version}/`,
+  `/scripts/`,
+).replaceAll(`scripts/youtube-web-response.js`, `scripts/youtube-web-response.js?v=${version}&token=test`)
+  .replaceAll(`scripts/youtube-web-page.js`, `scripts/youtube-web-page.js?v=${version}&token=test`);
+const localTestResult = runChecker(localTestProfile, { SURGE_LOCAL_TEST: "1" });
+assert.equal(
+  localTestResult.status,
+  0,
+  localTestResult.stderr || localTestResult.stdout,
+);
 
 const wildcardMitmResult = runChecker(
   `${currentEffectiveProfile}\nhostname = *, www.youtube.com, m.youtube.com, youtubei.googleapis.com\n`,
@@ -98,6 +126,19 @@ const staleResult = runChecker(
 );
 assert.equal(staleResult.status, 1, "缺少 player/ad_break 的旧模块必须检查失败");
 assert.match(`${staleResult.stdout}\n${staleResult.stderr}`, /STALE/);
+
+const stalePageRoutesResult = runChecker(
+  currentEffectiveProfile.replace("sports|", ""),
+);
+assert.equal(
+  stalePageRoutesResult.status,
+  1,
+  "同版本但缺少当前页面路由的旧模块必须检查失败",
+);
+assert.match(
+  `${stalePageRoutesResult.stdout}\n${stalePageRoutesResult.stderr}`,
+  /youtube\.web\.page.*route|page.*route/i,
+);
 
 const oldReleaseResult = runChecker(
   currentEffectiveProfile.replaceAll(`/releases/${version}/`, "/releases/1.2.7/"),

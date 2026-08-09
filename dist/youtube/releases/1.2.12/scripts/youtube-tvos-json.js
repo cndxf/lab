@@ -37,8 +37,6 @@
     "adBreakHeartbeatParams",
     "adPlaybackContext",
     "adLayoutMetadata",
-    "legacyImportant",
-    "no_ads",
   ]);
   const adRendererFields = new Set([
     "adPlacementRenderer",

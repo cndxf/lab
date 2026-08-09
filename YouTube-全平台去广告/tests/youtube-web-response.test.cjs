@@ -95,6 +95,8 @@ const nativeWebResponseRule =
   nativeConfig.match(/^youtube\.web\.response = .*$/m)?.[0] || "";
 const normalizedNativeResponseRule = nativeResponseRule.replaceAll("\\/", "/");
 const mitmHostnameLine = config.match(/^hostname = .*$/m)?.[0] || "";
+const nativeMitmHostnameLine =
+  nativeConfig.match(/^hostname = .*$/m)?.[0] || "";
 const googlevideoQuicRule =
   config.match(/^AND,\(\(DOMAIN-SUFFIX,googlevideo\.com\).*$/m)?.[0] || "";
 const youtubeiQuicRule =
@@ -164,6 +166,8 @@ const adBreakPayload = {
     },
   ],
   adThrottled: true,
+  legacyImportant: { ad: true },
+  no_ads: { ad: true },
   trackingParams: "keep-response-context",
 };
 const adBreakOutput = runSurgeScript(
@@ -180,6 +184,8 @@ assert.equal(
   undefined,
   "player/ad_break 的广告限流标志必须被删除",
 );
+assert.equal(adBreakOutput.legacyImportant, undefined);
+assert.equal(adBreakOutput.no_ads, undefined);
 assert.deepEqual(
   adBreakOutput.responseContext,
   adBreakPayload.responseContext,
@@ -203,22 +209,41 @@ assert.deepEqual(
 );
 console.log("PASS: full player response remains untouched");
 
-for (const route of [
-  "shorts",
-  "results",
-  "feed",
-  "channel",
-  "embed",
-  "playlist",
-  "live",
-  "post",
-  "hashtag",
-  "clip",
-]) {
-  assert.match(
-    pageRule,
-    new RegExp(route),
-    `页面脚本必须覆盖 /${route}，以便清理动态插入的广告卡片`,
+const pageRouteExamples = {
+  shorts: "shorts/",
+  results: "results?search_query=iphone",
+  feed: "feed/subscriptions",
+  channel: "@YouTube",
+  embed: "embed/8dJyRm2jJ-U",
+  playlist: "playlist?list=PLfixture",
+  live: "live/awQzjn72bI0",
+  post: "post/Ugkfixture",
+  hashtag: "hashtag/thatthat",
+  clip: "clip/Ugkxfixture",
+  gaming: "gaming",
+  music: "music",
+  movies: "movies",
+  podcasts: "podcasts",
+  premium: "premium",
+  shopping: "shopping",
+  sports: "sports",
+  news: "news",
+  kids: "kids",
+  fashion: "fashion",
+  learning: "learning",
+};
+
+for (const [route, path] of Object.entries(pageRouteExamples)) {
+  assert.match(pageRule, new RegExp(route), `页面规则必须声明 /${route}`);
+  assert.equal(
+    pagePattern.test(`https://www.youtube.com/${path}`),
+    true,
+    `页面脚本必须实际匹配 /${route}，以便清理动态插入的广告卡片`,
+  );
+  assert.equal(
+    packagePagePattern.test(`https://www.youtube.com/${path}`),
+    true,
+    `维护包模板必须实际匹配 /${route}`,
   );
 }
 
@@ -246,12 +271,22 @@ assert.equal(
 );
 assert.equal(pageRule, packagePageRule, "活动页面规则必须与维护包模板一致");
 
-assert.match(responseRule, /\(\?:www\|m\)/, "响应脚本必须同时覆盖桌面和移动站");
-assert.match(pageRule, /\(\?:www\|m\)/, "页面脚本必须同时覆盖桌面和移动站");
+assert.match(responseRule, /\(\?:www\|m\|music\)/, "响应脚本必须覆盖桌面、移动站和 YouTube Music");
+assert.match(pageRule, /\(\?:www\|m\|music\)/, "页面脚本必须覆盖桌面、移动站和 YouTube Music");
 assert.match(
   mitmHostnameLine,
-  /www\.youtube\.com.*m\.youtube\.com/,
-  "MITM 必须包含 www.youtube.com 与 m.youtube.com",
+  /www\.youtube\.com.*m\.youtube\.com.*music\.youtube\.com/,
+  "MITM 必须包含 www.youtube.com、m.youtube.com 与 music.youtube.com",
+);
+assert.doesNotMatch(
+  nativeMitmHostnameLine,
+  /(?:www|m)\.youtube\.com/,
+  "Apple TV 原生 MITM 不得捕获证书固定的网页主机",
+);
+assert.match(
+  nativeMitmHostnameLine,
+  /youtubei\.googleapis\.com.*\*\.googlevideo\.com/,
+  "Apple TV 原生 MITM 仍必须覆盖 youtubei 与 googlevideo",
 );
 
 console.log("PASS: config covers search and the selected YouTube page routes");
@@ -388,6 +423,55 @@ assert.match(
   new RegExp(`const VERSION="${escapedVersion}"`),
   "网页运行时版本必须与维护版本文件一致",
 );
+assert.match(
+  injectedPageScript,
+  /all_web_enable_network_machine/,
+  "网页脚本必须关闭当前上游识别到的 network machine 实验开关",
+);
+assert.match(
+  injectedPageScript,
+  /all_web_network_machine_raw_request/,
+  "网页脚本必须关闭当前上游识别到的 network machine 原始请求开关",
+);
+const networkMachineFlags = {
+  all_web_enable_network_machine: true,
+  all_web_network_machine_raw_request: true,
+};
+vm.runInNewContext(
+  injectedPageScript,
+  {
+    window: {
+      ytcfg: { data_: { EXPERIMENT_FLAGS: networkMachineFlags } },
+    },
+    document: {
+      documentElement: {},
+      querySelector() {
+        return null;
+      },
+      querySelectorAll() {
+        return [];
+      },
+      hidden: false,
+      visibilityState: "visible",
+    },
+    HTMLElement: class HTMLElement {},
+    MutationObserver: class MutationObserver {
+      observe() {}
+    },
+    setInterval() {},
+  },
+  { filename: "youtube-web-page.network-machine.injected.js" },
+);
+assert.equal(
+  networkMachineFlags.all_web_enable_network_machine,
+  false,
+  "网页运行时必须关闭 network machine 实验开关",
+);
+assert.equal(
+  networkMachineFlags.all_web_network_machine_raw_request,
+  false,
+  "网页运行时必须关闭 network machine 原始请求开关",
+);
 
 const visualAdSuppressionResult = transformPage({
   body: "<html><body><main>content</main></body></html>",
@@ -422,6 +506,17 @@ assert.match(
   "HTML 未携带 nonce 时必须从 CSP 响应头继承，避免浏览器保留脚本但拒绝执行",
 );
 console.log("PASS: page injection inherits the CSP response nonce");
+
+const emptyNonceBeforeValidNonceResult = transformPage({
+  body:
+    '<html><body><script nonce=""></script><script nonce="youtube-html-nonce"></script><main>content</main></body></html>',
+});
+assert.match(
+  emptyNonceBeforeValidNonceResult.body,
+  /<script nonce="youtube-html-nonce" data-youtube-adblock-skipper>/,
+  "HTML 中存在空 nonce 时必须继续寻找可用的非空 nonce",
+);
+console.log("PASS: page injection skips empty nonce attributes");
 
 const cacheControlResult = transformPage({
   body: "<html><body><main>content</main></body></html>",
@@ -616,7 +711,17 @@ console.log("PASS: stale ad-showing class cannot keep the main video hidden");
 
 let modernSkipClicks = 0;
 let runtimeDomVersion = null;
-const modernMovieVideo = { muted: false, playbackRate: 1 };
+let modernMoviePlayCalls = 0;
+const modernMovieVideo = {
+  muted: false,
+  playbackRate: 1,
+  paused: true,
+  play() {
+    modernMoviePlayCalls += 1;
+    this.paused = false;
+    return Promise.resolve();
+  },
+};
 const modernSkipButton = new VisibleElement();
 modernSkipButton.offsetParent = {};
 modernSkipButton.textContent = "跳过";
@@ -668,6 +773,7 @@ vm.runInNewContext(injectedPageScript, modernMovieContext, {
 assert.equal(modernSkipClicks, 1, "新版免费电影广告的通用跳过按钮必须被点击");
 assert.equal(modernMovieVideo.muted, true, "仅有播放器广告状态时也必须临时静音");
 assert.equal(modernMovieVideo.playbackRate, 16, "仅有播放器广告状态时也必须临时加速");
+assert.equal(modernMoviePlayCalls, 1, "已进入广告态但 video 暂停时必须恢复广告播放以便加速跳过");
 assert.match(runtimeDomVersion || "", /^\d+\.\d+\.\d+$/, "运行时必须写入跨上下文可见的版本标记");
 console.log("PASS: page cleaner handles modern YouTube Movies ad markup");
 

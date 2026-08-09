@@ -2,14 +2,15 @@
 
 ## 当前状态（2026-08-05）
 
-- Apple TV 的 Surge 远程控制端口可达，设备运行环境报告为 `tvOS 27.0`、`AppleTV14,1`。
-- 当前 tvOS 有效配置只包含网页 YouTube 规则：`www.youtube.com`、`m.youtube.com` 和 `youtubei.googleapis.com`。
-- 当前有效配置没有 `youtube.native.response`、`youtube.native.request.init`、`youtube.native.response.init`、`youtube.tvos.json`，也没有 `*.googlevideo.com` MITM。
+- 2026-08-05 复测 Apple TV `10.10.10.161:6170` 返回 `Connection refused`；当前没有可用的 Surge tvOS 远程控制会话。
+- 同日扫描到 `10.10.10.21:6170` 可达，但该地址的局域网主机名为 `dingxia17promax.ts.net`，对应 iPhone，不能把它当作 Apple TV 验收目标。
+- 上一次可读取的 tvOS 配置只包含网页 YouTube 规则：`www.youtube.com`、`m.youtube.com` 和 `youtubei.googleapis.com`。
+- 上一次有效配置没有 `youtube.native.response`、`youtube.native.request.init`、`youtube.native.response.init`、`youtube.tvos.json`，也没有 `*.googlevideo.com` MITM；该结果不能替代当前在线检查。
 - 因此当前不能宣称 Apple TV 已部署原生去广告模块，也没有前贴片、中插或长视频恢复的真机证据。
 
 ## 部署门槛
 
-1. 在 iPhone/iPad 的 Surge 中安装并启用 `YouTube iOS/tvOS 去广告`。
+1. 在 iPhone/iPad 的 Surge 中安装并启用 `v1.2.17 · YouTube iOS/tvOS 去广告`。
 2. 确认 Surge CA 已安装并完全信任。
 3. 通过 Surge 的 tvOS/Ponte 管理入口，把配置和 CA 重新部署到 Apple TV。
 4. 在 Apple TV 上重启 Surge，再强制退出并重新打开 YouTube。

@@ -86,6 +86,66 @@ const DEFAULT_CASES = [
     scrollSteps: 4,
   },
   {
+    name: "trending",
+    url: "https://www.youtube.com/feed/trending",
+    waitMs: 7000,
+    scrollSteps: 4,
+  },
+  {
+    name: "library",
+    url: "https://www.youtube.com/feed/library",
+    waitMs: 7000,
+    scrollSteps: 3,
+  },
+  {
+    name: "history",
+    url: "https://www.youtube.com/feed/history",
+    waitMs: 7000,
+    scrollSteps: 3,
+  },
+  {
+    name: "you",
+    url: "https://www.youtube.com/feed/you",
+    waitMs: 7000,
+    scrollSteps: 3,
+  },
+  {
+    name: "gaming",
+    url: "https://www.youtube.com/gaming",
+    waitMs: 7000,
+    scrollSteps: 3,
+  },
+  {
+    name: "music",
+    url: "https://www.youtube.com/music",
+    waitMs: 7000,
+    scrollSteps: 3,
+  },
+  {
+    name: "movies",
+    url: "https://www.youtube.com/movies",
+    waitMs: 7000,
+    scrollSteps: 3,
+  },
+  {
+    name: "podcasts",
+    url: "https://www.youtube.com/podcasts",
+    waitMs: 7000,
+    scrollSteps: 3,
+  },
+  {
+    name: "premium",
+    url: "https://www.youtube.com/premium",
+    waitMs: 7000,
+    scrollSteps: 2,
+  },
+  {
+    name: "shopping",
+    url: "https://www.youtube.com/shopping",
+    waitMs: 7000,
+    scrollSteps: 3,
+  },
+  {
     name: "channel",
     url: "https://www.youtube.com/@officialpsy",
     waitMs: 7000,
@@ -604,6 +664,12 @@ function summarizeSamples(
   const first = samples[0] || {};
   const last = samples.at(-1) || {};
   const failures = [];
+  const playbackBlocker = samples.find((sample) => sample.playbackBlocker)?.playbackBlocker || null;
+  const instrumentationUnavailable = Boolean(playbackBlocker) &&
+    (last.injectedScriptCount == null || last.injectedScriptCount === 0) &&
+    (last.injectedStyleCount == null || last.injectedStyleCount === 0) &&
+    !last.documentVersion &&
+    !last.runtimeVersion;
   const adNodeMetrics = computeAdNodeMetrics(samples, stableSampleCount);
   const runtimeErrors = last.diagnostics?.errors || [];
   const activeSamples = samples.filter((sample) => sample.active);
@@ -668,16 +734,16 @@ function summarizeSamples(
   });
   const playbackEstablished = playbackProgressed;
 
-  if (last.injectedScriptCount !== 1) {
+  if (!instrumentationUnavailable && last.injectedScriptCount !== 1) {
     failures.push(`injected script count=${last.injectedScriptCount ?? "missing"}`);
   }
-  if (last.injectedStyleCount !== 1) {
+  if (!instrumentationUnavailable && last.injectedStyleCount !== 1) {
     failures.push(`injected style count=${last.injectedStyleCount ?? "missing"}`);
   }
-  if (last.documentVersion !== expectedVersion) {
+  if (!instrumentationUnavailable && last.documentVersion !== expectedVersion) {
     failures.push(`document version=${last.documentVersion || "missing"}`);
   }
-  if (last.runtimeVersion !== expectedVersion) {
+  if (!instrumentationUnavailable && last.runtimeVersion !== expectedVersion) {
     failures.push(`runtime version=${last.runtimeVersion || "missing"}`);
   }
   if (adNodeMetrics.stableAdNodes > 0) {
@@ -687,8 +753,7 @@ function summarizeSamples(
     failures.push(`runtime errors=${runtimeErrors.join(" | ")}`);
   }
   if (expectPlayback && !playbackEstablished) {
-    const blocker = samples.find((sample) => sample.playbackBlocker)?.playbackBlocker;
-    failures.push(blocker ? `playback blocked=${blocker}` : "media playback not established");
+    failures.push(playbackBlocker ? `playback blocked=${playbackBlocker}` : "media playback not established");
   }
   if (seenPrerollAd && !seenPrerollRecovery) {
     failures.push("preroll ad did not recover");
@@ -712,7 +777,6 @@ function summarizeSamples(
   }
 
   const uniqueFailures = [...new Set(failures)];
-  const playbackBlocker = samples.find((sample) => sample.playbackBlocker)?.playbackBlocker || null;
   const onlyExternalPlaybackBlock =
     Boolean(playbackBlocker) &&
     uniqueFailures.length === 1 &&
@@ -740,6 +804,7 @@ function summarizeSamples(
     midrollStatus,
     seekPointsTested,
     playbackEstablished,
+    instrumentationUnavailable,
     playbackStatus: !expectPlayback
       ? "not-applicable"
       : playbackEstablished

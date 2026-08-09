@@ -6,7 +6,18 @@ SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
 PROJECT_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd -P)
 EXPECTED_VERSION=$(tr -d '\r\n' < "$PROJECT_ROOT/VERSION")
 EXPECTED_RELEASE_PATH="/releases/$EXPECTED_VERSION/"
+VERSION_PATTERN=$(printf '%s' "$EXPECTED_VERSION" | sed 's/\./\\./g')
 SURGE_CLI=${SURGE_CLI:-/Applications/Surge.app/Contents/Applications/surge-cli}
+
+script_is_current() {
+  script_line=$1
+  if [ "${SURGE_LOCAL_TEST:-0}" -eq 1 ]; then
+    # The one-time LAN server intentionally rewrites public release paths to /scripts/.
+    printf '%s\n' "$script_line" | grep -Eq "/scripts/[^,[:space:]]+\\?[^,[:space:]]*v=$VERSION_PATTERN(&|$)"
+    return
+  fi
+  printf '%s\n' "$script_line" | grep -Fq "$EXPECTED_RELEASE_PATH"
+}
 
 # 测试可传入固定的有效配置；正常使用时仍由 Surge CLI 读取当前合并结果。
 if [ -n "${SURGE_EFFECTIVE_PROFILE_FILE:-}" ]; then
@@ -40,7 +51,7 @@ native_script_count=$(printf '%s\n' "$effective_profile" | awk '
 if [ "$native_script_count" -gt 0 ]; then
   printf '%s\n' \
     "NATIVE_CONFLICT: Mac effective profile contains $native_script_count iOS/tvOS YouTube script(s)." \
-    "Remove the iOS/tvOS module from Mac and keep only the current \"YouTube 全平台去广告 v$EXPECTED_VERSION\" module." >&2
+    "Remove the iOS/tvOS module from Mac and keep only the current \"v$EXPECTED_VERSION · YouTube 全平台去广告\" module." >&2
   failed=1
 fi
 
@@ -58,7 +69,7 @@ do
       script_line=$(printf '%s\n' "$effective_profile" | awk -v prefix="$script_name =" '
         index($0, prefix) == 1 { print; exit }
       ')
-      if ! printf '%s\n' "$script_line" | grep -Fq "$EXPECTED_RELEASE_PATH"; then
+      if ! script_is_current "$script_line"; then
         printf '%s\n' \
           "STALE: $script_name does not reference release $EXPECTED_VERSION." \
           'Refresh or replace the current YouTube module, then apply changes.' >&2
@@ -87,10 +98,23 @@ if [ -n "$web_response_lines" ] && ! printf '%s\n' "$web_response_lines" | grep 
   failed=1
 fi
 
+# 同一版本的旧模块也可能只更新了脚本 URL，遗漏新增页面路由；检查规则内容本身。
+web_page_lines=$(printf '%s\n' "$effective_profile" | awk '
+  index($0, "youtube.web.page =") == 1 { print }
+')
+for required_route in gaming music movies podcasts premium shopping sports news kids fashion learning live; do
+  if ! printf '%s\n' "$web_page_lines" | grep -Eq "(^|[|(:])${required_route}([|):])"; then
+    printf '%s\n' \
+      "STALE: youtube.web.page does not include current page route: $required_route." \
+      'Refresh or replace the current YouTube module, then apply changes.' >&2
+    failed=1
+  fi
+done
+
 if [ "$failed" -ne 0 ]; then
   printf '%s\n' \
     'The effective profile is missing, stale, or contains duplicate YouTube scripts.' \
-    "Open Surge > Modules, keep one current \"YouTube 全平台去广告 v$EXPECTED_VERSION\", then apply changes." >&2
+    "Open Surge > Modules, keep one current \"v$EXPECTED_VERSION · YouTube 全平台去广告\", then apply changes." >&2
   exit 1
 fi
 

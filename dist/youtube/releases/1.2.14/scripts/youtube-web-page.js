@@ -23,9 +23,7 @@ if (!source || !/<\/body>/i.test(source)) {
 } else if (source.includes("data-youtube-adblock-skipper")) {
   $done({});
 } else {
-  const nonceMatch = Array.from(
-    source.matchAll(/<script\b[^>]*\bnonce=(["'])([^"']*)\1/gi),
-  ).find((match) => match[2]);
+  const nonceMatch = source.match(/<script\b[^>]*\bnonce=(["'])([^"']+)\1/i);
   const cspHeader = Object.entries($response.headers || {}).find(
     ([name]) => name.toLowerCase() === "content-security-policy",
   )?.[1];
@@ -65,7 +63,7 @@ if (!source || !/<\/body>/i.test(source)) {
   </style>`;
   const injectedScript = `<script${nonceAttribute} data-youtube-adblock-skipper>(()=>{
     // [COMMON / 多客户端通用] 运行时名称和诊断快照保持客户端无关，便于跨适配器排障。
-    const VERSION="1.2.17";
+    const VERSION="1.2.14";
     const activeRuntime=window.__youtubeAdBlockRuntime;
     if(activeRuntime){
       if(activeRuntime.version===VERSION){
@@ -335,11 +333,6 @@ if (!source || !/<\/body>/i.test(source)) {
       try{
         video.muted=true;
         video.playbackRate=16;
-        if(video.paused&&typeof video.play==="function"){
-          const playResult=video.play();
-          if(playResult&&typeof playResult.catch==="function")playResult.catch(rememberError);
-          remember("resume-ad-playback");
-        }
         counters.acceleratedTicks+=1;
         remember(serverSideAd?"accelerate-ssap":"accelerate-ad");
       }catch(error){

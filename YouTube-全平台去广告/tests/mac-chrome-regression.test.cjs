@@ -42,6 +42,16 @@ const requiredCases = [
   "shorts",
   "playlist",
   "subscriptions",
+  "trending",
+  "library",
+  "history",
+  "you",
+  "gaming",
+  "music",
+  "movies",
+  "podcasts",
+  "premium",
+  "shopping",
   "channel",
   "post",
   "hashtag",
@@ -187,6 +197,30 @@ const blockedSummary = summarizeSamples(
 );
 assert.equal(blockedSummary.ok, false);
 assert.equal(blockedSummary.status, "blocked", "外部登录/机器人门槛必须独立标记为 blocked");
+
+const blockedBeforePageInstrumentation = summarizeSamples(
+  [
+    {
+      playbackBlocker: "youtube-bot-signin-gate",
+      injectedScriptCount: 0,
+      injectedStyleCount: 0,
+      documentVersion: null,
+      runtimeVersion: null,
+      paused: true,
+      readyState: 0,
+      duration: null,
+    },
+  ],
+  { expectedVersion: currentVersion, expectPlayback: true, stableSampleCount: 3 },
+);
+assert.equal(
+  blockedBeforePageInstrumentation.status,
+  "blocked",
+  "外部播放门槛导致页面未注入时，不能误报为模块失败",
+);
+assert.deepEqual(blockedBeforePageInstrumentation.failures, [
+  "playback blocked=youtube-bot-signin-gate",
+]);
 
 const failedPlaybackSummary = summarizeSamples(
   [

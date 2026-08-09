@@ -13,14 +13,15 @@ const checker = fs.readFileSync(checkerPath, "utf8");
 assert.match(checker, /youtube\.native\.response/);
 assert.match(checker, /youtube\.tvos\.json/);
 assert.match(checker, /googlevideo/);
+assert.match(checker, /SURGE_LOCAL_TEST/);
 
-function runChecker(profile) {
+function runChecker(profile, extraEnv = {}) {
   const temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "youtube-native-effective-profile-"));
   const profilePath = path.join(temporaryDirectory, "effective.conf");
   fs.writeFileSync(profilePath, profile);
   const result = spawnSync(checkerPath, [], {
     encoding: "utf8",
-    env: { ...process.env, SURGE_EFFECTIVE_PROFILE_FILE: profilePath },
+    env: { ...process.env, SURGE_EFFECTIVE_PROFILE_FILE: profilePath, ...extraEnv },
   });
   fs.rmSync(temporaryDirectory, { recursive: true, force: true });
   return result;
@@ -29,7 +30,7 @@ function runChecker(profile) {
 const releaseRoot = `/releases/${version}/scripts/`;
 const validNativeProfile = `
 [MITM]
-hostname = www.youtube.com, m.youtube.com, youtubei.googleapis.com, *.googlevideo.com
+hostname = youtubei.googleapis.com, *.googlevideo.com
 
 [Script]
 youtube.native.response = type=http-response,script-path=${releaseRoot}youtube-native-response.js
@@ -41,9 +42,32 @@ youtube.tvos.json = type=http-response,script-path=${releaseRoot}youtube-tvos-js
 const validResult = runChecker(validNativeProfile);
 assert.equal(validResult.status, 0, validResult.stderr || validResult.stdout);
 
+const localNativeProfile = validNativeProfile.replaceAll(
+  `/releases/${version}/scripts/`,
+  `/scripts/`,
+).replaceAll(
+  `scripts/youtube-native-response.js`,
+  `scripts/youtube-native-response.js?v=${version}&token=test`,
+).replaceAll(
+  `scripts/youtube-native-request.js`,
+  `scripts/youtube-native-request.js?v=${version}&token=test`,
+).replaceAll(
+  `scripts/youtube-native-ump.js`,
+  `scripts/youtube-native-ump.js?v=${version}&token=test`,
+).replaceAll(
+  `scripts/youtube-tvos-json.js`,
+  `scripts/youtube-tvos-json.js?v=${version}&token=test`,
+);
+const localNativeResult = runChecker(localNativeProfile, { SURGE_LOCAL_TEST: "1" });
+assert.equal(
+  localNativeResult.status,
+  0,
+  localNativeResult.stderr || localNativeResult.stdout,
+);
+
 const wildcardMitmResult = runChecker(
   validNativeProfile.replace(
-    "hostname = www.youtube.com, m.youtube.com, youtubei.googleapis.com, *.googlevideo.com",
+    "hostname = youtubei.googleapis.com, *.googlevideo.com",
     "hostname = *, www.youtube.com, m.youtube.com, youtubei.googleapis.com, *.googlevideo.com",
   ),
 );
@@ -51,6 +75,18 @@ assert.equal(wildcardMitmResult.status, 1, "全局 * MITM 必须检查失败，�
 assert.match(
   `${wildcardMitmResult.stdout}\n${wildcardMitmResult.stderr}`,
   /GLOBAL_MITM_WILDCARD/,
+);
+
+const webMitmResult = runChecker(
+  validNativeProfile.replace(
+    "hostname = youtubei.googleapis.com, *.googlevideo.com",
+    "hostname = www.youtube.com, m.youtube.com, youtubei.googleapis.com, *.googlevideo.com",
+  ),
+);
+assert.equal(webMitmResult.status, 1, "native tvOS profile must not MITM certificate-pinned web hosts");
+assert.match(
+  `${webMitmResult.stdout}\n${webMitmResult.stderr}`,
+  /NATIVE_WEB_MITM/,
 );
 
 const missingTvosResult = runChecker(
@@ -75,5 +111,18 @@ const webOnlyResult = runChecker(
 );
 assert.equal(webOnlyResult.status, 1, "网页模块不能被视为原生模块已部署");
 assert.match(`${webOnlyResult.stdout}\n${webOnlyResult.stderr}`, /NATIVE_MISSING/);
+
+const noActiveProfileResult = runChecker(
+  "Effective Profile (Modified by Modules):\n\n(null)\n",
+);
+assert.equal(
+  noActiveProfileResult.status,
+  2,
+  "Surge 没有有效配置时必须返回部署状态错误，而不是伪装成脚本缺失",
+);
+assert.match(
+  `${noActiveProfileResult.stdout}\n${noActiveProfileResult.stderr}`,
+  /NO_ACTIVE_PROFILE/,
+);
 
 console.log("PASS: native iOS/tvOS effective-profile checker");

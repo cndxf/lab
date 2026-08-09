@@ -1,12 +1,14 @@
-#!name=YouTube 全平台去广告 v1.2.11
-#!desc=Mac 与移动浏览器网页去广告；原生设备请使用 iOS/tvOS 模块。启用前必须关闭全局 hostname=* HTTPS 捕获；脚本只进入有效配置，不会复制到主配置。
+#!name=v1.2.17 · YouTube 全平台去广告
+#!desc=版本：v1.2.17 | macOS 网页去广告；iPhone/iPad 移动网页与原生设备请使用 iOS/tvOS 模块。启用前必须关闭全局 hostname=* HTTPS 捕获；脚本只进入有效配置，不会复制到主配置。
+#!requirement=CORE_VERSION >= 20 && SYSTEM = 'macOS'
 #!category=广告过滤
 #!arguments=debug:false,update_interval:21600
 #!arguments-desc=debug：两条网页脚本调试日志，true/false；update_interval：远程脚本更新间隔，单位秒
 
 # ============================================================
 # [安装与证书信任设置]
-# 1. 从 URL 安装本模块；安装完成不等于启用，必须在每台设备的模块列表打开开关。
+# 1. 本模块仅在 macOS 生效；iPhone/iPad/Apple TV 即使安装也不会应用。
+#    安装完成不等于启用，必须在 Mac 的模块列表打开开关。
 # 2. 启用前检查 Surge 的有效 [MITM]，不要保留单独的 hostname = * 或“捕获全部 HTTPS”；
 #    这会让 Bilibili、银行等证书固定应用主动断开。模块使用 %APPEND% 只追加 YouTube 主机，
 #    不能替已有的全局通配符。
@@ -29,7 +31,7 @@
 # - 当前模块故意不解密 *.googlevideo.com，以降低黑屏、转圈和连接不安全风险。
 #
 # [回滚方法]
-# - 在模块列表停用或删除“ YouTube 全平台去广告 v1.2.11”，重新加载配置并重启 YouTube。
+# - 在模块列表停用或删除“v1.2.17 · YouTube 全平台去广告”，重新加载配置并重启 YouTube。
 # - 本模块不直接改写主配置，因此正常情况下无需手工删除 [MITM] 或 [Script] 行。
 # - 完整说明：https://github.com/cndxf/lab/tree/main/YouTube-%E5%85%A8%E5%B9%B3%E5%8F%B0%E5%8E%BB%E5%B9%BF%E5%91%8A/clients/surge
 
@@ -48,15 +50,15 @@ DOMAIN-SUFFIX,adservice.google.com,REJECT
 # ============================================================
 # [WEB / 网页专用]
 # response 在 JSON 渲染前清理广告结构；page 注入 DOM/播放器恢复逻辑。
-# 覆盖桌面网页和 m.youtube.com，不用于原生 App protobuf。
+# 覆盖桌面网页、移动网页和 YouTube Music，不用于原生 App protobuf。
 # ============================================================
 [Script]
-youtube.web.response = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/youtubei\/v1\/(?:next|browse|search|get_watch|reel\/reel_watch_sequence|player|player\/ad_break)(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-web-response.js?v=1.2.11,script-update-interval={{{update_interval}}}
-youtube.web.page = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/(?:(?:watch|results|playlist)(?:\?.*)?|shorts\/(?:[^/?#]+)?(?:\?.*)?|(?:live|post|hashtag|clip|embed)\/[^/?#]+(?:\?.*)?|feed\/[^?#]+(?:\?.*)?|(?:@[^/?#]+|(?:channel|c|user)\/[^/?#]+)(?:\/[^?#]*)?(?:\?.*)?|(?:\?.*)?)$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-web-page.js?v=1.2.11,script-update-interval={{{update_interval}}}
+youtube.web.response = type=http-response,pattern=^https:\/\/(?:www|m|music)\.youtube\.com\/youtubei\/v1\/(?:next|browse|search|get_watch|reel\/reel_watch_sequence|player|player\/ad_break)(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.17/scripts/youtube-web-response.js?v=1.2.17,script-update-interval={{{update_interval}}}
+youtube.web.page = type=http-response,pattern=^https:\/\/(?:www|m|music)\.youtube\.com\/(?:(?:watch|results|playlist)(?:\?.*)?|shorts\/(?:[^/?#]+)?(?:\?.*)?|(?:live|post|hashtag|clip|embed)\/[^/?#]+(?:\?.*)?|feed\/[^?#]+(?:\?.*)?|(?:gaming|music|movies|podcasts|premium|shopping|sports|news|kids|fashion|learning|live)(?:\/[^?#]*)?(?:\?.*)?|(?:@[^/?#]+|(?:channel|c|user)\/[^/?#]+)(?:\/[^?#]*)?(?:\?.*)?|(?:\?.*)?)$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.17/scripts/youtube-web-page.js?v=1.2.17,script-update-interval={{{update_interval}}}
 
 # ============================================================
 # [MITM]
 # 模块只能声明域名，不能安装、分发或信任证书和私钥。
 # ============================================================
 [MITM]
-hostname = %APPEND% www.youtube.com, m.youtube.com, youtubei.googleapis.com
+hostname = %APPEND% www.youtube.com, m.youtube.com, music.youtube.com, youtubei.googleapis.com

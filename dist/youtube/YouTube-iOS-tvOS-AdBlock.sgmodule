@@ -1,5 +1,5 @@
-#!name=YouTube iOS/tvOS 去广告 v1.2.11
-#!desc=iPhone、iPad 与 Apple TV 原生 YouTube 去广告；本地处理加密播放流，Apple TV 仍为实验支持。启用前必须关闭全局 hostname=* HTTPS 捕获。
+#!name=v1.2.17 · YouTube iOS/tvOS 去广告
+#!desc=版本：v1.2.17 | iPhone、iPad 与 Apple TV 原生 YouTube 去广告；本地处理加密播放流，Apple TV 仍为实验支持。启用前必须关闭全局 hostname=* HTTPS 捕获。
 #!category=广告过滤
 #!requirement=CORE_VERSION >= 20 && (SYSTEM = 'iOS' || SYSTEM = 'tvOS')
 #!arguments=caption_lang:off,block_upload:false,block_immersive:false,block_shorts:false,debug:false,update_interval:21600
@@ -48,28 +48,30 @@ DOMAIN-SUFFIX,adservice.google.com,REJECT
 # 中插、播放恢复、遥控器操作和长时间播放稳定性。
 # ============================================================
 [Script]
-youtube.native.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config)(?:\?.*)?$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-native-response.js?v=1.2.11,script-update-interval={{{update_interval}}},argument="{\"captionLang\":\"{{{caption_lang}}}\",\"blockUpload\":{{{block_upload}}},\"blockImmersive\":{{{block_immersive}}},\"blockShorts\":{{{block_shorts}}},\"debug\":{{{debug}}}}"
-youtube.native.request.init = type=http-request,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-native-request.js?v=1.2.11,script-update-interval={{{update_interval}}}
-youtube.native.response.init = type=http-response,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-native-ump.js?v=1.2.11,script-update-interval={{{update_interval}}},argument="{\"captionLang\":\"{{{caption_lang}}}\",\"blockUpload\":{{{block_upload}}},\"blockImmersive\":{{{block_immersive}}},\"blockShorts\":{{{block_shorts}}},\"debug\":{{{debug}}}}"
-youtube.native.request.log_event = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event(?:\?.*)?$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-native-request.js?v=1.2.11,script-update-interval={{{update_interval}}}
+youtube.native.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config)(?:\?.*)?$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.17/scripts/youtube-native-response.js?v=1.2.17,script-update-interval={{{update_interval}}},argument="{\"captionLang\":\"{{{caption_lang}}}\",\"blockUpload\":{{{block_upload}}},\"blockImmersive\":{{{block_immersive}}},\"blockShorts\":{{{block_shorts}}},\"debug\":{{{debug}}}}"
+youtube.native.request.init = type=http-request,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.17/scripts/youtube-native-request.js?v=1.2.17,script-update-interval={{{update_interval}}}
+youtube.native.response.init = type=http-response,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.17/scripts/youtube-native-ump.js?v=1.2.17,script-update-interval={{{update_interval}}},argument="{\"captionLang\":\"{{{caption_lang}}}\",\"blockUpload\":{{{block_upload}}},\"blockImmersive\":{{{block_immersive}}},\"blockShorts\":{{{block_shorts}}},\"debug\":{{{debug}}}}"
+youtube.native.request.log_event = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event(?:\?.*)?$,requires-body=1,max-size=-1,binary-body-mode=1,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.17/scripts/youtube-native-request.js?v=1.2.17,script-update-interval={{{update_interval}}}
 
 # ============================================================
 # [TVOS / Apple TV 专用]
 # Apple TV 某些版本会把 player 返回为 JSON；此规则只处理该回退格式。
 # 原生 UMP 规则仍负责可能出现的加密 initplayback 响应。
 # ============================================================
-youtube.tvos.json = type=http-response,pattern=^https:\/\/(?:(?:www|m)\.youtube\.com|youtubei\.googleapis\.com)\/youtubei\/v1\/player(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-tvos-json.js?v=1.2.11,script-update-interval={{{update_interval}}}
+youtube.tvos.json = type=http-response,pattern=^https:\/\/(?:(?:www|m)\.youtube\.com|youtubei\.googleapis\.com)\/youtubei\/v1\/player(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.17/scripts/youtube-tvos-json.js?v=1.2.17,script-update-interval={{{update_interval}}}
 
 # ============================================================
 # [WEB / 移动浏览器专用]
 # iPhone/iPad Safari 与其他 WebKit 浏览器复用基础模块的网页清理脚本。
 # ============================================================
-youtube.web.response = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/youtubei\/v1\/(?:next|browse|search|get_watch|reel\/reel_watch_sequence|player|player\/ad_break)(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-web-response.js?v=1.2.11,script-update-interval={{{update_interval}}}
-youtube.web.page = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/(?:(?:watch|results|playlist)(?:\?.*)?|shorts\/(?:[^/?#]+)?(?:\?.*)?|(?:live|post|hashtag|clip|embed)\/[^/?#]+(?:\?.*)?|feed\/[^?#]+(?:\?.*)?|(?:@[^/?#]+|(?:channel|c|user)\/[^/?#]+)(?:\/[^?#]*)?(?:\?.*)?|(?:\?.*)?)$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.11/scripts/youtube-web-page.js?v=1.2.11,script-update-interval={{{update_interval}}}
+youtube.web.response = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/youtubei\/v1\/(?:next|browse|search|get_watch|reel\/reel_watch_sequence|player|player\/ad_break)(?:\?.*)?$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.17/scripts/youtube-web-response.js?v=1.2.17,script-update-interval={{{update_interval}}}
+youtube.web.page = type=http-response,pattern=^https:\/\/(?:www|m)\.youtube\.com\/(?:(?:watch|results|playlist)(?:\?.*)?|shorts\/(?:[^/?#]+)?(?:\?.*)?|(?:live|post|hashtag|clip|embed)\/[^/?#]+(?:\?.*)?|feed\/[^?#]+(?:\?.*)?|(?:gaming|music|movies|podcasts|premium|shopping|sports|news|kids|fashion|learning|live)(?:\/[^?#]*)?(?:\?.*)?|(?:@[^/?#]+|(?:channel|c|user)\/[^/?#]+)(?:\/[^?#]*)?(?:\?.*)?|(?:\?.*)?)$,requires-body=1,max-size=10485760,debug={{{debug}}},script-path=https://raw.githubusercontent.com/cndxf/lab/main/dist/youtube/releases/1.2.17/scripts/youtube-web-page.js?v=1.2.17,script-update-interval={{{update_interval}}}
 
 # ============================================================
 # [MITM]
-# 解密 youtubei 、移动网页与原生 initplayback。证书和私钥不进入模块或仓库。
+# 原生 App 只解密 youtubei 与原生 initplayback。
+# 不捕获 www.youtube.com / m.youtube.com，避免 tvOS YouTube 的证书固定导致
+# TLS 握手后主动断开；网页端仍由基础网页模块独立处理。证书和私钥不进入模块或仓库。
 # ============================================================
 [MITM]
-hostname = %APPEND% www.youtube.com, m.youtube.com, youtubei.googleapis.com, *.googlevideo.com
+hostname = %APPEND% youtubei.googleapis.com, *.googlevideo.com
