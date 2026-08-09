@@ -143,4 +143,29 @@ case "$verify_source" in
     ;;
 esac
 
+audit_source=$(cat "$AUDIT_SCRIPT")
+case "$audit_source" in
+  *'YOUTUBE_AUDIT_MAX_TIME'*) ;;
+  *)
+    printf 'FAIL: upstream audit has no configurable download timeout.\n' >&2
+    exit 1
+    ;;
+esac
+
+case "$audit_source" in
+  *'YOUTUBE_AUDIT_RETRIES'*) ;;
+  *)
+    printf 'FAIL: upstream audit has no bounded download retry setting.\n' >&2
+    exit 1
+    ;;
+esac
+
+case "$audit_source" in
+  *'--max-time "$YOUTUBE_AUDIT_MAX_TIME"'*) ;;
+  *)
+    printf 'FAIL: upstream audit does not apply its configurable download timeout.\n' >&2
+    exit 1
+    ;;
+esac
+
 printf 'PASS: upstream audit accepts known signals and rejects missing ones.\n'

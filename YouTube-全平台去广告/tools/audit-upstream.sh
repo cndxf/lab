@@ -10,6 +10,10 @@ UASSETS_BASELINE_COMMIT="9bbd491042c3e6c3ade281ab43de7502d75347d4"
 ADGUARD_BASELINE_COMMIT="c6f4f4abffcda13b66ced923d4348e7633745b90"
 UASSETS_BASELINE_HASH="78c9fd5fb410627736045dea324a69ebc02ac780f8e64fe5b5cf33e77d47b751"
 ADGUARD_BASELINE_HASH="85ab2b9e67ddad6c234ee560e8e62cb46b13409882d54a63beb18f2d2d421bc9"
+# AdGuard's upstream filter file is large enough that a busy connection can
+# exceed a short CI timeout even after most of the response has arrived.
+YOUTUBE_AUDIT_MAX_TIME=${YOUTUBE_AUDIT_MAX_TIME:-120}
+YOUTUBE_AUDIT_RETRIES=${YOUTUBE_AUDIT_RETRIES:-3}
 
 uassets_file=""
 adguard_file=""
@@ -17,6 +21,20 @@ native_head=""
 skip_baseline=0
 strict=0
 temporary_files=""
+
+case "$YOUTUBE_AUDIT_MAX_TIME" in
+  ''|*[!0-9]*|0)
+    printf 'YOUTUBE_AUDIT_MAX_TIME must be a positive integer number of seconds.\n' >&2
+    exit 2
+    ;;
+esac
+
+case "$YOUTUBE_AUDIT_RETRIES" in
+  ''|*[!0-9]*|0)
+    printf 'YOUTUBE_AUDIT_RETRIES must be a positive integer number of attempts.\n' >&2
+    exit 2
+    ;;
+esac
 
 usage() {
   printf '%s\n' \
@@ -35,7 +53,22 @@ new_temporary_file() {
 }
 
 download_source() {
-  curl --fail --silent --show-error --location --max-time 30 "$1" -o "$2"
+  source_url=$1
+  target_path=$2
+  attempt=1
+  while [ "$attempt" -le "$YOUTUBE_AUDIT_RETRIES" ]; do
+    if curl --fail --silent --show-error --location \
+      --max-time "$YOUTUBE_AUDIT_MAX_TIME" "$source_url" -o "$target_path"; then
+      return 0
+    fi
+    if [ "$attempt" -lt "$YOUTUBE_AUDIT_RETRIES" ]; then
+      sleep "$attempt"
+    fi
+    attempt=$((attempt + 1))
+  done
+  printf 'Failed to download upstream source after %s attempt(s): %s\n' \
+    "$YOUTUBE_AUDIT_RETRIES" "$source_url" >&2
+  return 1
 }
 
 extract_uassets_block() {

@@ -43,8 +43,6 @@ if (!source) {
       "ssapconfig",
       "adbreakheartbeatparams",
       "pageadviewthroughconversion",
-      "legacyimportant",
-      "no_ads",
       "adplacementrenderer",
       "adslotrenderer",
       "infeedadlayoutrenderer",

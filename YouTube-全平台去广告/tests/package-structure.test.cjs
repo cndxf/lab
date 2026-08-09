@@ -26,9 +26,17 @@ assert.match(version, /^\d+\.\d+\.\d+$/, "维护版本必须使用 semver 三段
 
 const baseModuleSource = fs.readFileSync(baseModulePath, "utf8");
 const nativeModuleSource = fs.readFileSync(nativeModulePath, "utf8");
-assert.match(baseModuleSource, /^#!name=YouTube 全平台去广告$/m);
+assert.match(baseModuleSource, new RegExp(`^#!name=v${escapedVersion} · YouTube 全平台去广告$`, "m"));
+assert.match(
+  baseModuleSource,
+  new RegExp(`^#!desc=版本：v${escapedVersion} \| .*网页.*$`, "m"),
+);
 assert.match(baseModuleSource, /^#!desc=.*网页.*$/m);
-assert.match(nativeModuleSource, /^#!name=YouTube iOS\/tvOS 去广告$/m);
+assert.match(nativeModuleSource, new RegExp(`^#!name=v${escapedVersion} · YouTube iOS\\/tvOS 去广告$`, "m"));
+assert.match(
+  nativeModuleSource,
+  new RegExp(`^#!desc=版本：v${escapedVersion} \| .*Apple TV.*$`, "m"),
+);
 for (const moduleSource of [baseModuleSource, nativeModuleSource]) {
   assert.match(moduleSource, /^\[Rule\]$/m);
   assert.match(moduleSource, /^\[Script\]$/m);
@@ -69,7 +77,7 @@ for (const scriptRule of baseModuleSource.match(/^youtube\..*script-path=.*$/gm)
 
 assert.match(
   baseModuleSource,
-  /^hostname = %APPEND% www\.youtube\.com, m\.youtube\.com, youtubei\.googleapis\.com$/m,
+  /^hostname = %APPEND% www\.youtube\.com, m\.youtube\.com, music\.youtube\.com, youtubei\.googleapis\.com$/m,
 );
 const activeModuleSource = baseModuleSource
   .split("\n")

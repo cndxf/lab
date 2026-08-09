@@ -6,7 +6,18 @@ SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
 PROJECT_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd -P)
 EXPECTED_VERSION=$(tr -d '\r\n' < "$PROJECT_ROOT/VERSION")
 EXPECTED_RELEASE_PATH="/releases/$EXPECTED_VERSION/scripts/"
+VERSION_PATTERN=$(printf '%s' "$EXPECTED_VERSION" | sed 's/\./\\./g')
 SURGE_CLI=${SURGE_CLI:-/Applications/Surge.app/Contents/Applications/surge-cli}
+
+script_is_current() {
+  script_line=$1
+  if [ "${SURGE_LOCAL_TEST:-0}" -eq 1 ]; then
+    # The one-time LAN server intentionally rewrites public release paths to /scripts/.
+    printf '%s\n' "$script_line" | grep -Eq "/scripts/[^,[:space:]]+\\?[^,[:space:]]*v=$VERSION_PATTERN(&|$)"
+    return
+  fi
+  printf '%s\n' "$script_line" | grep -Fq "$EXPECTED_RELEASE_PATH"
+}
 
 if [ -n "${SURGE_EFFECTIVE_PROFILE_FILE:-}" ]; then
   [ -f "$SURGE_EFFECTIVE_PROFILE_FILE" ] || {
@@ -28,12 +39,26 @@ else
   effective_profile=$($SURGE_CLI dump profile effective)
 fi
 
+if printf '%s\n' "$effective_profile" | grep -Fxq '(null)'; then
+  printf '%s\n' \
+    'NO_ACTIVE_PROFILE: Surge returned no effective profile.' \
+    'Start Surge, apply a profile, and enable the VPN before checking iOS/tvOS native modules.' >&2
+  exit 2
+fi
+
 failed=0
 mitm_hostname=$(printf '%s\n' "$effective_profile" | awk '/^hostname = / { print }')
 if printf '%s\n' "$mitm_hostname" | grep -Eq '(^|[ ,])\*([ ,]|$)'; then
   printf '%s\n' \
     'GLOBAL_MITM_WILDCARD: effective profile contains hostname = *.' \
     'Remove the wildcard and keep only the YouTube hosts required by this module; certificate-pinned apps can abort the TLS handshake.' >&2
+  failed=1
+fi
+
+if printf '%s\n' "$mitm_hostname" | grep -Eq '(^|[ ,])(www|m)\.youtube\.com([ ,]|$)'; then
+  printf '%s\n' \
+    'NATIVE_WEB_MITM: native iOS/tvOS profile still captures www.youtube.com or m.youtube.com.' \
+    'Disable the macOS web module for iOS/tvOS and keep native MITM limited to youtubei.googleapis.com and *.googlevideo.com.' >&2
   failed=1
 fi
 
@@ -44,7 +69,7 @@ native_count=$(printf '%s\n' "$effective_profile" | awk '
 if [ "$native_count" -eq 0 ]; then
   printf '%s\n' \
     'NATIVE_MISSING: no iOS/tvOS YouTube scripts are present in the effective profile.' \
-    'Install and enable "YouTube iOS/tvOS 去广告", then redeploy the profile to the device.' >&2
+    "Install and enable the current \"v$EXPECTED_VERSION · YouTube iOS/tvOS 去广告\", then redeploy the profile to the device." >&2
   failed=1
 fi
 
@@ -64,7 +89,7 @@ do
       script_line=$(printf '%s\n' "$effective_profile" | awk -v prefix="$script_name =" '
         index($0, prefix) == 1 { print; exit }
       ')
-      if ! printf '%s\n' "$script_line" | grep -Fq "$EXPECTED_RELEASE_PATH"; then
+      if ! script_is_current "$script_line"; then
         printf '%s\n' \
           "STALE: $script_name does not reference release $EXPECTED_VERSION." \
           'Refresh or replace the current iOS/tvOS module, then redeploy the profile.' >&2

@@ -26,7 +26,10 @@ assert.ok(fs.existsSync(requestScriptPath), "native initplayback request script 
 assert.ok(fs.existsSync(umpScriptPath), "native UMP response script is missing");
 
 const moduleSource = fs.readFileSync(modulePath, "utf8");
-assert.match(moduleSource, /^#!name=YouTube iOS\/tvOS 去广告$/m);
+assert.match(
+  moduleSource,
+  new RegExp(`^#!name=v${escapedVersion} · YouTube iOS\\/tvOS 去广告$`, "m"),
+);
 assert.match(
   moduleSource,
   /^#!requirement=CORE_VERSION >= 20 && \(SYSTEM = 'iOS' \|\| SYSTEM = 'tvOS'\)$/m,
@@ -82,6 +85,11 @@ const activeBaseModuleSource = baseModuleSource
   .split("\n")
   .filter((line) => line.trim() && !line.trimStart().startsWith("#"))
   .join("\n");
+assert.match(
+  baseModuleSource,
+  /^#!requirement=CORE_VERSION >= 20 && SYSTEM = 'macOS'$/m,
+  "web module must be limited to macOS so it is not deployed to iOS/tvOS",
+);
 assert.doesNotMatch(
   activeBaseModuleSource,
   /youtube\.native\.|\*\.googlevideo\.com/,

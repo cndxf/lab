@@ -65,7 +65,7 @@ if (!source || !/<\/body>/i.test(source)) {
   </style>`;
   const injectedScript = `<script${nonceAttribute} data-youtube-adblock-skipper>(()=>{
     // [COMMON / 多客户端通用] 运行时名称和诊断快照保持客户端无关，便于跨适配器排障。
-    const VERSION="1.2.17";
+    const VERSION="1.2.16";
     const activeRuntime=window.__youtubeAdBlockRuntime;
     if(activeRuntime){
       if(activeRuntime.version===VERSION){

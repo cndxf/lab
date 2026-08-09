@@ -37,6 +37,8 @@ const payload = {
   playerAds: [{ adPlacementRenderer: { config: { kind: "pre-roll" } } }],
   adPlacements: [{ adPlacementRenderer: { config: { kind: "mid-roll" } } }],
   adSlots: [{ adSlotRenderer: { slotId: "slot-1" } }],
+  legacyImportant: { ad: true },
+  no_ads: { ad: true },
   playbackTracking: {
     pageadViewthroughconversion: "sensitive-tracking-value",
     videoplayback: { start: "keep" },
@@ -53,6 +55,8 @@ const cleaned = JSON.parse(result.body);
 assert.equal(cleaned.playerAds, undefined);
 assert.equal(cleaned.adPlacements, undefined);
 assert.equal(cleaned.adSlots, undefined);
+assert.equal(cleaned.legacyImportant, undefined);
+assert.equal(cleaned.no_ads, undefined);
 assert.equal(
   cleaned.playerConfig.ssapConfig,
   undefined,
